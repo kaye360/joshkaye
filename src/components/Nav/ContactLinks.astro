@@ -1,0 +1,48 @@
+---
+import { CONTACT_LINKS } from '../../config';
+import Wrapper from '../Wrapper.astro';
+import ContactLink from './ContactLink.astro';
+
+
+interface Props {
+
+    class? : string
+
+    /**
+     * @props slot
+     */
+    props? : true
+}
+
+const {
+    class : className = ''
+} = Astro.props
+
+
+---
+
+<div class={`bg-[var(--contact-bar-bg-color)] text-[var(--contact-bar-text-color)] ${className}`}>
+    <Wrapper width="max" padding="inline" class="flex justify-end">
+        <ul>
+            { CONTACT_LINKS.map( (link) => ( 
+                <ContactLink href={link.path} icon={link.icon}>{link.title}</ContactLink>
+            ))}
+        </ul>
+    </Wrapper>
+</div>
+
+
+
+<style>
+
+ul {
+    display : flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    column-gap : 1.5rem;
+    row-gap: 0.5rem ;
+    width : max-content;
+}
+
+</style>

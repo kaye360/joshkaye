@@ -1,0 +1,42 @@
+---
+import { NAV_LINKS, Navlink } from '../../config';
+import Icon from './../Icon.astro';
+
+interface Props {
+    
+    /** Material icon string for icon */
+    icon? : string
+
+    class? : string,
+
+    /**
+     * @prop href (string)
+     * @prop icon (string)
+     */
+    props? : true
+}
+
+const {
+    icon,
+    class : className = ''
+} = Astro.props
+
+const cta = NAV_LINKS.find(link => link.cta) as Navlink
+
+---
+
+<a 
+    href={cta.path} 
+    class={`
+        flex items-center gap-2 font-bold ml-auto px-3 py-2 
+        bg-[var(--nav-bar-CTA-bg-color)] hover:bg-[var(--nav-bar-CTA-bg-color-hover)] 
+        text-[var(--nav-bar-CTA-text-color)]
+        ${className} 
+    `}
+>
+
+    {cta.title}
+    
+    {icon && <Icon icon={icon} /> }
+
+</a>

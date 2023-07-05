@@ -1,0 +1,55 @@
+---
+
+interface Props {
+
+    /** Link href of Nav Link */
+    href : string,
+
+    /** Material icon string */
+    icon? : string
+
+    class? : string,
+
+    /**
+     * @prop href (string)
+     * @prop icon (string)
+     * @prop slot
+     */
+    props? : true
+}
+
+const {
+    href,
+    icon,
+    class : className = ''
+} = Astro.props
+---
+
+<li class="nav-link">
+    <a href={href} class={`flex items-center gap-2 font-semibold hover:underline hover:underline-offset-4 ${className} `}>
+
+        {icon && icon }
+
+        <slot />
+    </a>
+</li>
+
+
+<style is:global>
+
+li.nav-link {
+    display : none;
+    transition: all 250ms;
+}
+
+@media (min-width: 768px) {
+    li.nav-link {
+        display: block;
+    }
+}
+
+.mobile-menu-is-open li.nav-link {
+    display: block;
+}
+
+</style>

@@ -1,0 +1,70 @@
+---
+import SkipToContent from '../../components/SkipToContent.astro';
+import '../../css/config.css'
+import Footer from '../../components/Footer.astro';
+import MainContent from '../../components/MainContent.astro';
+import { FAVICON_PATH, Layout, SITE_SHORT_NAME } from '../../config';
+import HeroFullScreen from '../../components/Heros/HeroFullScreen.astro';
+import ContactLinks from '../../components/Nav/ContactLinks.astro';
+import NavCTALink from '../../components/Nav/NavCTALink.astro';
+import NavLinks from '../../components/Nav/NavLinks.astro';
+import HeaderTopBar from '../../components/Headers/HeaderTopBar.astro';
+
+
+interface Props extends Layout { }
+
+const {
+    title,
+    description,
+	class : className = ''
+} = Astro.props
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href={FAVICON_PATH} />
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+        
+        <meta name="description" content={description}>
+
+		<title>
+            {`${title} - ${SITE_SHORT_NAME}`} 
+        </title>
+	</head>
+	<body class={`bg-[var(--body-bg-color)] text-[var(--body-text-color)] ${className}`}>
+
+		<SkipToContent />
+
+		<HeaderTopBar props>
+
+			<ContactLinks slot="contact" class="text-sm py-1" />
+
+			<NavLinks slot='navLinks' />
+			
+			<NavCTALink slot='cta' icon="explore" />
+
+		</HeaderTopBar>
+		
+		<HeroFullScreen props
+			align='center'
+			heading="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, unde." 
+			subheading='Consequatur neque iure unde nisi repudiandae pariatur consectetur ipsa quia quaerat laborum rem impedit optio illo, hic, aliquid repellendus.'
+			primaryCTAText='Buy now'
+			primaryCTALink='#'
+			secondaryCTAText='Learn more'
+			secondaryCTALink='#'
+		/>
+
+        <MainContent>
+
+            <slot />
+
+        </MainContent>
+
+        <Footer />
+
+	</body>
+</html>

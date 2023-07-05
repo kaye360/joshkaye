@@ -1,0 +1,43 @@
+---
+interface Props {
+
+    /** Width of Wrapper.
+     * Default is wide with of 100%
+     * max = 72rem, 1152px
+     * text = 70ch
+     */
+    width : 'max' | 'text',
+
+    /** Default padding applied to inline, block, or both */
+    padding? : 'inline' | 'block' | 'both'
+    
+    class? : string,
+
+    /**
+     * @prop width ('max' | 'text')
+     * @prop padding ('inline' | 'block' | 'both')
+     * @prop slot
+     */
+    props? : true
+}
+
+const { 
+    width,
+    padding,
+    class : className = '',
+} = Astro.props
+---
+
+<div class={`
+    ${width === 'max' ? 'max-w-6xl' : ''}
+    ${width === 'text' ? 'max-w-[70ch]' : ''}
+    ${padding === 'inline' ? 'px-default' : ''}
+    ${padding === 'block' ? 'py-default' : ''}
+    ${padding === 'both' ? 'px-default py-default' : ''}
+    mx-auto w-full
+    ${className}
+`}>
+
+    <slot />
+
+</div>

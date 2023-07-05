@@ -1,0 +1,49 @@
+---
+import Icon from '../Icon.astro';
+
+interface Props {
+
+    /** Link href of Contact link */
+    href? : string,
+
+    /** Material Icon string */
+    icon? : string,
+
+    class? : string,
+
+    /**
+     * @prop href string
+     * @prop icon string
+     * @prop slot
+     */
+    props? : true,
+}
+
+const {
+    href,
+    icon,
+    class : className = ''
+} = Astro.props
+---
+
+{ href ? (
+
+    <li>
+        <a href={href} class={`flex items-center gap-2 text-sm ${className} `}>
+
+            {icon && <Icon icon={icon} /> }
+
+            <slot />
+        </a>
+    </li>
+
+) : (
+
+    <li class={`flex items-center gap-2 text-sm ${className} `}>
+
+        {icon && <Icon icon={icon} /> }
+
+        <slot />
+    </li>
+
+)}

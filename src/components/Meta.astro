@@ -1,0 +1,40 @@
+---
+import { FAVICON_PATH, SITE_SHORT_NAME } from '../config';
+
+interface Props {
+
+    /** <title> tag */
+    title : string,
+
+    /** Meta Description */
+    description : string,
+
+    /**
+     * @prop title (string)
+     * @prop description (string)
+     * @prop slot
+     */
+    props? : true
+}
+
+const {
+    title,
+    description
+} = Astro.props
+---
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href={FAVICON_PATH} />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <meta name="description" content={description}>
+
+    <title>
+        {`${title} - ${SITE_SHORT_NAME}`} 
+    </title>
+
+    <slot />
+</head>

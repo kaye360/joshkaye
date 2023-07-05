@@ -1,0 +1,26 @@
+---
+import { HEADER_LOGO_PATH, LOGO_NAME } from '../config';
+
+interface Props {
+
+    class? : string,
+
+    /**
+     * none
+     */
+    props? : true
+}
+
+const { 
+    class: className = '',
+} = Astro.props
+---
+
+<a href="/">
+    <div class={`flex items-center gap-2 font-semibold text-xl stroke-[var(--nav-bar-logo-color)] ${className}`}>
+    
+        <img src={ HEADER_LOGO_PATH } />
+        {LOGO_NAME}
+
+    </div>
+</a>    

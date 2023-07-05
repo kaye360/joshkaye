@@ -1,0 +1,22 @@
+---
+interface Props {
+    class? : string
+}
+
+const {
+    class : className = ''
+} = Astro.props
+---
+
+<div class={`text-flow ${className} `}>
+    <slot />
+</div>
+
+
+<style is:global>
+
+.text-flow > * + * {
+    margin-top : 1.3em;
+}
+
+</style>

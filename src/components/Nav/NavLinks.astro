@@ -1,0 +1,59 @@
+---
+import { NAV_LINKS } from "../../config";
+import NavLink from "./NavLink.astro";
+
+
+---
+
+<ul class="nav-links">
+
+    { NAV_LINKS.map( (link) => ( 
+        link.mainNav && !link.cta && <NavLink href={link.path}>{link.title}</NavLink>
+    ))}
+
+</ul>
+
+
+<style is:global>
+
+ul.nav-links {
+    display : flex;
+    align-items: center;
+    gap : 1.5rem;
+    width : 100%;
+}
+
+@media screen and (max-width: 767px) {
+        
+    .mobile-menu-is-open ul.nav-links {
+        flex-direction: column;
+        animation : mobile-menu-animation-open 2000ms cubic-bezier(0.34, 1.56, 0.64, 1);
+        overflow: hidden;
+        padding-block : 2rem;
+    }
+
+    .mobile-menu-is-closing ul.nav-links {
+        animation: mobile-menu-animation-close 400ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
+
+    @keyframes mobile-menu-animation-open {
+        from {
+            max-height: 0px;
+        }
+        to {
+            max-height: 1000px;
+        }
+    }
+
+    @keyframes mobile-menu-animation-close {
+        from {
+            max-height: 100vh;
+        }
+        to {
+            max-height: 0px;
+        }
+    }
+}
+
+
+</style>

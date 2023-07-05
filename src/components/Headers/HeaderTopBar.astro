@@ -1,0 +1,145 @@
+---
+import Wrapper from '../Wrapper.astro'
+import Logo from '../Logo.astro';
+import MobileMenuBtn from '../Nav/MobileMenuBtn.astro';
+
+interface Props {
+
+    /** Whether or not the header has position: sticky applied */
+    sticky? : boolean,
+
+    /** Is Nav BG transparent when over hero, but has bg color everywhere else? */
+    transparent? : "true" | "false",
+
+    class? : string,
+
+    /**
+     * @prop sticky ( boolean - Default true )
+     * @prop transparent ( 'true' | 'false' - Default 'true' )
+     * @prop slot ( contact | cta | navlinks )
+     */
+    props? : true
+}
+
+const {
+    sticky = true,
+    transparent = "true",
+    class: className = '',
+} = Astro.props
+---
+
+{/**
+ * NavBar ordering
+ * 
+ * Mobile
+ * 1. Logo
+ * 2. CTA
+ * 3. MobileMenuBtn
+ * 4. <nav></nav>
+ * 
+ * Desktop
+ * 1. Logo
+ * 2. <nav></nav>
+ * 3. CTA
+ * 
+ */}
+
+<header data-transparent={transparent} class={`
+    hasColorBG
+    ${ sticky ? 'sticky top-0 z-[999]' : '' }
+    ${className}
+`}>
+
+    <slot name="contact" />
+
+    <Wrapper width="max" padding="inline">
+
+        <div class="nav-wrapper">
+
+            <div class="order-1 mr-auto">
+                <Logo slot="logo" />
+            </div>
+
+            <div class="order-2  md:order-3">
+                <slot name="cta" />
+            </div>
+            
+            <div class="order-3 md:hidden flex items-center">
+                <MobileMenuBtn />
+            </div>
+            
+            <nav class="order-4 md:order-2 relative flex items-start gap-4 w-full md:w-auto">
+                <slot name="navLinks" /> 
+            </nav>
+
+        </div>
+
+    </Wrapper>
+
+</header>
+
+
+<style>
+
+header {
+    transition: all 250ms;
+}
+
+header.hasTransparentBG {
+    background-color: transparent;
+    color : var(--nav-bar-transparent-text-color);
+}
+
+header.hasColorBG {
+    background-color: var(--nav-bar-bg-color);
+    color : var(--nav-bar-text-color);
+}
+
+.nav-wrapper {
+    display : flex;
+    align-items: center;
+    column-gap:  1rem;
+    flex-wrap: wrap;
+    padding-block : 0.5rem;
+}
+
+</style>
+
+
+<script>
+
+const header = document.querySelector('header') as HTMLDivElement
+const hero  = document.querySelector('#hero') as HTMLDivElement
+
+const headerIsTransparent = header?.dataset.transparent === 'true'
+
+if( headerIsTransparent ) toggleNavTransparency()
+
+
+function toggleNavTransparency() {
+
+    const heroObserverOptions = {
+        root : null,
+        threshold : 0,
+        rootMargin : "-70% 0px 0px 0px"
+    }
+    
+    const heroObserver = new IntersectionObserver( entries => {
+        entries.forEach(entry => {
+            
+            if(entry.isIntersecting) {
+                header.classList.add('hasTransparentBG')
+                header.classList.remove('hasColorBG')
+            } else {
+                header.classList.remove('hasTransparentBG')
+                header.classList.add('hasColorBG')
+            }
+            
+        })
+    }, heroObserverOptions)
+    
+    heroObserver.observe(hero)
+}
+
+</script>
+

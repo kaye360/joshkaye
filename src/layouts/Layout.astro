@@ -1,0 +1,45 @@
+---
+/**
+ * 
+ * Landing Page component controller
+ * 
+ */
+import type { Layout } from '../config'
+import BaseLayout from './layouts/BaseLayout.astro';
+import LandingPageLayout from './layouts/LandingPageLayout.astro'
+
+interface Props extends Layout {
+
+    /** Type of Layout */
+    type : 'landingPage' | 'base',
+
+    class? : string,
+
+    /**
+     * @prop type ( 'base' | 'landingPage' )
+     * @prop title (string)
+     * @prop description (string)
+     */
+    props? : true
+}
+
+const {
+    type,
+    title,
+    description,
+    class: className = ''
+} = Astro.props
+
+---
+
+{ type === 'landingPage' &&
+    <LandingPageLayout title={title} description={description} class={className}>
+        <slot />
+    </LandingPageLayout>
+}
+
+{ type === 'base' &&
+    <BaseLayout title={title} description={description} class={className}>
+        <slot />
+    </BaseLayout>
+}

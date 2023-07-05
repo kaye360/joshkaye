@@ -1,0 +1,23 @@
+---import Wrapper from "./Wrapper.astro";
+
+
+---
+
+<h1>
+    <Wrapper width="max" padding="inline">
+        <slot />
+    </Wrapper>
+</h1>
+
+
+<style>
+
+h1 {
+    padding-block : 2rem;
+    background-image : url('/img/hero.webp');
+    background-size : cover;
+    background-color : hsl( var(--primary-color ) 20% );
+    color : hsl( var(--primary-color ) 90% );
+}
+
+</style>
