@@ -1,3 +1,3 @@
-# Astro Starter: Templates and Component
+# Astro Starter: Templates and Componenta
 
 By Josh Kaye
