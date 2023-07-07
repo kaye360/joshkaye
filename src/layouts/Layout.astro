@@ -25,22 +25,20 @@ interface Props extends Layout {
 
 const {
     type,
-    title,
-    description,
-    class: className = ''
+    class: className = '',
+    ...rest
 } = Astro.props
 
 ---
 
 { type === 'landingPage' &&
-    <LandingPageLayout title={title} description={description} class={className}>
-        <slot name="hero" />
+    <LandingPageLayout {...rest}>
         <slot />
     </LandingPageLayout>
 }
 
 { type === 'base' &&
-    <BaseLayout title={title} description={description} class={className}>
+    <BaseLayout {...rest}>
         <slot />
     </BaseLayout>
 }
