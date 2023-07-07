@@ -9,6 +9,10 @@
  * Site Info
  */
 
+export const SITE_URL = 'http://'
+
+export const SITE_BASE_PATH = '/'
+
 export const SITE_FULL_NAME = 'Full Cool Site Name Ltd.'
 
 export const SITE_SHORT_NAME = 'Cool Site'
@@ -26,6 +30,8 @@ export const HEADER_LOGO_PATH = '/img/logo.svg'
 export const HERO_IMG_PATH = '/img/hero.webp'
 
 export const FAVICON_PATH = '/meta-img/favicon.svg'
+
+export const OPENGRAPH_PATH = '/meta-img/og.png'
 
 
 /**

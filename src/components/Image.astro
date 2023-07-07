@@ -1,0 +1,58 @@
+---
+interface Props {
+    src : string,
+    width : string,
+    height : string,
+    alt : string,
+    class? : string,
+    lazy? : boolean,
+    bgColor? : string,
+
+    /**
+     * @prop Required img props: src, width, height, alt
+     * @prop Lazy - boolean (default false)
+     * @prop bgColor - string (optional)
+     */
+    props? : true
+}
+
+const {
+    src,
+    width,
+    height,
+    alt,
+    class : className = '',
+    lazy = 'eager',
+    bgColor = null
+} = Astro.props
+---
+
+
+{ bgColor ? (
+
+    <div style={`
+        background-color : ${bgColor};
+        width : fit-content;
+    `}>
+        <img 
+            src={src} 
+            width={width} 
+            height={height} 
+            alt={alt} 
+            class={className || ''} 
+            loading={ lazy ? 'lazy' : 'eager'}
+        />
+    </div>
+
+) : (
+
+    <img 
+        src={src} 
+        width={width} 
+        height={height} 
+        alt={alt} 
+        class={className || ''} 
+        loading={ lazy ? 'lazy' : 'eager'}
+    />
+
+)}
