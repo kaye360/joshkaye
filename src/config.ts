@@ -27,7 +27,13 @@ export const LOCATION = 'Port Coquitlam, BC'
 
 export const HEADER_LOGO_PATH = '/img/logo.svg'
 
+export const HEADER_LOGO_DIMENSIONS = { width : 28, height : 28 }
+
 export const HERO_IMG_PATH = '/img/hero.webp'
+
+export const HERO_IMG_ALT_TEXT = 'Hero image alt text'
+
+export const HERO_IMG_DIMENSIONS = { width : 200, height : 100 }
 
 export const FAVICON_PATH = '/meta-img/favicon.svg'
 

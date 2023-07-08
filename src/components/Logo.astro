@@ -1,5 +1,6 @@
 ---
-import { HEADER_LOGO_PATH, LOGO_NAME } from '../config';
+import { HEADER_LOGO_DIMENSIONS, HEADER_LOGO_PATH, LOGO_NAME, SITE_FULL_NAME } from '../config';
+import Image from '../components/Image.astro'
 
 interface Props {
 
@@ -19,7 +20,7 @@ const {
 <a href="/">
     <div class={`flex items-center gap-2 font-semibold text-xl stroke-[var(--nav-bar-logo-color)] ${className}`}>
     
-        <img src={ HEADER_LOGO_PATH } />
+        <Image src={ HEADER_LOGO_PATH } alt={SITE_FULL_NAME} width={HEADER_LOGO_DIMENSIONS.width} height={HEADER_LOGO_DIMENSIONS.height} />
         {LOGO_NAME}
 
     </div>

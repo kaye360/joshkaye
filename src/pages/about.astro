@@ -1,8 +1,11 @@
 ---
 import EvenColumns from "../components/EvenColumns.astro";
 import Heading from "../components/Heading.astro";
+import FullScreenImageTextBoxOverlay from "../components/Sections/FullScreenImageTextBoxOverlay.astro";
+import ThreeColumnLineContentLine from "../components/Sections/ThreeColumnLineContentLine.astro";
 import TextFlow from "../components/TextFlow.astro";
 import Wrapper from "../components/Wrapper.astro";
+import { HERO_IMG_PATH } from "../config";
 import Layout from "../layouts/Layout.astro";
 
 ---
@@ -16,6 +19,12 @@ import Layout from "../layouts/Layout.astro";
     <Heading>
         About
     </Heading>
+
+    <ThreeColumnLineContentLine id="hello" props>
+        <h2>Hello</h2>
+
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit molestias commodi corporis odit sunt perspiciatis natus rem consequatur veniam. Soluta repellat vitae facere qui excepturi! Tempore, quisquam corrupti. Expedita, eum?</p>
+    </ThreeColumnLineContentLine>
 
     <section>
         <Wrapper width="max" padding="both">
@@ -32,6 +41,14 @@ import Layout from "../layouts/Layout.astro";
             </TextFlow>
         </Wrapper>
     </section>
+
+    <FullScreenImageTextBoxOverlay bgImage={HERO_IMG_PATH} props>
+
+        <h2>Hello</h2>
+    
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit molestias commodi corporis odit sunt perspiciatis natus rem consequatur veniam. Soluta repellat vitae facere qui excepturi! Tempore, quisquam corrupti. Expedita, eum?</p>
+
+    </FullScreenImageTextBoxOverlay>
 
     <section>
         <EvenColumns props breakpoints={1}>

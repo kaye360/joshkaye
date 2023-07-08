@@ -1,7 +1,8 @@
 ---
-import { HERO_IMG_PATH } from "../../config";
+import { HERO_IMG_DIMENSIONS, HERO_IMG_PATH, LOGO_NAME } from "../../config";
 import Icon from "../Icon.astro";
 import Wrapper from "../Wrapper.astro";
+import Image from '../Image.astro'
 
 interface Props {
     heading : string,
@@ -43,8 +44,8 @@ const {
 ---
 
 
-<div class="absolute top-0 left-0 w-full h-screen z-[-1] bg-[hsl(var(--primary-color)_25%)]">
-    <img src={HERO_IMG_PATH} class="w-screen h-screen object-cover mix-blend-overlay" />
+<div class="absolute top-0 left-0 w-full h-screen z-[-1] bg-primary-600">
+    <Image src={HERO_IMG_PATH} alt={LOGO_NAME} width={HERO_IMG_DIMENSIONS.width} height={HERO_IMG_DIMENSIONS.height} class="w-screen h-screen object-cover mix-blend-overlay" />
 </div>
 
 <section id="hero">

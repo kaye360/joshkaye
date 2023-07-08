@@ -1,4 +1,6 @@
 ---
+import type { Image as ImageInterface } from './Image.astro';
+import Image from './Image.astro';
 import TextFlow from './TextFlow.astro';
 
 interface Props {
@@ -12,8 +14,8 @@ interface Props {
     /** Classes for card button */
     linkClass? : string
 
-    /** Img url for card img */
-    img? : string,
+    /** Img object for card img */
+    img? : ImageInterface,
 
     /** Is entire card clickable? */
     clickable? : boolean,
@@ -24,7 +26,7 @@ interface Props {
      * @prop href (string)
      * @prop linkText (string)
      * @prop linkClass (string)
-     * @prop img (string)
+     * @prop img (Image)
      * @prop clickable (boolean)
      * @prop slot ( 'heading' | 'content' )
      */
@@ -46,7 +48,7 @@ const {
 
     <a href={href} class={`card ${className}`}>
     
-        { img && <img src={img} loading="lazy" /> }
+        { img && <Image src={img.src} lazy width={img.width} height={img.height} alt={img.alt} /> }
 
         <TextFlow>
             <slot name="heading" />
@@ -67,7 +69,7 @@ const {
 
     <div class={`card ${className}`}>
 
-        { img && <img src={img} loading="lazy" /> }
+        { img && <Image src={img.src} lazy width={img.width} height={img.height} alt={img.alt} /> }
 
         <slot name="heading" />
         <slot name="content" />
@@ -85,7 +87,7 @@ const {
 
     <div class={`card ${className}`}>
 
-        { img && <img src={img} loading="lazy" /> }
+        { img && <Image src={img.src} lazy width={img.width} height={img.height} alt={img.alt} /> }
 
         <slot name="heading" />
         <slot name="content" />

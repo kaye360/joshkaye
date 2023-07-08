@@ -1,12 +1,16 @@
 ---
-interface Props {
+
+export interface Image {
     src : string,
-    width : string,
-    height : string,
+    width : number,
+    height : number,
     alt : string,
     class? : string,
     lazy? : boolean,
     bgColor? : string,
+}
+
+interface Props extends Image {
 
     /**
      * @prop Required img props: src, width, height, alt

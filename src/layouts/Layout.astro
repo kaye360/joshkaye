@@ -4,6 +4,7 @@
  * Landing Page component controller
  * 
  */
+import MainContent from '../components/MainContent.astro';
 import type { Layout } from '../config'
 import BaseLayout from './layouts/BaseLayout.astro';
 import LandingPageLayout from './layouts/LandingPageLayout.astro'
@@ -33,7 +34,10 @@ const {
 
 { type === 'landingPage' &&
     <LandingPageLayout {...rest}>
-        <slot />
+        <slot name="hero" />
+        <MainContent>
+            <slot />    
+        </MainContent>
     </LandingPageLayout>
 }
 
