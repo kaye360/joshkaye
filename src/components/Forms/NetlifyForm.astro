@@ -1,6 +1,9 @@
 ---
 interface Props {
 
+    /** Name of the Form. Needed for Netlify UI */
+    name : string,
+
     /** Email subject. Only use if there is 1 subject option - ie: subject is not a <select> */
     subject? : string,
 
@@ -12,16 +15,17 @@ interface Props {
 }
 
 const {
+    name,
     subject
 } = Astro.props
 ---
 
-<form id="email-form" method="post" data-netlify="true" name="contact">
+<form id="email-form" method="post" data-netlify="true" name={name}>
 
     { subject && <input type="hidden" name="subject" value={subject} /> }
 
     <slot />
-    
+
 </form>
 
 
