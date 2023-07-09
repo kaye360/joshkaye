@@ -1,0 +1,72 @@
+---
+
+interface Props {
+
+    /**
+     * @prop slot (Default ; 'Submit')
+     */
+    props? : true
+}
+
+---
+
+<div>
+
+    <button type="submit">
+        <slot>Submit</slot>
+    </button>
+
+    <button type="reset">
+        Reset
+    </button>
+
+</div>
+
+
+
+
+<style>
+
+div {
+    display : grid;
+    grid-template-columns: 2fr 1fr;
+    gap : 1rem;
+    width : 100%;
+    max-width: 600px;
+}
+
+button[type=submit], button[type=reset] {
+    cursor : pointer;
+    font-size : 1.25rem;
+    font-weight: 600;
+    padding-block: 0.75rem !important;
+    border : 1px solid var(--form-field-border-color);
+    border-radius: 0.25rem;
+}
+
+button[type=submit] {
+    background-color : var(--button-bg-color);
+    color : var(--button-text-color) !important;
+}
+
+button[type=submit]:hover,
+button[type=submit]:focus-visible {
+    background-color: var(--button-bg-color-hover);
+    color : var(--button-text-color-hover);
+    outline : none;
+}
+
+button[type=reset] {
+    border-color : var(--button-bg-color);
+    color : var(--button-button-color) !important;
+    font-size : 1.25rem;
+}
+
+button[type=reset]:hover,
+button[type=reset]:focus-visible {
+    border-color : var(--button-bg-color-hover);
+    color : var(--button-bg-color-hover) !important;
+    outline : none;
+}
+
+</style>

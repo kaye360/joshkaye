@@ -54,9 +54,17 @@
         --button-bg-color-hover          : hsl( var(--secondary-color) 50% );
         --button-text-color-hover        : hsl( var(--secondary-color) 90% );
 
+        --form-field-bg-color            : hsl( var(--primary-color) 96% );
+        --form-field-border-color        : hsl( var(--primary-color) 80% );
+        --form-field-text-color          : hsl( var(--primary-color) 30% );
+
+        --form-field-bg-color-hover      : hsl( var(--primary-color) 93% );
+        --form-field-border-color-hover  : hsl( var(--primary-color) 30% );
+        --form-field-text-color-hover    : hsl( var(--primary-color) 30% );
+
         --footer-bg-color-from           : hsl( var(--primary-color) 75% );
         --footer-bg-color-to             : hsl( var(--primary-color) 95% );
-        --footer-text-color              : hsl( var(--primary-color) 10% );
+        --footer-text-color              : hsl( var(--primary-color) 30% );
 
 
 

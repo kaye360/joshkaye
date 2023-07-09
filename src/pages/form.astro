@@ -1,0 +1,55 @@
+---
+import FormField from "../components/Forms/FormField.astro";
+import FormSubmit from "../components/Forms/FormSubmit.astro";
+import Heading from "../components/Heading.astro";
+import Wrapper from "../components/Wrapper.astro";
+import Layout from "../layouts/Layout.astro";
+
+---
+
+<Layout
+    type="base"
+    title="About Us"
+    description="Tenetur culpa ab ipsam tempora est debitis? Totam quis saepe nostrum ducimus ipsa id vitae sit."
+>
+
+    <Heading>
+        Form Example
+    </Heading>
+
+    <section>
+        <Wrapper width="max" padding="both">
+    
+            <h2 class="mb-8">Form Example</h2>
+    
+            <form class="grid gap-8">
+    
+                <FormField props floatingLabel type="text" name="Name" label="Your Full Name" required />
+    
+                <FormField floatingLabel type="email" name="Email" required />
+    
+                <FormField floatingLabel type="date" name="Date" />
+
+                <FormField type="color" name="Pick a Color" />
+
+                <FormField floatingLabel type="textarea" name="Message" required />
+    
+                <div>
+                    <FormField type="checkbox" name="Checkbox1" label="Checkbox One" />
+                    <FormField type="checkbox" name="Checkbox2" label="Checkbox Two" />
+                    <FormField type="checkbox" name="Checkbox3" label="Checkbox Three" />
+                </div>
+    
+                <div>
+                    <FormField type="radio" name="radio" label="Radio One" />
+                    <FormField type="radio" name="radio" label="Radio Two" />
+                    <FormField type="radio" name="radio" label="Radio Three" />
+                </div>
+    
+                <FormSubmit />
+    
+            </form>
+    
+        </Wrapper>
+    </section>
+</BaseLayout>

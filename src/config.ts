@@ -76,6 +76,13 @@ export const NAV_LINKS : Navlink[] = [
         cta       : false
     },
     {
+        title     : 'Form',
+        path      : '/form',
+        mainNav   : true,
+        footerNav : true,
+        cta       : false
+    },
+    {
         title     : 'Privacy Policy',
         path      : '/privact',
         mainNav   : false,

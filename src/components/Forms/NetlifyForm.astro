@@ -1,0 +1,32 @@
+---
+interface Props {
+
+    /** Email subject */
+    subject : string,
+
+    /**
+     * @prop subject - string
+     * @prop slot
+     */
+    props? : true
+}
+
+const {
+    subject
+} = Astro.props
+---
+
+<form id="email-form" method="post" data-netlify="true">
+    <input type="hidden" name="subject" value={subject} />
+
+    <slot />
+</form>
+
+
+<style>
+
+form {
+    display : grid;
+    gap : 2rem;
+}
+</style>
