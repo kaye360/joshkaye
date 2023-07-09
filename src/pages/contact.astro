@@ -27,8 +27,20 @@ import Layout from "../layouts/Layout.astro";
                 <NetlifyForm subject="Astro Starter Inquiry">
 
                     <FormField name="Name" type="text" required />
+
                     <FormField name="Email" type="email" required />
+
                     <FormField name="Phone Number" type="tel" />
+
+                    <FormField type="select" name="Subject" required>
+
+                        <option value="General Inquiry">General Inquiry</option>
+                        <option value="Landing Page">Landing Page</option>
+                        <option value="Basic Site">Basic Site</option>
+                        <option value="Custom Site">Custom Site</option>
+    
+                    </FormField>
+                    
                     <FormField name="Message" type="textarea" required />
 
                     <FormSubmit />

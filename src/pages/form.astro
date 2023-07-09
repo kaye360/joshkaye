@@ -24,15 +24,24 @@ import Layout from "../layouts/Layout.astro";
     
             <form class="grid gap-8">
     
-                <FormField props floatingLabel type="text" name="Name" label="Your Full Name" required />
+                <FormField props type="text" name="Name" label="Your Full Name" required floatingLabel />
+
+                <FormField type="select" name="Subject" required>
+
+                    <option value="General Inquiry">General Inquiry</option>
+                    <option value="Landing Page">Landing Page</option>
+                    <option value="Basic Site">Basic Site</option>
+                    <option value="Custom Site">Custom Site</option>
+
+                </FormField>
     
-                <FormField floatingLabel type="email" name="Email" required />
+                <FormField type="email" name="Email" required floatingLabel />
     
-                <FormField floatingLabel type="date" name="Date" />
+                <FormField type="date" name="Date" floatingLabel />
 
                 <FormField type="color" name="Pick a Color" />
 
-                <FormField floatingLabel type="textarea" name="Message" required />
+                <FormField type="textarea" name="Message" required floatingLabel />
     
                 <div>
                     <FormField type="checkbox" name="Checkbox1" label="Checkbox One" />

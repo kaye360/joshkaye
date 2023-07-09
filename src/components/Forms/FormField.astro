@@ -1,7 +1,7 @@
 ---
 type TextInputs = 'textarea' | 'date' | 'datetime-local' | 'email' | 'month' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'time' | 'url' | 'week'
 
-type NonTextInputs = 'checkbox' | 'color' | 'file' | 'image' | 'radio' | 'range' | 'reset'
+type NonTextInputs = 'checkbox' | 'color' | 'file' | 'image' | 'radio' | 'range' | 'reset' | 'select'
 
 interface FormFieldProps {
 
@@ -57,15 +57,27 @@ label = label || name
 
 <label class={floatingLabel && isInputTextType ? 'floating-label' : ''}>
 
+
     <span class="form-field-title">
         { label }
         { required && <span class="form-field-required">(Required)</span> }
     </span>
-    
+
+
     { type ===  'textarea' ? (
+
         <textarea name={name.toLowerCase()} id={name.toLowerCase()} />
+
+    ) : type === 'select' ? (
+
+        <select name={name.toLowerCase()} id={name.toLowerCase()}>
+            <slot />    
+        </select>
+
     ) : (
+
         <input type={type} name={name.toLowerCase()} id={name.toLowerCase()} required={required} />
+
     )}
 
 </label>
@@ -117,7 +129,7 @@ span.form-field-required {
     opacity: 40%;
 }
 
-input, textarea {
+input, textarea, select {
     position: relative;
     z-index: 1;
     padding : 0.75rem 0.5rem !important;
@@ -132,16 +144,19 @@ input[type=radio] {
     margin-bottom: 0.15rem;
 }
 
-input:focus-visible, textarea:focus-visible {
+textarea {
+    height : 8rem;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
     outline : none;
     background-color: var(--form-field-bg-color-hover);
     border : 1px solid var(--form-field-border-color-hover);
     color : var(--form-field-text-color-hover) !important;
 }
 
-textarea {
-    height : 8rem;
-}
 
 
 .floating-label .form-field-title,

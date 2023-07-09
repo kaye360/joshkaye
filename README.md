@@ -2,6 +2,8 @@
 
 By Josh Kaye
 
+## Working Demo
+[View the Demo](https://joshs-astro-starter.netlify.app/)
 
 ## Checklist
 Things to remember for each project
@@ -13,3 +15,4 @@ Things to remember for each project
 - Favicon - /public/meta-img/favicon.svg
 - OpenGraph Card - /public/meta-img/og.png
 - Convert images to webp
+- Set up form submission on Netlify
