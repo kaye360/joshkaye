@@ -15,5 +15,5 @@ collections:
   fields:
    - {label: "title", name: "title", widjet: "string"}
    - {label: "Description", name: "description", widjet: "text"}
-   - {label: "Image", name: "image", widjet: "image"}
+   - {label: "Image", name: "image", widjet: "image", choose_url: true}
    - {label: "Price", name: "price", widjet: "string"}
