@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: master
+
+publish_mode: editorial_workflow # Allows draft modde
+
+media_folder: "uploads" # Folder to upload media to
+public_folder: "/uploads" # src folder for uploaded media
+
+collections:
+- name: "products"
+  label: 'Products'
+  folder: "src/contentc/products"
+  create: true
+  slug: {{slug}}
+   - {label: "title", name: "title", widjet: "string"}
+   - {label: "Description", name: "description", widjet: "text"}
+   - {label: "Image", name: "image", widjet: "image"}
+   - {label: "Price", name: "price", widjet: "string"}

@@ -12,6 +12,9 @@ interface Props {
     /** Use Material Icons? */
     materialIcons? : boolean,
 
+    /** Use Decap CMS? */
+    decap? : boolean,
+
     /**
      * @prop title (string)
      * @prop description (string)
@@ -24,7 +27,8 @@ interface Props {
 const {
     title,
     description,
-    materialIcons = false
+    materialIcons = false,
+    decap = false
 } = Astro.props
 ---
 
@@ -37,6 +41,10 @@ const {
 
     { materialIcons &&
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    }
+
+    { decap &&
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     }
     
     <meta name="description" content={description}>

@@ -16,3 +16,4 @@ Things to remember for each project
 - OpenGraph Card - /public/meta-img/og.png
 - Convert images to webp
 - Set up form submission on Netlify
+- If using Decap, install instructions: https://decapcms.org/docs/add-to-your-site/
