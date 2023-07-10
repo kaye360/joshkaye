@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: master
 
-publish_mode: editorial_workflow # Allows draft modde
+# publish_mode: editorial_workflow # Allows draft modde
 
 media_folder: "public/uploads" # Folder to upload media to. Relative to repo base
 public_folder: "/uploads" # src folder for uploaded media. Relative to Prouction site
