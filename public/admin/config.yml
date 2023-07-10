@@ -4,8 +4,8 @@ backend:
 
 publish_mode: editorial_workflow # Allows draft modde
 
-media_folder: "uploads" # Folder to upload media to
-public_folder: "/uploads" # src folder for uploaded media
+media_folder: "public/uploads" # Folder to upload media to. Relative to repo base
+public_folder: "uploads" # src folder for uploaded media. Relative to Prouction site
 
 collections:
   - name: "products"
