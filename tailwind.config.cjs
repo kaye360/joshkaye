@@ -43,6 +43,9 @@ module.exports = {
 					800 : "hsl( var(--tertiary-color) 20% / <alpha-value> )",
 					900 : "hsl( var(--tertiary-color) 10% / <alpha-value> )",
 				},
+			},
+			backgroundImage : {
+				'radial-gradient' : 'radial-gradient(var(--tw-gradient-stops))'
 			}
 		},
 	},

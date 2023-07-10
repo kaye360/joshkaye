@@ -1,0 +1,55 @@
+---
+import { getCollection } from "astro:content";
+import Heading from "../components/Heading.astro";
+import Layout from "../layouts/Layout.astro";
+import Wrapper from "../components/Wrapper.astro";
+import Card from "../components/Card.astro";
+import TextFlow from "../components/TextFlow.astro";
+
+const allProducts = await getCollection('products')
+
+---
+
+<Layout
+    type="base"
+    title="About Us"
+    description="Tenetur culpa ab ipsam tempora est debitis? Totam quis saepe nostrum ducimus ipsa id vitae sit."
+>
+
+    <Heading>
+        Products
+    </Heading>
+
+    <section>
+        <Wrapper width="max" padding="both">
+
+            <div>
+                {allProducts.map( product => (
+                    <Card props class="border border-primary-200 bg-radial-gradient from-white via-primary-100 to-primary-50 text-primary-900 rounded-xl p-6 pb-36 ">
+                        <span slot="heading">
+                            {product.data.title}
+                        </span>
+
+                        <TextFlow slot="content">
+                            {product.data.description}    
+                        </TextFlow>
+                    </Card>
+                ) )}
+
+            </div>
+        </Wrapper>
+
+    </section>
+
+</BaseLayout>
+
+
+<style>
+
+div {
+    display : grid;
+    gap : 1rem;
+    grid-template-columns : repeat(auto-fit, minmax(300px, 1fr));
+}
+
+</style>
