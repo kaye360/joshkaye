@@ -10,9 +10,9 @@ public_folder: "/uploads" # src folder for uploaded media
 collections:
 - name: "products"
   label: 'Products'
-  folder: "src/contentc/products"
+  folder: "src/content/products"
   create: true
-  slug: {{slug}}
+  fields:
    - {label: "title", name: "title", widjet: "string"}
    - {label: "Description", name: "description", widjet: "text"}
    - {label: "Image", name: "image", widjet: "image"}
