@@ -77,6 +77,10 @@
             --spacing-inline-default : 2vw;
             --spacing-block-default : 4rem;
         }
+
+
+
+
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -89,30 +93,30 @@
     }
 
     h2 {
-        font-size: 2rem !important;
-        line-height: 2.3rem;
-    }
-    
-    h3 {
         font-size: 1.7rem !important;
         line-height: 2rem;
     }
-
-    h4 {
+    
+    h3 {
         font-size: 1.5rem !important;
         line-height: 1.8rem;
     }
 
-    h5 {
+    h4 {
         font-size: 1.2rem !important;
         line-height: 1.5rem;
+        font-weight: 600;
+    }
+
+    h5 {
+        font-size: 1rem !important;
+        line-height: 1.3rem;
         font-weight: 600 !important;
     }
 
     h6 {
         font-size: 1rem !important;
         line-height: 1.3rem;
-        font-weight: 600 !important;
     }
 
     p {

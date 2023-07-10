@@ -25,6 +25,8 @@ export const EMAIL_ADDRESS = 'email@email.com'
 
 export const LOCATION = 'Port Coquitlam, BC'
 
+export const ADDRESS = '123 Address St, City, BC'
+
 export const HEADER_LOGO_PATH = '/img/logo.svg'
 
 export const HEADER_LOGO_DIMENSIONS = { width : 28, height : 28 }
