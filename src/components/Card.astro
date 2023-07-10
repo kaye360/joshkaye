@@ -48,7 +48,7 @@ const {
 
     <a href={href} class={`card ${className}`}>
     
-        { img && <Image src={img.src} lazy width={img.width} height={img.height} alt={img.alt} /> }
+        { img && <Image src={img.src} lazy width={img.width} height={img.height} alt={img.alt} class="object-cover" /> }
 
         <TextFlow>
             <slot name="heading" />

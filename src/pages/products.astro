@@ -26,16 +26,21 @@ const allProducts = await getCollection('products')
             <div>
                 {allProducts.map( product => (
                     <Card props 
-                        class="border border-primary-200 bg-radial-gradient from-white via-primary-100 to-primary-50 text-primary-900 rounded-xl p-6 pb-36 "
+                        class="border border-primary-100 drop-shadow-lg shadow-primary-600 text-primary-900 rounded-xl pb-6"
                         img={{
-                            src : product.data.image
+                            src : product.data.image,
+                            width : 200,
+                            height : 200,
+                            alt : 'Product Image'
                         }}
                     >
-                        <span slot="heading">
-                            {product.data.title}
-                        </span>
+                        <h2 slot="heading" class="px-6">
+                            {product.data.title} <br />
+                            {product.data.image}
+                        </h2>
 
-                        <TextFlow slot="content">
+                        
+                        <TextFlow slot="content" class="px-6">
                             {product.data.description}    
                         </TextFlow>
                     </Card>
