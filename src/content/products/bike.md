@@ -1,7 +1,6 @@
 ---
 title: Bike
-description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, velit?
-  Eaque magni doloribus eligendi.
+description: I want to ride my bicycle
 image: /uploads/robert-bye-tg36rvceqng-unsplash.jpg
 price: "465.99"
 ---
