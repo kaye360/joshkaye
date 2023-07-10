@@ -93,7 +93,14 @@ export const NAV_LINKS : Navlink[] = [
     },
     {
         title     : 'Privacy Policy',
-        path      : '/privact',
+        path      : '/privacy',
+        mainNav   : false,
+        footerNav : true,
+        cta       : false
+    },
+    {
+        title     : 'Admin',
+        path      : '/admin/index.html',
         mainNav   : false,
         footerNav : true,
         cta       : false
