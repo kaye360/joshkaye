@@ -25,7 +25,12 @@ const allProducts = await getCollection('products')
 
             <div>
                 {allProducts.map( product => (
-                    <Card props class="border border-primary-200 bg-radial-gradient from-white via-primary-100 to-primary-50 text-primary-900 rounded-xl p-6 pb-36 ">
+                    <Card props 
+                        class="border border-primary-200 bg-radial-gradient from-white via-primary-100 to-primary-50 text-primary-900 rounded-xl p-6 pb-36 "
+                        img={{
+                            src : product.data.image
+                        }}
+                    >
                         <span slot="heading">
                             {product.data.title}
                         </span>
