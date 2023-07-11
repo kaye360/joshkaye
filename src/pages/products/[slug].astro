@@ -1,0 +1,59 @@
+---
+import { getCollection } from "astro:content";
+import Heading from "../../components/Heading.astro";
+import Layout from "../../layouts/Layout.astro";
+import Image from "../../components/Image.astro"
+import Wrapper from "../../components/Wrapper.astro";
+import EvenColumns from "../../components/EvenColumns.astro";
+
+export const prerender = true
+
+export async function getStaticPaths() {
+
+    const allProducts = await getCollection('products')
+    
+    return allProducts.map( product => ({
+        params : { slug : product.slug },
+        props : product
+    }))
+}
+
+
+const {data} = Astro.props
+
+---
+
+<Layout
+    type="base"
+    title="Product"
+    description="Tenetur culpa ab ipsam tempora est debitis? Totam quis saepe nostrum ducimus ipsa id vitae sit."
+>
+
+    <Heading>
+        Product - {data.title}
+    </Heading>
+
+
+<section>
+    <Wrapper width="max" padding="both">
+        <EvenColumns class="gap-12">
+
+            <Image props src={data.image} alt={`Product: ${data.title}`} width={300} height={300} class="w-full" />
+            
+            <div>
+
+                <a href="/products">Back to Products</a>
+
+                <h2>
+                    {data.price}
+                </h2>
+                {data.description} 
+
+            </div>
+
+        </EvenColumns>
+
+        </Wrapper>
+    </section>
+
+</Layout>

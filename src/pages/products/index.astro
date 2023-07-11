@@ -1,18 +1,17 @@
 ---
 import { getCollection } from "astro:content";
-import Heading from "../components/Heading.astro";
-import Layout from "../layouts/Layout.astro";
-import Wrapper from "../components/Wrapper.astro";
-import Card from "../components/Card.astro";
-import TextFlow from "../components/TextFlow.astro";
+import Heading from "../../components/Heading.astro";
+import Layout from "../../layouts/Layout.astro";
+import Wrapper from "../../components/Wrapper.astro";
+import Card from "../../components/Card.astro";
+import TextFlow from "../../components/TextFlow.astro";
 
 const allProducts = await getCollection('products')
-
 ---
 
 <Layout
     type="base"
-    title="About Us"
+    title="Products"
     description="Tenetur culpa ab ipsam tempora est debitis? Totam quis saepe nostrum ducimus ipsa id vitae sit."
 >
 
@@ -26,20 +25,24 @@ const allProducts = await getCollection('products')
             <div class="products">
                 {allProducts.map( product => (
                     <Card props 
-                        class="border border-primary-100 drop-shadow-lg shadow-primary-600 text-primary-900 rounded-xl pb-6"
+                        class="border border-primary-100 shadow-md shadow-primary-100 text-primary-900 rounded-xl pb-6 hover:shadow-primary-300 hover:bg-primary-50"
                         img={{
                             src : product.data.image,
                             width : 200,
                             height : 200,
                             alt : 'Product Image'
                         }}
+                        href={`/products/${product.slug}`}
+                        linkText="View Product"
+                        linkClass="mx-2"
+                        clickable
                     >
-                        <h2 slot="heading" class="px-6">
+                        <h2 slot="heading" class="px-2">
                             {product.data.title} <br />
                         </h2>
 
                         
-                        <TextFlow slot="content" class="px-6">
+                        <TextFlow slot="content" class="px-2">
                             {product.data.description}    
                         </TextFlow>
                     </Card>
