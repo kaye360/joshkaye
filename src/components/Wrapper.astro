@@ -1,5 +1,6 @@
 ---
-interface Props {
+import type { HTMLAttributes } from 'astro/types';
+interface Props extends HTMLAttributes<'div'> {
 
     /** Width of Wrapper.
      * Default is wide with of 100%
@@ -25,18 +26,23 @@ const {
     width,
     padding,
     class : className = '',
+    ...rest
 } = Astro.props
 ---
 
-<div class={`
-    ${width === 'max' ? 'max-w-6xl' : ''}
-    ${width === 'text' ? 'max-w-[70ch]' : ''}
-    ${padding === 'inline' ? 'px-default' : ''}
-    ${padding === 'block' ? 'py-default' : ''}
-    ${padding === 'both' ? 'px-default py-default' : ''}
-    mx-auto w-full
-    ${className}
-`}>
+<div 
+    class={`
+        ${width === 'max' ? 'max-w-6xl' : ''}
+        ${width === 'text' ? 'max-w-[70ch]' : ''}
+        ${padding === 'inline' ? 'px-default' : ''}
+        ${padding === 'block' ? 'py-default' : ''}
+        ${padding === 'both' ? 'px-default py-default' : ''}
+        mx-auto w-full
+        ${className}
+        
+    `} 
+    {...rest}
+>
 
     <slot />
 

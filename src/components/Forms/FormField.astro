@@ -43,7 +43,7 @@ const {
     floatingLabel = false
 } = Astro.props
 
-let { label } = Astro.props
+let { label = name } = Astro.props
 
 const inputTextTypes = [
     'textarea', 'date', 'datetime-local', 'email', 'month', 'number', 'password', 'search','tel', 'text', 'time', 'url', 'week'
@@ -51,7 +51,6 @@ const inputTextTypes = [
 
 const isInputTextType = inputTextTypes.includes(type)
 
-label = label || name
 
 ---
 

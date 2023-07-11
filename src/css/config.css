@@ -123,6 +123,11 @@
         line-height: 1.6rem;
     }
 
+    .text-flow ul {
+        list-style: disc;
+        margin-left: 2rem;
+    }
+
 }
 
 
