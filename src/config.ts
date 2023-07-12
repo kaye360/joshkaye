@@ -92,6 +92,13 @@ export const NAV_LINKS : Navlink[] = [
         cta       : false
     },
     {
+        title     : 'Store',
+        path      : '/store',
+        mainNav   : true,
+        footerNav : true,
+        cta       : false
+    },
+    {
         title     : 'Privacy Policy',
         path      : '/privacy',
         mainNav   : false,
