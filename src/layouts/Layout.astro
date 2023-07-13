@@ -20,6 +20,7 @@ interface Props extends Layout {
      * @prop type ( 'base' | 'landingPage' )
      * @prop title (string)
      * @prop description (string)
+     * @prop slot (default | pageEnd)
      */
     props? : true
 }
@@ -38,11 +39,13 @@ const {
         <MainContent>
             <slot />    
         </MainContent>
+        <div slot="pageEnd"><slot name="pageEnd" /></div>
     </LandingPageLayout>
 }
 
 { type === 'base' &&
     <BaseLayout {...rest}>
         <slot />
+        <div slot="pageEnd"><slot name="pageEnd" /></div>
     </BaseLayout>
 }

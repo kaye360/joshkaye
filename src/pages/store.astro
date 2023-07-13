@@ -5,7 +5,11 @@ import Heading from "../components/Heading.astro";
 import Wrapper from "../components/Wrapper.astro";
 import Layout from "../layouts/Layout.astro";
 import CardWrapper from "../components/CardWrapper.astro";
-import Snipcart from "../components/Snipcart.astro";
+import Snipcart from "../components/Snipcart/Snipcart.astro";
+import CartItemCount from "../components/Snipcart/CartItemCount.astro";
+import CartTotalPrice from "../components/Snipcart/CartTotalPrice.astro";
+import IconCart from "../components/Snipcart/IconCart.astro";
+import IconCartWithBubble from "../components/Snipcart/IconCartWithBubble.astro";
 
 const allProducts = await getCollection('products')
 
@@ -23,9 +27,8 @@ const allProducts = await getCollection('products')
 
     <section>
         <Wrapper width="text" padding="both">
-            <button class="snipcart-checkout border p-4">Click here to checkout</button><br />
-            <span class="snipcart-items-count" /> in cart.<br />
-            <span class="snipcart-total-price" /> total in cart.
+            <IconCartWithBubble />
+            <CartTotalPrice animate={false} />
         </Wrapper>
     </section>
 
@@ -71,8 +74,8 @@ const allProducts = await getCollection('products')
         </Wrapper>
     </section>
 
-    <Snipcart />
-    
+    <Snipcart slot="pageEnd" />
+
 </BaseLayout>
 
 

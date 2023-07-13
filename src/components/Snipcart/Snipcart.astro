@@ -4,9 +4,47 @@
 
 <style is:global>
 
-/* Used to put the Snipcart Cart over top of everything */
+
+.snipcart__font--std {
+    font-size : 1.2rem;
+}
+
 .snipcart-modal__container { 
-    z-index: 99999;
+    z-index: 99999 !important;
+}
+
+.snipcart-modal,
+.snipcart-modal__container {
+    background-color : hsl( var(--primary-color) 93%);
+}
+
+.snipcart-modal__close-title {
+    font-weight: 900;
+    font-size : 0.9rem;
+}
+
+.snipcart-cart-header {
+    background-color : hsl( var(--primary-color) 93%) !important;
+    color: var(--nav-bar-text-color);
+    background: url('/img/logo.svg') no-repeat 0 center;
+    padding-left: 60px;
+}
+
+.snipcart-cart__content {
+    background-color : hsl( var(--primary-color) 97%);
+}
+
+.snipcart-item-line {
+    background-color : hsl( var(--primary-color) 97%);
+    border-bottom : 3px solid hsl( var(--primary-color) 90%);
+    box-shadow : none;
+}
+
+.snipcart-item-line__info {
+}
+
+.snipcart-summary-fees {
+    padding-inline : 2vw;
 }
 
 </style>

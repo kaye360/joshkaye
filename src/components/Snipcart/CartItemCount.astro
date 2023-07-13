@@ -1,0 +1,18 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import IconLoader16Px from "./IconLoader16px.astro";
+
+interface Props extends HTMLAttributes<'span'> {
+
+    /**
+     * @props <span> props
+     */
+    props?: true
+}
+
+const { class: className = '', ...rest } = Astro.props
+---
+
+<span class={`snipcart-items-count inline-block ${className}`} {...rest}>
+    <IconLoader16Px />
+</span>
