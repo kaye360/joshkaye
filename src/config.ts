@@ -154,3 +154,11 @@ export interface Layout {
     description : string,
     class? : string
 }
+
+
+/**
+ * SnipCart
+ */
+
+// Needed for tailwind to include the z-index override
+export const scClass = 'snipcart-modal__container'

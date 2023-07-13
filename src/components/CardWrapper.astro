@@ -1,0 +1,29 @@
+---
+
+interface Props {
+
+    class? : string,
+
+    /**
+     * @prop slot
+     */
+    props? : true
+}
+
+const { class: className = '' } = Astro.props
+---
+
+<div class={`card-wrapper ${className}`}>
+    <slot />
+</div>
+
+
+<style>
+
+.card-wrapper {
+    display : grid;
+    gap : 1rem;
+    grid-template-columns : repeat(auto-fill, minmax(250px, 1fr));
+}
+
+</style>

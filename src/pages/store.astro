@@ -1,12 +1,13 @@
 ---
-import EvenColumns from "../components/EvenColumns.astro";
+import { getCollection } from "astro:content";
+import Card from "../components/Card.astro";
 import Heading from "../components/Heading.astro";
-import FullScreenImageTextBoxOverlay from "../components/Sections/FullScreenImageTextBoxOverlay.astro";
-import ThreeColumnLineContentLine from "../components/Sections/ThreeColumnLineContentLine.astro";
-import TextFlow from "../components/TextFlow.astro";
 import Wrapper from "../components/Wrapper.astro";
-import { HERO_IMG_PATH } from "../config";
 import Layout from "../layouts/Layout.astro";
+import CardWrapper from "../components/CardWrapper.astro";
+import Snipcart from "../components/Snipcart.astro";
+
+const allProducts = await getCollection('products')
 
 ---
 
@@ -21,26 +22,57 @@ import Layout from "../layouts/Layout.astro";
     </Heading>
 
     <section>
-        <Wrapper width="max" padding="both">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum quam veritatis doloremque praesentium deleniti! Iure itaque autem nobis ipsam voluptatibus harum aut, dicta voluptas. Ipsam pariatur in aliquam commodi facere?
+        <Wrapper width="text" padding="both">
+            <button class="snipcart-checkout border p-4">Click here to checkout</button><br />
+            <span class="snipcart-items-count" /> in cart.<br />
+            <span class="snipcart-total-price" /> total in cart.
         </Wrapper>
     </section>
 
     <section class="bg-primary-50 mb-8">
         <Wrapper width="max" padding="both">
-            <div class="store">
-                <button class="snipcart-add-item"
-                    data-item-id="starry-night"
-                    data-item-price="79.99"
-                    data-item-description="High-quality replica of The Starry Night by the Dutch post-impressionist painter Vincent van Gogh."
-                    data-item-image="/assets/images/starry-night.jpg"
-                    data-item-name="The Starry Night">
-                Add to cart
-              </button>
-            </div>
+            <CardWrapper>
+                { allProducts.map( product => (
+                    <Card 
+                        class="shadow-md shadow-primary-200"
+                        img={{
+                            src : product.data.image,
+                            width : 250,
+                            height : 250,
+                            alt : `Product: ${product.data.title}`
+                        }}
+                    >
+
+                    
+                    <div slot="content" class="p-4 flex flex-col gap-4 h-full w-full">
+                        
+                            <header class="flex items-center justify-between"> 
+                                <h3>{product.data.title}</h3>
+                                <p class="text-xl font-bold text-red-500">{product.data.price}</p>
+                            </header>
+
+                            <p>{product.data.description}</p>
+    
+                            <button class="snipcart-add-item font-semibold bg-secondary-50 text-secondary-600 px-4 py-2 w-full mt-auto"
+                                data-item-id={product.data.title}
+                                data-item-price={product.data.price}
+                                data-item-description={product.data.description}
+                                data-item-image={product.data.image}
+                                data-item-name={product.data.title}>
+                            Add to cart
+                            </button>
+
+                        </div>
+                    </Card>
+                ))
+
+                }
+            </CardWrapper>
         </Wrapper>
     </section>
 
+    <Snipcart />
+    
 </BaseLayout>
 
 
@@ -52,14 +84,23 @@ div.store {
     grid-template-columns : repeat(auto-fill, minmax(250px, 1fr));
 }
 
+
 </style>
 
+<style is:global>
 
-<script is:raw>
-    window.SnipcartSettings = {
-        publicApiKey: 'MzFjODFhNGMtZjJmYS00MmNkLTgyN2YtNGQ1YmMzMGMyMjcxNjM4MjQ3NDM3MzEzMjQ4NzY3',
-        loadStrategy: 'on-user-interaction',
-    };
+.snipcart-button-primary,
+.snipcart-base-button {
+    background-color : var(--button-bg-color) !important;
+    color : var(--button-text-color) !important;
+}
 
-    (()=>{var c,d;(d=(c=window.SnipcartSettings).version)!=null||(c.version="3.0");var s,S;(S=(s=window.SnipcartSettings).timeoutDuration)!=null||(s.timeoutDuration=2750);var l,p;(p=(l=window.SnipcartSettings).domain)!=null||(l.domain="cdn.snipcart.com");var w,u;(u=(w=window.SnipcartSettings).protocol)!=null||(w.protocol="https");var f=window.SnipcartSettings.version.includes("v3.0.0-ci")||window.SnipcartSettings.version!="3.0"&&window.SnipcartSettings.version.localeCompare("3.4.0",void 0,{numeric:!0,sensitivity:"base"})===-1,m=["focus","mouseover","touchmove","scroll","keydown"];window.LoadSnipcart=o;document.readyState==="loading"?document.addEventListener("DOMContentLoaded",r):r();function r(){window.SnipcartSettings.loadStrategy?window.SnipcartSettings.loadStrategy==="on-user-interaction"&&(m.forEach(t=>document.addEventListener(t,o)),setTimeout(o,window.SnipcartSettings.timeoutDuration)):o()}var a=!1;function o(){if(a)return;a=!0;let t=document.getElementsByTagName("head")[0],e=document.querySelector("#snipcart"),i=document.querySelector(`src[src^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][src$="snipcart.js"]`),n=document.querySelector(`link[href^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][href$="snipcart.css"]`);e||(e=document.createElement("div"),e.id="snipcart",e.setAttribute("hidden","true"),document.body.appendChild(e)),v(e),i||(i=document.createElement("script"),i.src=`${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.js`,i.async=!0,t.appendChild(i)),n||(n=document.createElement("link"),n.rel="stylesheet",n.type="text/css",n.href=`${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.css`,t.prepend(n)),m.forEach(g=>document.removeEventListener(g,o))}function v(t){!f||(t.dataset.apiKey=window.SnipcartSettings.publicApiKey,window.SnipcartSettings.addProductBehavior&&(t.dataset.configAddProductBehavior=window.SnipcartSettings.addProductBehavior),window.SnipcartSettings.modalStyle&&(t.dataset.configModalStyle=window.SnipcartSettings.modalStyle),window.SnipcartSettings.currency&&(t.dataset.currency=window.SnipcartSettings.currency),window.SnipcartSettings.templatesUrl&&(t.dataset.templatesUrl=window.SnipcartSettings.templatesUrl))}})();
-</script>
+.snipcart-button-primary:hover,
+.snipcart-button-primary:focus-visible,
+.snipcart-base-button:hover,
+.snipcart-base-button:focus-visible {
+    background-color : var(--button-bg-color-hover) !important;
+    color : var(--button-text-color-hover) !important;
+}
+
+</style>
