@@ -1,0 +1,80 @@
+---
+import { getCollection } from "astro:content"
+import Card from "../../../components/Card.astro";
+import Heading from "../../../components/Heading.astro";
+import TextFlow from "../../../components/TextFlow.astro";
+import Wrapper from "../../../components/Wrapper.astro";
+import { LANGUAGES } from "../../../config";
+import Layout from "../../../layouts/Layout.astro";
+
+
+
+const allProducts = await getCollection('products')
+
+export async function getStaticPaths() {
+	return LANGUAGES.map( lang => ({
+		params : { lang : lang.code }
+	}))
+}
+
+const { lang } = Astro.params
+---
+
+<Layout
+    lang={lang as string}
+    type="base"
+    title="Products"
+    description="Tenetur culpa ab ipsam tempora est debitis? Totam quis saepe nostrum ducimus ipsa id vitae sit."
+>
+
+    <Heading>
+        Products
+    </Heading>
+
+    <section>
+        <Wrapper width="max" padding="both">
+
+            <div class="products">
+                {allProducts.map( product => (
+                    <Card props 
+                        class="border border-primary-100 shadow-md shadow-primary-100 text-primary-900 rounded-xl pb-6 hover:shadow-primary-300 hover:bg-primary-50"
+                        img={{
+                            src : product.data.image,
+                            width : 200,
+                            height : 200,
+                            alt : 'Product Image'
+                        }}
+                        href={`/products/${product.slug}`}
+                        linkText="View Product"
+                        linkClass="mx-2"
+                        clickable
+                    >
+                        <h2 slot="heading" class="px-2">
+                            {product.data.title} <br />
+                        </h2>
+
+                        
+                        <TextFlow slot="content" class="px-2">
+                            {product.data.description}    
+                        </TextFlow>
+                    </Card>
+                ) )}
+
+            </div>
+        </Wrapper>
+
+    </section>
+
+</BaseLayout>
+
+
+<style>
+
+.products {
+    display : grid;
+    gap : 1rem;
+    grid-template-columns : repeat(auto-fill, minmax(250px, 1fr));
+    width : 100%;
+}
+
+</style>

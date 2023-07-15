@@ -2,6 +2,7 @@
 import { CONTACT_LINKS } from '../../config';
 import Wrapper from '../Wrapper.astro';
 import ContactLink from './ContactLink.astro';
+import LangSelector from '../Lang/LangSelector.astro'
 
 
 interface Props {
@@ -19,15 +20,21 @@ const {
 } = Astro.props
 
 
+const { lang } = Astro.params
+
 ---
 
 <div class={`bg-[var(--contact-bar-bg-color)] text-[var(--contact-bar-text-color)] ${className}`}>
-    <Wrapper width="max" padding="inline" class="flex justify-end">
+    <Wrapper width="max" padding="inline" class="flex justify-end gap-8">
+
         <ul>
             { CONTACT_LINKS.map( (link) => ( 
                 <ContactLink href={link.path} icon={link.icon}>{link.title}</ContactLink>
             ))}
         </ul>
+
+        <LangSelector />
+
     </Wrapper>
 </div>
 
@@ -46,3 +53,5 @@ ul {
 }
 
 </style>
+
+

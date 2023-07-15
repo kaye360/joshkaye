@@ -1,0 +1,116 @@
+---
+import { getCollection } from "astro:content";
+import Card from "../../components/Card.astro";
+import Heading from "../../components/Heading.astro";
+import Wrapper from "../../components/Wrapper.astro";
+import Layout from "../../layouts/Layout.astro";
+import CardWrapper from "../../components/CardWrapper.astro";
+import Snipcart from "../../components/Snipcart/Snipcart.astro";
+import CartTotalPrice from "../../components/Snipcart/CartTotalPrice.astro";
+import IconCartWithBubble from "../../components/Snipcart/IconCartWithBubble.astro";
+import { LANGUAGES } from "../../config";
+
+const allProducts = await getCollection('products')
+
+export async function getStaticPaths() {
+	return LANGUAGES.map( lang => ({
+		params : { lang : lang.code }
+	}))
+}
+
+const { lang } = Astro.params
+---
+
+<Layout
+    lang={lang as string}
+    type="base"
+    title="Store"
+    description="Tenetur culpa ab ipsam tempora est debitis? Totam quis saepe nostrum ducimus ipsa id vitae sit."
+>
+
+    <Heading>
+        Store
+    </Heading>
+
+    <section>
+        <Wrapper width="max" padding="both">
+            <IconCartWithBubble />
+            <CartTotalPrice animate={false} />
+        </Wrapper>
+    </section>
+
+    <section class="bg-primary-50 mb-8">
+        <Wrapper width="max" padding="both">
+            <CardWrapper>
+                { allProducts.map( product => (
+                    <Card 
+                        class="shadow-md shadow-primary-200"
+                        img={{
+                            src : product.data.image,
+                            width : 250,
+                            height : 250,
+                            alt : `Product: ${product.data.title}`
+                        }}
+                    >
+
+                    
+                    <div slot="content" class="p-4 flex flex-col gap-4 h-full w-full">
+                        
+                            <header class="flex items-center justify-between"> 
+                                <h3>{product.data.title}</h3>
+                                <p class="text-xl font-bold text-red-500">{product.data.price}</p>
+                            </header>
+
+                            <p>{product.data.description}</p>
+    
+                            <button class="snipcart-add-item font-semibold bg-secondary-50 text-secondary-600 px-4 py-2 w-full mt-auto"
+                                data-item-id={product.data.title}
+                                data-item-price={product.data.price}
+                                data-item-description={product.data.description}
+                                data-item-image={product.data.image}
+                                data-item-name={product.data.title}>
+                            Add to cart
+                            </button>
+
+                        </div>
+                    </Card>
+                ))
+
+                }
+            </CardWrapper>
+        </Wrapper>
+    </section>
+
+    <Snipcart slot="pageEnd" />
+
+</BaseLayout>
+
+
+<style>
+
+div.store {
+    display : grid;
+    gap : 1rem;
+    grid-template-columns : repeat(auto-fill, minmax(250px, 1fr));
+}
+
+
+</style>
+
+<style is:global>
+
+.snipcart-button-primary,
+.snipcart-base-button {
+    background-color : var(--button-bg-color) !important;
+    color : var(--button-text-color) !important;
+}
+
+.snipcart-button-primary:hover,
+.snipcart-button-primary:focus-visible,
+.snipcart-base-button:hover,
+.snipcart-base-button:focus-visible {
+    background-color : var(--button-bg-color-hover) !important;
+    color : var(--button-text-color-hover) !important;
+}
+
+</style>

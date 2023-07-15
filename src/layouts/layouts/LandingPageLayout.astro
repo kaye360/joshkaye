@@ -2,8 +2,6 @@
 import SkipToContent from '../../components/SkipToContent.astro';
 import '../../css/config.css'
 import Footer from '../../components/Footer.astro';
-import MainContent from '../../components/MainContent.astro';
-import HeroFullScreen from '../../components/Heros/HeroFullScreen.astro';
 import ContactLinks from '../../components/Nav/ContactLinks.astro';
 import NavCTALink from '../../components/Nav/NavCTALink.astro';
 import NavLinks from '../../components/Nav/NavLinks.astro';
@@ -17,11 +15,12 @@ interface Props extends Layout { }
 const {
     title,
     description,
+	lang,
 	class : className = ''
 } = Astro.props
 ---
 
-<html lang="en">
+<html lang={lang}>
 
 	<Meta title={title} description={description} materialIcons decap	/>
 

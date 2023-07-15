@@ -2,7 +2,7 @@
 import Wrapper from "./Wrapper.astro";
 import EvenColumns from "./EvenColumns.astro";
 import Logo from "./Logo.astro";
-import { CONTACT_LINKS, NAV_LINKS, SITE_FULL_NAME } from "../config";
+import { CONTACT_LINKS, PAGES, SITE_FULL_NAME } from "../config";
 import TextFlow from "./TextFlow.astro";
 import Icon from "./Icon.astro";
 
@@ -27,8 +27,8 @@ import Icon from "./Icon.astro";
                 <nav>
                     <h2>Links</h2>
                     <ul>
-                        { NAV_LINKS.map( (link) => ( 
-                            link.footerNav && <li><a href={link.path}>{link.title}</a></li>
+                        { PAGES.map( (page) => ( 
+                            page.footerNav && <li><a href={page.path}>{page.title}</a></li>
                         ))}
                     </ul>
                 </nav>

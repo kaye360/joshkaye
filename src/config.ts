@@ -46,7 +46,7 @@ export const OPENGRAPH_PATH = '/meta-img/og.png'
  * Navigation Links
  */
 
-export interface Navlink {
+export interface Page {
     title     : string,
     path      : string,
     mainNav   : boolean,
@@ -55,7 +55,7 @@ export interface Navlink {
 }
 
 /** Note: There can only be 1 Call to Action link */
-export const NAV_LINKS : Navlink[] = [
+export const PAGES : Page[] = [
     {
         title     : 'Home',
         path      : '/',
@@ -145,6 +145,26 @@ export const CONTACT_LINKS: Contactlink[] = [
 ]
 
 
+export interface Language {
+    code : string,
+    full : string
+}
+
+export const LANGUAGES : Language[] = [
+    {
+        code : 'en',
+        full : 'English',
+    },
+    {
+        code : 'pt',
+        full : 'Portuguese',
+    },
+    {
+        code : 'cn',
+        full : 'Chinese',
+    },
+]
+
 /**
  * General Types
  */
@@ -152,6 +172,7 @@ export const CONTACT_LINKS: Contactlink[] = [
 export interface Layout {
     title : string,
     description : string,
+    lang : string,
     class? : string
 }
 

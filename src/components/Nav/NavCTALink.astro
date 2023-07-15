@@ -1,5 +1,5 @@
 ---
-import { NAV_LINKS, Navlink } from '../../config';
+import { PAGES, Navlink } from '../../config';
 import Icon from './../Icon.astro';
 
 interface Props {
@@ -21,7 +21,7 @@ const {
     class : className = ''
 } = Astro.props
 
-const cta = NAV_LINKS.find(link => link.cta) as Navlink
+const cta = PAGES.find(page => page.cta) as Navlink
 
 ---
 

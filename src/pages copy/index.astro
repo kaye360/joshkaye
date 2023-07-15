@@ -1,0 +1,235 @@
+---
+import Wrapper from '../components/Wrapper.astro';
+import TextFlow from '../components/TextFlow.astro';
+import EvenColumns from '../components/EvenColumns.astro';
+import Card from '../components/Card.astro';
+import Layout from '../layouts/Layout.astro';
+import Image from '../components/Image.astro';
+import HeroFullScreen from '../components/Heros/HeroFullScreen.astro';
+import HeroMidScreenGradient from '../components/Heros/HeroMidScreenGradient.astro';
+
+---
+
+<Layout props
+	type="landingPage"
+	title="Home"
+	description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro in expedita beatae perferendis quod qui perspiciatis numquam."
+>
+
+	<HeroFullScreen props
+		slot='hero'
+		align='center'
+		heading="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, unde." 
+		subheading='Consequatur neque iure unde nisi repudiandae pariatur consectetur ipsa quia quaerat laborum rem impedit optio illo, hic, aliquid repellendus.'
+		primaryCTAText='Buy now'
+		primaryCTALink='#'
+		secondaryCTAText='Learn more'
+		secondaryCTALink='#'
+	/>
+
+	<section>
+		<Wrapper width="max" padding='both'>
+
+			<h2 class="mb-[1em] border-b-2 border-sky-100">Card Example</h2>
+
+			<EvenColumns breakpoints={2} class='gap-6'>
+
+				<Card 
+					href="#" 
+					linkText='Click me'
+					linkClass='mx-2'
+					class='drop-shadow shadow-md shadow-slate-200'
+					img={{
+						src : 'https://source.unsplash.com/random/300x200?space',
+						alt : "card",
+						width : 100,
+						height : 100
+					}}
+					
+				>
+					<h3 slot="heading" class="px-2">
+						Tolestias quae veniam quibusdam?
+					</h3>
+
+					<p slot="content" class="px-2">
+						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, voluptas!
+						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, voluptas!
+					</p>
+				</Card>
+
+				<Card
+					clickable={true} 
+					href="#" 
+					linkText='Click me'
+					linkClass='mx-2'
+					class="drop-shadow shadow-md shadow-slate-200"
+					img={{
+						src : "https://source.unsplash.com/random/300x200?city",
+						alt : "card",
+						width : 100,
+						height : 100
+					}}
+						
+				>
+
+					<h3 slot="heading" class="px-2">Lorem ipsum dolor sit.</h3>
+
+					<p slot="content" class="px-2">Lorem ipsum dolor sit amet consectetur amet consectetur amet consectetur, adipisicing elit. Recusandae, provident. Repudiandae ipsa deserunt nemo veniam unde repellendus quo possimus porro?</p>
+				</Card>
+
+				<Card
+					clickable={true} 
+					href="#" 
+					linkText='Click me'
+					linkClass='mx-2'
+					class="drop-shadow shadow-md shadow-slate-200"
+					img={{
+						src : "https://source.unsplash.com/random/300x200?weather",
+						alt : "card",
+						width : 100,
+						height : 100
+					}}
+						
+				>
+
+					<h3 slot="heading" class="px-2">Lorem ipsum dolor sit.</h3>
+
+					<p slot="content" class="px-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae, provident. Repudiandae ipsa deserunt nemo veniam unde repellendus quo possimus porro?</p>							
+					
+				</Card>
+
+				<Card
+					clickable={true} 
+					href="#" 
+					linkText='Click me'
+					linkClass='mx-2'
+					class="drop-shadow shadow-md shadow-slate-200"
+					img={{
+						src : "https://source.unsplash.com/random/300x200?nature",
+						alt : "card",
+						width : 100,
+						height : 100
+					}}
+						
+				>
+
+					<h3 slot="heading" class="px-2">Lorem ipsum dolor sit.</h3>
+
+					<p slot="content" class="px-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae, provident. Repudiandae ipsa deserunt nemo veniam unde repellendus quo possimus porro?</p>							
+					
+				</Card>
+
+			</EvenColumns>
+		</Wrapper>
+	</section>
+
+	<section>
+		<Wrapper props width="max" padding="both">
+
+			<h2 class="py-6">
+				Aliquam Incidunt, alias facere?
+			</h2>
+
+			<EvenColumns class="gap-6">
+
+				<TextFlow>
+					<h3>Lorem ipsum dolor</h3>
+
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, velit? Eaque magni doloribus eligendi, 
+						
+					<p>Q modi commodi, vero non assumenda accusantium explicabo quos tenetur voluptas molestias culpa repellendus hic iusto beatae reprehenderit? Voluptatum eligendi eos praesentium odio animi numquam vitae maiores unde aliquid.</p>
+				</TextFlow>
+
+				<TextFlow>
+					<h3>Consectetur adipisicing elit</h3>
+
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, velit? Eaque magni doloribus eligendi, quas ipsam maxiuam sint, modi commodi.
+						
+					<p>Vero non assumenda accusantium explicabo quos tenetur voluptas molestias culpa repellendus hic iusto beatae repreheum odio animi numquam vitae maiores unde aliquid.</p>
+				</TextFlow>
+
+				<TextFlow>
+					<h3>Accusantium, cumque!</h3>
+
+					<p>Maxime esse repudiandae eos aliquam sint, modi commodi, vero non assumenda accusantium explicabo quos tenetur voluptas molestias culpa repellendus hic iusto beatae reprehenderit? Voluptatum eligendi eos praesentium odio animi numquam vitae maiores unde aliquid.</p>
+					
+					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, asperiores.</p>
+				</TextFlow>
+
+			</EvenColumns>
+		</Wrapper>
+	</section>
+	
+
+	<section class="bg-primary-800 text-primary-100">
+		<Wrapper width="text" padding="both">
+			<TextFlow>
+				<h2>Heading and Paragraph Exammples</h2>
+		
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur neque iure unde nisi repudiandae pariatur consectetur ipsa quia quaerat laborum rem impedit optio illo, hic, aliquid repellendus cupiditate, ratione quasi?</p>
+		
+				<h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, cumque!</h2>
+		
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, velit? Eaque magni doloribus eligendi, quas ipsam maxime esse repudiandae eos aliquam sint, modi commodi, vero non assumenda accusantium explicabo quos tenetur voluptas molestias culpa repellendus hic iusto beatae reprehenderit? Voluptatum eligendi eos praesentium odio animi numquam vitae maiores unde aliquid.</p>
+
+				<h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, consequatur.</h3>
+
+				<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis corporis non cupiditate quae necessitatibus! Qui sapiente quae libero incidunt laudantium.</p>
+
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur neque iure unde nisi repudiandae pariatur consectetur ipsa quia quaerat laborum rem impedit optio illo, hic, aliquid repellendus cupiditate, ratione quasi?</p>
+
+				<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, magnam.</h4>
+
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur neque iure unde nisi repudiandae pariatur consectetur ipsa quia quaerat laborum rem impedit optio illo, hic, aliquid repellendus cupiditate, ratione quasi?</p>
+
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur neque iure unde nisi repudiandae pariatur consectetur ipsa quia quaerat laborum rem impedit optio illo, hic, aliquid repellendus cupiditate, ratione quasi?</p>
+
+				<h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, magnam.</h5>
+
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur neque iure unde nisi repudiandae pariatur consectetur ipsa quia quaerat laborum rem impedit optio illo, hic, aliquid repellendus cupiditate, ratione quasi?</p>
+				
+				<h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, magnam.</h6>
+
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur neque iure unde nisi repudiandae pariatur consectetur ipsa quia quaerat laborum rem impedit optio illo, hic, aliquid repellendus cupiditate, ratione quasi?</p>
+			</TextFlow>
+		</Wrapper>
+	</section>
+
+	<section>
+		<Wrapper width="text" padding='both'>
+			<TextFlow>
+				<h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis incidunt voluptatibus omnis ex. Nihil laboriosam facere distinctio ea neque aperiam consequatur optio soluta a temporibus, possimus voluptates earum quaerat! Illum enim odit harum nulla! Tempore repudiandae suscipit quaerat nostrum consequatur itaque ipsa, debitis inventore consectetur a placeat, explicabo praesentium impedit?</p>
+				<h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis incidunt voluptatibus omnis ex. Nihil laboriosam facere distinctio ea neque aperiam consequatur optio soluta a temporibus, possimus voluptates earum quaerat! Illum enim odit harum nulla! Tempore repudiandae suscipit quaerat nostrum consequatur itaque ipsa, debitis inventore consectetur a placeat, explicabo praesentium impedit?</p>
+			</TextFlow>
+		</Wrapper>
+	</section>
+
+	<section>
+		<Wrapper width="text" padding="both">
+			<Image props 
+				src="/img/hero.jpg"
+				alt="hero"
+				width={100}
+				height={100}
+				lazy
+				bgColor='red'
+			/>
+		</Wrapper>
+	</section>
+			
+
+</LandingPageLayout>
+
+<script>
+	if (window.netlifyIdentity) {
+	  window.netlifyIdentity.on("init", user => {
+		if (!user) {
+		  window.netlifyIdentity.on("login", () => {
+			document.location.href = "/admin/";
+		  });
+		}
+	  });
+	}
+  </script>
