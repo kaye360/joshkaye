@@ -5,6 +5,13 @@ By Josh Kaye
 ## Working Demo
 [View the Demo](https://joshs-astro-starter.netlify.app/)
 
+## Features
+- Reusable components and layouts
+- Netlify Form Integration
+- Decap CMS Integration
+- Snipcart Integration
+- Multilanguage support
+
 ## Checklist
 Things to remember for each project
 
