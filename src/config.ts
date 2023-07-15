@@ -43,81 +43,91 @@ export const OPENGRAPH_PATH = '/meta-img/og.png'
 
 
 /**
- * Navigation Links
+ * Site Pages
  */
 
 export interface Page {
-    title     : string,
-    path      : string,
-    mainNav   : boolean,
-    footerNav : boolean,
-    cta       : boolean
+    title            : string,
+    path             : string,
+    mainNav          : boolean,
+    footerNav        : boolean,
+    cta              : boolean,
+    ignoreLangPrefix : boolean,
 }
 
 /** Note: There can only be 1 Call to Action link */
 export const PAGES : Page[] = [
     {
-        title     : 'Home',
-        path      : '/',
-        mainNav   : true,
-        footerNav : true,
-        cta       : false
+        title            : 'Home',
+        path             : '/',
+        mainNav          : true,
+        footerNav        : true,
+        cta              : false,
+        ignoreLangPrefix : true
     },
     {
-        title     : 'About',
-        path      : '/about',
-        mainNav   : true,
-        footerNav : true,
-        cta       : false
+        title            : 'About',
+        path             : '/about',
+        mainNav          : true,
+        footerNav        : true,
+        cta              : false,
+        ignoreLangPrefix : true
     },
     {
-        title     : 'Products',
-        path      : '/products',
-        mainNav   : true,
-        footerNav : true,
-        cta       : false
+        title            : 'Products',
+        path             : '/products',
+        mainNav          : true,
+        footerNav        : true,
+        cta              : false,
+        ignoreLangPrefix : true
     },
     {
-        title     : 'Contact',
-        path      : '/contact',
-        mainNav   : true,
-        footerNav : true,
-        cta       : false
+        title            : 'Contact',
+        path             : '/contact',
+        mainNav          : true,
+        footerNav        : true,
+        cta              : false,
+        ignoreLangPrefix : true
     },
     {
-        title     : 'Form',
-        path      : '/form',
-        mainNav   : true,
-        footerNav : true,
-        cta       : false
+        title            : 'Form',
+        path             : '/form',
+        mainNav          : true,
+        footerNav        : true,
+        cta              : false,
+        ignoreLangPrefix : true
     },
     {
-        title     : 'Store',
-        path      : '/store',
-        mainNav   : true,
-        footerNav : true,
-        cta       : false
+        title            : 'Store',
+        path             : '/store',
+        mainNav          : true,
+        footerNav        : true,
+        cta              : false,
+        ignoreLangPrefix : true
     },
     {
-        title     : 'Privacy Policy',
-        path      : '/privacy',
-        mainNav   : false,
-        footerNav : true,
-        cta       : false
+        title            : 'Privacy Policy',
+        path             : '/privacy',
+        mainNav          : false,
+        footerNav        : true,
+        cta              : false,
+        ignoreLangPrefix : true
     },
     {
-        title     : 'Admin',
-        path      : '/admin/index.html',
-        mainNav   : false,
-        footerNav : true,
-        cta       : false
+        title            : 'Admin',
+        path             : '/admin/index.html',
+        mainNav          : false,
+        footerNav        : true,
+        cta              : false,
+        ignoreLangPrefix : true
     },
     {
-        title     : 'Call to Action',
-        path      : '/cta',
-        mainNav   : true,
-        footerNav : true,
-        cta       : true
+        title            : 'Call to Action',
+        path             : '/cta',
+        mainNav          : true,
+        footerNav        : true,
+        cta              : true,
+        ignoreLangPrefix : true
     },
 ]
 
@@ -172,14 +182,7 @@ export const LANGUAGES : Language[] = [
 export interface Layout {
     title : string,
     description : string,
-    lang : string,
+    lang? : string,
     class? : string
 }
 
-
-/**
- * SnipCart
- */
-
-// Needed for tailwind to include the z-index override
-export const scClass = 'snipcart-modal__container'

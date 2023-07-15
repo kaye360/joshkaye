@@ -1,0 +1,35 @@
+---
+import ResolveLang from "../../components/Lang/ResolveLang.astro";
+
+
+---
+
+<html>
+    <head>      
+    </head>   
+    <body>
+
+        <a href="/en">Continue to english site. Please enable Javascript</a>
+
+        <ResolveLang />
+
+    </body>
+</html>
+
+
+<style>
+
+a {
+    display : block;
+    padding : 1rem;
+    text-align: center;
+    animation: hide-link 2s;
+}
+
+@keyframes hide-link {
+    0%   { opacity: 0; }
+    90%  { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+</style>

@@ -1,5 +1,6 @@
 ---
 import Icon from '../Icon.astro';
+import Link from '../Link.astro';
 
 interface Props {
 
@@ -29,12 +30,12 @@ const {
 { href ? (
 
     <li>
-        <a href={href} class={`flex items-center gap-2 text-sm ${className} `}>
+        <Link to={href} class={`flex items-center gap-2 text-sm ${className} `} ignoreLangPrefix>
 
             {icon && <Icon icon={icon} /> }
 
             <slot />
-        </a>
+        </Link>
     </li>
 
 ) : (

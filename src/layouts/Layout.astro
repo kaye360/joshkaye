@@ -4,7 +4,6 @@
  * Landing Page component controller
  * 
  */
-import ResolveLang from '../components/Lang/ResolveLang.astro';
 import MainContent from '../components/MainContent.astro';
 import type { Layout } from '../config'
 import BaseLayout from './layouts/BaseLayout.astro';
@@ -16,7 +15,7 @@ interface Props extends Layout {
     type : 'landingPage' | 'base',
 
     /** Language of current page */
-    lang : string,
+    lang? : string,
 
     class? : string,
 
@@ -32,7 +31,7 @@ interface Props extends Layout {
 
 const {
     type,
-    lang,
+    lang = 'en',
     class: className = '',
     ...rest
 } = Astro.props
@@ -42,21 +41,19 @@ const {
 
 
 { type === 'landingPage' &&
-    <LandingPageLayout lang={lang} {...rest}>
+    <LandingPageLayout lang={lang ||'en'} {...rest}>
         <slot name="hero" />
         <MainContent>
             <slot />    
         </MainContent>
         <div slot="pageEnd"><slot name="pageEnd" /></div>
-        <ResolveLang />
     </LandingPageLayout>
 }
 
 { type === 'base' &&
-    <BaseLayout lang={lang} {...rest}>
+    <BaseLayout lang={lang || 'en'} {...rest}>
         <slot />
         <div slot="pageEnd"><slot name="pageEnd" /></div>
-        <ResolveLang />
     </BaseLayout>
 }
 

@@ -2,13 +2,11 @@
 import { PAGES } from "../../config";
 import NavLink from "./NavLink.astro";
 
-const { lang } = Astro.params
-
 ---
 
 <ul class="nav-links">
     { PAGES.map( (page) => ( 
-        page.mainNav && !page.cta && <NavLink href={'/' + lang + page.path}>{page.title}</NavLink>
+        page.mainNav && !page.cta && <NavLink href={page.path}>{page.title}</NavLink>
     ))}
 
 </ul>

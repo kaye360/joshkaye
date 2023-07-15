@@ -5,6 +5,7 @@ import Logo from "./Logo.astro";
 import { CONTACT_LINKS, PAGES, SITE_FULL_NAME } from "../config";
 import TextFlow from "./TextFlow.astro";
 import Icon from "./Icon.astro";
+import Link from "./Link.astro";
 
 
 ---
@@ -28,7 +29,7 @@ import Icon from "./Icon.astro";
                     <h2>Links</h2>
                     <ul>
                         { PAGES.map( (page) => ( 
-                            page.footerNav && <li><a href={page.path}>{page.title}</a></li>
+                            page.footerNav && <li><Link to={page.path} ignoreLangPrefix={page.ignoreLangPrefix}>{page.title}</Link></li>
                         ))}
                     </ul>
                 </nav>
