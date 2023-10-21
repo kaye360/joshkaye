@@ -1,8 +1,10 @@
 ---
+import type { HTMLAttributes } from 'astro/types';
 
-interface Props {
+interface Props extends HTMLAttributes<'div'> {
 
     /**
+     * @extends <form>
      * @prop slot (Default ; 'Submit')
      */
     props? : true

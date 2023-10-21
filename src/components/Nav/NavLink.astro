@@ -1,7 +1,8 @@
 ---
+import type { HTMLAttributes } from 'astro/types';
 import Link from '../Link.astro';
 
-interface Props {
+interface Props extends HTMLAttributes<'li'> {
 
     /** Link href of Nav Link */
     href : string,
@@ -22,14 +23,20 @@ interface Props {
 const {
     href,
     icon,
-    class : className = ''
+    class : className = '',
+    ...rest
 } = Astro.props
+
+const { pathname } = Astro.url
+
 ---
 
-<li class="nav-link">
+<li class="nav-link" {...rest}>
     <Link 
         to={href} 
-        class={`flex items-center gap-2 font-semibold hover:underline hover:underline-offset-4 ${className} `} 
+        class={`
+        ${className}
+        ${pathname === href ? 'border-primary-500' : ''}`} 
     >
 
         {icon && icon }
@@ -37,6 +44,24 @@ const {
         <slot />
     </Link>
 </li>
+
+
+<style>
+
+a {
+    display : flex;
+    align-items: center;
+    gap : 0.5rem;
+    font-weight: 600;
+    border-bottom : 4px solid transparent
+}
+
+a:hover, a:focus {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+</style>
 
 
 <style is:global>
@@ -57,3 +82,4 @@ li.nav-link {
 }
 
 </style>
+

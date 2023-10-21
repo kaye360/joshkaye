@@ -6,11 +6,13 @@ import { CONTACT_LINKS, PAGES, SITE_FULL_NAME } from "../config";
 import TextFlow from "./TextFlow.astro";
 import Icon from "./Icon.astro";
 import Link from "./Link.astro";
+import type { HTMLAttributes } from "astro/types";
 
-
+interface Props extends HTMLAttributes<'footer'> {}
+const {...rest} = Astro.props
 ---
 
-<footer>
+<footer {...rest}>
     <Wrapper padding="inline" width="max">
         <EvenColumns props class="gap-x-36 gap-y-12">
 

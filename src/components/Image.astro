@@ -1,21 +1,21 @@
 ---
+import type { HTMLAttributes } from 'astro/types';
 
-export interface Image {
+export interface Image extends HTMLAttributes<'img'> {
     src : string,
     width : number,
     height : number,
     alt : string,
     class? : string,
     lazy? : boolean,
-    bgColor? : string,
 }
 
 interface Props extends Image {
 
     /**
+     * @extends <img>s
      * @prop Required img props: src, width, height, alt
      * @prop Lazy - boolean (default false)
-     * @prop bgColor - string (optional)
      */
     props? : true
 }
@@ -25,38 +25,20 @@ const {
     width,
     height,
     alt,
-    class : className = '',
     lazy = 'eager',
-    bgColor = null
+    class : className = '',
+    ...rest
 } = Astro.props
 ---
 
 
-{ bgColor ? (
+<img 
+    src={src} 
+    width={width} 
+    height={height} 
+    alt={alt} 
+    class={className || ''} 
+    loading={ lazy ? 'lazy' : 'eager'}
+    {...rest}
+/>
 
-    <div style={`
-        background-color : ${bgColor};
-        width : fit-content;
-    `}>
-        <img 
-            src={src} 
-            width={width} 
-            height={height} 
-            alt={alt} 
-            class={className || ''} 
-            loading={ lazy ? 'lazy' : 'eager'}
-        />
-    </div>
-
-) : (
-
-    <img 
-        src={src} 
-        width={width} 
-        height={height} 
-        alt={alt} 
-        class={className || ''} 
-        loading={ lazy ? 'lazy' : 'eager'}
-    />
-
-)}

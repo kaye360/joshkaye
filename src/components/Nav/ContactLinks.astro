@@ -1,15 +1,16 @@
 ---
+import type { HTMLAttributes } from 'astro/types';
 import { CONTACT_LINKS } from '../../config';
 import Wrapper from '../Wrapper.astro';
 import ContactLink from './ContactLink.astro';
-import LangSelector from '../Lang/LangSelector.astro'
 
 
-interface Props {
+interface Props extends HTMLAttributes<'div'> {
 
     class? : string
 
     /**
+     * @extends <div>
      * @props slot
      */
     props? : true
@@ -20,16 +21,16 @@ const {
 } = Astro.props
 
 
-const { lang } = Astro.params
-
 ---
 
-<div class={`bg-[var(--contact-bar-bg-color)] text-[var(--contact-bar-text-color)] ${className}`}>
+<div class={`${className}`}>
     <Wrapper width="max" padding="inline" class="flex justify-end gap-8">
 
         <ul>
             { CONTACT_LINKS.map( (link) => ( 
-                <ContactLink href={link.path} icon={link.icon}>{link.title}</ContactLink>
+                <ContactLink href={link.path} icon={link.icon}>
+                    {link.title}
+                </ContactLink>
             ))}
         </ul>
     </Wrapper>
@@ -38,6 +39,11 @@ const { lang } = Astro.params
 
 
 <style>
+
+div {
+    background-color: var(--contact-bar-bg-color);
+    color : var(--contact-bar-text-color)
+}
 
 ul {
     display : flex;

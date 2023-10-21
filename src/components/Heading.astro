@@ -1,9 +1,18 @@
----import Wrapper from "./Wrapper.astro";
+---
+import type { HTMLAttributes } from "astro/types";
+import Wrapper from "./Wrapper.astro";
 
+interface Props extends HTMLAttributes<'h1'> {}
+
+
+const {
+    class : className = '',
+    ...rest
+} = Astro.props
 
 ---
 
-<h1>
+<h1 class={className} {...rest}>
     <Wrapper width="max" padding="inline">
         <slot />
     </Wrapper>

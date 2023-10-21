@@ -1,5 +1,5 @@
 ---
-import { FAVICON_PATH, OPENGRAPH_PATH, SITE_BASE_PATH, SITE_SHORT_NAME, SITE_URL } from '../config';
+import { FAVICON_PATH, OPENGRAPH_PATH, SITE_BASE_PATH, SITE_SHORT_NAME, SITE_URL, USE_DECAP_CMS, USE_MATERIAL_ICONS } from '../config';
 
 interface Props {
 
@@ -9,16 +9,9 @@ interface Props {
     /** Meta Description */
     description : string,
 
-    /** Use Material Icons? */
-    materialIcons? : boolean,
-
-    /** Use Decap CMS? */
-    decap? : boolean,
-
     /**
-     * @prop title (string)
-     * @prop description (string)
-     * @prop materialIcons (boolean)
+     * @prop title : string
+     * @prop description : string
      * @prop slot
      */
     props? : true
@@ -26,9 +19,7 @@ interface Props {
 
 const {
     title,
-    description,
-    materialIcons = false,
-    decap = false
+    description
 } = Astro.props
 ---
 
@@ -39,11 +30,11 @@ const {
 
     <link rel="icon" type="image/svg+xml" href={FAVICON_PATH} />
 
-    { materialIcons &&
+    { USE_MATERIAL_ICONS &&
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
     }
 
-    { decap &&
+    { USE_DECAP_CMS &&
         <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     }
     

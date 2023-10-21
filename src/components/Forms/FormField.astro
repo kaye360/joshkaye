@@ -1,9 +1,12 @@
 ---
+
 type TextInputs = 'textarea' | 'date' | 'datetime-local' | 'email' | 'month' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'time' | 'url' | 'week'
 
 type NonTextInputs = 'checkbox' | 'color' | 'file' | 'image' | 'radio' | 'range' | 'reset' | 'select'
 
-interface FormFieldProps {
+
+
+interface BaseFormFieldProps {
 
     /** <label> title and <input>, <textarea> name, id (toLowerCase) */
     name : string,
@@ -24,15 +27,21 @@ interface FormFieldProps {
      props? : true,
 }
 
-interface TextInput extends FormFieldProps {
+
+
+interface TextInput extends BaseFormFieldProps {
     type : TextInputs,
     floatingLabel? : boolean
 }
 
-interface NonTextInput extends FormFieldProps {
+
+
+interface NonTextInput extends BaseFormFieldProps {
     type : NonTextInputs,
     floatingLabel? : never
 }
+
+
 
 type Props = TextInput | NonTextInput
 

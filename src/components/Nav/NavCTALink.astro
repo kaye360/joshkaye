@@ -1,8 +1,12 @@
 ---
+import type { HTMLAttributes } from 'astro/types';
 import { PAGES, Page } from '../../config';
 import Icon from './../Icon.astro';
+import Button from '../Button.astro';
 
-interface Props {
+
+
+interface Props extends HTMLAttributes<'a'> {
     
     /** Material icon string for icon */
     icon? : string
@@ -10,33 +14,44 @@ interface Props {
     class? : string,
 
     /**
-     * @prop href (string)
-     * @prop icon (string)
+     * @extends <a>
+     * @prop href : string
+     * @prop icon : string
      */
     props? : true
 }
+
+
 
 const {
     icon,
     class : className = ''
 } = Astro.props
 
+
+
 const cta = PAGES.find(page => page.cta) as Page
 
 ---
 
-<a 
-    href={cta.path} 
-    class={`
-        flex items-center gap-2 font-bold ml-auto px-3 py-2 
-        bg-[var(--nav-bar-CTA-bg-color)] hover:bg-[var(--nav-bar-CTA-bg-color-hover)] 
-        text-[var(--nav-bar-CTA-text-color)]
-        ${className} 
-    `}
->
 
+<Button type='link' href={cta.path} class={className}>
     {cta.title}
-    
     {icon && <Icon icon={icon} /> }
+</Button>
 
-</a>
+
+
+<style>
+
+a {
+    background-color: var(--nav-bar-CTA-bg-color);
+    color : var(--nav-bar-CTA-text-color) !important;
+}
+
+a:hover, a:focus-visible {
+    background-color: var(--nav-bar-CTA-bg-color-hover);
+    color : var(--nav-bar-CTA-text-color-hover) !important;
+}
+
+</style>

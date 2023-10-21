@@ -1,5 +1,8 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
+
+
+
 interface Props extends HTMLAttributes<'div'> {
 
     /** Width of Wrapper.
@@ -39,7 +42,6 @@ const {
         ${padding === 'both' ? 'px-default py-default' : ''}
         mx-auto w-full
         ${className}
-        
     `} 
     {...rest}
 >

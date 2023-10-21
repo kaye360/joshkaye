@@ -43,6 +43,16 @@ export const OPENGRAPH_PATH = '/meta-img/og.png'
 
 
 /**
+ * External Libraries
+ */
+
+export const USE_DECAP_CMS = false
+
+export const USE_MATERIAL_ICONS = true
+
+
+
+/**
  * Site Pages
  */
 
@@ -155,6 +165,11 @@ export const CONTACT_LINKS: Contactlink[] = [
 ]
 
 
+
+/**
+ * Site Languages (if using multilanguage)
+ */
+
 export interface Language {
     code : string,
     full : string
@@ -174,15 +189,3 @@ export const LANGUAGES : Language[] = [
         full : 'Chinese',
     },
 ]
-
-/**
- * General Types
- */
-
-export interface Layout {
-    title : string,
-    description : string,
-    lang? : string,
-    class? : string
-}
-

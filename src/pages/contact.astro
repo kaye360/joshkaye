@@ -6,13 +6,13 @@ import NetlifyForm from "../components/Forms/NetlifyForm.astro";
 import Heading from "../components/Heading.astro";
 import TextFlow from "../components/TextFlow.astro";
 import Wrapper from "../components/Wrapper.astro";
-import { ADDRESS, EMAIL_ADDRESS, LOCATION, PHONE_NUMBER } from "../config";
-import Layout from "../layouts/Layout.astro";
+import { ADDRESS, EMAIL_ADDRESS, PHONE_NUMBER } from "../config";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 ---
 
-<Layout
-    type="base"
+<BaseLayout
+    lang="en"
     title="Contact"
     description="Tenetur culpa ab ipsam tempora est debitis? Totam quis saepe nostrum ducimus ipsa id vitae sit."
 >
@@ -90,4 +90,4 @@ import Layout from "../layouts/Layout.astro";
         </Wrapper>
     </section>
 
-</Layout>
+</BaseLayout>

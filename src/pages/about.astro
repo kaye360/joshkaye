@@ -1,4 +1,5 @@
 ---
+import Button from "../components/Button.astro";
 import EvenColumns from "../components/EvenColumns.astro";
 import Heading from "../components/Heading.astro";
 import FullScreenImageTextBoxOverlay from "../components/Sections/FullScreenImageTextBoxOverlay.astro";
@@ -6,12 +7,12 @@ import ThreeColumnLineContentLine from "../components/Sections/ThreeColumnLineCo
 import TextFlow from "../components/TextFlow.astro";
 import Wrapper from "../components/Wrapper.astro";
 import { HERO_IMG_PATH } from "../config";
-import Layout from "../layouts/Layout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 ---
 
-<Layout
-    type="base"
+<BaseLayout props
+    lang="en"
     title="About Us"
     description="Tenetur culpa ab ipsam tempora est debitis? Totam quis saepe nostrum ducimus ipsa id vitae sit."
 >

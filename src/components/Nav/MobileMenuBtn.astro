@@ -1,19 +1,27 @@
 ---
-interface Props {
+import type { HTMLAttributes } from 'astro/types';
+
+
+
+interface Props extends HTMLAttributes<'button'> {
     class? : string,
 
     /**
-     * No props
+     * @extends <button>
      */
     props? : true
 }
+
+
 
 const {
     class : className = '',
 } = Astro.props
 
 ---
-<button aria-label="Toggle Menu" class={`mobile-menu-btn ${className}`}>
+
+
+<button aria-label="Toggle Menu" data-element="mobile-menu-btn" class={className}>
 
     <svg class="nav-icon-open" width="34" height="25" viewBox="0 0 34 25" fill="none">
         
@@ -76,7 +84,7 @@ button {
 
 <script>
 
-const btn = document.querySelector('.mobile-menu-btn') as HTMLButtonElement
+const btn = document.querySelector('[data-element="mobile-menu-btn"]') as HTMLButtonElement
 const body = document.body as HTMLBodyElement
 
 let menuIsOpen: boolean = false

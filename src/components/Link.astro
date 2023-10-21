@@ -1,29 +1,42 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
 
+
+
 interface Props extends HTMLAttributes<'a'> {
 
     href? : never,
     to: string,
-    ignoreLangPrefix? : boolean
+    useLangPrefix? : boolean
 }
+
+
 
 const { 
     to, 
-    ignoreLangPrefix = true, 
+    useLangPrefix = false, 
+    class : className = '',
     ...rest 
 } = Astro.props
 
+
+
 const { lang } = Astro.params
+
+
 
 // If site is multi language, prefix the link with /lang rest param
 const linkPrefix = `/${lang}`
 
+
+
 // Check if ignore prefix (#anchor link, tel, email etc.)
-const link = ignoreLangPrefix ? to : linkPrefix + to
+const link = useLangPrefix ? linkPrefix + to : to
 
 ---
 
-<a {...rest} href={link}>
+
+
+<a href={link} class={className} {...rest} >
     <slot />
 </a>

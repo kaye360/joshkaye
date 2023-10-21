@@ -19,10 +19,34 @@ const {
 ---
 
 <Link to="/">
-    <div class={`flex items-center gap-2 font-semibold text-xl stroke-[var(--nav-bar-logo-color)] ${className}`}>
+    <div class={className}>
     
-        <Image src={ HEADER_LOGO_PATH } alt={SITE_FULL_NAME} width={HEADER_LOGO_DIMENSIONS.width} height={HEADER_LOGO_DIMENSIONS.height} />
+        <Image 
+            src={ HEADER_LOGO_PATH } 
+            alt={SITE_FULL_NAME} 
+            width={HEADER_LOGO_DIMENSIONS.width} 
+            height={HEADER_LOGO_DIMENSIONS.height} 
+        />
+
         {LOGO_NAME}
 
     </div>
 </Link>    
+
+
+
+<style>
+
+div {
+    display : flex;
+    align-items: center;
+    gap : 0.5rem;
+
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight : 600;
+
+    stroke: var(--nav-bar-logo-color);
+}
+
+</style>

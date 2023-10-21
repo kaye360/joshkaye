@@ -1,16 +1,16 @@
 ---
 import { getCollection } from "astro:content";
 import Heading from "../../components/Heading.astro";
-import Layout from "../../layouts/Layout.astro";
 import Wrapper from "../../components/Wrapper.astro";
 import Card from "../../components/Card.astro";
 import TextFlow from "../../components/TextFlow.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const allProducts = await getCollection('products')
 ---
 
-<Layout
-    type="base"
+<BaseLayout
+    lang="en"
     title="Products"
     description="Tenetur culpa ab ipsam tempora est debitis? Totam quis saepe nostrum ducimus ipsa id vitae sit."
 >

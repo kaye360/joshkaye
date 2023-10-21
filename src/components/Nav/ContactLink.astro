@@ -1,8 +1,9 @@
 ---
+import type { HTMLAttributes } from 'astro/types';
 import Icon from '../Icon.astro';
 import Link from '../Link.astro';
 
-interface Props {
+interface Props extends HTMLAttributes<'li'> {
 
     /** Link href of Contact link */
     href? : string,
@@ -13,6 +14,7 @@ interface Props {
     class? : string,
 
     /**
+     * @extends <li>
      * @prop href string
      * @prop icon string
      * @prop slot
@@ -23,28 +25,37 @@ interface Props {
 const {
     href,
     icon,
-    class : className = ''
 } = Astro.props
 ---
 
 { href ? (
 
     <li>
-        <Link to={href} class={`flex items-center gap-2 text-sm ${className} `} ignoreLangPrefix>
-
+        <Link to={href} class={`contact-bar-item`}>
             {icon && <Icon icon={icon} /> }
-
             <slot />
         </Link>
     </li>
 
 ) : (
 
-    <li class={`flex items-center gap-2 text-sm ${className} `}>
-
+    <li class={`contact-bar-item`}>
         {icon && <Icon icon={icon} /> }
-
         <slot />
     </li>
 
 )}
+
+
+
+<style>
+
+.contact-bar-item {
+    display : flex;
+    align-items: center;
+    gap : 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem
+}
+
+</style>
