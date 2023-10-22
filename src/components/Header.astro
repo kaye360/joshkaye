@@ -139,40 +139,45 @@ header.hasColorBg {
 
 <script>
 
-const header = document.querySelector('[data-element="header-main"]') as HTMLDivElement
-const hero  = document.querySelector('[data-element="hero"]') as HTMLDivElement
 
-
-if( header.dataset.toggletransparencyonscroll === 'true' ) {
-    addToggleNavTransparencyObserver()
-}
-
-
-function addToggleNavTransparencyObserver() {
-
-
-    const heroObserverOptions = {
-        root : null,
-        threshold : 0,
-        rootMargin : "-70% 0px 0px 0px"
+window.addEventListener('DOMContentLoaded', () => {
+    
+    const header = document.querySelector('[data-element="header-main"]') as HTMLDivElement
+    const hero  = document.querySelector('[data-element="hero"]') as HTMLDivElement
+    
+    
+    if( header.dataset.toggletransparencyonscroll === 'true' ) {
+        addToggleNavTransparencyObserver()
     }
     
-    const heroObserver = new IntersectionObserver( entries => {
-        entries.forEach(entry => {
-
-            if(entry.isIntersecting) {
-                header.classList.add('hasTransparentBg')
-                header.classList.remove('hasColorBg')
-            } else {
-                header.classList.remove('hasTransparentBg')
-                header.classList.add('hasColorBg')
-            }
-            
-        })
-    }, heroObserverOptions)
     
-    heroObserver.observe(hero)
-}
+    function addToggleNavTransparencyObserver() {
+    
+    
+        const heroObserverOptions = {
+            root : null,
+            threshold : 0,
+            rootMargin : "-70% 0px 0px 0px"
+        }
+        
+        const heroObserver = new IntersectionObserver( entries => {
+            entries.forEach(entry => {
+    
+                if(entry.isIntersecting) {
+                    header.classList.add('hasTransparentBg')
+                    header.classList.remove('hasColorBg')
+                } else {
+                    header.classList.remove('hasTransparentBg')
+                    header.classList.add('hasColorBg')
+                }
+                
+            })
+        }, heroObserverOptions)
+        
+        heroObserver.observe(hero)
+    }
+
+})
 
 </script>
 
