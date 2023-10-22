@@ -137,10 +137,10 @@ header.hasColorBg {
 </style>
 
 
-<script is:inline>
+<script>
 
-const header = document.querySelector('[data-element="header-main"]')
-const hero  = document.querySelector('[data-element="hero"]')
+const header = document.querySelector('[data-element="header-main"]') as HTMLDivElement
+const hero  = document.querySelector('[data-element="hero"]') as HTMLDivElement
 
 
 if( header.dataset.toggletransparencyonscroll === 'true' ) {
