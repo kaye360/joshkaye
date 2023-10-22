@@ -53,10 +53,10 @@ const {
 
 
 
-{/*
-data-toggleTransparencyOnScroll, data-element, and hasColorBg/hasTransparentBg class 
-are used to toggle the header Bg transparency on Scroll, usually in a hero section 
-*/}
+{/**
+ * data-toggleTransparencyOnScroll, data-element, and hasColorBg/hasTransparentBg class  
+ * are used to toggle the header Bg transparency on Scroll, usually in a hero section 
+ */}
 
 <header
     data-toggleTransparencyOnScroll={toggleTransparencyOnScroll ? 'true' : 'false'}
@@ -133,9 +133,6 @@ header.hasColorBg {
     padding-block : 0.5rem;
 }
 
-.contact-wrapper {
-
-}
     
 </style>
 
@@ -153,6 +150,7 @@ if( header.dataset.toggletransparencyonscroll === 'true' ) {
 
 function addToggleNavTransparencyObserver() {
 
+    console.log('adding')
 
     const heroObserverOptions = {
         root : null,
@@ -162,6 +160,8 @@ function addToggleNavTransparencyObserver() {
     
     const heroObserver = new IntersectionObserver( entries => {
         entries.forEach(entry => {
+
+            console.log('observing')
             
             if(entry.isIntersecting) {
                 header.classList.add('hasTransparentBg')
