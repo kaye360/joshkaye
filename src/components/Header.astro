@@ -137,22 +137,19 @@ header.hasColorBg {
 </style>
 
 
-<script>
+<script is:inline>
 
-const header = document.querySelector('[data-element="header-main"]') as HTMLDivElement
-const hero  = document.querySelector('[data-element="hero"]') as HTMLDivElement
+const header = document.querySelector('[data-element="header-main"]')
+const hero  = document.querySelector('[data-element="hero"]')
 
 
-console.log('before if')
 if( header.dataset.toggletransparencyonscroll === 'true' ) {
-    console.log('in if')
     addToggleNavTransparencyObserver()
 }
 
 
 function addToggleNavTransparencyObserver() {
 
-    console.log('adding')
 
     const heroObserverOptions = {
         root : null,
@@ -163,8 +160,6 @@ function addToggleNavTransparencyObserver() {
     const heroObserver = new IntersectionObserver( entries => {
         entries.forEach(entry => {
 
-            console.log('observing')
-            
             if(entry.isIntersecting) {
                 header.classList.add('hasTransparentBg')
                 header.classList.remove('hasColorBg')
