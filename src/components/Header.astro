@@ -143,7 +143,9 @@ const header = document.querySelector('[data-element="header-main"]') as HTMLDiv
 const hero  = document.querySelector('[data-element="hero"]') as HTMLDivElement
 
 
+console.log('before if')
 if( header.dataset.toggletransparencyonscroll === 'true' ) {
+    console.log('in if')
     addToggleNavTransparencyObserver()
 }
 
