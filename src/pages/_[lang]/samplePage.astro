@@ -5,15 +5,15 @@ import FullScreenImageTextBoxOverlay from "../../components/Sections/FullScreenI
 import ThreeColumnLineContentLine from "../../components/Sections/ThreeColumnLineContentLine.astro";
 import TextFlow from "../../components/TextFlow.astro";
 import Wrapper from "../../components/Wrapper.astro";
-import { HERO_IMG_PATH, LANGUAGES, PAGES } from "../../config";
-import Layout from "../../layouts/Layout.astro";
+import { HERO_IMG_PATH, } from "../../config";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
 
-export async function getStaticPaths() {
-	return LANGUAGES.map( lang => ({
-		params : { lang : lang.code }
-	}))
-}
+// export async function getStaticPaths() {
+// 	return LANGUAGES.map( lang => ({
+// 		params : { lang : lang.code }
+// 	}))
+// }
 
 const { lang } = Astro.params
 
@@ -21,9 +21,8 @@ const { lang } = Astro.params
 
 ---
 
-<Layout
+<BaseLayout
     lang={lang as string}
-    type="base"
     title="About Us"
     description="Tenetur culpa ab ipsam tempora est debitis? Totam quis saepe nostrum ducimus ipsa id vitae sit."
 >

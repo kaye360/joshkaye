@@ -55,6 +55,8 @@ export interface Page {
     footerNav        : boolean,
 }
 
+
+
 export const PAGES : Page[] = [
     {
         title            : 'Home',

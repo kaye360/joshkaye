@@ -1,5 +1,5 @@
 ---
-import { FAVICON_PATH, OPENGRAPH_PATH, SITE_BASE_PATH, SITE_SHORT_NAME, SITE_URL, USE_DECAP_CMS, USE_MATERIAL_ICONS } from '../config';
+import { FAVICON_PATH, OPENGRAPH_PATH, SITE_BASE_PATH, SITE_SHORT_NAME, SITE_URL } from '../config';
 
 interface Props {
 
@@ -32,9 +32,7 @@ const {
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
 
-    { USE_DECAP_CMS &&
-        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    }
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     
     <meta name="description" content={description}>
 
