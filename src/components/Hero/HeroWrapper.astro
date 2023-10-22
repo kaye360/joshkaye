@@ -26,8 +26,8 @@ const { variant, ...rest} = Astro.props
     id="hero" 
     data-element="hero" 
     class={`
-        relative bg-cover
-        ${variant === 'fullscreen' ? 'h-screen grid items-center' : ''}
+        relative bg-cover bg-blend-multiply bg-primary-800
+        ${variant === 'fullscreen' ? 'min-h-screen grid items-center' : ''}
         ${variant === 'fitcontent' ? '' : ''}
     `}
     style={`
@@ -41,7 +41,7 @@ const { variant, ...rest} = Astro.props
         padding="inline"
         class={`
             bg-cover
-            ${variant === 'fullscreen' ? 'grid items-center' : ''}
+            ${variant === 'fullscreen' ? 'grid items-center mt-24' : ''}
             ${variant === 'fitcontent' ? 'relative rounded-xl overflow-hidden py-12' : ''}
         `}
         style={`
