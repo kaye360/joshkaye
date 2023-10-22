@@ -42,14 +42,6 @@ export const FAVICON_PATH = '/meta-img/favicon.svg'
 export const OPENGRAPH_PATH = '/meta-img/og.png'
 
 
-/**
- * External Libraries
- */
-
-export const USE_DECAP_CMS = false
-
-export const USE_MATERIAL_ICONS = true
-
 
 
 /**
@@ -59,87 +51,76 @@ export const USE_MATERIAL_ICONS = true
 export interface Page {
     title            : string,
     path             : string,
-    mainNav          : boolean,
+    headerNav        : boolean,
     footerNav        : boolean,
-    cta              : boolean,
-    ignoreLangPrefix : boolean,
 }
 
-/** Note: There can only be 1 Call to Action link */
 export const PAGES : Page[] = [
     {
         title            : 'Home',
         path             : '/',
-        mainNav          : true,
+        headerNav        : true,
         footerNav        : true,
-        cta              : false,
-        ignoreLangPrefix : true
     },
     {
         title            : 'About',
         path             : '/about',
-        mainNav          : true,
+        headerNav        : true,
         footerNav        : true,
-        cta              : false,
-        ignoreLangPrefix : true
     },
     {
         title            : 'Products',
         path             : '/products',
-        mainNav          : true,
+        headerNav        : true,
         footerNav        : true,
-        cta              : false,
-        ignoreLangPrefix : true
     },
     {
         title            : 'Contact',
         path             : '/contact',
-        mainNav          : true,
+        headerNav        : true,
         footerNav        : true,
-        cta              : false,
-        ignoreLangPrefix : true
     },
     {
         title            : 'Form',
         path             : '/form',
-        mainNav          : true,
+        headerNav        : true,
         footerNav        : true,
-        cta              : false,
-        ignoreLangPrefix : true
     },
     {
         title            : 'Store',
         path             : '/store',
-        mainNav          : true,
+        headerNav        : true,
         footerNav        : true,
-        cta              : false,
-        ignoreLangPrefix : true
     },
     {
         title            : 'Privacy Policy',
         path             : '/privacy',
-        mainNav          : false,
+        headerNav        : false,
         footerNav        : true,
-        cta              : false,
-        ignoreLangPrefix : true
     },
     {
         title            : 'Admin',
         path             : '/admin/index.html',
-        mainNav          : false,
+        headerNav        : false,
         footerNav        : true,
-        cta              : false,
-        ignoreLangPrefix : true
     },
     {
         title            : 'Call to Action',
         path             : '/cta',
-        mainNav          : true,
+        headerNav        : true,
         footerNav        : true,
-        cta              : true,
-        ignoreLangPrefix : true
     },
 ]
+
+
+
+
+
+export const CTAPath = '/cta'
+
+
+
+
 
 export interface Contactlink {
     title : string,
@@ -164,28 +145,3 @@ export const CONTACT_LINKS: Contactlink[] = [
     },
 ]
 
-
-
-/**
- * Site Languages (if using multilanguage)
- */
-
-export interface Language {
-    code : string,
-    full : string
-}
-
-export const LANGUAGES : Language[] = [
-    {
-        code : 'en',
-        full : 'English',
-    },
-    {
-        code : 'pt',
-        full : 'Portuguese',
-    },
-    {
-        code : 'cn',
-        full : 'Chinese',
-    },
-]

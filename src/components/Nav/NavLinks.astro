@@ -1,12 +1,12 @@
 ---
-import { PAGES } from "../../config";
+import { CTAPath, PAGES } from "../../config";
 import NavLink from "./NavLink.astro";
 
 ---
 
 <ul class="nav-links">
     { PAGES.map( (page) => ( 
-        page.mainNav && !page.cta && <NavLink href={page.path}>{page.title}</NavLink>
+        page.headerNav && page.path !== CTAPath && <NavLink href={page.path}>{page.title}</NavLink>
     ))}
 
 </ul>

@@ -42,7 +42,7 @@ const { variant, ...rest} = Astro.props
         class={`
             bg-cover
             ${variant === 'fullscreen' ? 'grid items-center' : ''}
-            ${variant === 'fitcontent' ? 'relative rounded-xl overflow-hidden py-6' : ''}
+            ${variant === 'fitcontent' ? 'relative rounded-xl overflow-hidden py-12' : ''}
         `}
         style={`
             ${variant === 'fitcontent' ? `background-image : url(${HERO_IMG_PATH})` : ''}

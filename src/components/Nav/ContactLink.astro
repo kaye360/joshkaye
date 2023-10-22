@@ -38,7 +38,7 @@ const {
 
 ) : (
 
-    <li class={`contact-bar-item`}>
+    <li class={`contact-bar-item `}>
         {icon && <Icon icon={icon} /> }
         <slot />
     </li>
@@ -57,4 +57,13 @@ const {
     line-height: 1.25rem
 }
 
+
+@media screen and (max-width: 639px) {
+    li:nth-child(n + 3) {
+        display: none;
+    }
+    li:nth-child(-n + 2) {
+        display : block;
+    }
+}
 </style>

@@ -1,7 +1,8 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
-import { PAGES, Page } from '../../config';
+import { PAGES, Page, CTAPath } from '../../config';
 import Button from '../Button.astro';
+import Icon from '../Icon.astro';
 
 
 
@@ -29,12 +30,13 @@ const {
 
 
 
-const cta = PAGES.find(page => page.cta) as Page
+const cta = PAGES.find(page => page.path === CTAPath) as Page
 
 ---
 
 
 <Button type='link' href={cta.path} class={className}>
+    {icon && <Icon icon={icon} />}
     {cta.title}
 </Button>
 
