@@ -10,5 +10,7 @@ export default defineConfig({
   site : 'https://joshs-astro-starter.netlify.app',
 
   // Set path for site
-  base : '/'
+  base : '/',
+
+  compressHTML : false
 });
