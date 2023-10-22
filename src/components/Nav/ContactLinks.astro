@@ -23,9 +23,8 @@ const {
 
 ---
 
-<div class={`${className}`}>
-    <Wrapper width="max" padding="inline" class="flex justify-end gap-8">
-
+<div class="py-2">
+    <Wrapper padding='inline' width='max'>
         <ul>
             { CONTACT_LINKS.map( (link) => ( 
                 <ContactLink href={link.path} icon={link.icon}>
@@ -38,11 +37,13 @@ const {
 
 
 
+
+
 <style>
 
 div {
     background-color: var(--contact-bar-bg-color);
-    color : var(--contact-bar-text-color)
+    color : var(--contact-bar-text-color);
 }
 
 ul {
@@ -52,7 +53,6 @@ ul {
     justify-content: flex-end;
     column-gap : 1.5rem;
     row-gap: 0.5rem ;
-    width : max-content;
 }
 
 </style>

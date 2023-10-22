@@ -4,7 +4,7 @@ import EvenColumns from "../EvenColumns.astro";
 import TextFlow from "../TextFlow.astro";
 import Wrapper from "../Wrapper.astro";
 
-interface Props  {
+interface Props extends HTMLAttributes<'section'> {
 
     /** Extra classes for lines */
     lineClass? : string,

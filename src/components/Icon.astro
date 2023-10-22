@@ -1,23 +1,23 @@
 ---
 interface Props {
 
-    /** Material icons string for icon */
-    icon : string,
+/** Material icons string for icon */
+icon : string,
 
-    class? : string,
+class? : string,
 
-    /**
-     * @prop icon (string)
-     */
-    props? : true
+/**
+ * @prop icon (string)
+ */
+props? : true
 }
 
 const { 
-    icon,
-    class: className = '',
+icon,
+class: className = '',
 } = Astro.props
 ---
 
 <span class={`material-icons-outlined ${className}`}>
-    {icon}
+{icon}
 </span>

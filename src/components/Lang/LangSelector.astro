@@ -1,6 +1,5 @@
 ---
 import { LANGUAGES } from "../../config";
-import Icon from "../Icon.astro";
 
 const { lang } = Astro.params
 
@@ -9,7 +8,6 @@ const { lang } = Astro.params
 
 
 <div class="flex items-center gap-2">
-    <Icon icon="language" />
     
     <select name="langSelector" id="langSelector">
         { LANGUAGES.map( language => (

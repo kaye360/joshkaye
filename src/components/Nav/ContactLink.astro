@@ -1,7 +1,6 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
 import Icon from '../Icon.astro';
-import Link from '../Link.astro';
 
 interface Props extends HTMLAttributes<'li'> {
 
@@ -31,10 +30,10 @@ const {
 { href ? (
 
     <li>
-        <Link to={href} class={`contact-bar-item`}>
+        <a href={href} class={`contact-bar-item`}>
             {icon && <Icon icon={icon} /> }
             <slot />
-        </Link>
+        </a>
     </li>
 
 ) : (

@@ -1,6 +1,5 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
-import Link from '../Link.astro';
 
 interface Props extends HTMLAttributes<'li'> {
 
@@ -32,8 +31,8 @@ const { pathname } = Astro.url
 ---
 
 <li class="nav-link" {...rest}>
-    <Link 
-        to={href} 
+    <a
+        href={href} 
         class={`
         ${className}
         ${pathname === href ? 'border-primary-500' : ''}`} 
@@ -42,7 +41,7 @@ const { pathname } = Astro.url
         {icon && icon }
 
         <slot />
-    </Link>
+    </a>
 </li>
 
 

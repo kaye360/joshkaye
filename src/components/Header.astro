@@ -5,6 +5,7 @@ import Logo from './Logo.astro';
 import MobileMenuBtn from './Nav/MobileMenuBtn.astro';
 import NavCTALink from './Nav/NavCTALink.astro';
 import NavLinks from './Nav/NavLinks.astro';
+import ContactLinks from './Nav/ContactLinks.astro';
 
 interface Props extends HTMLAttributes<'header'> {
 
@@ -66,8 +67,12 @@ const {
 >
 
 
+    <ContactLinks />
+
+
+
     <Wrapper width='max' padding='inline'>
-        
+
 
         <div class="nav-wrapper">
 
@@ -122,6 +127,10 @@ header.hasColorBg {
     column-gap:  1rem;
     flex-wrap: wrap;
     padding-block : 0.5rem;
+}
+
+.contact-wrapper {
+
 }
     
 </style>

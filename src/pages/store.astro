@@ -3,10 +3,9 @@ import { getCollection } from "astro:content";
 import Card from "../components/Card.astro";
 import Heading from "../components/Heading.astro";
 import Wrapper from "../components/Wrapper.astro";
-import CardWrapper from "../components/CardWrapper.astro";
-import Snipcart from "../components/Snipcart/Snipcart.astro";
-import CartTotalPrice from "../components/Snipcart/CartTotalPrice.astro";
-import IconCartWithBubble from "../components/Snipcart/IconCartWithBubble.astro";
+import Snipcart from "../lib/Snipcart/Snipcart.astro";
+import CartTotalPrice from "../lib/Snipcart/CartTotalPrice.astro";
+import IconCartWithBubble from "../lib/Snipcart/IconCartWithBubble.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const allProducts = await getCollection('products')
@@ -31,44 +30,42 @@ const allProducts = await getCollection('products')
     </section>
 
     <section class="bg-primary-50 mb-8">
-        <Wrapper width="max" padding="both">
-            <CardWrapper>
-                { allProducts.map( product => (
-                    <Card 
-                        class="shadow-md shadow-primary-200"
-                        img={{
-                            src : product.data.image,
-                            width : 250,
-                            height : 250,
-                            alt : `Product: ${product.data.title}`
-                        }}
-                    >
+        <Wrapper width="max" padding="both" class="grid grid-cols-4 gap-4">
 
+             
+            { allProducts.map( product => (
+                <Card 
+                    class="shadow-md shadow-primary-200"
+                    img={{
+                        src : product.data.image,
+                        width : 250,
+                        height : 250,
+                        alt : `Product: ${product.data.title}`
+                    }}
+                >
+
+                
+                <div slot="content" class="p-4 flex flex-col gap-4 h-full w-full">
                     
-                    <div slot="content" class="p-4 flex flex-col gap-4 h-full w-full">
-                        
-                            <header class="flex items-center justify-between"> 
-                                <h3>{product.data.title}</h3>
-                                <p class="text-xl font-bold text-red-500">{product.data.price}</p>
-                            </header>
+                        <header class="flex items-center justify-between"> 
+                            <h3>{product.data.title}</h3>
+                            <p class="text-xl font-bold text-red-500">{product.data.price}</p>
+                        </header>
 
-                            <p>{product.data.description}</p>
-    
-                            <button class="snipcart-add-item font-semibold bg-secondary-50 text-secondary-600 px-4 py-2 w-full mt-auto"
-                                data-item-id={product.data.title}
-                                data-item-price={product.data.price}
-                                data-item-description={product.data.description}
-                                data-item-image={product.data.image}
-                                data-item-name={product.data.title}>
-                            Add to cart
-                            </button>
+                        <p>{product.data.description}</p>
 
-                        </div>
-                    </Card>
-                ))
+                        <button class="snipcart-add-item font-semibold bg-secondary-50 text-secondary-600 px-4 py-2 w-full mt-auto"
+                            data-item-id={product.data.title}
+                            data-item-price={product.data.price}
+                            data-item-description={product.data.description}
+                            data-item-image={product.data.image}
+                            data-item-name={product.data.title}>
+                        Add to cart
+                        </button>
 
-                }
-            </CardWrapper>
+                    </div>
+                </Card>
+            ))}
         </Wrapper>
     </section>
 

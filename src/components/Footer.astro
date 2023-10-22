@@ -4,8 +4,6 @@ import EvenColumns from "./EvenColumns.astro";
 import Logo from "./Logo.astro";
 import { CONTACT_LINKS, PAGES, SITE_FULL_NAME } from "../config";
 import TextFlow from "./TextFlow.astro";
-import Icon from "./Icon.astro";
-import Link from "./Link.astro";
 import type { HTMLAttributes } from "astro/types";
 
 interface Props extends HTMLAttributes<'footer'> {}
@@ -31,7 +29,7 @@ const {...rest} = Astro.props
                     <h2>Links</h2>
                     <ul>
                         { PAGES.map( (page) => ( 
-                            page.footerNav && <li><Link to={page.path} ignoreLangPrefix={page.ignoreLangPrefix}>{page.title}</Link></li>
+                            page.footerNav && <li><a href={page.path}>{page.title}</a></li>
                         ))}
                     </ul>
                 </nav>
@@ -41,7 +39,6 @@ const {...rest} = Astro.props
                     <ul>
                         { CONTACT_LINKS.map( (link) => ( 
                             <li>
-                                {link.icon && <Icon icon={link.icon} /> }
                                 {link.path ? (
                                     <a href={link.path}>{link.title}</a>
                                 ) : (
