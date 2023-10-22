@@ -7,8 +7,8 @@ export default defineConfig({
   integrations: [tailwind()],
 
   // Set base URL
-  site : import.meta.env.PROD ? 'https://joshs-astro-starter.netlify.app/' : 'http://localhost:4321',
+  site : 'https://joshs-astro-starter.netlify.app',
 
   // Set path for site
-  base : import.meta.env.PROD ? '/' : '/'
+  base : '/'
 });
