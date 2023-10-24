@@ -12,5 +12,7 @@ export default defineConfig({
   // Set path for site
   base : '/',
 
-  compressHTML : false
+  build : {
+    inlineStylesheets : 'never'
+  }
 });

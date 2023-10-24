@@ -24,12 +24,16 @@ const {
 ---
 
 <head>
+    <meta 
+        http-equiv="Content-Security-Policy" 
+        content=`default-src https: 'unsafe-inline'; 
+                 img-src 'self'; 
+                 script-src 'self' ${import.meta.env.DEV ? 'http://localhost:4321' : ''};
+                 connect-src 'self'
+        ` />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    { import.meta.env.PROD && 
-        <meta http-equiv="Content-Security-Policy" content="default-src https:" />
-    }
 
     <link rel="icon" type="image/svg+xml" href={FAVICON_PATH} />
 
