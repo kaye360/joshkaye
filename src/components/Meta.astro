@@ -28,6 +28,7 @@ const {
         http-equiv="Content-Security-Policy" 
         content=`default-src https:; 
                  img-src 'self';
+                 object-src 'self';
                  script-src 'self' ${import.meta.env.DEV ? 'http://localhost:4321;' : ''};
                  ${import.meta.env.DEV ? "connect-src 'self';" : ''}
                  ${import.meta.env.DEV 
