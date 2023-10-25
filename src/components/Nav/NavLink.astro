@@ -34,6 +34,8 @@ const {
 
 const { pathname } = Astro.url
 
+const isActive = pathname === href
+
 const megaMenuPages = !dropdown ? null : PAGES.filter( page => page.group.includes(dropdown))
 
 ---
@@ -43,7 +45,7 @@ const megaMenuPages = !dropdown ? null : PAGES.filter( page => page.group.includ
         href={href} 
         class={`poopies
         ${className}
-        ${pathname === href ? 'border-primary-500' : ''}`} 
+        ${isActive ? 'text-secondary-500' : ''}`} 
     >
 
         <slot />

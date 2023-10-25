@@ -48,7 +48,7 @@ export const OPENGRAPH_PATH = '/meta-img/og.png'
  * Site Pages
  */
 
-export type PageGroup = 'header' | 'footer' | 'services'
+export type PageGroup = 'header' | 'footer' | 'services' | 'about'
 
 export interface Page {
     title : string,
@@ -145,7 +145,23 @@ export const PAGES : Page[] = [
         title : 'About',
         path  : '/about',
         group : ['header', 'footer'],
+        dropdown : 'about'
     },
+        {
+            title : 'About One',
+            path  : '/about1',
+            group : ['about']
+        },
+        {
+            title : 'About Two',
+            path  : '/about2',
+            group : ['about']
+        },
+        {
+            title : 'About Three',
+            path  : '/about1',
+            group : ['about']
+        },
     {
         title : 'Store',
         path  : '/store',
