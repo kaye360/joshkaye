@@ -37,7 +37,7 @@ const breakpointsClass =
 
 
 
-<div class={`even-columns ${breakpointsClass} ${classList}`}  {...rest} >
+<div class={`even-columns items-stretch ${breakpointsClass} ${classList}`}  {...rest} >
     <slot />
 </div>
 
@@ -47,7 +47,6 @@ const breakpointsClass =
 
 .even-columns {
     display : grid;
-    align-items: stretch;
 }
 
 .even-columns-0 {
