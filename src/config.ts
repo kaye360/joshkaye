@@ -48,69 +48,128 @@ export const OPENGRAPH_PATH = '/meta-img/og.png'
  * Site Pages
  */
 
+export type PageGroup = 'header' | 'footer' | 'services'
+
 export interface Page {
-    title            : string,
-    path             : string,
-    headerNav        : boolean,
-    footerNav        : boolean,
+    title : string,
+    path  : string,
+    group : PageGroup[],
+    dropdown? : PageGroup
 }
 
 
 
 export const PAGES : Page[] = [
     {
-        title            : 'Home',
-        path             : '/',
-        headerNav        : true,
-        footerNav        : true,
+        title : 'Home',
+        path  : '/',
+        group : ['header', 'footer'],
     },
     {
-        title            : 'About',
-        path             : '/about',
-        headerNav        : true,
-        footerNav        : true,
+        title : 'Services',
+        path  : '/services',
+        group : ['header', 'footer'],
+        dropdown : 'services'
+    },
+        {
+            title : 'Service One',
+            path  : '/serviceone',
+            group : ['services']
+        },
+        {
+            title : 'Service Two',
+            path  : '/servicetwo',
+            group : ['services']
+        },
+        {
+            title : 'Service Three',
+            path  : '/servicethree',
+            group : ['services']
+        },
+        {
+            title : 'Service Four',
+            path  : '/serviceone',
+            group : ['services']
+        },
+        {
+            title : 'Service Five',
+            path  : '/serviceone',
+            group : ['services']
+        },
+        {
+            title : 'Service Six',
+            path  : '/serviceone',
+            group : ['services']
+        },
+        {
+            title : 'Service Seven',
+            path  : '/serviceone',
+            group : ['services']
+        },
+        {
+            title : 'Service Eight',
+            path  : '/serviceone',
+            group : ['services']
+        },
+        {
+            title : 'Service Nine',
+            path  : '/serviceone',
+            group : ['services']
+        },
+        {
+            title : 'Service Ten',
+            path  : '/serviceone',
+            group : ['services']
+        },
+        {
+            title : 'Service Eleven',
+            path  : '/serviceone',
+            group : ['services']
+        },
+        {
+            title : 'Service Twelve',
+            path  : '/serviceone',
+            group : ['services']
+        },
+    {
+        title : 'Products',
+        path  : '/products',
+        group : ['header', 'footer'],
     },
     {
-        title            : 'Products',
-        path             : '/products',
-        headerNav        : true,
-        footerNav        : true,
+        title : 'Contact',
+        path  : '/contact',
+        group : ['header', 'footer'],
     },
     {
-        title            : 'Contact',
-        path             : '/contact',
-        headerNav        : true,
-        footerNav        : true,
+        title : 'About',
+        path  : '/about',
+        group : ['header', 'footer'],
     },
     {
-        title            : 'Form',
-        path             : '/form',
-        headerNav        : true,
-        footerNav        : true,
+        title : 'Store',
+        path  : '/store',
+        group : ['header', 'footer'],
     },
     {
-        title            : 'Store',
-        path             : '/store',
-        headerNav        : true,
-        footerNav        : true,
+        title : 'Form',
+        path  : '/form',
+        group : ['header', 'footer'],
     },
     {
-        title            : 'Privacy Policy',
-        path             : '/privacy',
-        headerNav        : false,
-        footerNav        : true,
+        title : 'Privacy Policy',
+        path  : '/privacy',
+        group : ['footer'],
     },
     {
-        title            : 'Admin',
-        path             : '/admin/index.html',
-        headerNav        : false,
-        footerNav        : true,
+        title : 'Admin',
+        path  : '/admin/index.html',
+        group : ['footer'],
     },
     {
-        title            : 'Call to Action',
-        path             : '/cta',
-        headerNav        : true,
-        footerNav        : true,
+        title : 'Call to Action',
+        path  : '/cta',
+        group : ['header', 'footer'],
     },
 ]
 

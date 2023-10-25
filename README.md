@@ -2,6 +2,10 @@
 
 By Josh Kaye
 
+## TODO
+- 404 page
+- services pages
+
 ## Working Demo
 [View the Demo](https://joshs-astro-starter.netlify.app/)
 
@@ -25,6 +29,7 @@ Things to remember for each project
 - Set up form submission on Netlify
 - If using Decap, install instructions: https://decapcms.org/docs/add-to-your-site/
 - If using multilanguage, prefix all links with /lang/
+- check Mozilla Observatory https://observatory.mozilla.org/
 
 ## How To's
 
@@ -37,12 +42,6 @@ Things to remember for each project
 #### Pages
 - Use the folder in /src/pages/[lang] to store all pages.
 - Use /src/pages/[lang]/samplePage.astro for basic page template
-- Every page needs to pass in a lang prop to <Layout>. Grab this from Astro.params. Example:
-```
-const { lang } = Astro.params
-<Layout lang={lang} ... >
-```
-- <Layout> lang prop defaults to 'en'
 
 #### Root Index
 - Use /src/pages/[lang]/rootIndex.astro for root index (src/pages/index.astro) This is a simple resolve lang/redirect page

@@ -23,13 +23,22 @@ const {...rest} = Astro.props
                 </TextFlow>
             </div>
 
-            <EvenColumns class="gap-y-12 gap-x-6 bg-primary-100 px-8 py-6">
+            <EvenColumns class="gap-y-12 gap-x-6 bg-primary-100 px-8 py-6 col-span-2">
 
                 <nav>
                     <h2>Links</h2>
                     <ul>
                         { PAGES.map( (page) => ( 
-                            page.footerNav && <li><a href={page.path}>{page.title}</a></li>
+                            page.group.includes('footer') && <li><a href={page.path}>{page.title}</a></li>
+                        ))}
+                    </ul>
+                </nav>
+
+                <nav>
+                    <h2>Services</h2>
+                    <ul>
+                        { PAGES.map( (page) => ( 
+                            page.group.includes('services') && <li><a href={page.path}>{page.title}</a></li>
                         ))}
                     </ul>
                 </nav>

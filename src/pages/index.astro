@@ -5,7 +5,6 @@ import EvenColumns from '../components/EvenColumns.astro';
 import Card from '../components/Card.astro';
 import Image from '../components/Image.astro';
 import FullScreenImageTextBoxOverlay from '../components/Sections/FullScreenImageTextBoxOverlay.astro';
-import MainContent from '../components/MainContent.astro';
 import HomeLayout from '../layouts/HomeLayout.astro';
 import Hero from '../components/Hero.astro';
 
@@ -205,20 +204,8 @@ import Hero from '../components/Hero.astro';
 		</Wrapper>
 	</section>
 
-	<section>
-		<Wrapper width="text" padding="both">
-			<Image props 
-				src="/img/hero.jpg"
-				alt="hero"
-				width={100}
-				height={100}
-				lazy
-			/>
-		</Wrapper>
-	</section>
-			
 
-</LandingPageLayout>
+</HomeLayout>
 
 <!-- 
 <script is:inline>
