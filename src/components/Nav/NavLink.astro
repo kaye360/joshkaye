@@ -47,10 +47,10 @@ const megaMenuPages = !dropdown ? null : PAGES.filter( page => page.group.includ
     >
 
         <slot />
-        { megaMenuPages && <Icon icon="expand_more" /> }
+        { megaMenuPages && <Icon icon="expand_more" class="hidden lg:inline-block" /> }
 
     </a>
-    
+
     { megaMenuPages && <MegaMenu pages={megaMenuPages} /> }
 </li>
 

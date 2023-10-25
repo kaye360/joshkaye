@@ -39,5 +39,23 @@ ul.nav-links {
 
 }
 
-
 </style>
+
+<script>
+
+window.addEventListener('click', (e: MouseEvent) => {
+
+    if( !(e.target instanceof HTMLElement) ) return
+
+    if(
+        document.body.classList.contains('mobile-menu-is-open') && // Mobile menu is open
+        !e.target.classList.contains('nav-links') &&               // Target is not nav-links
+        !e.target.classList.contains('nav-icon-open') &&           // Target is not nav menu icon (svg)
+        !e.target.classList.contains('mobile-btn-line')            // Target is not nav menu icon (line)
+    ) {
+        document.body.classList.remove('mobile-menu-is-open')
+    }
+
+})
+
+</script>
