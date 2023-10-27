@@ -1,0 +1,21 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'span' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'> {
+
+    Element? : 'span' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+
+    /**
+     * 
+     */
+    props? : true
+}
+
+const {
+    Element = 'span'
+} = Astro.props
+---
+
+<Element class="px-2 text-2xl font-semibold">
+    <slot />    
+</Element>

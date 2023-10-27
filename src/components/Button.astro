@@ -1,69 +1,106 @@
 ---
-import type { HTMLAttributes } from 'astro/types'
+import Icon from './Icon.astro';
 
-interface Base {
+interface Props {
+
+    variant : 'outline-primary' | 'outline-secondary' | 'outline-tertiary' | 'fill-primary' | 'fill-secondary' | 'fill-tertiary',
+
+    href? : string,
+
+    icon? : string,
+
+    class? : string,
+
     /**
-     * @extend <a | button>
-     * @prop type : 'link' | 'button'
+     * @prop variant : 'outline-primary' | 'outline-secondary' | 'outline-tertiary' | 'fill-primary' | 'fill-secondary' | 'fill-tertiary'
+     * @prop href? : string
+     * @prop icon? : string
+     * @prop class? : string
      * @prop slot
      */
     props? : true
 }
 
-interface Link extends HTMLAttributes<'a'>, Base {
-    type : 'link',
-    href : string
-}
-
-interface Button extends HTMLAttributes<'button'>, Base {
-    type? : 'button',
-    href? : never
-}
-
-type Props = Link | Button
-
 
 
 const {
-    type = 'button',
+    variant,
+    href = null,
+    icon,
+    class : className = 'hello',
     ...rest
 } = Astro.props
 
+const Element = href ? 'a' : 'button'
+
 ---
 
-{ type === 'button' && 
-    <button {...rest}>
-        <slot />
-    </button>
-}
+<Element 
+    class:list={`inline-flex items-center gap-2 px-6 py-2 font-semibold tracking-wide rounded-md border btn btn-${variant} ${className}`}
+    {href}
+    {...rest} 
+>
+    {icon && <Icon icon={icon} /> }
+    <slot />
+</Element>
 
-{type === 'link' &&
-    <a {...rest}>
-        <slot />
-    </a>
-}
+
 
 
 
 <style>
 
-a, button {
-    display : inline-flex !important;
-    align-items: center !important;
-    gap : 0.25rem !important;
-    padding : 0.75rem 1.25rem !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.05rem !important;
+.btn {
+    border-color : var(--border-color);
+    color : var(--text-color);
+    background-color: var(--background-color, #fff);
 }
 
-.btn-default {
-    background-color: var(--button-bg-color);
-    color : var(--button-text-color);
+.btn:hover, .btn:focus {
+    border-color : var(--border-hover-color);
+    background-color: var(--background-hover-color);
 }
 
-.btn-default:hover, .btn-default:focus {
-    background-color: var(--button-bg-color-hover);
-    color : var(--button-text-color-hover);
+.btn-outline-primary {
+    --border-color : hsl( var(--primary-color), 60% );
+    --border-hover-color : hsl( var(--primary-color), 20% );
+    --text-color : hsl( var(--primary-color), 30% );
+}
+
+.btn-outline-secondary {
+    --border-color : hsl( var(--secondary-color), 60% );
+    --border-hover-color : hsl( var(--secondary-color), 40% );
+    --text-color :  hsl( var(--secondary-color), 50% );
+}
+
+.btn-outline-tertiary {
+    --border-color : hsl( var(--tertiary-color), 60% );
+    --border-hover-color : hsl( var(--tertiary-color), 30% );
+    --text-color :  hsl( var(--tertiary-color), 40% );
+}
+
+.btn-fill-primary {
+    --border-color : hsl( var(--primary-color), 30% );
+    --border-hover-color : hsl( var(--primary-color), 50% );
+    --text-color : hsl( var(--primary-color), 95% );
+    --background-color : hsl( var(--primary-color), 30% );
+    --background-hover-color : hsl( var(--primary-color), 50% );
+}
+
+.btn-fill-secondary {
+    --border-color : hsl( var(--secondary-color), 50% );
+    --border-hover-color : hsl( var(--secondary-color), 60% );
+    --text-color : hsl( var(--secondary-color), 95% );
+    --background-color : hsl( var(--secondary-color), 50% );
+    --background-hover-color : hsl( var(--secondary-color), 60% );
+}
+
+.btn-fill-tertiary {
+    --border-color : hsl( var(--tertiary-color), 40% );
+    --border-hover-color : hsl( var(--tertiary-color), 60% );
+    --text-color : hsl( var(--tertiary-color), 95% );
+    --background-color : hsl( var(--tertiary-color), 40% );
+    --background-hover-color : hsl( var(--tertiary-color), 60% );
 }
 
 </style>

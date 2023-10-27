@@ -48,12 +48,6 @@
         --hero-CTA-bg-color-hover        : hsl( var(--primary-color) 50% );
         --hero-CTA-text-color-hover      : hsl( var(--primary-color) 5% );
 
-        --button-bg-color                : hsl( var(--primary-color) 20% );
-        --button-text-color              : hsl( var(--primary-color) 90% );
-
-        --button-bg-color-hover          : hsl( var(--secondary-color) 50% );
-        --button-text-color-hover        : hsl( var(--secondary-color) 90% );
-
         --form-field-bg-color            : hsl( var(--primary-color) 96% );
         --form-field-border-color        : hsl( var(--primary-color) 80% );
         --form-field-text-color          : hsl( var(--primary-color) 30% );

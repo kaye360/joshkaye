@@ -1,0 +1,77 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'div' | 'a'>  {
+
+    href? : string,
+
+    class? : string,
+
+    'hover-grow'? : boolean,
+
+    'rounded-sm'? : boolean,
+
+    'rounded-md'? : boolean,
+
+    'rounded-lg'? : boolean,
+
+    /**
+     * @prop clickable : boolean
+     */
+    props? : true
+}
+
+const {
+    href = null,
+    class : className = '',
+    'hover-grow' : hoverGrow = false,
+    'rounded-sm' : roundedSm = false,
+    'rounded-md' : roundedMd = false,
+    'rounded-lg' : roundedLg = false,
+    ...rest
+} = Astro.props
+
+const Element = href ? 'a' : Fragment
+
+---
+
+
+<Element {href}>
+    <div class={`
+        card flex flex-col gap-4 h-full overflow-hidden transition-all border
+        ${hoverGrow ? 'card-hover-grow' : ''} 
+        ${roundedSm ? 'card-rounded-sm' : ''}
+        ${roundedMd ? 'card-rounded-md' : ''}
+        ${roundedLg ? 'card-rounded-lg' : ''}
+        ${className}
+    `} {...rest}>
+        <slot />
+    </div>
+</Element>
+
+
+<style is:global>
+
+
+
+.card {
+    --border-sm : 0.5rem;
+    --border-md : 1.25rem;
+    --border-lg : 2rem;
+}
+
+/** These selectors are kept separate so that individual cards can overide default settings */
+
+/* Card Rounded */
+[data-card-rounded-sm] .card { border-radius: var(--border-sm); }
+[data-card-rounded-md] .card { border-radius: var(--border-md); }
+[data-card-rounded-lg] .card { border-radius: var(--border-lg); }
+
+.card.card-rounded-sm { border-radius: var(--border-sm); }
+.card.card-rounded-md { border-radius: var(--border-md); }
+.card.card-rounded-lg { border-radius: var(--border-lg); }
+
+/* Card Scale Up on hover */
+[data-card-hover-grow] .card:hover { transform: scale(1.05); }
+.card.card-hover-grow:hover { transform: scale(1.05); }
+</style>
