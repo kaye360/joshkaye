@@ -2,7 +2,15 @@
 import type { Image as ImageInterface } from '../Image.astro'
 import Image from '../Image.astro';
 
-interface Props extends ImageInterface { }
+interface Props extends ImageInterface { 
+
+    /**
+     * @extends <Image>
+     * @prop Required img props: src, width, height, alt
+     * @prop Lazy - boolean (default false)
+     */
+    props? : true
+}
 
 const { src, width, height, alt } = Astro.props
 

@@ -3,7 +3,7 @@ import Icon from './Icon.astro';
 
 interface Props {
 
-    variant : 'outline-primary' | 'outline-secondary' | 'outline-tertiary' | 'fill-primary' | 'fill-secondary' | 'fill-tertiary',
+    variant : 'outline-primary' | 'outline-secondary' | 'outline-tertiary' | 'fill-primary' | 'fill-secondary' | 'fill-tertiary' | 'plain-primary' | 'plain-secondary' | 'plain-tertiary',
 
     href? : string,
 
@@ -12,7 +12,7 @@ interface Props {
     class? : string,
 
     /**
-     * @prop variant : 'outline-primary' | 'outline-secondary' | 'outline-tertiary' | 'fill-primary' | 'fill-secondary' | 'fill-tertiary'
+     * @prop variant : 'outline-primary' | 'outline-secondary' | 'outline-tertiary' | 'fill-primary' | 'fill-secondary' | 'fill-tertiary' | 'plain-primary' | 'plain-secondary' | 'plain-tertiary',
      * @prop href? : string
      * @prop icon? : string
      * @prop class? : string
@@ -36,7 +36,7 @@ const Element = href ? 'a' : 'button'
 ---
 
 <Element 
-    class:list={`inline-flex items-center gap-2 px-6 py-2 font-semibold tracking-wide rounded-md border btn btn-${variant} ${className}`}
+    class:list={`inline-flex items-center justify-center gap-2 px-6 py-2 font-semibold tracking-wide rounded-md border btn btn-${variant} ${className}`}
     {href}
     {...rest} 
 >
@@ -102,5 +102,26 @@ const Element = href ? 'a' : 'button'
     --background-color : hsl( var(--tertiary-color), 40% );
     --background-hover-color : hsl( var(--tertiary-color), 60% );
 }
+
+.btn-plain-primary {
+    --border-color : transparent;
+    --border-hover-color : hsl( var(--primary-color), 50% ) ; 
+    --background-color : transparent;
+    --text-color : hsl( var(--primary-color), 50% );
+}   
+
+.btn-plain-secondary {
+    --border-color : transparent;
+    --border-hover-color : hsl( var(--secondary-color), 50% ) ; 
+    --background-color : transparent;
+    --text-color : hsl( var(--secondary-color), 50% );
+}   
+
+.btn-plain-tertiary {
+    --border-color : transparent;
+    --border-hover-color : hsl( var(--tertiary-color), 50% ) ; 
+    --background-color : transparent;
+    --text-color : hsl( var(--tertiary-color), 50% );
+}   
 
 </style>

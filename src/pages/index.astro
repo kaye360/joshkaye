@@ -29,9 +29,9 @@ import Button from '../components/Button.astro';
 
 			<h2 class="mb-[1em] border-b-2 border-sky-100 text-2xl">Card Example</h2>
 
-			<Cards padding-x-md rounded-lg hover-grow>
+			<Cards padding-x-sm padding-b-sm rounded-sm hover-grow>
 
-				<Card href='/products'>
+				<Card href='/products' class="shadow-lg">
 					<CardImage
 						src="/img/starter-img-1.webp"
 						width={300}
@@ -46,13 +46,16 @@ import Button from '../components/Button.astro';
 					<CardContent>
 						<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, fuga.</p>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, placeat.</p>
-						<Button variant="fill-secondary" icon='explore'>
+						<Button variant="fill-primary" icon='explore' class="w-full">
+							Learn More
+						</Button>
+						<Button variant="plain-secondary" icon='explore' class="w-full">
 							Learn More
 						</Button>
 					</CardContent>
 				</Card>
 
-				<Card>
+				<Card class="shadow-lg">
 					<CardImage
 						src="/img/starter-img-2.webp"
 						width={300}
@@ -67,13 +70,13 @@ import Button from '../components/Button.astro';
 					<CardContent>
 						<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, fuga.</p>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, placeat.</p>
-						<Button variant="fill-secondary" href="/products" icon='explore'>
+						<Button variant="fill-secondary" href="/products" icon='explore' class="w-full">
 							Learn More
 						</Button>
 					</CardContent>
 				</Card>
 
-				<Card>
+				<Card class="shadow-lg">
 					<CardImage
 						src="/img/starter-img-3.webp"
 						width={300}
@@ -88,14 +91,14 @@ import Button from '../components/Button.astro';
 					<CardContent>
 						<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, fuga.</p>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, placeat.</p>
-						<Button variant="fill-secondary" href="/products" icon='explore'>
+						<Button variant="fill-secondary" href="/products" icon='explore' class="w-full">
 							Learn More
 						</Button>
 					</CardContent>
 				</Card>
 
-				<Card>
-					<CardImage
+				<Card class="shadow-lg">
+					<CardImage props
 						src="/img/starter-img-4.webp"
 						width={300}
 						height={200}
@@ -109,7 +112,7 @@ import Button from '../components/Button.astro';
 					<CardContent>
 						<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, fuga.</p>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, placeat.</p>
-						<Button variant="fill-secondary" href="/products" icon='explore'>
+						<Button variant="fill-secondary" href="/products" icon='explore' class="w-full">
 							Learn More
 						</Button>
 					</CardContent>
@@ -125,9 +128,9 @@ import Button from '../components/Button.astro';
 
 			<h2 class="text-2xl font-bold mx-auto mb-12 w-fit border-b border-primary-200">Features</h2>
 
-			<Cards>
+			<Cards padding-x-lg padding-y-lg rounded-lg>
 
-				<Card rounded-md class='border border-primary-200 py-8'>
+				<Card>
 					<CardHeading>
 						Basic Plan
 					</CardHeading>
@@ -151,7 +154,7 @@ import Button from '../components/Button.astro';
 					</CardContent>
 				</Card>
 
-				<Card rounded-md class="bg-primary-100 py-8">
+				<Card class='bg-primary-100'>
 					<CardHeading>
 						Starter Plan
 					</CardHeading>
@@ -167,7 +170,7 @@ import Button from '../components/Button.astro';
 					</CardContent>
 				</Card>
 
-				<Card rounded-md class='border border-primary-200 py-8'>
+				<Card>
 					<CardHeading>
 						Pro Plan
 					</CardHeading>

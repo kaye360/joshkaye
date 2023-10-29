@@ -5,17 +5,21 @@ interface Props extends HTMLAttributes<'span' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 
     Element? : 'span' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
+    class? : string,
+
     /**
-     * 
+     * @prop Element? : 'span' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+     * @prop class? : string
      */
     props? : true
 }
 
 const {
-    Element = 'span'
+    Element = 'span',
+    class : className = ''
 } = Astro.props
 ---
 
-<Element class="px-2 text-2xl font-semibold">
+<Element class={`card-heading text-xl font-semibold ${className}`}`>
     <slot />    
 </Element>
