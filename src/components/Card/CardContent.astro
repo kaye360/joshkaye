@@ -11,11 +11,11 @@ interface Props {
     props? : true
 }
 
-const { class : className = '' } = Astro.props
+const { class : className } = Astro.props
 
 ---
 
-<div class={`card-content ${className}`} >
+<div class:list={['card-content', className]} >
 
     <TextFlow>
 

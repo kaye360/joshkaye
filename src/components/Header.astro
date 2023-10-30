@@ -29,7 +29,7 @@ interface Props extends HTMLAttributes<'header'> {
 const {
     variant = 'relative',
     toggleTransparencyOnScroll = false,
-    class: className = ''
+    class: className
 } = Astro.props
 
 ---
@@ -61,13 +61,13 @@ const {
 <header
     data-toggleTransparencyOnScroll={toggleTransparencyOnScroll ? 'true' : 'false'}
     data-element="header-main"
-    class={`
-        ${toggleTransparencyOnScroll ? 'hasTransparentBg' : 'hasColorBg'}
-        ${variant === 'relative' ? 'relative' : ''}
-        ${variant === 'sticky' ? 'sticky top-0 z-[999]' : ''}
-        ${variant === 'fixed' ? 'fixed top-0 left-0 right-0 z-[999]' : ''}
-        ${className}
-    `}
+    class:list={[
+        `${toggleTransparencyOnScroll ? 'hasTransparentBg' : 'hasColorBg'}`,
+        `${variant === 'relative' ? 'relative' : ''}`,
+        `${variant === 'sticky' ? 'sticky top-0 z-[999]' : ''}`,
+        `${variant === 'fixed' ? 'fixed top-0 left-0 right-0 z-[999]' : ''}`,
+        className
+    ]}
 >
 
 

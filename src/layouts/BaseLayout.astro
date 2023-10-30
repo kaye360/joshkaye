@@ -14,7 +14,7 @@ const {
     title,
     description,
 	lang,
-	class : className = ''
+	class : className
 } = Astro.props
 ---
 
@@ -22,7 +22,7 @@ const {
 
 	<Meta title={title} description={description} />
 
-	<body class={`bg-[var(--body-bg-color)] font-base text-[var(--body-text-color)] ${className}`}>
+	<body class:list={['bg-[var(--body-bg-color)] font-base text-[var(--body-text-color)]', className]}>
 
 		<SkipToContent />
 

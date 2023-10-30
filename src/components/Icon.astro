@@ -14,10 +14,10 @@ props? : true
 
 const { 
     icon,
-    class: className = '',
+    class: className,
 } = Astro.props
 ---
 
-<span class={`material-icons-outlined ${className}`}>
-{icon}
+<span class:list={['material-icons-outlined', className]}>
+    {icon}
 </span>

@@ -16,10 +16,10 @@ interface Props extends HTMLAttributes<'span' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 
 const {
     Element = 'span',
-    class : className = ''
+    class : className
 } = Astro.props
 ---
 
-<Element class={`card-heading text-xl font-semibold ${className}`}`>
+<Element class:list={['card-heading text-xl font-semibold', className]}>
     <slot />    
 </Element>

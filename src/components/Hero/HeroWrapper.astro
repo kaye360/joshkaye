@@ -25,11 +25,11 @@ const { variant, ...rest} = Astro.props
 <section 
     id="hero" 
     data-element="hero" 
-    class={`
-        relative bg-cover bg-blend-multiply bg-primary-800 font-theme
-        ${variant === 'fullscreen' ? 'min-h-screen grid items-center' : ''}
-        ${variant === 'fitcontent' ? '' : ''}
-    `}
+    class:list={[
+        'relative bg-cover bg-blend-multiply bg-primary-800 font-theme',
+        `${variant === 'fullscreen' ? 'min-h-screen grid items-center' : ''}`,
+        `${variant === 'fitcontent' ? '' : ''}`
+    ]}
     style={`
         ${variant === 'fullscreen' ? `background-image : url(${HERO_IMG_PATH})` : ''}
     `}
@@ -39,14 +39,12 @@ const { variant, ...rest} = Astro.props
     <Wrapper 
         width="max" 
         padding="inline"
-        class={`
-            bg-cover
-            ${variant === 'fullscreen' ? 'grid items-center mt-24' : ''}
-            ${variant === 'fitcontent' ? 'relative rounded-xl overflow-hidden py-12' : ''}
-        `}
-        style={`
-            ${variant === 'fitcontent' ? `background-image : url(${HERO_IMG_PATH})` : ''}
-        `}
+        class:list={[
+            'bg-cover',
+            `${variant === 'fullscreen' ? 'grid items-center mt-24' : ''}`,
+            `${variant === 'fitcontent' ? 'relative rounded-xl overflow-hidden py-12' : ''}`
+        ]}
+        style={`${variant === 'fitcontent' ? `background-image : url(${HERO_IMG_PATH})` : ''}`}
     >
 
         <slot />

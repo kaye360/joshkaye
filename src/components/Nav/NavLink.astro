@@ -28,8 +28,7 @@ const {
     href,
     icon,
     dropdown = null,
-    class : className = '',
-    ...rest
+    class : className,
 } = Astro.props
 
 const { pathname } = Astro.url
@@ -40,12 +39,13 @@ const megaMenuPages = !dropdown ? null : PAGES.filter( page => page.group.includ
 
 ---
 
-<li {...rest}>
+<li>
     <a
         href={href} 
-        class={`poopies
-        ${className}
-        ${isActive ? 'text-secondary-500' : ''}`} 
+        class:list={[
+            className,
+            `${isActive ? 'text-secondary-500' : ''}`
+        ]}
     >
 
         <slot />

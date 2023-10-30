@@ -6,11 +6,11 @@ interface Props extends HTMLAttributes<'div'> {
 }
 
 const {
-    class : className = ''
+    class : className
 } = Astro.props
 ---
 
-<div class={`text-flow ${className} `}>
+<div class:list={['text-flow', className]}>
     <slot />
 </div>
 

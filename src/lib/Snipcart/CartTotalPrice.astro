@@ -14,11 +14,11 @@ interface Props extends HTMLAttributes<'span'> {
 
 const { 
     animate = true,
-    class: className = '', 
+    class: className, 
     ...rest 
 } = Astro.props
 ---
 
-<span class={`snipcart-total-price inline-block ${className}`} {...rest}>
+<span class:list={['snipcart-total-price inline-block', className]} {...rest}>
     { animate && <IconLoader16Px /> }
 </span>
