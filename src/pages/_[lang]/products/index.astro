@@ -4,10 +4,10 @@ import Card from "../../../components/OldCard.astro";
 import Heading from "../../../components/Heading.astro";
 import TextFlow from "../../../components/TextFlow.astro";
 import Wrapper from "../../../components/Wrapper.astro";
-import { LANGUAGES } from "../../../config";
-import Layout from "../../../layouts/Layout.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
 
 
+const LANGUAGES: any[] = []
 
 const allProducts = await getCollection('products')
 
@@ -20,9 +20,8 @@ export async function getStaticPaths() {
 const { lang } = Astro.params
 ---
 
-<Layout
+<BaseLayout
     lang={lang as string}
-    type="base"
     title="Products"
     description="Tenetur culpa ab ipsam tempora est debitis? Totam quis saepe nostrum ducimus ipsa id vitae sit."
 >

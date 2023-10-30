@@ -1,44 +1,93 @@
 ---
 import Icon from './Icon.astro';
 
-interface Props {
 
-    variant : 'outline-primary' | 'outline-secondary' | 'outline-tertiary' | 'fill-primary' | 'fill-secondary' | 'fill-tertiary' | 'plain-primary' | 'plain-secondary' | 'plain-tertiary',
+interface Base  { 
 
-    href? : string,
+    variant : 'outline-primary' | 'outline-secondary' | 'outline-tertiary' | 
+            'fill-primary' | 'fill-secondary' | 'fill-tertiary' | 
+            'plain-primary' | 'plain-secondary' | 'plain-tertiary',
 
     icon? : string,
 
     class? : string,
 
+    id? : string,
+
     /**
+     * 
+     * @description This component can render as either a button or an anchor tag.
+     * 
      * @prop variant : 'outline-primary' | 'outline-secondary' | 'outline-tertiary' | 'fill-primary' | 'fill-secondary' | 'fill-tertiary' | 'plain-primary' | 'plain-secondary' | 'plain-tertiary',
-     * @prop href? : string
      * @prop icon? : string
      * @prop class? : string
+     * @prop id? : string
+     * 
+     * @prop href? : string
+     * @prop target? : '_blank'
+     * @prop download? : boolean
+     * 
+     * @prop type? : 'submit' | 'reset' | 'button'
+     * @prop disabled? : boolean
+     * @prop name? : string
+     * @prop value? : string
+     * 
      * @prop slot
      */
-    props? : true
+    props? : true,
+}
+
+interface HtmlATag extends Base {
+    href : string,
+    target? : '_blank',
+    download? : boolean,
+
+    type? : never,
+    disabled?  : never,
+    name? : never,
+    value? : never
+}
+
+interface HtmlButtonTag extends Base { 
+    href? : never,
+    target? : never,
+    download? : never
+
+    type? : 'submit' | 'reset' | 'button',
+    disabled?  : boolean,
+    name? : string,
+    value? : string
 }
 
 
+type Props = HtmlATag | HtmlButtonTag
 
-const {
+// Props that aren't attributes
+const { 
     variant,
-    href = null,
     icon,
-    class : className = 'hello',
-    ...rest
+    class: className,
 } = Astro.props
 
-const Element = href ? 'a' : 'button'
+
+// Attribute props
+const attrs: {[key : string] : any} = {...Astro.props}
+
+delete attrs.class
+delete attrs.icon
+delete attrs.variant
+
+const Element = attrs.href ? 'a' : 'button'
 
 ---
 
 <Element 
-    class:list={`inline-flex items-center justify-center gap-2 px-6 py-2 font-semibold tracking-wide rounded-md w-full border btn btn-${variant} ${className}`}
-    {href}
-    {...rest} 
+    class:list={[
+        'inline-flex items-center justify-center gap-2 px-6 py-2 font-semibold tracking-wide rounded-md w-full border btn', 
+        `btn-${variant}`, 
+        className
+    ]}
+    {...attrs}
 >
     {icon && <Icon icon={icon} /> }
     <slot />

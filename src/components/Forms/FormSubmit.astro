@@ -1,5 +1,6 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
+import Button from '../Button.astro';
 
 interface Props extends HTMLAttributes<'div'> {
 
@@ -14,13 +15,13 @@ interface Props extends HTMLAttributes<'div'> {
 
 <div>
 
-    <button type="submit">
-        <slot>Submit</slot>
-    </button>
-
-    <button type="reset">
+    <Button variant='outline-primary' type="submit">
         Reset
-    </button>
+    </Button> 
+
+    <Button variant='fill-primary' type="submit">
+        Submit
+    </Button> 
 
 </div>
 
@@ -31,44 +32,15 @@ interface Props extends HTMLAttributes<'div'> {
 
 div {
     display : grid;
-    grid-template-columns: 2fr 1fr;
     gap : 1rem;
     width : 100%;
     max-width: 600px;
 }
 
-button[type=submit], button[type=reset] {
-    cursor : pointer;
-    font-size : 1.1rem;
-    font-weight: 600;
-    padding-block: 0.75rem !important;
-    border : 1px solid var(--form-field-border-color);
-    border-radius: 0.25rem;
-}
-
-button[type=submit] {
-    background-color : var(--button-bg-color);
-    color : var(--button-text-color) !important;
-}
-
-button[type=submit]:hover,
-button[type=submit]:focus-visible {
-    background-color: var(--button-bg-color-hover);
-    color : var(--button-text-color-hover);
-    outline : none;
-}
-
-button[type=reset] {
-    border-color : var(--button-bg-color);
-    color : var(--button-button-color) !important;
-    font-size : 1.25rem;
-}
-
-button[type=reset]:hover,
-button[type=reset]:focus-visible {
-    border-color : var(--button-bg-color-hover);
-    color : var(--button-bg-color-hover) !important;
-    outline : none;
+@media screen and (min-width : 768px) {
+    div {
+        grid-template-columns: 1fr 2fr;
+    }
 }
 
 </style>
