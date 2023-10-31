@@ -1,6 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
-import Wrapper from "./Wrapper.astro";
+import Wrapper from "../Wrapper.astro";
 
 interface Props extends HTMLAttributes<'h1'> {}
 
@@ -12,7 +12,7 @@ const {
 
 ---
 
-<h1 class:list={[`text-3xl font-theme`, className]} {...rest}>
+<h1 class:list={[`text-3xl font-semibold tracking-wide font-theme`, className]} {...rest}>
     <Wrapper width="max" padding="inline">
         <slot />
     </Wrapper>

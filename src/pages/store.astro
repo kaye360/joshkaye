@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Card from "../components/OldCard.astro";
-import Heading from "../components/Heading.astro";
+import H1 from "../components/Heading/H1.astro";
 import Wrapper from "../components/Wrapper.astro";
 import Snipcart from "../lib/Snipcart/Snipcart.astro";
 import CartTotalPrice from "../lib/Snipcart/CartTotalPrice.astro";
@@ -18,9 +18,9 @@ const allProducts = await getCollection('products')
     description="Tenetur culpa ab ipsam tempora est debitis? Totam quis saepe nostrum ducimus ipsa id vitae sit."
 >
 
-    <Heading>
+    <H1>
         Store
-    </Heading>
+    </H1>
 
     <section>
         <Wrapper width="max" padding="both">

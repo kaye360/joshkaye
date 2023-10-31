@@ -162,16 +162,11 @@ export const PAGES : Page[] = [
             path  : '/about1',
             group : ['about']
         },
-    {
-        title : 'Store',
-        path  : '/store',
-        group : ['header', 'footer'],
-    },
-    {
-        title : 'Form',
-        path  : '/form',
-        group : ['header', 'footer'],
-    },
+    // {
+    //     title : 'Store',
+    //     path  : '/store',
+    //     group : ['header', 'footer'],
+    // },
     {
         title : 'Privacy Policy',
         path  : '/privacy',
@@ -185,6 +180,11 @@ export const PAGES : Page[] = [
     {
         title : 'Call to Action',
         path  : '/cta',
+        group : ['header', 'footer'],
+    },
+    {
+        title : 'Examples',
+        path  : '/examples',
         group : ['header', 'footer'],
     },
 ]
