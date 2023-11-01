@@ -139,7 +139,8 @@ header.hasColorBg {
 <style is:global>
     
 /* This is for when mobile menu is open when user is over hero section. */
-.mobile-menu-is-open header {
+.mobile-menu-is-open header,
+header:has( nav a:focus ) {
     background-color: var(--nav-bar-bg-color) !important;
     color : var(--nav-bar-text-color) !important;
 }

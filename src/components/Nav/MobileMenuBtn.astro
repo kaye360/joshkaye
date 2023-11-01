@@ -85,9 +85,15 @@ button {
 <script>
 
 const btn = document.querySelector('[data-element="mobile-menu-btn"]') as HTMLButtonElement
-const body = document.body as HTMLBodyElement
 
-btn.addEventListener('click', () => body.classList.toggle('mobile-menu-is-open') )
+function toggleMobileMenu(): void { 
+    const body = document.body as HTMLBodyElement
+    body.classList.toggle('mobile-menu-is-open')
+}
+
+btn.addEventListener('click', () => { toggleMobileMenu(); btn.blur() })
+btn.addEventListener('focus', toggleMobileMenu )
+btn.addEventListener('blur', toggleMobileMenu )
   
 </script>
   

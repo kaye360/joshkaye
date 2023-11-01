@@ -27,12 +27,13 @@ ul.nav-links {
 @media screen and (max-width: 1023px) {
         
     ul.nav-links {
-        flex-direction: column;
+        flex-direction: column;         
         overflow: hidden;
         max-height: 0px;
     }
     
-    .mobile-menu-is-open ul.nav-links {
+    .mobile-menu-is-open ul.nav-links,
+    ul.nav-links:has( a:focus ) {
         padding-block : 2rem;
         max-height: 1000px;
     }

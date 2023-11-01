@@ -2,7 +2,7 @@
 import type { Page } from "../../config";
 import type { HTMLAttributes } from 'astro/types';
 
-interface Props extends HTMLAttributes<'div'> {
+interface Props extends HTMLAttributes<'ul'> {
     pages : Page[]
 }
 
@@ -10,9 +10,9 @@ const { pages } = Astro.props
 ---
 
 
-<div class="mega-menu drop-shadow-xl">
-    {pages.map(page => <a href={page.path} class="hover:underline">{page.title}</a>)}
-</div>
+<ul class="mega-menu drop-shadow-xl">
+    {pages.map(page => <li><a href={page.path} class="hover:underline">{page.title}</a></li>)}
+</ul>
 
 
 <style is:global>
@@ -43,7 +43,8 @@ const { pages } = Astro.props
 
     a:hover + .mega-menu,
     a:focus-visible + .mega-menu,
-    .mega-menu:hover {
+    .mega-menu:hover,
+    .mega-menu:has(a:focus)  {
         max-height: 400px;
         padding-block: 2rem;
     }
