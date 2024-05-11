@@ -1,46 +1,24 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
-import Button from '../Button.astro';
+import Button from '../Button/Button.astro';
 
 interface Props extends HTMLAttributes<'div'> {
-
     /**
-     * @extends <form>
-     * @prop slot (Default ; 'Submit')
+     * @prop slot
      */
     props? : true
 }
 
 ---
 
-<div>
+<div class="grid gap-4 w-full max-w-[600px] md:grid-cols-[1fr_2fr]">
 
-    <Button variant='outline-primary' type="submit">
+    <Button variant='outline' type="reset">
         Reset
     </Button> 
 
-    <Button variant='fill-primary' type="submit">
+    <Button type="submit">
         Submit
     </Button> 
 
 </div>
-
-
-
-
-<style>
-
-div {
-    display : grid;
-    gap : 1rem;
-    width : 100%;
-    max-width: 600px;
-}
-
-@media screen and (min-width : 768px) {
-    div {
-        grid-template-columns: 1fr 2fr;
-    }
-}
-
-</style>

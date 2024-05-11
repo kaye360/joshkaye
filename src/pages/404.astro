@@ -1,10 +1,9 @@
 ---
-import Wrapper from "../components/Wrapper.astro";
-import Image from "../components/Image.astro";
+import EvenColumns from "../components/Base/EvenColumns.astro";
+import Wrapper from "../components/Base/Wrapper.astro";
 import { PAGES } from "../config";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import EvenColumns from "../components/EvenColumns.astro";
-
+import Image from "../components/Base/Image.astro";
 
 ---
 
@@ -14,7 +13,7 @@ import EvenColumns from "../components/EvenColumns.astro";
     description="This page cannot be found"
 >
 
-    <Wrapper width="max" padding="both" class="">
+    <Wrapper>
 
         <EvenColumns class="mb-12 gap-12">
             <div class="self-center">

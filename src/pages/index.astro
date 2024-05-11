@@ -1,142 +1,148 @@
 ---
-import Wrapper from '../components/Wrapper.astro';
-import TextFlow from '../components/TextFlow.astro';
-import EvenColumns from '../components/EvenColumns.astro';
-import FullScreenImageTextBoxOverlay from '../components/Sections/FullScreenImageTextBoxOverlay.astro';
 import HomeLayout from '../layouts/HomeLayout.astro';
-import Hero from '../components/Hero.astro';
+import Hero from '../components/Base/Hero.astro';
 import Card from '../components/Card/Card.astro';
 import CardImage from '../components/Card/CardImage.astro';
 import CardHeading from '../components/Card/CardHeading.astro';
 import CardContent from '../components/Card/CardContent.astro';
-import Cards from '../components/Card/Cards.astro';
-import Button from '../components/Button.astro';
-
+import Button from '../components/Button/Button.astro';
+import EvenColumns from '../components/Base/EvenColumns.astro';
+import Wrapper from '../components/Base/Wrapper.astro';
+import TextFlow from '../components/Base/TextFlow.astro';
+import CardList from '../components/Card/CardList.astro';
+import ReviewList from '../components/Base/ReviewList.astro';
+import H2 from '../components/Heading/H2.astro';
 ---
 
 <HomeLayout props
 	title="Home"
 	description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro in expedita beatae perferendis quod qui perspiciatis numquam."
-	lang="en"
 >
 
 	<Hero />
 
 
 	<section>
-		<Wrapper width="max" padding='both'>
+		<Wrapper width='slim'>
+			<TextFlow>
+				<H2>Introduce Yourself Here</H2>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis incidunt voluptatibus omnis ex. Nihil laboriosam facere distinctio ea neque aperiam consequatur optio soluta a temporibus, possimus voluptates earum quaerat! Illum enim odit harum nulla! Tempore repudiandae suscipit quaerat nostrum consequatur itaque ipsa, debitis inventore consectetur a placeat, explicabo praesentium impedit?</p>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis incidunt voluptatibus omnis ex. Nihil laboriosam facere distinctio ea neque aperiam consequatur optio soluta a temporibus, possimus voluptates earum quaerat! Illum enim odit harum nulla! Tempore repudiandae suscipit quaerat nostrum consequatur itaque ipsa, debitis inventore consectetur a placeat, explicabo praesentium impedit?</p>
+			</TextFlow>
+		</Wrapper>
+	</section>
 
-			<h2 class="mb-[1em] border-b-2 border-sky-100 text-2xl">Card Example</h2>
 
-			<Cards padding-x-sm padding-b-sm rounded-sm hover-grow>
+	<section>
+		<Wrapper>
 
-				<Card href='/products' class="shadow-lg">
+			<H2 class="mb-[1em] border-b-2 border-sky-100 text-2xl">Card Example</H2>
+
+			<CardList>
+
+				<Card href='/products'>
 					<CardImage
-						src="/img/starter-img-1.webp"
+						src="/img/temp.jpg"
 						width={300}
 						height={200}
 						alt="Galaxy in Space"
 					/>
 
-					<CardHeading Element='h2'>
+					<CardHeading>
 						Galaxy in Space
 					</CardHeading>
 
 					<CardContent>
 						<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, fuga.</p>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, placeat.</p>
-						<Button variant="fill-primary" icon='explore'>
-							Learn More
-						</Button>
-						<Button variant="plain-primary" icon='explore'>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, placeat.</p>
+					</CardContent>
+					<CardContent class='mt-auto'>
+						<Button  variant="outline" class='w-full'>
 							Learn More
 						</Button>
 					</CardContent>
 				</Card>
 
-				<Card class="shadow-lg">
+				<Card>
 					<CardImage
-						src="/img/starter-img-2.webp"
+						src="/img/temp.jpg"
 						width={300}
 						height={200}
 						alt="Galaxy in Space"
 					/>
 
-					<CardHeading Element='h2'>
+					<CardHeading>
 						City Skyline
 					</CardHeading>
 
 					<CardContent>
 						<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, fuga.</p>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, placeat.</p>
-						<Button variant="fill-secondary" href="/products" icon='explore'>
-							Learn More
-						</Button>
-						<Button variant="plain-secondary" href="/products" icon='explore'>
+					</CardContent>
+					<CardContent class='mt-auto'>
+						<Button  variant="outline" class='w-full'>
 							Learn More
 						</Button>
 					</CardContent>
 				</Card>
 
-				<Card class="shadow-lg">
+				<Card>
 					<CardImage
-						src="/img/starter-img-3.webp"
+						src="/img/temp.jpg"
 						width={300}
 						height={200}
 						alt="Galaxy in Space"
 					/>
 
-					<CardHeading Element='h2'>
+					<CardHeading>
 						Clouds in the sky
 					</CardHeading>
 
 					<CardContent>
-						<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, fuga.</p>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, placeat.</p>
-						<Button variant="fill-tertiary" href="/products" icon='explore'>
-							Learn More
-						</Button>
-						<Button variant="plain-tertiary" href="/products" icon='explore'>
+					</CardContent>
+					<CardContent class='mt-auto'>
+						<Button  variant="outline" class='w-full'>
 							Learn More
 						</Button>
 					</CardContent>
 				</Card>
 
-				<Card class="shadow-lg">
+				<Card>
 					<CardImage props
-						src="/img/starter-img-4.webp"
+						src="/img/temp.jpg"
 						width={300}
 						height={200}
 						alt="Galaxy in Space"
 					/>
 
-					<CardHeading Element='h2'>
+					<CardHeading>
 						Desert Sand
 					</CardHeading>
 
 					<CardContent>
 						<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, fuga.</p>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, placeat.</p>
-						<Button variant="fill-primary" href="/products" icon='explore'>
-							Learn More
-						</Button>
-						<Button variant="plain-primary" href="/products" icon='explore'>
+					</CardContent>
+					<CardContent class='mt-auto'>
+						<Button  variant="outline" class='w-full'>
 							Learn More
 						</Button>
 					</CardContent>
 				</Card>
 
-			</Cards>
+			</CardList>
 		</Wrapper>
 	</section>
 
 	<section>
 
-		<Wrapper width='max' padding='both'>
+		<Wrapper>
 
-			<h2 class="text-2xl font-bold mx-auto mb-12 w-fit border-b border-primary-200">Features</h2>
+			<H2 class="text-2xl font-bold mx-auto mb-12 w-fit border-b border-primary-200">Features</H2>
 
-			<Cards padding-x-lg padding-y-lg rounded-lg>
+			<CardList>
 
 				<Card>
 					<CardHeading>
@@ -156,10 +162,10 @@ import Button from '../components/Button.astro';
 							<li>ducimus quis earum officiis</li>
 						</ul>
 
-						<Button variant="fill-primary" href="/products">
+						<Button href="/products">
 							View Plan
 						</Button>
-						<Button variant="plain-primary" href="/products">
+						<Button href="/products">
 							View All Plans
 						</Button>
 					</CardContent>
@@ -180,10 +186,10 @@ import Button from '../components/Button.astro';
 						</p>
 
 
-						<Button variant="fill-primary" href="/products" id="foo">
+						<Button href="/products" id="foo">
 							View Plan
 						</Button>
-						<Button variant="plain-primary" id="ba">
+						<Button id="ba">
 							View All Plans
 						</Button>
 					</CardContent>
@@ -203,121 +209,28 @@ import Button from '../components/Button.astro';
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nemo distinctio deleniti minus autem eveniet cumque necessitatibus doloremque eos deserunt maiores corporis, excepturi nesciunt velit ea sint saepe. Nisi excepturi sequi reprehenderit? Incidunt, est similique.
 						</p>
 						
-						<Button variant="fill-primary" href="/products">
+						<Button href="/products">
 							View Plan
 						</Button>
-						<Button variant="plain-primary" href="/products">
+						<Button href="/products">
 							View All Plans
 						</Button>
 					</CardContent>
 				</Card>
 
-			</Cards>
+			</CardList>
 
 		</Wrapper>
 
-	</section>
-
-	
-	<FullScreenImageTextBoxOverlay props bgImage='/img/hero.webp'>
-		This is some text
-	</FullScreenImageTextBoxOverlay>
-
-	<section>
-		<Wrapper props width="max" padding="both">
-
-			<h2 class="py-6">
-				Aliquam Incidunt, alias facere?
-			</h2>
-
-			<EvenColumns class="gap-6">
-
-				<TextFlow>
-					<h3>Lorem ipsum dolor</h3>
-
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, velit? Eaque magni doloribus eligendi, 
-						
-					<p>Q modi commodi, vero non assumenda accusantium explicabo quos tenetur voluptas molestias culpa repellendus hic iusto beatae reprehenderit? Voluptatum eligendi eos praesentium odio animi numquam vitae maiores unde aliquid.</p>
-				</TextFlow>
-
-				<TextFlow>
-					<h3>Consectetur adipisicing elit</h3>
-
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, velit? Eaque magni doloribus eligendi, quas ipsam maxiuam sint, modi commodi.
-						
-					<p>Vero non assumenda accusantium explicabo quos tenetur voluptas molestias culpa repellendus hic iusto beatae repreheum odio animi numquam vitae maiores unde aliquid.</p>
-				</TextFlow>
-
-				<TextFlow>
-					<h3>Accusantium, cumque!</h3>
-
-					<p>Maxime esse repudiandae eos aliquam sint, modi commodi, vero non assumenda accusantium explicabo quos tenetur voluptas molestias culpa repellendus hic iusto beatae reprehenderit? Voluptatum eligendi eos praesentium odio animi numquam vitae maiores unde aliquid.</p>
-					
-					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, asperiores.</p>
-				</TextFlow>
-
-			</EvenColumns>
-		</Wrapper>
-	</section>
-	
-
-	<section class="bg-primary-800 text-primary-100">
-		<Wrapper width="text" padding="both">
-			<TextFlow>
-				<h2>Heading and Paragraph Exammples</h2>
-		
-				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur neque iure unde nisi repudiandae pariatur consectetur ipsa quia quaerat laborum rem impedit optio illo, hic, aliquid repellendus cupiditate, ratione quasi?</p>
-		
-				<h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, cumque!</h2>
-		
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, velit? Eaque magni doloribus eligendi, quas ipsam maxime esse repudiandae eos aliquam sint, modi commodi, vero non assumenda accusantium explicabo quos tenetur voluptas molestias culpa repellendus hic iusto beatae reprehenderit? Voluptatum eligendi eos praesentium odio animi numquam vitae maiores unde aliquid.</p>
-
-				<h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, consequatur.</h3>
-
-				<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis corporis non cupiditate quae necessitatibus! Qui sapiente quae libero incidunt laudantium.</p>
-
-				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur neque iure unde nisi repudiandae pariatur consectetur ipsa quia quaerat laborum rem impedit optio illo, hic, aliquid repellendus cupiditate, ratione quasi?</p>
-
-				<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, magnam.</h4>
-
-				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur neque iure unde nisi repudiandae pariatur consectetur ipsa quia quaerat laborum rem impedit optio illo, hic, aliquid repellendus cupiditate, ratione quasi?</p>
-
-				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur neque iure unde nisi repudiandae pariatur consectetur ipsa quia quaerat laborum rem impedit optio illo, hic, aliquid repellendus cupiditate, ratione quasi?</p>
-
-				<h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, magnam.</h5>
-
-				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur neque iure unde nisi repudiandae pariatur consectetur ipsa quia quaerat laborum rem impedit optio illo, hic, aliquid repellendus cupiditate, ratione quasi?</p>
-				
-				<h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, magnam.</h6>
-
-				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur neque iure unde nisi repudiandae pariatur consectetur ipsa quia quaerat laborum rem impedit optio illo, hic, aliquid repellendus cupiditate, ratione quasi?</p>
-			</TextFlow>
-		</Wrapper>
 	</section>
 
 	<section>
-		<Wrapper width="text" padding='both'>
+		<Wrapper width='slim'>
 			<TextFlow>
-				<h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis incidunt voluptatibus omnis ex. Nihil laboriosam facere distinctio ea neque aperiam consequatur optio soluta a temporibus, possimus voluptates earum quaerat! Illum enim odit harum nulla! Tempore repudiandae suscipit quaerat nostrum consequatur itaque ipsa, debitis inventore consectetur a placeat, explicabo praesentium impedit?</p>
-				<h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis incidunt voluptatibus omnis ex. Nihil laboriosam facere distinctio ea neque aperiam consequatur optio soluta a temporibus, possimus voluptates earum quaerat! Illum enim odit harum nulla! Tempore repudiandae suscipit quaerat nostrum consequatur itaque ipsa, debitis inventore consectetur a placeat, explicabo praesentium impedit?</p>
+				<H2>What our customers are saying</H2>
+				<ReviewList />
 			</TextFlow>
 		</Wrapper>
 	</section>
-
 
 </HomeLayout>
-
-<!-- 
-<script is:inline>
-	// if (window.netlifyIdentity) {
-	//   window.netlifyIdentity.on("init", user => {
-	// 	if (!user) {
-	// 	  window.netlifyIdentity.on("login", () => {
-	// 		document.location.href = "/admin/";
-	// 	  });
-	// 	}
-	//   });
-	// }
-</script> -->

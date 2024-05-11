@@ -1,19 +1,16 @@
 ---
-import type { Image as ImageInterface } from '../Image.astro'
-import Image from '../Image.astro';
+import type { Image as ImageInterface } from '../Base/Image.astro'
+import Image from '../Base/Image.astro';
 
 interface Props extends ImageInterface { 
-
     /**
-     * @extends <Image>
+     * @extends Image
      * @prop Required img props: src, width, height, alt
-     * @prop Lazy - boolean (default false)
      */
     props? : true
 }
 
 const { src, width, height, alt } = Astro.props
-
 ---
 
 <Image
@@ -22,4 +19,5 @@ const { src, width, height, alt } = Astro.props
     height={height}
     alt={alt}
     class="w-full aspect-video object-cover"
+    lazy
 />

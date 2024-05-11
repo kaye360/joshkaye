@@ -1,26 +1,19 @@
 ---
-import TextFlow from '../TextFlow.astro';
+import TextFlow from '../Base/TextFlow.astro';
 
 interface Props {
-
-    class? : string,
-
     /**
      * @prop class? : string,
      */
     props? : true
+    class? : string,
 }
 
 const { class : className } = Astro.props
-
 ---
 
-<div class:list={['card-content', className]} >
-
+<div class:list={['p-2', className]} >
     <TextFlow>
-
         <slot />
-
     </TextFlow>
-
 </div>

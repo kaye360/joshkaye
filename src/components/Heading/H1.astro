@@ -1,6 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
-import Wrapper from "../Wrapper.astro";
+import Wrapper from "../Base/Wrapper.astro";
 
 interface Props extends HTMLAttributes<'h1'> {}
 
@@ -13,20 +13,5 @@ const {
 ---
 
 <h1 class:list={[`text-3xl font-semibold tracking-wide font-theme`, className]} {...rest}>
-    <Wrapper width="max" padding="inline">
         <slot />
-    </Wrapper>
 </h1>
-
-
-<style>
-
-h1 {
-    padding-block : 2rem;
-    background-image : url('/img/hero.webp');
-    background-size : cover;
-    background-color : hsl( var(--primary-color ) 20% );
-    color : hsl( var(--primary-color ) 90% );
-}
-
-</style>

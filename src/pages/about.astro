@@ -1,14 +1,11 @@
 ---
-import Button from "../components/Button.astro";
-import EvenColumns from "../components/EvenColumns.astro";
-import Heading from "../components/Heading/H1.astro";
-import FullScreenImageTextBoxOverlay from "../components/Sections/FullScreenImageTextBoxOverlay.astro";
-import ThreeColumnLineContentLine from "../components/Sections/ThreeColumnLineContentLine.astro";
-import TextFlow from "../components/TextFlow.astro";
-import Wrapper from "../components/Wrapper.astro";
-import { HERO_IMG_PATH } from "../config";
+import EvenColumns from "../components/Base/EvenColumns.astro";
+import TextFlow from "../components/Base/TextFlow.astro";
+import Wrapper from "../components/Base/Wrapper.astro";
+import BioList from "../components/Bio/BioList.astro";
+import H2 from "../components/Heading/H2.astro";
+import PageHeading from "../components/Heading/PageHeading.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-
 ---
 
 <BaseLayout props
@@ -17,21 +14,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     description="Tenetur culpa ab ipsam tempora est debitis? Totam quis saepe nostrum ducimus ipsa id vitae sit."
 >
 
-    <Heading id="hi">
+    <PageHeading>
         About
-    </Heading>
-
-    <ThreeColumnLineContentLine id="hello" props>
-        <h2>Hello</h2>
-
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit molestias commodi corporis odit sunt perspiciatis natus rem consequatur veniam. Soluta repellat vitae facere qui excepturi! Tempore, quisquam corrupti. Expedita, eum?</p>
-    </ThreeColumnLineContentLine>
+    </PageHeading>
 
     <section>
-        <Wrapper width="max" padding="both">
+        <Wrapper>
             <TextFlow>
 
-                <h2>About Us</h2>
+                <H2>About Us</H2>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ea laborum aliquid ducimus odio! Distinctio excepturi a amet fugit, illo id architecto quo quasi enim adipisci delectus quod quam dolorem, earum dolor voluptatibus similique! Tenetur culpa ab ipsam tempora est debitis? Totam quis saepe nostrum ducimus ipsa id vitae sit.
                 </p>
@@ -43,21 +34,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </Wrapper>
     </section>
 
-    <section class="relative grid grid-cols-2 items-start w-2/3 mx-auto p-4 pt-32 scroll">
 
-        <h2 class="text-3xl sticky top-[125px] ">
-            Adipisicing elit. Hic, fugiat?
-        </h2>
-
-        <div class="">
-
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius nobis dolorem, fugit vel praesentium commodi possimus dicta? Reiciendis perferendis ab placeat nobis animi cupiditate delectus quo voluptates natus ut, sint numquam ullam autem, est, ipsum facere consequuntur accusamus! Consequatur alias, optio magni laborum natus commodi iste veritatis excepturi sint eaque dolorem obcaecati molestias maiores, repudiandae in, officiis quisquam totam molestiae perferendis aperiam assumenda soluta quia quidem? Voluptate, quidem soluta asperiores inventore rem sunt magnam nemo iste repellendus saepe minima! Voluptas ipsam quam necessitatibus error beatae dolores quasi amet consectetur officiis ipsum voluptatibus dolorem dolore adipisci delectus doloremque, perferendis repudiandae corporis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, commodi. Eveniet sunt suscipit officia. Eum velit cum sequi ea, est pariatur sit nesciunt animi non itaque consequuntur placeat in corrupti exercitationem temporibus modi vel, iure id quis nulla unde labore eius. Fugit, placeat! Repellendus aperiam suscipit in a velit ut officiis, dolore explicabo, obcaecati ullam delectus! Autem asperiores repellat quos voluptas esse fuga quas, iure minus necessitatibus atque in quae hic voluptatibus ratione nisi praesentium voluptate blanditiis nihil incidunt perspiciatis, sint harum possimus porro! Incidunt suscipit optio ea reiciendis veniam fuga neque ipsum excepturi tenetur? Deserunt, excepturi est et harum minus aliquam, consectetur provident ipsum dolorum soluta quisquam! Dolor blanditiis doloremque rem numquam! Corrupti, cupiditate in exercitationem nisi sed aliquam! Ducimus vitae error at nemo eligendi! 
-            </p>
-
-        </div>
-
-    </section>
 
     <section class="relative grid grid-cols-2 items-start w-2/3 mx-auto p-4">
 
@@ -68,23 +45,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </p>
 
         </div>
-
         
-        <h2 class="text-3xl sticky top-[125px] pt-32">
+        <H2 class="sticky top-[125px] pt-32">
             Adipisicing elit. Hic, fugiat?
-        </h2>
-
-
+        </H2>
 
     </section>
 
-    <FullScreenImageTextBoxOverlay bgImage={HERO_IMG_PATH} props>
-
-        <h2>Hello</h2>
-    
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit molestias commodi corporis odit sunt perspiciatis natus rem consequatur veniam. Soluta repellat vitae facere qui excepturi! Tempore, quisquam corrupti. Expedita, eum?</p>
-
-    </FullScreenImageTextBoxOverlay>
+    <section>
+        <Wrapper width="slim">
+            <H2>Our Team</H2>
+            <BioList />
+        </Wrapper>
+    </section>
 
     <section>
         <EvenColumns props breakpoints={1}>
@@ -92,7 +65,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <div class="grid items-center px-4 bg-primary-100 aspect-square">
                 <TextFlow>
 
-                    <h2>About Us</h2>
+                    <H2>About Us</H2>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ea laborum aliquid ducimus odio! Distinctio excepturi a amet fugit, illo id architecto quo quasi enim adipisci delectus quod quam dolorem, earum dolor voluptatibus similique! Tenetur culpa ab ipsam tempora est debitis? Totam quis saepe nostrum ducimus ipsa id vitae sit.
                     </p>
@@ -102,7 +75,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <div class="grid items-center px-4 bg-primary-200 aspect-square">
                 <TextFlow>
 
-                    <h2>About Us</h2>
+                    <H2>About Us</H2>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ea laborum aliquid ducimus odio! Distinctio excepturi a amet fugit, illo id architecto quo quasi enim adipisci delectus quod quam dolorem, earum dolor voluptatibus similique! Tenetur culpa ab ipsam tempora est debitis? Totam quis saepe nostrum ducimus ipsa id vitae sit.
                     </p>
@@ -113,7 +86,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <div class="grid items-center px-4 bg-primary-300 aspect-square">
                 <TextFlow>
 
-                    <h2>About Us</h2>
+                    <H2>About Us</H2>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ea laborum aliquid ducimus odio! Distinctio excepturi a amet fugit, illo id architecto quo quasi enim adipisci delectus quod quam dolorem, earum dolor voluptatibus similique! Tenetur culpa ab ipsam tempora est debitis? Totam quis saepe nostrum ducimus ipsa id vitae sit.
                     </p>
@@ -125,14 +98,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </section>
 
     <section class="bg-primary-700 text-primary-100">
-        <Wrapper width="max" padding="both">
+        <Wrapper>
             <TextFlow>
 
-                <h2>About Us</h2>
+                <H2>About Us</H2>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ea laborum aliquid ducimus odio! Distinctio excepturi a amet fugit, illo id architecto quo quasi enim adipisci delectus quod quam dolorem, earum dolor voluptatibus similique! Tenetur culpa ab ipsam tempora est debitis? Totam quis saepe nostrum ducimus ipsa id vitae sit.
                 </p>
-                <h2>About Us</h2>
+                <H2>About Us</H2>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ea laborum aliquid ducimus odio! Distinctio excepturi a amet fugit, illo id architecto quo quasi enim adipisci delectus quod quam dolorem, earum dolor voluptatibus similique! Tenetur culpa ab ipsam tempora est debitis? Totam quis saepe nostrum ducimus ipsa id vitae sit.
                 </p>
@@ -142,9 +115,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </section>
 
     <section>
-        <Wrapper width="text" padding="both">
+        <Wrapper width="slim" >
             <TextFlow>
-                <h2>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto nemo reprehenderit omnis.</h2>
+                <H2>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto nemo reprehenderit omnis.</H2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, modi dolores! Fugiat, quibusdam illum beatae numquam incidunt laboriosam unde nemo.</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum at eius repudiandae nobis magnam porro, totam ratione fugit reprehenderit? Ratione, consequatur commodi dolores minima expedita quisquam perferendis vero excepturi sunt.</p>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque asperiores quasi inventore mollitia distinctio incidunt enim esse voluptatem, necessitatibus porro voluptatibus vitae laudantium, blanditiis aspernatur a facere error dolorum officiis, ea sit? Eveniet esse deleniti, sit, animi nisi veniam dolorum aspernatur neque laboriosam debitis enim.</p>

@@ -1,20 +1,21 @@
 ---
-import SkipToContent from '../components/SkipToContent.astro';
-import '../css/config.css'
-import Footer from '../components/Footer.astro';
-import MainContent from '../components/MainContent.astro';
-import Meta from '../components/Meta.astro';
+import '../css/main.css'
+import Footer from '../components/Base/Footer.astro';
+import Meta from '../components/Base/Meta.astro';
 import type { Layout } from './types';
-import Header from '../components/Header.astro';
+import Header from '../components/Base/Header.astro';
+import MainContent from '../components/Base/MainContent.astro';
+import SkipToContent from '../components/Base/SkipToContent.astro';
+import BackToTop from '../components/Base/BackToTop.astro';
 
 
 interface Props extends Layout { }
 
 const {
-    title,
-    description,
-	lang,
-	class : className
+    title = '',
+    description = '',
+	lang = 'en',
+	class : className = ''
 } = Astro.props
 ---
 
@@ -22,11 +23,11 @@ const {
 
 	<Meta title={title} description={description} />
 
-	<body class:list={['bg-[var(--body-bg-color)] font-base text-[var(--body-text-color)]', className]}>
+	<body class:list={['bg-primary-50 font-base text-primary-900 pt-32', className]}>
 
 		<SkipToContent />
 
-		<Header variant='sticky' props />
+		<Header variant='fixed' props />
 		
         <MainContent>
 
@@ -35,6 +36,8 @@ const {
         </MainContent>
 
         <Footer />
+
+		<BackToTop />
 
 		<slot name="pageEnd" />
 		

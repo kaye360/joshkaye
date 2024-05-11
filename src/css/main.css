@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+
+
+        /* ------------------------ Colors ------------------------ */
+                
+        /* Color Picker is just for use in IDE */
+        --color-picker : hsl(204, 36%, 36%);
+        --color-picker : hsl(340, 93%, 62%);
+        --color-picker : hsl(286, 39%, 44%);
+
+        /* 
+            Base Site Colors (HSL) 
+            Note: only provide H and S values. L values are not needed
+        */
+        --primary-color   : 204deg 36%;
+        --secondary-color : 340deg 90%;
+        --tertiary-color  : 286deg 40%;
+
+
+        /* ------------------------ Spacing ------------------------ */
+
+        --spacing-inline-default : 2vw;
+        --spacing-block-default : 2rem;
+        
+        @media screen and (min-width : 768px) {
+            --spacing-inline-default : 2vw;
+            --spacing-block-default : 2.5rem;
+        }
+
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        text-wrap : balance;
+    }
+
+
+    p {
+        line-height: 1.6rem;
+    }
+
+    .text-flow ul {
+        list-style: disc;
+        margin-left: 2rem;
+    }
+
+}
+
+
+@layer components {
+
+}
+
+@layer utilities {
+
+    .px-default {
+        padding-inline : var(--spacing-inline-default);
+    }
+    
+    .py-default {
+        padding-block : var(--spacing-block-default);
+    }
+    
+    .mx-default {
+        margin-inline : var(--spacing-inline-default);
+    }
+    
+    .my-default {
+        margin-block : var(--spacing-block-default);
+    }
+}

@@ -1,0 +1,41 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+export interface Image extends HTMLAttributes<'img'> {
+    /**
+     * @extends img
+     * @prop Required img props: src, width, height, alt
+     * @prop Lazy - boolean (default false)
+     */
+    props? : true,
+    src    : string,
+    width  : number,
+    height : number,
+    alt    : string,
+    class? : string,
+    lazy?  : boolean,
+}
+
+interface Props extends Image { }
+
+const {
+    src,
+    width,
+    height,
+    alt,
+    lazy = false,
+    class : className,
+    ...rest
+} = Astro.props
+---
+
+<img 
+    src={src} 
+    width={width} 
+    height={height} 
+    alt={alt} 
+    class={className} 
+    loading={ lazy ? 'lazy' : 'eager'}
+    {...rest}
+/>
+

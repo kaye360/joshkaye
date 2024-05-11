@@ -1,11 +1,12 @@
 ---
-import SkipToContent from '../components/SkipToContent.astro';
-import '../css/config.css'
-import Footer from '../components/Footer.astro';
-import MainContent from '../components/MainContent.astro';
-import Meta from '../components/Meta.astro';
+import '../css/main.css'
 import type { Layout } from './types';
-import Header from '../components/Header.astro';
+import MainContent from '../components/Base/MainContent.astro';
+import Footer from '../components/Base/Footer.astro';
+import Meta from '../components/Base/Meta.astro';
+import Header from '../components/Base/Header.astro';
+import SkipToContent from '../components/Base/SkipToContent.astro';
+import BackToTop from '../components/Base/BackToTop.astro';
 
 
 interface Props extends Layout { }
@@ -13,7 +14,7 @@ interface Props extends Layout { }
 const {
     title,
     description,
-	lang,
+	lang = 'en',
 	class : className
 } = Astro.props
 ---
@@ -22,11 +23,11 @@ const {
 
 	<Meta title={title} description={description} />
 
-	<body class:list={['bg-[var(--body-bg-color)] text-[var(--body-text-color)] font-base', className]}>
+	<body class:list={['bg-primary-50 font-base text-primary-900', className]}>
 
 		<SkipToContent />
 
-		<Header variant='fixed' toggleTransparencyOnScroll={true} props />
+		<Header variant='fixed' transparentToSolid props />
 		
         <MainContent>
 
@@ -36,6 +37,7 @@ const {
 
         <Footer />
 
+		<BackToTop />
 		<slot name="pageEnd" />
 		
 	</body>

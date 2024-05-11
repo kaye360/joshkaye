@@ -2,16 +2,16 @@
 import type { HTMLAttributes } from 'astro/types';
 
 interface Props extends HTMLAttributes<'h2'> { 
-    class? : string,
     /**
      * @prop class? : string
      */
     props? : true
+    class? : string,
 }
 
 const { class: className, ...rest } = Astro.props
 ---
 
-<h2 class:list={['text-3xl font-bold', className]} {...rest}>
+<h2 class:list={['text-3xl font-bold mb-9', className]} {...rest}>
     <slot />
 </h2>

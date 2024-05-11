@@ -1,0 +1,55 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+interface Props extends HTMLAttributes<'li'> {
+
+    /** Link href of Contact link */
+    href? : string,
+
+    class? : string,
+
+    /**
+     * @extends <li>
+     * @prop href string
+     * @prop icon string
+     * @prop slot
+     */
+    props? : true,
+}
+
+const {
+    href,
+} = Astro.props
+---
+
+{ href ? (
+
+    <li>
+        <a href={href} class={`flex items-center gap-2 text-base text-primary-100 hover:underline`}>
+            <slot />
+        </a>
+    </li>
+
+) : (
+
+    <li class={`flex items-center gap-2 text-base text-primary-100 `}>
+        <slot />
+    </li>
+
+)}
+
+
+
+<style>
+
+
+
+@media screen and (max-width: 639px) {
+    li:nth-child(n + 3) {
+        display: none;
+    }
+    li:nth-child(-n + 2) {
+        display : block;
+    }
+}
+</style>
