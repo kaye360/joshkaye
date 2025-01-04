@@ -2,42 +2,31 @@
 import type { HTMLAttributes } from 'astro/types';
 
 
-interface Props extends HTMLAttributes<'div'> {
+// interface Props {
 
-    /** 
-     * How many breakpoints in the grid. Default 1
-     * If 0, Columns will not collapse
-     * If 1, Columns will collapse to 1 on medium screens
-     * If 2, Columms will collapse to 2 on medium and 1 on small screens
-     * 
-     */
-    breakpoints? : number,
-
-    /**
-     * @prop breakpoints number
-     * @prop slot
-     */
-    props? : true
-}
+//     /**
+//      * @prop slot
+//      */
+//     props? : true
+// }
 
 
 
-const {
-    breakpoints = 1,
-    class : classList = '',
-    ...rest
-} = Astro.props
+// const {
+//     children,
+// } = Astro.props
 
+// console.log(Astro.self.)
 
-const breakpointsClass = 
-    breakpoints === 0 ? 'even-columns-0' : 
-    breakpoints === 1 ? 'even-columns-1 lg:grid-cols-2' :
-    breakpoints === 2 ? 'even-columns-2 lg:grid-cols-2' : ''
+const breakpointsClass = ''
+    // breakpoints === 0 ? 'even-columns-0' : 
+    // breakpoints === 1 ? 'even-columns-1 lg:grid-cols-2' :
+    // breakpoints === 2 ? 'even-columns-2 lg:grid-cols-2' : ''
 ---
 
 
 
-<div class={`even-columns items-stretch ${breakpointsClass} ${classList}`}  {...rest} >
+<div class={`even-columns items-stretch ${breakpointsClass}`} >
     <slot />
 </div>
 

@@ -1,26 +1,24 @@
 ---
-import HomeLayout from '../layouts/HomeLayout.astro';
-import Hero from '../components/Base/Hero.astro';
+import Layout from '../layouts/Layout.astro'
 import Card from '../components/Card/Card.astro';
 import CardImage from '../components/Card/CardImage.astro';
 import CardHeading from '../components/Card/CardHeading.astro';
 import CardContent from '../components/Card/CardContent.astro';
-import Button from '../components/Button/Button.astro';
-import EvenColumns from '../components/Base/EvenColumns.astro';
-import Wrapper from '../components/Base/Wrapper.astro';
+import Button from '../components/Base/Button.astro';
 import TextFlow from '../components/Base/TextFlow.astro';
-import CardList from '../components/Card/CardList.astro';
 import ReviewList from '../components/Base/ReviewList.astro';
 import H2 from '../components/Heading/H2.astro';
+import Hero from '../components/Layout/Hero.astro';
+import Wrapper from '../components/Layout/Wrapper.astro';
+import Columns from '../components/Base/Columns.astro';
 ---
 
-<HomeLayout props
+<Layout props
 	title="Home"
 	description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro in expedita beatae perferendis quod qui perspiciatis numquam."
 >
 
 	<Hero />
-
 
 	<section>
 		<Wrapper width='slim'>
@@ -38,7 +36,7 @@ import H2 from '../components/Heading/H2.astro';
 
 			<H2 class="mb-[1em] border-b-2 border-sky-100 text-2xl">Card Example</H2>
 
-			<CardList>
+			<Columns props cols={3} class="gap-4 px-4">
 
 				<Card href='/products'>
 					<CardImage
@@ -132,7 +130,7 @@ import H2 from '../components/Heading/H2.astro';
 					</CardContent>
 				</Card>
 
-			</CardList>
+			</Columns>
 		</Wrapper>
 	</section>
 
@@ -142,7 +140,7 @@ import H2 from '../components/Heading/H2.astro';
 
 			<H2 class="text-2xl font-bold mx-auto mb-12 w-fit border-b border-primary-200">Features</H2>
 
-			<CardList>
+			<Columns class='gap-6'>
 
 				<Card>
 					<CardHeading>
@@ -218,7 +216,7 @@ import H2 from '../components/Heading/H2.astro';
 					</CardContent>
 				</Card>
 
-			</CardList>
+			</Columns>
 
 		</Wrapper>
 
@@ -233,4 +231,4 @@ import H2 from '../components/Heading/H2.astro';
 		</Wrapper>
 	</section>
 
-</HomeLayout>
+</Layout>

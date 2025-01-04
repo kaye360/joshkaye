@@ -1,0 +1,41 @@
+---
+interface Props {
+    variant? : 'fill' | 'outline' | 'ghost',
+    href? : string,
+    class? : string,
+    [key:string] : any,
+}
+
+const { 
+    variant = 'fill',
+    href = null,
+    class: className,
+    ...props
+} = Astro.props
+
+const ButtonElement = href ? 'a' : 'button'
+---
+
+<ButtonElement 
+    class:list={[
+        'flex items-center justify-center gap-2 px-4 py-2 font-bold rounded-md border transition-all active:scale-95', 
+
+        variant === 'fill' && 
+            'border-primary-500 hover:border-secondary-500 bg-primary-500 hover:bg-secondary-500 text-white ',
+
+        variant === 'outline' && 
+            'border-primary-800',
+
+        variant === 'fill' || variant === 'outline' && 
+            'hover:bg-primary-900 hover:text-primary-100 active:bg-secondary-500',
+
+        variant === 'ghost' && 
+            'border-transparent hover:underline hover:border-primary-500 active:bg-secondary-500',
+
+        className
+    ]}
+    { ...props }
+    { ...( href && { href } ) }
+>
+    <slot />
+</ButtonElement>

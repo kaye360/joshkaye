@@ -16,6 +16,10 @@ export default defineConfig({
     inlineStylesheets : 'never'
   },
 
+  server : {
+    host : true,
+  },
+
   devToolbar : {
     enabled : false
   }

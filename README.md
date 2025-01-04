@@ -2,7 +2,14 @@
 
 By Josh Kaye
 
-## TODO
-- EvenColumns refactor css
-- Footer convert to tailwind
-- Image add role prop
+## Project Setup Checklist
+- Check for astro updates @ https://astro.build
+- Change site url in astro.config.mjs
+- Get Favicon and manifest @ https://favicon.io/favicon-generator/
+- Lighthouse testing
+- Accessibilty testing @ https://www.accessibilitychecker.org/
+- OG images
+
+
+## Todos
+- Fix mobile nav bug that pushes content down. position sticky

@@ -1,0 +1,129 @@
+---
+import MobileMenuBtn from '../Nav/MobileMenuBtn.astro';
+import { getPages } from "../../utils/getPages";
+import NavLink from '../Nav/NavLink.astro';
+import { PHONE_NUMBER, EMAIL_ADDRESS, LOCATION } from '../../config/site';
+import ContactLink from '../Nav/ContactLink.astro';
+import Logo from '../Base/Logo.astro';
+import Section from './Section.astro';
+import Button from '../Base/Button.astro';
+import Icon from '../Base/Icon.astro';
+import { Phone, Mail, MapPin, NotepadText } from 'lucide'
+
+const headerPages = getPages().byGroup('header').all()
+const cta = getPages().byGroup('cta').single()
+/**
+ * NavBar ordering
+ * 
+ * Mobile
+ * 1. Logo
+ * 2. CTA
+ * 3. MobileMenuBtn
+ * 4. <nav />
+ * 
+ * Desktop
+ * 1. Logo
+ * 2. <nav />
+ * 3. CTA
+ * 
+ */
+---
+
+<header
+    data-element="header"
+    class="sticky top-0 left-0 right-0 z-[999] bg-primary-25"
+>
+
+    <Section py-none class='py-2 bg-primary-900'>
+        <ul class="flex flex-wrap items-center justify-end gap-x-6 gap-y-2">
+
+            <ContactLink href={PHONE_NUMBER}>
+                <Icon icon={Phone} />
+                {PHONE_NUMBER}
+            </ContactLink>
+
+            <ContactLink href={EMAIL_ADDRESS}>
+                <Icon icon={Mail} />
+                {EMAIL_ADDRESS}
+            </ContactLink>
+            
+            <ContactLink href={LOCATION}>
+                <Icon icon={MapPin} />
+                {LOCATION}
+            </ContactLink>
+        </ul>
+    </Section>
+
+    <Section py-none>
+
+        <div class="relative flex items-center gap-4 flex-wrap text-primary-700 py-2">
+
+            <div class="order-1 mr-auto">
+                <Logo />
+            </div>
+
+            <!-- Call To Action -->
+            <div class="order-2  lg:order-3">
+                <Button href={cta.path}>
+                    <Icon icon={NotepadText} />
+                    {cta.title}
+                </Button>
+            </div>
+            
+            <div class="order-3 lg:hidden flex items-center">
+                <MobileMenuBtn />
+            </div>
+            
+            <nav 
+                class:list={[
+                    "order-4 lg:order-2 overflow-clip", 
+                    "absolute lg:relative top-0 left-0 right-0",
+                    "w-full lg:w-auto max-h-[0px] lg:max-h-none", 
+                    "bg-primary-50/90 backdrop-blur-sm lg:bg-primary-25",
+                    "transition-all ease-[cubic-bezier(0.34,1.56,0.64,1)] duration-500"
+                ]}
+            >
+                <ul 
+                    class:list={[
+                        "flex items-center justify-center gap-6 w-full", 
+                        "flex-col lg:flex-row py-8 lg:py-0"
+                    ]}
+                >
+                    { headerPages.map( (page) => ( 
+                        <NavLink href={page.path}>{page.title}</NavLink>
+                    ))}
+                </ul>
+            </nav>
+
+        </div>
+
+    </Section>
+
+</header>
+
+<style is:global>
+@media screen and (max-width: 1024px) {
+    body[data-mobile-menu="open"] nav,
+    nav:has( a:focus ) {
+        padding-block : 2rem;
+        max-height: 1000px;
+    }
+}
+</style>
+    
+<script>
+import { isClicked } from "../../utils/isClicked"
+    
+/**
+ * If the user clicked outside of the menu, close the mobile menu
+ */
+window.addEventListener('click', (e: MouseEvent) => {
+
+    const header = document.querySelector('header') as HTMLElement
+
+    if( !isClicked({e, el: header}) ) {
+        document.body.dataset.mobileMenu = 'closed'
+    }
+})
+    
+</script>

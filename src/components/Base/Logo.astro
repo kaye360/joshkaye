@@ -1,5 +1,6 @@
 ---
-import { LOGO_NAME } from '../../config';
+import { SITE_SHORT_NAME } from '../../config/site'
+
 
 interface Props {
     /**
@@ -9,7 +10,7 @@ interface Props {
 }
 ---
 
-<a href="/" class="inline-flex items-center gap-2 text-lg font-bold tracking-widest font-theme">
+<a href="/" class="flex items-center gap-2 text-lg font-bold font-theme">
 
     <svg 
         width="28" 
@@ -35,6 +36,6 @@ interface Props {
         />
     </svg>
 
-    {LOGO_NAME}
+    {SITE_SHORT_NAME}
 
 </a>    

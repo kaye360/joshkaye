@@ -1,0 +1,73 @@
+---
+export interface Props {
+    /**
+     * Number of child columns
+     */
+    cols? : number,
+
+    /**
+     * Collapse down to 1 column with no intermediate breakpoints on smaller screens
+     */
+    collapse? : 'none' | 'break' | 'collapse',
+
+    /**
+     * Class names
+     */
+    class? : string,
+
+    /**
+     * @prop cols : number, required
+     * @prop collapse : 'none' | 'break' | 'collapse' - Default 'break'
+     * @prop class : string
+     */
+    props? :true,
+
+}
+
+
+const {
+    cols,
+    collapse = 'break',
+    class: className = true,
+} = Astro.props
+
+const breakOrCollapse = collapse === 'break' || collapse === 'collapse'
+const autoCols = !cols || ![1,2,3,4,6].includes(cols)
+
+---
+
+<div
+    class:list={[
+        'grid',
+        className,
+
+        autoCols && [
+            { 'grid-flow-col auto-cols-fr'                   : collapse === 'none' },
+            { 'grid-cols-1 md:grid-flow-col md:auto-cols-fr' : breakOrCollapse },
+        ],
+
+        cols === 2 && [
+            { 'grid-cols-2'                : collapse === 'none' },
+            { 'grid-cols-1 sm:grid-cols-2' : breakOrCollapse },
+        ],
+
+        cols === 3 && [
+            { 'grid-cols-3'                : collapse === 'none' },
+            { 'grid-cols-1 md:grid-cols-3' : breakOrCollapse },
+        ],
+
+        cols === 4 && [
+            { 'grid-cols-4'                               : collapse === 'none' },
+            { 'grid-cols-1 lg:grid-cols-4'                : collapse === 'collapse' },
+            { 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4' : collapse === 'break' },
+        ],
+
+        cols === 6 && [
+            { 'grid-cols-6'                                              : collapse === 'none' },
+            { 'grid-cols-1 lg:grid-cols-6'                               : collapse === 'collapse' },
+            { 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6' : collapse === 'break' },
+        ]
+    ]}
+>
+    <slot />
+</div>

@@ -1,13 +1,13 @@
 ---
 import EvenColumns from "../components/Base/EvenColumns.astro";
-import Wrapper from "../components/Base/Wrapper.astro";
-import { PAGES } from "../config";
-import BaseLayout from "../layouts/BaseLayout.astro";
+import Wrapper from "../components/Layout/Wrapper.astro";
+import { PAGES } from "../config/pages";
+import Layout from "../layouts/Layout.astro";
 import Image from "../components/Base/Image.astro";
 
 ---
 
-<BaseLayout props
+<Layout props
     lang="en"
     title="Page Not Found"
     description="This page cannot be found"
@@ -43,7 +43,7 @@ import Image from "../components/Base/Image.astro";
 
     </Wrapper>
 
-</BaseLayout>
+</Layout>
 
 <style>
 

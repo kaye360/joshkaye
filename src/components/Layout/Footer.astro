@@ -1,0 +1,80 @@
+---
+import { PHONE_NUMBER, EMAIL_ADDRESS, LOCATION, SITE_FULL_NAME, PUBLISH_DATE } from "../../config/site";
+import Logo from "../Base/Logo.astro";
+import TextFlow from "../Base/TextFlow.astro";
+import Columns from "../Base/Columns.astro";
+import Section from "./Section.astro";
+import { getPages } from "../../utils/getPages";
+import Icon from "../Base/Icon.astro";
+import { Phone, Mail, MapPin, NotepadText, Pin } from 'lucide'
+
+const pages = getPages().byGroup('footer').all()
+---
+
+<footer>
+    <Section>
+        <Columns props cols={2} class="gap-6">
+
+            <div>
+                <Logo />
+
+                <TextFlow class="mt-4">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, libero. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore tenetur aperiam culpa sequi vel non necessitatibus sed amet officiis optio.</p>
+                </TextFlow>
+            </div>
+
+            <Columns cols={2} px-none py-none class="gap-y-12 gap-x-6 bg-primary-100 px-8 py-6">
+
+                <nav>
+                    <h2 class="text-xl font-semibold mb-3">
+                        Links
+                    </h2>
+                    <ul class="grid gap-2">
+                        { pages.map( (page) => ( 
+                            <li>
+                                <a 
+                                    href={page.path}
+                                    class="hover:underline"
+                                >
+                                    {page.title}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
+                
+                <nav>
+                    <h2 class="text-xl font-semibold mb-3">Contact Us</h2>
+                    <ul class="grid gap-2">
+                        <li>
+                            <a href={PHONE_NUMBER} class="flex items-center gap-2">
+                                <Icon icon={Phone} class="w-6 h-6" />
+                                {PHONE_NUMBER}
+                            </a>
+                        </li>
+            
+                        <li>
+                            <a href={EMAIL_ADDRESS} class="flex items-center gap-2">
+                               <Icon icon={Mail} class="w-6 h-6" />
+                                {EMAIL_ADDRESS}
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href={LOCATION} class="flex items-center gap-2">
+                               <Icon icon={Pin} class="w-6 h-6" />
+                                {LOCATION}
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </Columns>
+
+        </Columns>
+
+        <div class="text-center pt-16">
+            &copy; <span id="footer-date">{PUBLISH_DATE}</span> {SITE_FULL_NAME}
+        </div>
+    </Section>
+</footer>

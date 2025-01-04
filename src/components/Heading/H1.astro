@@ -1,17 +1,8 @@
 ---
-import type { HTMLAttributes } from "astro/types";
-import Wrapper from "../Base/Wrapper.astro";
-
-interface Props extends HTMLAttributes<'h1'> {}
-
-
-const {
-    class : className,
-    ...rest
-} = Astro.props
-
+import Section from "../Layout/Section.astro";
 ---
-
-<h1 class:list={[`text-3xl font-semibold tracking-wide font-theme`, className]} {...rest}>
+<Section class="bg-primary-100">
+    <h1 class="text-3xl font-semibold tracking-wide font-theme">
         <slot />
-</h1>
+    </h1>
+</Section>

@@ -1,38 +1,40 @@
 ---
 import EvenColumns from "../components/Base/EvenColumns.astro";
 import TextFlow from "../components/Base/TextFlow.astro";
-import Wrapper from "../components/Base/Wrapper.astro";
 import BioList from "../components/Bio/BioList.astro";
+import H1 from "../components/Heading/H1.astro";
 import H2 from "../components/Heading/H2.astro";
-import PageHeading from "../components/Heading/PageHeading.astro";
-import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/Layout/Section.astro";
+import Wrapper from "../components/Layout/Wrapper.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<BaseLayout props
+<Layout props
     lang="en"
     title="About Us"
     description="Tenetur culpa ab ipsam tempora est debitis? Totam quis saepe nostrum ducimus ipsa id vitae sit."
 >
 
-    <PageHeading>
+    
+    <H1>
         About
-    </PageHeading>
+    </H1>
 
-    <section>
-        <Wrapper>
-            <TextFlow>
+    <Section >
+        <TextFlow>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam laboriosam officia quas nam architecto necessitatibus omnis, maiores repudiandae magni est!
+            </p>
+            <H2>Hello</H2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ea laborum aliquid ducimus odio! Distinctio excepturi a amet fugit, illo id architecto quo quasi enim adipisci delectus quod quam dolorem, earum dolor voluptatibus similique! Tenetur culpa ab ipsam tempora est debitis? Totam quis saepe nostrum ducimus ipsa id vitae sit.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ea laborum aliquid ducimus odio! Distinctio excepturi a amet fugit, illo id architecto quo quasi enim adipisci delectus quod quam dolorem, earum dolor voluptatibus similique! Tenetur culpa ab ipsam tempora est debitis? Totam quis saepe nostrum ducimus ipsa id vitae sit.
+            </p>
 
-                <H2>About Us</H2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ea laborum aliquid ducimus odio! Distinctio excepturi a amet fugit, illo id architecto quo quasi enim adipisci delectus quod quam dolorem, earum dolor voluptatibus similique! Tenetur culpa ab ipsam tempora est debitis? Totam quis saepe nostrum ducimus ipsa id vitae sit.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ea laborum aliquid ducimus odio! Distinctio excepturi a amet fugit, illo id architecto quo quasi enim adipisci delectus quod quam dolorem, earum dolor voluptatibus similique! Tenetur culpa ab ipsam tempora est debitis? Totam quis saepe nostrum ducimus ipsa id vitae sit.
-                </p>
-
-            </TextFlow>
-        </Wrapper>
-    </section>
+        </TextFlow>
+    </Section>
 
 
 
@@ -125,4 +127,4 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </Wrapper>
     </section>
 
-</BaseLayout>
+</Layout>
