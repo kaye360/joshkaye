@@ -1,12 +1,12 @@
 ---
 import EvenColumns from "../components/Base/EvenColumns.astro";
 import TextFlow from "../components/Base/TextFlow.astro";
-import Wrapper from "../components/Base/Wrapper.astro";
 import FormField from "../components/Forms/FormField.astro";
 import FormSubmit from "../components/Forms/FormSubmit.astro";
 import NetlifyForm from "../components/Forms/NetlifyForm.astro";
-import PageHeading from "../components/Heading/PageHeading.astro";
-import { ADDRESS, EMAIL_ADDRESS, PHONE_NUMBER } from "../config";
+import H1 from "../components/Heading/H1.astro";
+import Wrapper from "../components/Layout/Wrapper.astro";
+import { ADDRESS, EMAIL_ADDRESS, PHONE_NUMBER } from "../config/site";
 import Layout from "../layouts/Layout.astro";
 
 ---
@@ -17,9 +17,9 @@ import Layout from "../layouts/Layout.astro";
     description="Tenetur culpa ab ipsam tempora est debitis? Totam quis saepe nostrum ducimus ipsa id vitae sit."
 >
 
-    <PageHeading>
+    <H1>
         Contact Us
-    </PageHeading>
+    </H1>
 
     <section>
         <Wrapper>
