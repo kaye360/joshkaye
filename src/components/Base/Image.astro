@@ -18,15 +18,7 @@ export interface Image extends HTMLAttributes<'img'> {
 
 interface Props extends Image { }
 
-const {
-    src,
-    width,
-    height,
-    alt,
-    lazy = false,
-    class : className,
-    ...rest
-} = Astro.props
+const { src, width, height, alt, lazy = false, class : className, ...rest } = Astro.props
 ---
 
 <img 

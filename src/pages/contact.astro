@@ -1,6 +1,6 @@
 ---
-import EvenColumns from "../components/Base/EvenColumns.astro";
-import TextFlow from "../components/Base/TextFlow.astro";
+import Columns from "../components/Base/Columns.astro";
+import TextBlock from "../components/Base/TextBlock.astro";
 import FormField from "../components/Forms/FormField.astro";
 import FormSubmit from "../components/Forms/FormSubmit.astro";
 import NetlifyForm from "../components/Forms/NetlifyForm.astro";
@@ -23,7 +23,7 @@ import Layout from "../layouts/Layout.astro";
 
     <section>
         <Wrapper>
-            <EvenColumns class="gap-8">
+            <Columns cols={2}  class="gap-8">
 
                 <NetlifyForm name="Astro Starter Contact Form">
                     
@@ -49,7 +49,7 @@ import Layout from "../layouts/Layout.astro";
                 </NetlifyForm>
 
                 <div class="bg-gradient-to-t from-primary-200 to-primary-50 p-6 rounded-3xl">
-                    <TextFlow>
+                    <TextBlock>
 
                         <h2>
                             We would love to hear from you!
@@ -82,11 +82,11 @@ import Layout from "../layouts/Layout.astro";
 
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel impedit nim iste laborum quia deleniti fuga doloremque adipisci cum quisquam.</p>
 
-                    </TextFlow>
+                    </TextBlock>
 
                 </div>
 
-            </EvenColumns>
+            </Columns>
         </Wrapper>
     </section>
 

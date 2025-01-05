@@ -1,0 +1,12 @@
+---
+import { getPages } from "../../utils/getPages";
+import Button from "./Button.astro";
+import Icon from "./Icon.astro";
+import { NotepadText } from 'lucide'
+const cta = getPages().byGroup('cta').single()
+---
+
+<Button href={cta.path}>
+    <Icon icon={NotepadText} />
+    {cta.title}
+</Button>

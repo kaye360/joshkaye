@@ -1,9 +1,8 @@
 ---
-import type { Page } from "../../config";
 import type { HTMLAttributes } from 'astro/types';
 
 interface Props extends HTMLAttributes<'ul'> {
-    pages : Page[]
+    pages : any[]
 }
 
 const { pages } = Astro.props

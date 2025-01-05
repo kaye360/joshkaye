@@ -1,12 +1,12 @@
 ---
 import { PHONE_NUMBER, EMAIL_ADDRESS, LOCATION, SITE_FULL_NAME, PUBLISH_DATE } from "../../config/site";
 import Logo from "../Base/Logo.astro";
-import TextFlow from "../Base/TextFlow.astro";
 import Columns from "../Base/Columns.astro";
 import Section from "./Section.astro";
 import { getPages } from "../../utils/getPages";
 import Icon from "../Base/Icon.astro";
-import { Phone, Mail, MapPin, NotepadText, Pin } from 'lucide'
+import { Phone, Mail, Pin } from 'lucide'
+import TextBlock from "../Base/TextBlock.astro";
 
 const pages = getPages().byGroup('footer').all()
 ---
@@ -18,9 +18,9 @@ const pages = getPages().byGroup('footer').all()
             <div>
                 <Logo />
 
-                <TextFlow class="mt-4">
+                <TextBlock class="mt-4">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, libero. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore tenetur aperiam culpa sequi vel non necessitatibus sed amet officiis optio.</p>
-                </TextFlow>
+                </TextBlock>
             </div>
 
             <Columns cols={2} px-none py-none class="gap-y-12 gap-x-6 bg-primary-100 px-8 py-6">
@@ -47,21 +47,21 @@ const pages = getPages().byGroup('footer').all()
                     <h2 class="text-xl font-semibold mb-3">Contact Us</h2>
                     <ul class="grid gap-2">
                         <li>
-                            <a href={PHONE_NUMBER} class="flex items-center gap-2">
+                            <a href={PHONE_NUMBER} class="fic-2">
                                 <Icon icon={Phone} class="w-6 h-6" />
                                 {PHONE_NUMBER}
                             </a>
                         </li>
             
                         <li>
-                            <a href={EMAIL_ADDRESS} class="flex items-center gap-2">
+                            <a href={EMAIL_ADDRESS} class="fic-2">
                                <Icon icon={Mail} class="w-6 h-6" />
                                 {EMAIL_ADDRESS}
                             </a>
                         </li>
                         
                         <li>
-                            <a href={LOCATION} class="flex items-center gap-2">
+                            <a href={LOCATION} class="fic-2">
                                <Icon icon={Pin} class="w-6 h-6" />
                                 {LOCATION}
                             </a>

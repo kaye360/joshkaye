@@ -1,11 +1,10 @@
 ---
-import type { Image as ImageInterface } from '../Base/Image.astro'
+import type { Image as ImageProps } from '../Base/Image.astro'
 import Image from '../Base/Image.astro';
 
-interface Props extends ImageInterface { 
+interface Props extends ImageProps { 
     /**
-     * @extends Image
-     * @prop Required img props: src, width, height, alt
+     * Requires the following img props: src, width, height, alt
      */
     props? : true
 }

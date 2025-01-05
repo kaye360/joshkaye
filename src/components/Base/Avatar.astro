@@ -1,0 +1,33 @@
+---
+import Image from '../Base/Image.astro'
+
+interface Props {
+    
+    /**
+     * Avatar image path
+     */
+    src : string,
+
+    /**
+     * Name of person
+     */
+    name : string
+
+    /**
+     * @prop src : string, required
+     * @prop name : string, required
+     */
+}
+
+const { src, name } = Astro.props
+---
+
+<div class="bg-primary-300 w-16 h-16 aspect-square rounded-full shrink-0">
+    <Image
+        src={src}
+        width={64}
+        height={64}
+        alt={'Image of ' + name}
+        class="w-16 h-16 aspect-square rounded-full"
+    />
+</div>

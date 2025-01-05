@@ -1,6 +1,4 @@
 ---
-import TextFlow from '../Base/TextFlow.astro';
-
 interface Props {
     /**
      * @prop class? : string,
@@ -13,7 +11,5 @@ const { class : className } = Astro.props
 ---
 
 <div class:list={['p-2', className]} >
-    <TextFlow>
-        <slot />
-    </TextFlow>
+    <slot />
 </div>

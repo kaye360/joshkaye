@@ -1,9 +1,9 @@
 ---
-import EvenColumns from "../components/Base/EvenColumns.astro";
-import Wrapper from "../components/Layout/Wrapper.astro";
 import { PAGES } from "../config/pages";
 import Layout from "../layouts/Layout.astro";
 import Image from "../components/Base/Image.astro";
+import Columns from "../components/Base/Columns.astro";
+import Section from "../components/Layout/Section.astro";
 
 ---
 
@@ -13,15 +13,12 @@ import Image from "../components/Base/Image.astro";
     description="This page cannot be found"
 >
 
-    <Wrapper>
-
-        <EvenColumns class="mb-12 gap-12">
+    <Section contentWidth="slim">
+        <Columns cols={2}>
             <div class="self-center">
                 <h1 class="text-3xl mb-4">Error: Page not found</h1>
-        
-                <p class="mb-4">We're sorry, the page you are looking for could not be found. Here is a list of all our pages:</p>
             </div>
-
+        
             <Image 
                 src="/img/404.webp"
                 class="mix-blend-darken"
@@ -29,8 +26,12 @@ import Image from "../components/Base/Image.astro";
                 height={148}
                 alt="Error 404"
             />
-        </EvenColumns>
+        </Columns>
+    </Section>
 
+    <Section contentWidth="slim" py-none>
+
+        <p class="mb-4">We're sorry, the page you are looking for could not be found. Here is a list of all our pages:</p>
 
         <ul>
             { PAGES.map( page => (
@@ -40,8 +41,7 @@ import Image from "../components/Base/Image.astro";
             ))}
         </ul>
 
-
-    </Wrapper>
+    </Section>
 
 </Layout>
 

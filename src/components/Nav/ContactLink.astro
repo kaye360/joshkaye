@@ -22,37 +22,22 @@ interface Props extends HTMLAttributes<'li'> {
 
 const {
     href,
+    class: className = ''
 } = Astro.props
+
+const Element = href ? 'a' : 'span'
 ---
 
-{ href ? (
 
-    <li>
-        <a href={href} class={`flex items-center gap-2 text-base text-primary-100 hover:underline`}>
-            <slot />
-        </a>
-    </li>
-
-) : (
-
-    <li class={`flex items-center gap-2 text-base text-primary-100 `}>
+<li class="last-of-type:hidden md:last-of-type:block">
+    <Element
+        {...( href ? { href } : {} )}
+        class:list={[
+            'fic-1 sm:fic-2 text-sm sm:text-base text-primary-100',
+            href ? 'hover:underline' : 'select-none',
+            className
+        ]}
+    >
         <slot />
-    </li>
-
-)}
-
-
-
-<style>
-
-
-
-@media screen and (max-width: 639px) {
-    li:nth-child(n + 3) {
-        display: none;
-    }
-    li:nth-child(-n + 2) {
-        display : block;
-    }
-}
-</style>
+    </Element>
+</li>

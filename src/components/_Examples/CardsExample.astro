@@ -1,0 +1,107 @@
+---
+import Button from "../Base/Button.astro";
+import Columns from "../Base/Columns.astro";
+import Card from "../Card/Card.astro";
+import CardContent from "../Card/CardContent.astro";
+import CardHeading from "../Card/CardHeading.astro";
+import CardImage from "../Card/CardImage.astro";
+import H2 from "../Heading/H2.astro";
+---
+
+<H2>Card Example</H2>
+
+<Columns props cols={4} class="gap-4">
+
+    <Card href='/products'>
+        <CardImage
+            src="/img/temp.jpg"
+            width={300}
+            height={200}
+            alt="Galaxy in Space"
+        />
+
+        <CardHeading>
+            Galaxy in Space
+        </CardHeading>
+
+        <CardContent>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, fuga.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, placeat.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, placeat.</p>
+        </CardContent>
+        <CardContent class='mt-auto'>
+            <Button  variant="outline" class='w-full'>
+                Learn More
+            </Button>
+        </CardContent>
+    </Card>
+
+    <Card>
+        <CardImage
+            src="/img/temp.jpg"
+            width={300}
+            height={200}
+            alt="Galaxy in Space"
+        />
+
+        <CardHeading>
+            City Skyline
+        </CardHeading>
+
+        <CardContent>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, fuga.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, placeat.</p>
+        </CardContent>
+        <CardContent class='mt-auto'>
+            <Button  variant="outline" class='w-full'>
+                Learn More
+            </Button>
+        </CardContent>
+    </Card>
+
+    <Card>
+        <CardImage
+            src="/img/temp.jpg"
+            width={300}
+            height={200}
+            alt="Galaxy in Space"
+        />
+
+        <CardHeading>
+            Clouds in the sky
+        </CardHeading>
+
+        <CardContent>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, placeat.</p>
+        </CardContent>
+        <CardContent class='mt-auto'>
+            <Button  variant="outline" class='w-full'>
+                Learn More
+            </Button>
+        </CardContent>
+    </Card>
+
+    <Card>
+        <CardImage props
+            src="/img/temp.jpg"
+            width={300}
+            height={200}
+            alt="Galaxy in Space"
+        />
+
+        <CardHeading>
+            Desert Sand
+        </CardHeading>
+
+        <CardContent>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, fuga.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, placeat.</p>
+        </CardContent>
+        <CardContent class='mt-auto'>
+            <Button  variant="outline" class='w-full'>
+                Learn More
+            </Button>
+        </CardContent>
+    </Card>
+
+</Columns>

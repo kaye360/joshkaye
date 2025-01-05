@@ -1,16 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Card from '../components/Card/Card.astro';
-import CardImage from '../components/Card/CardImage.astro';
-import CardHeading from '../components/Card/CardHeading.astro';
-import CardContent from '../components/Card/CardContent.astro';
-import Button from '../components/Base/Button.astro';
-import TextFlow from '../components/Base/TextFlow.astro';
-import ReviewList from '../components/Base/ReviewList.astro';
-import H2 from '../components/Heading/H2.astro';
-import Hero from '../components/Layout/Hero.astro';
-import Wrapper from '../components/Layout/Wrapper.astro';
-import Columns from '../components/Base/Columns.astro';
+import Section from '../components/Layout/Section.astro';
+import IntroExample from '../components/_Examples/IntroExample.astro';
+import TestimonialsExample from '../components/_Examples/TestimonialsExample.astro';
+import HeroExample from '../components/_Examples/HeroExample.astro';
+import LinkCardsExample from '../components/_Examples/LinkCardsExample.astro';
+import CardsExample from '../components/_Examples/CardsExample.astro';
 ---
 
 <Layout props
@@ -18,217 +13,27 @@ import Columns from '../components/Base/Columns.astro';
 	description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro in expedita beatae perferendis quod qui perspiciatis numquam."
 >
 
-	<Hero />
+	<Section 
+		contentWidth="slim"
+		class="min-h-[70vh] bg-primary-900 grid text-primary-100 place-items-center" 
+	>
+		<HeroExample />
+	</Section>
 
-	<section>
-		<Wrapper width='slim'>
-			<TextFlow>
-				<H2>Introduce Yourself Here</H2>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis incidunt voluptatibus omnis ex. Nihil laboriosam facere distinctio ea neque aperiam consequatur optio soluta a temporibus, possimus voluptates earum quaerat! Illum enim odit harum nulla! Tempore repudiandae suscipit quaerat nostrum consequatur itaque ipsa, debitis inventore consectetur a placeat, explicabo praesentium impedit?</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis incidunt voluptatibus omnis ex. Nihil laboriosam facere distinctio ea neque aperiam consequatur optio soluta a temporibus, possimus voluptates earum quaerat! Illum enim odit harum nulla! Tempore repudiandae suscipit quaerat nostrum consequatur itaque ipsa, debitis inventore consectetur a placeat, explicabo praesentium impedit?</p>
-			</TextFlow>
-		</Wrapper>
-	</section>
+	<Section contentWidth='slim'>
+		<IntroExample />
+	</Section>
 
+	<Section class='bg-primary-50'>
+		<CardsExample />
+	</Section>
 
-	<section>
-		<Wrapper>
+	<Section contentWidth='slim'>
+		<TestimonialsExample />
+	</Section>
 
-			<H2 class="mb-[1em] border-b-2 border-sky-100 text-2xl">Card Example</H2>
-
-			<Columns props cols={3} class="gap-4 px-4">
-
-				<Card href='/products'>
-					<CardImage
-						src="/img/temp.jpg"
-						width={300}
-						height={200}
-						alt="Galaxy in Space"
-					/>
-
-					<CardHeading>
-						Galaxy in Space
-					</CardHeading>
-
-					<CardContent>
-						<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, fuga.</p>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, placeat.</p>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, placeat.</p>
-					</CardContent>
-					<CardContent class='mt-auto'>
-						<Button  variant="outline" class='w-full'>
-							Learn More
-						</Button>
-					</CardContent>
-				</Card>
-
-				<Card>
-					<CardImage
-						src="/img/temp.jpg"
-						width={300}
-						height={200}
-						alt="Galaxy in Space"
-					/>
-
-					<CardHeading>
-						City Skyline
-					</CardHeading>
-
-					<CardContent>
-						<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, fuga.</p>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, placeat.</p>
-					</CardContent>
-					<CardContent class='mt-auto'>
-						<Button  variant="outline" class='w-full'>
-							Learn More
-						</Button>
-					</CardContent>
-				</Card>
-
-				<Card>
-					<CardImage
-						src="/img/temp.jpg"
-						width={300}
-						height={200}
-						alt="Galaxy in Space"
-					/>
-
-					<CardHeading>
-						Clouds in the sky
-					</CardHeading>
-
-					<CardContent>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, placeat.</p>
-					</CardContent>
-					<CardContent class='mt-auto'>
-						<Button  variant="outline" class='w-full'>
-							Learn More
-						</Button>
-					</CardContent>
-				</Card>
-
-				<Card>
-					<CardImage props
-						src="/img/temp.jpg"
-						width={300}
-						height={200}
-						alt="Galaxy in Space"
-					/>
-
-					<CardHeading>
-						Desert Sand
-					</CardHeading>
-
-					<CardContent>
-						<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, fuga.</p>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, placeat.</p>
-					</CardContent>
-					<CardContent class='mt-auto'>
-						<Button  variant="outline" class='w-full'>
-							Learn More
-						</Button>
-					</CardContent>
-				</Card>
-
-			</Columns>
-		</Wrapper>
-	</section>
-
-	<section>
-
-		<Wrapper>
-
-			<H2 class="text-2xl font-bold mx-auto mb-12 w-fit border-b border-primary-200">Features</H2>
-
-			<Columns class='gap-6'>
-
-				<Card>
-					<CardHeading>
-						Basic Plan
-					</CardHeading>
-
-					<CardContent>
-						<p>
-							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem ex consequatur hic commodi nisi aliquam, tempora expedita architecto similique ab.
-						</p>
-
-						<ul>
-							<li>Lorem ipsum dolor sit</li>
-							<li>Amet consectetur adipisicing elit sunt sapiente.</li>
-							<li>Soluta temporibus optio laborum</li>
-							<li>Accusantium distinctio iure explicabo dolores</li>
-							<li>ducimus quis earum officiis</li>
-						</ul>
-
-						<Button href="/products">
-							View Plan
-						</Button>
-						<Button href="/products">
-							View All Plans
-						</Button>
-					</CardContent>
-				</Card>
-
-				<Card class='bg-primary-100'>
-					<CardHeading>
-						Starter Plan
-					</CardHeading>
-
-					<CardContent>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi optio ullam magnam tenetur placeat architecto dignissimos laborum, facilis tempore dolorum?
-						</p>
-
-						<p>
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt, eos! Labore ex dignissimos, atque sit nulla expedita incidunt aliquam. Sapiente nostrum explicabo, sunt veritatis exercitationem porro eaque ipsa expedita quisquam?
-						</p>
-
-
-						<Button href="/products" id="foo">
-							View Plan
-						</Button>
-						<Button id="ba">
-							View All Plans
-						</Button>
-					</CardContent>
-				</Card>
-
-				<Card>
-					<CardHeading>
-						Pro Plan
-					</CardHeading>
-
-					<CardContent>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, ducimus? Enim consectetur temporibus neque!
-						</p>
-
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nemo distinctio deleniti minus autem eveniet cumque necessitatibus doloremque eos deserunt maiores corporis, excepturi nesciunt velit ea sint saepe. Nisi excepturi sequi reprehenderit? Incidunt, est similique.
-						</p>
-						
-						<Button href="/products">
-							View Plan
-						</Button>
-						<Button href="/products">
-							View All Plans
-						</Button>
-					</CardContent>
-				</Card>
-
-			</Columns>
-
-		</Wrapper>
-
-	</section>
-
-	<section>
-		<Wrapper width='slim'>
-			<TextFlow>
-				<H2>What our customers are saying</H2>
-				<ReviewList />
-			</TextFlow>
-		</Wrapper>
-	</section>
+	<Section class='bg-primary-50'>
+		<LinkCardsExample />
+	</Section>
 
 </Layout>

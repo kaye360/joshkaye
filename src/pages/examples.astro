@@ -6,12 +6,10 @@ import H3 from "../components/Heading/H3.astro";
 import H4 from "../components/Heading/H4.astro";
 import H5 from "../components/Heading/H5.astro";
 import H6 from "../components/Heading/H6.astro";
-import TextFlow from "../components/Base/TextFlow.astro";
 import Layout from "../layouts/Layout.astro";
-import Button from "../components/Base/Button.astro";
 import H1 from "../components/Heading/H1.astro";
 import Wrapper from "../components/Layout/Wrapper.astro";
-import Columns from "../components/Base/Columns.astro";
+import TextBlock from "../components/Base/TextBlock.astro";
 ---
 
 <Layout title="Component examples" lang="en" description="">
@@ -20,27 +18,12 @@ import Columns from "../components/Base/Columns.astro";
         Component Examples
     </H1>
 
-    <section>
-        <Wrapper>
-
-            <H2>Buttons</H2>
-
-            <Columns cols={3}>
-                <Button variant="fill">Fill Button</Button>
-                <Button variant="outline">Outline Button</Button>
-                <Button variant="ghost">Ghost Button</Button>
-            </Columns>
-
-
-        </Wrapper>
-    </section>
-
     <section class="bg-primary-200">
         <Wrapper>
 
             <H2>Headings</H2>
 
-            <TextFlow class="max-w-2xl">
+            <TextBlock>
 
                 <H2>Heading Two</H2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus possimus, labore, asperiores, delectus ea laboriosam molestiae cumque ab voluptate est officia harum non consequatur dolorum quibusdam repellat vel earum. Dicta facere ad ipsum nulla rem nihil, quia odio dolores </p>
@@ -61,7 +44,7 @@ import Columns from "../components/Base/Columns.astro";
                 <p>Sapiente quo magnam! Accusantium perferendis corrupti nulla, maxime qui aperiam velit hic laborum reprehenderit facere aspernatur vel consectetur! Laudantium, cum a. Labore vero ratione deleniti consequuntur eligendi harum itaque, id ipsum ad eos totam corporis</p>
                 <p>Libero eveniet explicabo repellat, iure, a ullam quas vel ea. Quo ratione perferendis suscipit ex recusandae ipsum illum odio dignissimos adipisci provident totam repudiandae, autem deleniti nihil hic debitis dolores. Delectus doloribus officiis nesciunt natus ratione facere at!</p>
 
-            </TextFlow>
+            </TextBlock>
         </Wrapper>
 
     </section>

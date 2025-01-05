@@ -1,29 +1,46 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
+import type { HTMLTag, Polymorphic } from 'astro/types';
 
-interface Props extends HTMLAttributes<'div' | 'a'>  {
+type Props<HTMLElement extends HTMLTag> = Polymorphic<{ 
+
     /**
-     * @prop href? : string,
+     * Link href if the whole card is a link
+     */
+    href? : string,
+
+    /**
+     * Element to wrap the whole card.
+     */
+    as : HTMLElement,
+
+    /**
+     * Extra class names
+     */
+    class? : string,
+
+    /**
+     * @prop href? : string
+     * @prop as? : string - Default 'div'
+     * @prop class? : string
      * @prop slot
      */
     props? : true
-    href? : string,
-}
+}>
 
 const {
-    href,
+    href = null,
+    as : Element = 'div',
+    class: className = '',
     ...rest
 } = Astro.props
 
-const Element = href ? 'a' : Fragment
 ---
 
-<Element {href}>
-    <div 
-        class="flex flex-col gap-3 h-full overflow-hidden transition-all border border-primary-100 shadow-lg shadow-primary-200 rounded-lg"
-        {...rest}
-    >
-        <slot />
-    </div>
+<Element
+    {...( href ? {href} : {} )}
+    class:list={["flex flex-col gap-3 h-full border border-primary-100 shadow-lg shadow-primary-200/50 rounded-lg", className]}
+    {...rest}
+>
+    <slot />
 </Element>
 

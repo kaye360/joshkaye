@@ -1,0 +1,48 @@
+---
+import Columns from "../Base/Columns.astro";
+import Card from "../Card/Card.astro";
+import CardContent from "../Card/CardContent.astro";
+import CardHeading from "../Card/CardHeading.astro";
+import H2 from "../Heading/H2.astro";
+---
+
+<H2>Card as Links Example</H2>
+
+<Columns props cols={4} collapse="collapse" class="gap-4">
+
+    <Card props as="a" href="/services" class="hover:bg-primary-100">
+        <CardHeading>
+            This is a link
+        </CardHeading>
+        <CardContent>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque temporibus sapiente ducimus possimus cum, qui deserunt accusantium amet animi, saepe architecto praesentium nulla dicta, dolore rem cumque harum! Explicabo, hic?
+        </CardContent>
+    </Card>
+
+    <Card>
+        <CardHeading>
+            Not a link
+        </CardHeading>
+        <CardContent>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quidem explicabo a molestiae beatae? Ab deleniti qui provident excepturi atque.
+        </CardContent>
+    </Card>
+    
+    <Card as="a" href="/services" class="hover:bg-primary-100">
+        <CardHeading>
+            This is a link
+        </CardHeading>
+        <CardContent>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque temporibus sapiente ducimus possimus cum, qui deserunt accusantium amet animi, saepe architecto praesentium nulla dicta, dolore rem cumque harum! Explicabo, hic?
+        </CardContent>
+    </Card>
+
+    <Card>
+        <CardHeading>
+            Not a link
+        </CardHeading>
+        <CardContent>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quidem explicabo a molestiae beatae? Ab deleniti qui provident excepturi atque.
+        </CardContent>
+    </Card>
+</Columns>

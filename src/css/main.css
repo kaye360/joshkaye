@@ -45,3 +45,17 @@
 
 }
 
+@layer utilities {
+    .fic-1 {
+        @apply flex items-center gap-1
+    }
+    .fic-2 {
+        @apply flex items-center gap-2
+    }
+    .fic-4 {
+        @apply flex items-center gap-4
+    }
+    .fic-6 {
+        @apply flex items-center gap-6
+    }
+}

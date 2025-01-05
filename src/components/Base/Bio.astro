@@ -1,0 +1,47 @@
+---
+import Avatar from "./Avatar.astro"
+
+interface Props {
+
+    /**
+     * The job title of the person
+     */
+    title : string,
+    
+    /**
+     * The bio of the person
+     */
+    bio : string,
+
+    /**
+     * Avatar image path
+     */
+    src : string,
+
+    /**
+     * Name of person
+     */
+    name : string
+
+    /**
+     * @prop src : string, required
+     * @prop name : string, required
+     * @prop title : string, required
+     * @prop bio : string, required
+     */
+}
+
+const { name, title, bio, src } = Astro.props
+---
+
+<div class="flex gap-3">
+
+    <Avatar src={src} name={name} />
+
+    <div class="text-primary-800">
+        <h3 class="font-bold">{name}</h3>
+        <span class="text-primary-500">{title}</span>
+        <p>{bio}</p>
+    </div>
+
+</div>

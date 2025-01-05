@@ -4,8 +4,8 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily : {
-				'base' : ['Lato', 'Helvetica'],
-				'theme' : ['Mooli', 'Helvetica'],
+				'base' : ['Lato', 'Helvetica', 'sans-serif'],
+				'theme' : ['Lato', 'Helvetica', 'sans-serif'],
 			},
 			colors : {
 				"primary" : {
