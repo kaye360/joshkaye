@@ -1,0 +1,34 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+import FormFieldTitle from './FormFieldTitle.astro'
+
+interface Props extends HTMLAttributes<'input'> {
+    title : string,
+    name : string,
+}
+
+const { 
+    title,
+    name,
+    required,
+    type,
+    ...props
+ } = Astro.props
+---
+
+<label 
+    class="form-field-label"
+>
+
+    <FormFieldTitle title={title} required={required} />
+
+    <input 
+        type={type} 
+        name={name.toLowerCase()} 
+        id={name.toLowerCase()} 
+        required={required} 
+        class="form-field"
+        {...props}
+    />
+
+</label>

@@ -58,4 +58,12 @@
     .fic-6 {
         @apply flex items-center gap-6
     }
+
+    .form-field {
+        @apply p-2 rounded border border-primary-200 bg-primary-25 w-full max-w-xl focus-visible:outline-primary-300
+    }
+
+    .form-field-label {
+        @apply block rounded-md px-4 py-2 w-full has-[:focus]:bg-primary-100/75
+    }
 }

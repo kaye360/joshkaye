@@ -1,0 +1,53 @@
+---
+import Input from "../Forms/Input.astro";
+import Select from "../Forms/Select.astro";
+import Textarea from "../Forms/Textarea.astro";
+
+---
+
+<form class="grid gap-2">
+
+    <Input 
+        title="Your name"
+        name="name"
+        type="text"
+        required
+        placeholder="Joshua Kaye"
+    />
+
+    <Input 
+        title="Your email"
+        name="email"
+        type="email"
+        required
+        placeholder="your@email.com"
+    />
+
+    <Input 
+        title="Your phone number"
+        name="phone"
+        type="tel"
+        placeholder="604-555-1234"
+    />
+
+    <Textarea
+        title="Message"
+        name="message"
+        placeholder="Hello! How are you today?"
+        required
+    />
+
+    <Select 
+        title="Preffered communication method"
+        name="communication-method"
+        options={[
+            { title : '---', value : '' },
+            { title : 'Email', value : 'email' },
+            { title : 'Phone', value : 'phone' },
+            { title : 'Mail', value : 'mail' },
+            { title : 'Pidgeon', value : 'pidgeon' },
+        ]}
+        value="email"
+    />
+
+</form>

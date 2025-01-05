@@ -1,0 +1,26 @@
+---
+interface Props {
+    /**
+     * The title of the form field in the label element
+     */
+    title : string,
+    /**
+     * Is this field required
+     */
+    required : string | boolean | undefined | null
+    /**
+     * @prop title: string
+     * @prop required: boolean
+     */
+    props? : true
+}
+const { title, required } = Astro.props
+---
+<span class="fic-2 font-semibold text-base">
+    { title }
+    { required && (
+        <span class="inline-block text-sm opacity-60">
+            (Required)
+        </span>
+    )}
+</span>
