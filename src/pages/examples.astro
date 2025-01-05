@@ -1,5 +1,4 @@
 ---
-import FormField from "../components/Forms/FormField.astro";
 import FormSubmit from "../components/Forms/FormSubmit.astro";
 import H2 from "../components/Heading/H2.astro";
 import H3 from "../components/Heading/H3.astro";
@@ -36,54 +35,5 @@ import TextBlock from "../components/Base/TextBlock.astro";
         </Wrapper>
 
     </section>
-
-
-
-    <section>
-        <Wrapper>
-
-            <H2>Forms</H2>
-
-            
-            <form class="grid gap-8">
     
-                <FormField props type="text" name="Name" label="Your Full Name" required />
-
-                <FormField type="select" name="Subject" required>
-
-                    <option value="General Inquiry">General Inquiry</option>
-                    <option value="Landing Page">Landing Page</option>
-                    <option value="Basic Site">Basic Site</option>
-                    <option value="Custom Site">Custom Site</option>
-
-                </FormField>
-    
-                <FormField type="email" name="Email" required />
-    
-                <FormField type="date" name="Date" />
-
-                <FormField type="color" name="Pick a Color" />
-
-                <FormField type="textarea" name="Message" required />
-    
-                <div>
-                    <FormField type="checkbox" name="Checkbox1" label="Checkbox One" />
-                    <FormField type="checkbox" name="Checkbox2" label="Checkbox Two" />
-                    <FormField type="checkbox" name="Checkbox3" label="Checkbox Three" />
-                </div>
-    
-                <div>
-                    <FormField type="radio" name="radio" label="Radio One" />
-                    <FormField type="radio" name="radio" label="Radio Two" />
-                    <FormField type="radio" name="radio" label="Radio Three" />
-                </div>
-    
-                <FormSubmit />
-    
-            </form>
-        </Wrapper>
-
-    </section>
-
-
 </Layout>
