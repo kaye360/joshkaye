@@ -16,10 +16,10 @@ interface Props {
 }
 const { title, required } = Astro.props
 ---
-<span class="fic-2 font-semibold text-base">
+<span class="fic-2 justify-between font-semibold text-base">
     { title }
     { required && (
-        <span class="inline-block text-sm opacity-60">
+        <span class="inline-block text-sm opacity-50">
             (Required)
         </span>
     )}

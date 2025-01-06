@@ -1,0 +1,53 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+import FormFieldTitle from './FormFieldTitle.astro'
+import Label from './Label.astro'
+
+interface Props extends HTMLAttributes<'input'> {
+
+    /**
+     * The title of heading of the input. This is inside the label
+     */
+    title : string,
+
+    /**
+     * Name and id of input
+     */
+    name : string,
+
+    options : { title : string, value : string, name : string, checked? : true }[]
+
+    /**
+     * @prop title : string
+     * @prop name : string
+     * @prop options : { title : string, value : string, name : string, checked? : true }[]
+     * 
+     * 
+     */
+    props? : true
+}
+
+const { title, name, required, options, ...props } = Astro.props
+---
+
+<div class="px-2 pt-3">
+    <FormFieldTitle title={title} required={required} />
+</div>
+
+{ options.map( option => (
+    <div class="fic-1 form-field-has-focus px-2 pb-1">
+        <input 
+            type="checkbox" 
+            name={option.name.toLowerCase()} 
+            id={option.name.toLowerCase()} 
+            value={option.value.toLowerCase()}
+            required={required} 
+            {...props}
+            { ...( option.checked && { checked : true }  ) }
+        />
+
+        <Label for={option.name.toLowerCase()} class="cursor-pointer !py-0">
+            { option.title }
+        </Label>
+    </div>
+))}

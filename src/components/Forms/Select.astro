@@ -1,23 +1,39 @@
 ---
 import type { HTMLAttributes } from 'astro/types'
 import FormFieldTitle from './FormFieldTitle.astro'
+import Label from './Label.astro'
 
 interface Props extends HTMLAttributes<'select'> {
-    title : string,
+
+    /**
+     * The title of heading of the input. This is inside the label
+     */
+     title : string,
+
+    /**
+     * Name and id of input
+     */
     name : string,
+
+    /**
+     * List of \<option> children for select tag
+     */
     options : { value: string, title: string }[]
+
+    /**
+     * @prop title : string
+     * @prop name : string
+     * @prop options : { value: string, title: string }[]
+     */
+    props? : true
 }
 
-const { 
-    title,
-    name,
-    options,
-    required,
-    ...props
- } = Astro.props
+const { title, name, options, required, ...props } = Astro.props
 ---
-<label class="form-field-label">
+<Label>
+
     <FormFieldTitle title={title} required={required} />
+
     <select 
         name={name.toLowerCase()} 
         id={name.toLowerCase()}
@@ -28,4 +44,5 @@ const {
             <option value={option.value}>{option.title}</option>
         ))}
     </select>
-</label>
+    
+</Label>

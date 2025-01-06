@@ -12,4 +12,7 @@ By Josh Kaye
 
 
 ## Todos
-- Fix mobile nav bug that pushes content down. position sticky
+- Make a Favicon component
+- Make a OG component
+- Make a Font component
+- Site map. Make a page and component to be added to 404

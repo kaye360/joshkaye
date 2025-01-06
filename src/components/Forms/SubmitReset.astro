@@ -3,22 +3,28 @@ import type { HTMLAttributes } from 'astro/types';
 import Button from '../Base/Button.astro';
 
 interface Props extends HTMLAttributes<'div'> {
+
     /**
-     * @prop slot
+     * @slot reset - Reset button text
+     * @slot submit - Submit button text
      */
     props? : true
 }
 
 ---
 
-<div class="grid gap-4 w-full max-w-[600px] md:grid-cols-[1fr_2fr]">
+<div class="grid gap-4 w-full max-w-[600px] md:grid-cols-[1fr_2fr] p-2">
 
     <Button variant='outline' type="reset">
-        Reset
+        <slot name="reset">
+            Reset
+        </slot>
     </Button> 
 
     <Button type="submit">
-        Submit
+        <slot name="submit">
+            Submit
+        </slot>
     </Button> 
 
 </div>

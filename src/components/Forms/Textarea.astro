@@ -1,18 +1,34 @@
 ---
 import type { HTMLAttributes } from 'astro/types'
 import FormFieldTitle from './FormFieldTitle.astro'
+import Label from './Label.astro'
 
 interface Props extends HTMLAttributes<'textarea'> {
-    title : string
-    name : string
+
+    /**
+     * The title of heading of the input. This is inside the label
+     */
+    title : string,
+
+    /**
+     * Name and id of input
+     */
+    name : string,
+
+    /**
+     * @prop title : string
+     * @prop name : string
+     */
+    props? : true
 }
 
 const { title, name, required, ...props } = Astro.props
 ---
 
+<Label>
 
-<label class="form-field-label">
     <FormFieldTitle title={title} required={required} />
+
     <textarea 
         name={name.toLowerCase()} 
         id={name.toLowerCase()}
@@ -20,4 +36,5 @@ const { title, name, required, ...props } = Astro.props
         rows="5"
         {...props}
     />
-</label>
+
+</Label>

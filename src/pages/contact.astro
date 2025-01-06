@@ -1,12 +1,14 @@
 ---
 import ContactFormExample from "../components/_Examples/ContactFormExample.astro";
 import Columns from "../components/Base/Columns.astro";
+import Icon from "../components/Base/Icon.astro";
 import TextBlock from "../components/Base/TextBlock.astro";
 import H1 from "../components/Heading/H1.astro";
 import H2 from "../components/Heading/H2.astro";
 import Section from "../components/Layout/Section.astro";
 import { ADDRESS, EMAIL_ADDRESS, PHONE_NUMBER } from "../config/site";
 import Layout from "../layouts/Layout.astro";
+import { MapPin, Phone, Mail } from 'lucide'
 ---
 
 <Layout
@@ -20,7 +22,7 @@ import Layout from "../layouts/Layout.astro";
     </H1>
 
     <Section>
-        <Columns cols={2}  class="gap-12 items-start">
+        <Columns cols={2}  class="gap-12">
 
             <ContactFormExample />
 
@@ -31,32 +33,35 @@ import Layout from "../layouts/Layout.astro";
                         We would love to hear from you!
                     </H2>
 
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel impedit nim iste laborum quia deleniti fuga doloremque adipisci cum quisquam.</p>
+                    <p>Whether you have questions about our services, need support, or want to provide feedback, we're here to help. Fill out the form here, and a member of our team will get back to you as soon as possible.</p>
 
-                    <h3 class="border-t border-primary-700 pt-2">
-                        Our Location
-                    </h3>
-                    <p class="mt-0">
-                        {ADDRESS}
-                    </p>
+                    <div>
+                        <h3 class="font-semibold">Our Location</h3>
+                        <p class="fic-2">
+                            <Icon icon={MapPin} stroke-width="1" class="w-5 h-5" />
+                            {ADDRESS}
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-semibold">Contact Us</h3>
+                        <p class="fic-2">
+                            <Icon icon={Mail} stroke-width="1" class="w-5 h-5" />
+                            {EMAIL_ADDRESS}
+                        </p>
+                        <p class="fic-2">
+                            <Icon icon={Phone} stroke-width="1" class="w-5 h-5" />
+                            {PHONE_NUMBER}
+                        </p>
+                    </div>
 
-                    <h3 class="border-t border-primary-700 pt-2">
-                        Contact Us
-                    </h3>
-                    <p class="mt-0">
-                        {EMAIL_ADDRESS} <br />
-                        {PHONE_NUMBER}
-                    </p>
-
-                    <h3 class="border-t border-primary-700 pt-2">
+                    <h3 class="font-semibold">
                     Social Media
                     </h3>
                     <p class="mt-0">
 
                         FB IN TK LN 
                     </p>
-
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel impedit nim iste laborum quia deleniti fuga doloremque adipisci cum quisquam.</p>
 
                 </TextBlock>
 

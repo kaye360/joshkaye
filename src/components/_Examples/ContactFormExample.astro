@@ -1,13 +1,16 @@
 ---
+import Icon from "../Base/Icon.astro";
+import Checkbox from "../Forms/Checkbox.astro";
 import Input from "../Forms/Input.astro";
+import Radio from "../Forms/Radio.astro";
 import Select from "../Forms/Select.astro";
+import SubmitReset from "../Forms/SubmitReset.astro";
 import Textarea from "../Forms/Textarea.astro";
-
+import { CircleArrowRight, RotateCcw } from "lucide";
 ---
 
 <form class="grid gap-2">
-
-    <Input 
+    <Input props
         title="Your name"
         name="name"
         type="text"
@@ -15,39 +18,85 @@ import Textarea from "../Forms/Textarea.astro";
         placeholder="Joshua Kaye"
     />
 
-    <Input 
-        title="Your email"
-        name="email"
-        type="email"
-        required
-        placeholder="your@email.com"
-    />
+    <div class="grid grid-cols-2 gap-2">
 
-    <Input 
-        title="Your phone number"
-        name="phone"
-        type="tel"
-        placeholder="604-555-1234"
-    />
+        <Input props
+            title="Your email"
+            name="email"
+            type="email"
+            required
+            placeholder="your@email.com"
+        />
+        
+        <Input props
+            title="Your phone number"
+            name="phone"
+            type="tel"
+            placeholder="604-555-1234"
+        />
+        
+    </div>
 
-    <Textarea
+
+    <Select props
+        title="Subject"
+        name="subject"
+        options={[
+            { title: "General Inquiry", value: "general inquiry" },
+            { title: "Careers", value: "careers" },
+            { title: "Sign Up", value: "sign up" },
+            { title: "Product Information", value: "product information" },
+        ]}
+    />    
+
+    <Textarea props
         title="Message"
         name="message"
         placeholder="Hello! How are you today?"
         required
     />
 
-    <Select 
-        title="Preffered communication method"
-        name="communication-method"
+    <Radio props
+        title="How old are you?"
+        name="age"
+        required
         options={[
-            { title : '---', value : '' },
-            { title : 'Email', value : 'email' },
-            { title : 'Phone', value : 'phone' },
-            { title : 'Mail', value : 'mail' },
-            { title : 'Pidgeon', value : 'pidgeon' },
+            { title: "Age of 0-18",  value: "18 or under" },
+            { title: "Age of 19-64", value: "19 to 64" },
+            { title: "Age of 65-99", value: "65 to 99" },
+            { title: "Age of 100+",  value: "Old" },
         ]}
-        value="email"
     />
 
+    <Checkbox props
+        title="Subscibe to our email list"
+        name="subscribe"
+        options={[
+            { title: "Weekly updates", name : 'sub-weekly',   value: "true" },
+            { title: "News stories",   name : 'sub-news',     value: "true" },
+            { title: "New products",   name : 'sub-products', value: "true" },
+            { title: "All emails",     name : 'sub-all',      value: "true", checked: true },
+        ]}
+    />
+
+    <SubmitReset props>
+        <Fragment slot="submit">
+            Send Email
+            <Icon icon={CircleArrowRight} />
+        </Fragment>
+        <Fragment slot="reset">
+            Reset Form
+            <Icon icon={RotateCcw} />
+        </Fragment>
+    </SubmitReset>
 </form>
+
+<script>
+    import { persistForm, loadPersistedForm } from '../../js/form'
+
+    const form = document.querySelector("form") as HTMLFormElement
+    form.addEventListener("keypress", () => persistForm(form))
+    form.addEventListener("change", () => persistForm(form))
+    form.addEventListener("reset", () => setTimeout( () => persistForm(form), 100 ))
+    window.addEventListener("DOMContentLoaded", () => loadPersistedForm(form))
+</script>
