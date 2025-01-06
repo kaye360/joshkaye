@@ -40,11 +40,12 @@ const {
 				img-src 'self'; 
 				style-src '${import.meta.env.DEV ? 'unsafe-inline' : 'self'}';
 				font-src 'self';
+				manifest-src 'self';
 				base-uri 'self';
 				form-action 'self'
 			`
 		/>
-s		<meta charset="utf-8" />
+		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="theme-color" content="#D7CCC1" />
