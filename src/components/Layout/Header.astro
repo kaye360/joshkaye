@@ -1,6 +1,6 @@
 ---
 import MobileMenuBtn from '../Nav/MobileMenuBtn.astro';
-import { getPages } from "../../utils/getPages";
+import { getPages } from "../../js/getPages";
 import NavLink from '../Nav/NavLink.astro';
 import { PHONE_NUMBER, EMAIL_ADDRESS, LOCATION } from '../../config/site';
 import Logo from '../Base/Logo.astro';
@@ -111,7 +111,7 @@ const headerPages = getPages().byGroup('header').all()
 </style>
     
 <script>
-import { isClicked } from "../../utils/isClicked"
+import { isClicked } from "../../js/isClicked"
     
 /**
  * If the user clicked outside of the menu, close the mobile menu

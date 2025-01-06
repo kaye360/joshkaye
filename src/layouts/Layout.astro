@@ -1,13 +1,13 @@
 ---
 import '../css/main.css'
-import { SITE_SHORT_NAME, SITE_URL } from '../config/site';
+import '@fontsource/lato'
+import { SITE_SHORT_NAME } from '../config/site';
 import BackToTop from '../components/Layout/BackToTop.astro';
 import Footer from '../components/Layout/Footer.astro';
 import Header from '../components/Layout/Header.astro';
 import SkipToContent from '../components/Layout/SkipToContent.astro';
 import Main from '../components/Layout/Main.astro';
 import Favicon from '../components/Layout/Favicon.astro';
-import Fonts from '../components/Layout/Fonts.astro';
 import SocialPreview from '../components/Layout/SocialPreview.astro';
 
 
@@ -51,7 +51,7 @@ const {
 		<meta name="description" content={description}>
 		<title>{title + ' - ' + SITE_SHORT_NAME}</title>
 		<Favicon />
-		<Fonts />
+		<!-- <Fonts /> -->
 		<SocialPreview title={title} description={description} />
 		<slot name="meta" />
 	</head>

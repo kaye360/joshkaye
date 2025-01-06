@@ -12,6 +12,5 @@ By Josh Kaye
 
 
 ## Todos
-- Site map. Make a page and component to be added to 404
 - Make base landing page
 - Astro fonts
