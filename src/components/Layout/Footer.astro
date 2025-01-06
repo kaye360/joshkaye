@@ -9,22 +9,74 @@ import { Phone, Mail, Pin } from 'lucide'
 import TextBlock from "../Base/TextBlock.astro";
 
 const pages = getPages().byGroup('footer').all()
+const services = getPages().subPagesOf('Services')
 ---
 
-<footer>
+<footer class="bg-primary-100">
     <Section>
-        <Columns props cols={2} class="gap-6">
+        <Columns props cols={3} class="gap-6">
 
+            <!-- Logo -->
             <div>
                 <Logo />
 
                 <TextBlock class="mt-4">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, libero. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore tenetur aperiam culpa sequi vel non necessitatibus sed amet officiis optio.</p>
+                    <p>
+                        &copy; <span id="footer-date">{PUBLISH_DATE}</span><br /> 
+                        {SITE_FULL_NAME}
+                    </p>
                 </TextBlock>
             </div>
 
-            <Columns cols={2} px-none py-none class="gap-y-12 gap-x-6 bg-primary-100 px-8 py-6">
+            <!-- Contact -->
+            <nav>
+                <h2 class="text-xl font-semibold mb-3">Contact Us</h2>
+                <ul class="grid gap-2">
+                    <li>
+                        <a href={PHONE_NUMBER} class="fic-2">
+                            <Icon icon={Phone} class="w-5 h-5" stroke-width="1.5" />
+                            {PHONE_NUMBER}
+                        </a>
+                    </li>
+        
+                    <li>
+                        <a href={EMAIL_ADDRESS} class="fic-2">
+                            <Icon icon={Mail} class="w-5 h-5" stroke-width="1.5" />
+                            {EMAIL_ADDRESS}
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href={LOCATION} class="fic-2">
+                            <Icon icon={Pin} class="w-5 h-5" stroke-width="1.5" />
+                            {LOCATION}
+                        </a>
+                    </li>
+                </ul>
+            </nav>
 
+            <div class="grid grid-cols-[auto_auto] justify-between">
+
+                <!-- Services -->
+                <nav>
+                    <h2 class="text-xl font-semibold mb-3">
+                        Services
+                    </h2>
+                    <ul class="grid gap-2">
+                        { services.map( (page) => ( 
+                            <li>
+                                <a 
+                                    href={page.path}
+                                    class="hover:underline"
+                                >
+                                    {page.title}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
+
+                <!-- Links -->
                 <nav>
                     <h2 class="text-xl font-semibold mb-3">
                         Links
@@ -42,39 +94,10 @@ const pages = getPages().byGroup('footer').all()
                         ))}
                     </ul>
                 </nav>
-                
-                <nav>
-                    <h2 class="text-xl font-semibold mb-3">Contact Us</h2>
-                    <ul class="grid gap-2">
-                        <li>
-                            <a href={PHONE_NUMBER} class="fic-2">
-                                <Icon icon={Phone} class="w-6 h-6" />
-                                {PHONE_NUMBER}
-                            </a>
-                        </li>
-            
-                        <li>
-                            <a href={EMAIL_ADDRESS} class="fic-2">
-                               <Icon icon={Mail} class="w-6 h-6" />
-                                {EMAIL_ADDRESS}
-                            </a>
-                        </li>
-                        
-                        <li>
-                            <a href={LOCATION} class="fic-2">
-                               <Icon icon={Pin} class="w-6 h-6" />
-                                {LOCATION}
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
 
-            </Columns>
+            </div>
 
         </Columns>
 
-        <div class="text-center pt-16">
-            &copy; <span id="footer-date">{PUBLISH_DATE}</span> {SITE_FULL_NAME}
-        </div>
     </Section>
 </footer>

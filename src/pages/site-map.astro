@@ -1,7 +1,7 @@
 ---
 import H1 from "../components/Heading/H1.astro";
 import Layout from "../layouts/Layout.astro";
-import SiteMap from "../components/Base/SiteMap.astro";
+import SiteMapList from "../components/Base/SiteMapList.astro";
 ---
 
 <Layout
@@ -10,6 +10,8 @@ import SiteMap from "../components/Base/SiteMap.astro";
 >
     <H1>Site Map</H1>
 
-    <SiteMap />
+    <div class="my-12">
+        <SiteMapList />
+    </div>
 
 </Layout>

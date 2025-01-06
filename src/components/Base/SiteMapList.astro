@@ -4,7 +4,7 @@ import Section from "../Layout/Section.astro";
 const pages = getPages().all()
 ---
 
-<Section contentWidth="slim" class="text-lg">
+<Section py-none contentWidth="slim" class="text-lg">
     <ul class="list-disc pl-6">
         { pages.map( page => (
             <li>
