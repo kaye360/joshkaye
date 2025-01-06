@@ -12,7 +12,6 @@ By Josh Kaye
 
 
 ## Todos
-- Make a Favicon component
-- Make a OG component
-- Make a Font component
 - Site map. Make a page and component to be added to 404
+- Make base landing page
+- Astro fonts

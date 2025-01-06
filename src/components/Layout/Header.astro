@@ -9,6 +9,7 @@ import Icon from '../Base/Icon.astro';
 import { Phone, Mail, MapPin } from 'lucide'
 import CtaButton from '../Base/CtaButton.astro';
 import ContactLink from '../Nav/ContactLink.astro'
+import MegaMenu from '../Nav/MegaMenu.astro';
 
 const headerPages = getPages().byGroup('header').all()
 
@@ -69,7 +70,7 @@ const headerPages = getPages().byGroup('header').all()
             
             <nav 
                 class:list={[
-                    "order-2 overflow-clip", 
+                    "order-2 overflow-clip lg:overflow-visible", 
                     "absolute lg:relative top-0 left-0 right-0",
                     "w-full lg:w-auto max-h-[0px] lg:max-h-none", 
                     "bg-primary-50/90 backdrop-blur-sm lg:bg-primary-25",
@@ -82,8 +83,13 @@ const headerPages = getPages().byGroup('header').all()
                         "flex-col lg:flex-row py-8 lg:py-0"
                     ]}
                 >
-                    { headerPages.map( (page) => ( 
-                        <NavLink href={page.path}>{page.title}</NavLink>
+                    { headerPages.map( (page) => (
+                        <li>
+                            <NavLink href={page.path}>{page.title}</NavLink>
+                            { page.subPages && (
+                                <MegaMenu pages={page.subPages} />
+                            )}
+                        </li>
                     ))}
                 </ul>
             </nav>

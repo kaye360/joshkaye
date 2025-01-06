@@ -18,5 +18,12 @@ export function getPages() {
             const pages =  PAGES.filter( page => page.group.includes(group) )
             return returnMethods(pages)
         },
+        subPagesOf(title: string) {
+            const page =  PAGES.filter( page => page.title === title )[0]
+            return page?.subPages || []
+        },
+        all() {
+            return PAGES
+        }
     }
 }

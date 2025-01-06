@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import Image from "../components/Base/Image.astro";
 import Columns from "../components/Base/Columns.astro";
 import Section from "../components/Layout/Section.astro";
+import SiteMap from "../components/Base/SiteMap.astro";
 
 ---
 
@@ -33,13 +34,7 @@ import Section from "../components/Layout/Section.astro";
 
         <p class="mb-4">We're sorry, the page you are looking for could not be found. Here is a list of all our pages:</p>
 
-        <ul>
-            { PAGES.map( page => (
-                <li>
-                    <a href={page.path} class="hover:underline">{page.title}</a>
-                </li>
-            ))}
-        </ul>
+        <SiteMap />
 
     </Section>
 

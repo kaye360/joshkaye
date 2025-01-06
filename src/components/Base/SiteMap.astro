@@ -1,0 +1,28 @@
+---
+import { getPages } from "../../utils/getPages";
+import Section from "../Layout/Section.astro";
+const pages = getPages().all()
+---
+
+<Section contentWidth="slim" class="text-lg">
+    <ul class="list-disc pl-6">
+        { pages.map( page => (
+            <li>
+                <a href={page.path} class="hover:underline">
+                    {page.title}
+                </a>
+                { page.subPages && (
+                    <ul class="list-disc pl-6">
+                        { page.subPages?.map( subPage => (
+                            <li>
+                                <a href={subPage.path} class="hover:underline">
+                                    {subPage.title}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                )}
+            </li>
+        )) }
+    </ul>
+</Section>

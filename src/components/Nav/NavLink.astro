@@ -28,20 +28,16 @@ const {
 const isActive = Astro.url.pathname === href
 ---
 
-<li>
-    <a
-        href={href} 
-        class:list={[
-            'block py-1 tracking-wide font-bold border-b-2 border-transparent hover:border-primary-500 text-2xl lg:text-base',
-            { 'text-secondary-500' : isActive},
-            className,
-        ]}
-    >
-
-        <slot />
-
-    </a>
-</li>
+<a
+    href={href} 
+    class:list={[
+        'block py-1 tracking-wide font-bold border-b-2 border-transparent hover:border-primary-500 text-2xl lg:text-base',
+        { 'text-secondary-500' : isActive},
+        className,
+    ]}
+>
+    <slot />
+</a>
 
 
 

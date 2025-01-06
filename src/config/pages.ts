@@ -21,13 +21,15 @@ export interface Page {
     /**
      * An array of pages to appear as a dropdown
      */
-    subPages? : Page[],
+    subPages? : SubPage[],
 
     /**
      * The grouping of the page. Usually for the location in the UI for this page to show
      */
     group : PageGroup[]
 }
+
+export type SubPage = Omit<Page, 'group'>
 
 
 export const PAGES : Page[] = [
@@ -40,11 +42,26 @@ export const PAGES : Page[] = [
         title : 'Services',
         path  : '/services',
         group : ['header', 'footer'],
+        subPages : [
+            { title : 'Small business website', path : '/services/sub1' },
+            { title : 'E-commerce website', path : '/services/sub2' },
+            { title : 'Local SEO and Google Ads', path : '/services/sub3' },
+            { title : 'Website Analytics', path : '/services/sub4' },
+            { title : 'Landing Pages', path : '/services/sub5' },
+            { title : 'Small business website', path : '/services/sub1' },
+            { title : 'E-commerce website', path : '/services/sub2' },
+            { title : 'Local SEO and Google Ads', path : '/services/sub3' },
+        ]
     },
     {
         title : 'Products',
         path  : '/products',
         group : ['header', 'footer'],
+        subPages : [
+            { title : 'Small business website', path : '/services/sub1' },
+            { title : 'E-commerce website', path : '/services/sub2' },
+            { title : 'Local SEO and Google Ads', path : '/services/sub3' },
+        ]
     },
     {
         title : 'Contact',
@@ -64,6 +81,11 @@ export const PAGES : Page[] = [
     {
         title : 'Admin',
         path  : '/admin/index.html',
+        group : ['footer'],
+    },
+    {
+        title : 'Site Map',
+        path  : '/site-map',
         group : ['footer'],
     },
     {
