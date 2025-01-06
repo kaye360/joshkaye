@@ -31,20 +31,20 @@ const {
 <html lang={lang} class="">
 
 	<head>
-		<!-- <meta 
+		<meta 
 			http-equiv="Content-Security-Policy" 
-			content=`default-src https:; 
-					img-src 'self';
-					object-src 'self';
-					connect-src 'self';
-					script-src 'self' ${import.meta.env.DEV ? 'http://localhost:4321;' : ''};
-					${import.meta.env.DEV 
-						? "style-src 'unsafe-inline' https://fonts.googleapis.com;" 
-						: "style-src 'self' https://fonts.googleapis.com;"
-					}
-					style-src-attr 'unsafe-inline';
-		`/> -->
-		<meta charset="utf-8" />
+			content=`
+				default-src 'none'; 
+				script-src 'self'; 
+				connect-src 'self'; 
+				img-src 'self'; 
+				style-src '${import.meta.env.DEV ? 'unsafe-inline' : 'self'}';
+				font-src 'self';
+				base-uri 'self';
+				form-action 'self'
+			`
+		/>
+s		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="theme-color" content="#D7CCC1" />
