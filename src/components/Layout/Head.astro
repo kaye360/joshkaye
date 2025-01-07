@@ -1,0 +1,42 @@
+---
+import { SITE_SHORT_NAME } from '../../config/site'
+import Favicon from './Favicon.astro'
+import SocialPreview from './SocialPreview.astro'
+
+interface Props  {
+	title : string,
+    description : string,
+	props? : true
+}
+
+const {
+    title = '',
+    description = '',
+} = Astro.props
+---
+
+<head>
+    <!-- <meta 
+        http-equiv="Content-Security-Policy" 
+        content=`
+            default-src 'none'; 
+            script-src 'unsafe-inline'; 
+            connect-src 'self'; 
+            img-src 'self'; 
+            style-src 'unsafe-inline';
+            font-src 'self';
+            manifest-src 'self';
+            base-uri 'self';
+            form-action 'self'
+        `
+    /> -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#D7CCC1" />
+    <meta name="description" content={description}>
+    <title>{title + ' - ' + SITE_SHORT_NAME}</title>
+    <Favicon />
+    <SocialPreview title={title} description={description} />
+    <slot name="head" />
+</head>

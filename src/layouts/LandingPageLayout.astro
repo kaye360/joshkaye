@@ -1,14 +1,13 @@
 ---
 import '../css/main.css'
 import '@fontsource/lato'
-import BackToTop from '../components/Layout/BackToTop.astro';
 import Footer from '../components/Layout/Footer.astro';
-import Header from '../components/Layout/Header.astro';
 import SkipToContent from '../components/Layout/SkipToContent.astro';
 import Main from '../components/Layout/Main.astro';
 import Head from '../components/Layout/Head.astro';
 import type { Layout } from '../types/Layout'
-
+import Logo from '../components/Base/Logo.astro';
+import Section from '../components/Layout/Section.astro';
 
 interface Props extends Layout { }
 
@@ -25,16 +24,13 @@ const {
 
 	<Head title={title} description={description} />
 
-	<body 
-		class:list={['body', className]}
-		data-mobile-menu="closed"
-	>
+	<body class:list={['body', className]}>
 
 		<SkipToContent />
 
-		<div id="top" class=" h-0 w-full" />
-
-		<Header />
+        <Section py-none class='py-2'>
+            <Logo />
+        </Section>
 
         <Main>
 
@@ -43,8 +39,6 @@ const {
         </Main>
 
         <Footer />
-
-		<BackToTop />
 		
 	</body>
 </html>
