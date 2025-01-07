@@ -54,8 +54,8 @@ export const PAGES : Page[] = [
         ]
     },
     {
-        title : 'Products',
-        path  : '/products',
+        title : 'Examples',
+        path  : '/examples',
         group : ['header', 'footer'],
         subPages : [
             { title : 'Small business website', path : '/services/sub1' },
@@ -64,13 +64,13 @@ export const PAGES : Page[] = [
         ]
     },
     {
-        title : 'Contact',
-        path  : '/contact',
+        title : 'About',
+        path  : '/about',
         group : ['header', 'footer'],
     },
     {
-        title : 'About',
-        path  : '/about',
+        title : 'Contact',
+        path  : '/contact',
         group : ['header', 'footer'],
     },
     {

@@ -12,6 +12,6 @@ interface Props extends HTMLAttributes<'h3'> {
 const { class: className, ...rest } = Astro.props
 ---
 
-<h2 class:list={['text-2xl font-bold', className]} {...rest}>
+<h2 class:list={['text-lg font-bold', className]} {...rest}>
     <slot />
 </h2>

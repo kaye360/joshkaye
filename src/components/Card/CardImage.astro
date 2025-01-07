@@ -3,13 +3,20 @@ import type { Image as ImageProps } from '../Base/Image.astro'
 import Image from '../Base/Image.astro';
 
 interface Props extends ImageProps { 
+
+    /**
+     * Extra class names
+     */
+    class? : string,
+
     /**
      * Requires the following img props: src, width, height, alt
+     * class: string
      */
     props? : true
 }
 
-const { src, width, height, alt } = Astro.props
+const { src, width, height, alt, class:className = '' } = Astro.props
 ---
 
 <Image
@@ -17,6 +24,6 @@ const { src, width, height, alt } = Astro.props
     width={width}
     height={height}
     alt={alt}
-    class="w-full aspect-video object-cover"
+    class:list={["w-full aspect-video object-cover", className]}
     lazy
 />

@@ -2,14 +2,52 @@
 import Icon from "./Icon.astro";
 import { Star } from  'lucide'
 
+interface Props {
+    /**
+     * The rating out of 5. Works in increments of 0.5
+     */
+    rating? : number
+
+    /**
+     * rating : number - Default 5
+     */
+    props? : true
+}
+
+const { rating = 5 } = Astro.props
+
+const stars: ('full' | 'half' | 'empty')[] = []
+
+for( let i=1; i<=5; i++) {
+
+    if( !Number.isInteger(rating) && (i-1).toString() === rating.toString()[0] ) {
+        stars.push('half')
+    } else if( i <= rating ) {
+        stars.push('full')
+    } else {
+        stars.push('empty')
+    }
+}
 ---
+
 <div class="fic-1 text-amber-400">
- 
-    <Icon icon={Star} class="stroke-0 fill-current" />
-    <Icon icon={Star} class="stroke-0 fill-current" />
-    <Icon icon={Star} class="stroke-0 fill-current" />
-    <Icon icon={Star} class="stroke-0 fill-current" />
-    <Icon icon={Star} class="stroke-0 fill-current" />
-    
+    { stars.map( star => (
+        <span class="relative">
+            <Icon 
+                icon={Star} 
+                class:list={[
+                    star === 'full' && 'fill-current stroke-0',
+                    star === 'empty' && 'fill-transparent stroke-1',
+                    star === 'half' && 'fill-current [clip-path:polygon(0_0,48%_0,48%_100%,0%_100%)]'
+                ]} 
+            />
+            { star === 'half' && (
+                <Icon 
+                    icon={Star}
+                    class="absolute inset-0 stroke-1 [clip-path:polygon(48%_0,100%_0,100%_100%,48%_100%)]"
+                />
+            )}
+        </span>
+    )) }
 </div>
     

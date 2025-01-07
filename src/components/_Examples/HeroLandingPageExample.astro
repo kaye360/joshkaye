@@ -1,0 +1,56 @@
+---
+import Image from "astro/components/Image.astro";
+import Button from "../Base/Button.astro";
+import Columns from "../Base/Columns.astro";
+import CtaButton from "../Base/CtaButton.astro";
+import FiveStars from "../Base/FiveStars.astro";
+import Section from "../Layout/Section.astro";
+---
+
+<Image
+    src="/temp/image.jpg"
+    width={200}
+    height={400}
+    alt=""
+    class="w-full h-[275px] md:h-[400px] object-cover md:hidden"
+/>
+
+<Section 
+    py-none
+    class="py-2 md:py-24 bg-primary-900 grid text-primary-100 place-items-center" 
+>
+
+    <Columns class="gap-x-4 items-start">
+
+        <div class="grid gap-6 py-4 md:py-12">
+            <h1 class="text-2xl md:text-3xl font-bold leading-10">
+                Adipisicing elit. Minima, fugit. Eaque ullam natus enim repudiandae.
+            </h1>
+        
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi asperiores, laborum, incidunt provident voluptatem vero quaerat accusamus aut maiores nihil.
+            </p>
+        
+            
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+                <CtaButton />
+                <Button href="#" variant="ghost">Learn More</Button>
+            </div>
+            
+            <div class="fic-2 md:pt-6">
+                5 stars on Google
+                <FiveStars />
+            </div>
+        </div>
+        
+        <Image
+            src="/temp/image.jpg"
+            width={200}
+            height={400}
+            alt=""
+            class="w-full h-[150px] md:h-[400px] object-cover hidden md:block"
+        />
+
+    </Columns>
+
+</Section>

@@ -8,6 +8,7 @@ By Josh Kaye
 - Change site url in astro.config.mjs
 - Lighthouse testing
 - OG images
+- Site.webmanifest name and colors
 
 ## Resources
 - [Astro](https://astro.build)

@@ -1,0 +1,68 @@
+---
+import IntroExample from "../components/_Examples/IntroExample.astro";
+import Button from "../components/Base/Button.astro";
+import Columns from "../components/Base/Columns.astro";
+import CtaButton from "../components/Base/CtaButton.astro";
+import TextBlock from "../components/Base/TextBlock.astro";
+import Card from "../components/Card/Card.astro";
+import CardContent from "../components/Card/CardContent.astro";
+import CardHeading from "../components/Card/CardHeading.astro";
+import CardImage from "../components/Card/CardImage.astro";
+import H1 from "../components/Heading/H1.astro";
+import Section from "../components/Layout/Section.astro";
+import { getPages } from "../js/getPages";
+import Layout from "../layouts/Layout.astro";
+
+const services = getPages().subPagesOf('Services')
+---
+
+<Layout props
+    lang="en"
+    title="Services"
+    description="Tenetur culpa ab ipsam tempora est debitis? Totam quis saepe nostrum ducimus ipsa id vitae sit."
+>
+    
+    <H1>
+        Services
+    </H1>
+
+    <Section contentWidth="slim">
+        <IntroExample />
+    </Section>
+
+    <Section class="bg-primary-50">
+        <Columns cols={3} class="gap-6">
+
+            { services.map( service => (
+                <Card as="a" href="/landing-page" class="group hover:bg-primary-100" props>
+                    <CardHeading>
+                        {service.title}
+                    </CardHeading>
+                    <CardImage props 
+                        src="/temp/image.jpg"
+                        alt=""
+                        width={100}
+                        height={200}
+                        class="group group-hover:scale-105 transition-all"
+                    />
+                    <CardContent>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio delectus sed cum ut aliquid, molestias recusandae praesentium voluptates alias dignissimos.
+                    </CardContent>
+                    <Button>
+                        Learn More
+                    </Button>
+                </Card>
+            ))}
+        </Columns>
+    </Section>
+
+    <Section contentWidth="slim">
+        <TextBlock>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam ab dignissimos, recusandae dicta eveniet dolores enim! Dignissimos totam aperiam commodi sequi ratione libero expedita recusandae quisquam provident, qui similique in.
+            </p>
+            <CtaButton />
+        </TextBlock>
+    </Section>
+
+</Layout>
