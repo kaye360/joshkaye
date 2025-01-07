@@ -20,7 +20,7 @@ By Josh Kaye
 ## Notes
 
 ### src/_Examples 
-This directory contains example code to be used as reference or to copy/paste into a /src/Sections file. Its purpose is to be used in the starter theme as filler content
+This directory contains example code to be used as reference or to copy/paste into a /src/Sections file. It is also for starter theme filler content
 
 ### src/Sections 
 This directory contains re-usable, pre-built sections that are commonly used across sites
@@ -29,6 +29,4 @@ This directory contains re-usable, pre-built sections that are commonly used acr
 This directory contains entire page content within the <main> tags so that pages can be duplicated. For example, a landing page for a particular service could be duplicated in a /services/example-service page. 
 
 ## Todos
-- Make base landing page
 - Privacy policy
-- As as feature to button. Make CardLinksExample have <Button as="span"> to avoid nestend button with anchor tag

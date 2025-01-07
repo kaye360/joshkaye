@@ -1,22 +1,48 @@
 ---
-interface Props {
+import type { HTMLTag, Polymorphic } from 'astro/types'
+
+type Props<HTMLElement extends HTMLTag> = Polymorphic<{ 
+
+    /**
+     * Style of button
+     */
     variant? : 'fill' | 'outline' | 'ghost',
+
+    /**
+     * Link href of button if button is a link
+     */
     href? : string,
+
+    /**
+     * Type of element the button should be. Default \<button>
+     */
+    as : HTMLElement,
+
+    /**
+     * Extra class names
+     */
     class? : string,
-    [key:string] : any,
-}
+
+    /**
+     * @props variant : 'fill' | 'outline' | 'ghost' - Default 'fill'
+     * @props href? : string
+     * @props as? : HTMLElement
+     * @props class? : string
+     */
+    props? : true
+}>
 
 const { 
     variant = 'fill',
     href = null,
+    as : Element = 'div',
     class: className,
     ...props
 } = Astro.props
 
-const ButtonElement = href ? 'a' : 'button'
 ---
 
-<ButtonElement 
+<Element 
     class:list={[
         'fic-2 justify-center px-4 py-2 font-normal tracking-wide rounded-md border transition-all active:scale-95', 
 
@@ -35,4 +61,4 @@ const ButtonElement = href ? 'a' : 'button'
     { ...( href && { href } ) }
 >
     <slot />
-</ButtonElement>
+</Element>

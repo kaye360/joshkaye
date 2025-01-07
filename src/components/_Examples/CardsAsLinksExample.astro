@@ -1,7 +1,9 @@
 ---
+import Button from "../Base/Button.astro";
 import Columns from "../Base/Columns.astro";
 import Card from "../Card/Card.astro";
 import CardContent from "../Card/CardContent.astro";
+import CardFooter from "../Card/CardFooter.astro";
 import CardHeading from "../Card/CardHeading.astro";
 import H2 from "../Heading/H2.astro";
 ---
@@ -17,6 +19,9 @@ import H2 from "../Heading/H2.astro";
         <CardContent>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque temporibus sapiente ducimus possimus cum, qui deserunt accusantium amet animi, saepe architecto praesentium nulla dicta, dolore rem cumque harum! Explicabo, hic?
         </CardContent>
+        <CardFooter>
+            <Button as="span">Learn More</Button>
+        </CardFooter>
     </Card>
 
     <Card>
@@ -26,6 +31,9 @@ import H2 from "../Heading/H2.astro";
         <CardContent>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quidem explicabo a molestiae beatae? Ab deleniti qui provident excepturi atque.
         </CardContent>
+        <CardFooter>
+            <Button href="/services">Learn More</Button>
+        </CardFooter>
     </Card>
     
     <Card as="a" href="/services" class="hover:bg-primary-100">
@@ -35,6 +43,9 @@ import H2 from "../Heading/H2.astro";
         <CardContent>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque temporibus sapiente ducimus possimus cum, qui deserunt accusantium amet animi, saepe architecto praesentium nulla dicta, dolore rem cumque harum! Explicabo, hic?
         </CardContent>
+        <CardFooter>
+            <Button as="span">Learn More</Button>
+        </CardFooter>
     </Card>
 
     <Card>
@@ -43,6 +54,11 @@ import H2 from "../Heading/H2.astro";
         </CardHeading>
         <CardContent>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quidem explicabo a molestiae beatae? Ab deleniti qui provident excepturi atque.
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, sunt deleniti ab labore enim odio cumque atque eum ad doloremque sapiente tempore suscipit voluptas optio provident quae repellendus! Nisi, eaque!
         </CardContent>
+        <CardFooter>
+            <Button href="/services">Learn More</Button>
+        </CardFooter>
     </Card>
 </Columns>
