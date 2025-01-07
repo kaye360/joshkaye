@@ -110,4 +110,23 @@ const headerPages = getPages().byGroup('header').all()
 }
 </style>
     
-<script src="../../js/components/Header.ts"></script>
+<script>
+
+import { isClicked } from "../../js/isClicked"
+    
+/**
+ * If the user clicked outside of the menu, close the mobile menu
+ */
+window.addEventListener('click', (e: MouseEvent) => {
+
+    const header = document.querySelector('header') as HTMLElement
+    const nav = document.querySelector('nav') as HTMLElement
+
+    if( 
+        !isClicked({e, el: header}) && 
+        !isClicked({e, el: nav}) 
+    ) {
+        document.body.dataset.mobileMenu = 'closed'
+    }
+})
+</script>

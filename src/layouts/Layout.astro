@@ -31,20 +31,20 @@ const {
 <html lang={lang} class="">
 
 	<head>
-		<meta 
+		<!-- <meta 
 			http-equiv="Content-Security-Policy" 
 			content=`
 				default-src 'none'; 
-				script-src 'self'; 
+				script-src 'unsafe-inline'; 
 				connect-src 'self'; 
 				img-src 'self'; 
-				style-src '${import.meta.env.DEV ? 'unsafe-inline' : 'self'}';
+				style-src 'unsafe-inline';
 				font-src 'self';
 				manifest-src 'self';
 				base-uri 'self';
 				form-action 'self'
 			`
-		/>
+		/> -->
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
