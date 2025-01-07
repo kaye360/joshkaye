@@ -1,0 +1,41 @@
+---
+import { getPages } from "../../js/getPages";
+import Button from "../Base/Button.astro";
+import Columns from "../Base/Columns.astro";
+import Card from "../Card/Card.astro";
+import CardContent from "../Card/CardContent.astro";
+import CardHeading from "../Card/CardHeading.astro";
+import CardImage from "../Card/CardImage.astro";
+import H2 from "../Heading/H2.astro";
+import Section from "../Layout/Section.astro";
+const services = getPages().subPagesOf('Services')
+---
+
+<Section class="bg-primary-50">
+
+    <H2>Our Services</H2>
+    
+    <Columns cols={4} class="gap-6">
+
+        { services.map( service => (
+            <Card as="a" href="/landing-page" class="group hover:bg-primary-100" props>
+                <CardHeading>
+                    {service.title}
+                </CardHeading>
+                <CardImage props 
+                    src="/temp/image.jpg"
+                    alt=""
+                    width={100}
+                    height={200}
+                    class="group group-hover:scale-105 transition-all"
+                />
+                <CardContent>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio delectus sed cum ut aliquid, molestias recusandae praesentium voluptates alias dignissimos.
+                </CardContent>
+                <Button>
+                    Learn More
+                </Button>
+            </Card>
+        ))}
+    </Columns>
+</Section>

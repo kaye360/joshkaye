@@ -1,0 +1,42 @@
+---
+import Columns from "../Base/Columns.astro";
+import Icon from "../Base/Icon.astro";
+import H2 from "../Heading/H2.astro";
+import H3 from "../Heading/H3.astro";
+import Section from "../Layout/Section.astro";
+import { DatabaseZap, WalletMinimal, PackageCheck, Gamepad2 } from 'lucide'
+---
+
+<Section contentWidth="full" >
+
+    <H2 class="text-center">Why work with us</H2>
+
+    <Columns cols={4} class="gap-4">
+
+        <div class="flex flex-col gap-2 items-center">
+            <Icon icon={ DatabaseZap } class="w-10 h-10 text-primary-500" stroke-width="1.5" />
+            <H3>Safety first</H3>
+            <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor molestiae sint quo cumque.</p>
+        </div>
+
+        <div class="flex flex-col gap-2 items-center">
+            <Icon icon={ WalletMinimal } class="w-10 h-10 text-primary-500" stroke-width="1.5" />
+            <H3>Save your money</H3>
+            <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor molestiae sint quo cumque.</p>
+        </div>
+
+        <div class="flex flex-col gap-2 items-center">
+            <Icon icon={ PackageCheck } class="w-10 h-10 text-primary-500" stroke-width="1.5" />
+            <H3>Less waiting</H3>
+            <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor molestiae sint quo cumque.</p>
+        </div>
+
+        <div class="flex flex-col gap-2 items-center">
+            <Icon icon={ Gamepad2 } class="w-10 h-10 text-primary-500" stroke-width="1.5" />
+            <H3>Have fun</H3>
+            <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor molestiae sint quo cumque.</p>
+        </div>
+    
+    </Columns>
+
+</Section>

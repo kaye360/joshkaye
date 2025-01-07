@@ -9,9 +9,7 @@ export function persistForm( form : HTMLFormElement ) {
 export function loadPersistedForm( form : HTMLFormElement ) {
     const savedData = localStorage.getItem("form")
 
-    if (!savedData) {
-        return
-    }
+    if (!savedData) return
 
     const formData = Object.entries ( JSON.parse(savedData) )
 

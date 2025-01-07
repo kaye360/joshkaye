@@ -1,14 +1,15 @@
 ---
-import HeroLandingPageExample from "../components/_Examples/HeroLandingPageExample.astro";
+import HeroLandingPageSection from "../components/Sections/HeroLandingPageSection.astro";
 import IntroExample from "../components/_Examples/IntroExample.astro";
-import TestimonialsExample from "../components/_Examples/TestimonialsExample.astro";
 import H2 from "../components/Heading/H2.astro";
 import Section from "../components/Layout/Section.astro";
 import LandingPageLayout from "../layouts/LandingPageLayout.astro";
 import CtaButton from '../components/Base/CtaButton.astro'
-import TextBlock from "../components/Base/TextBlock.astro";
 import Button from "../components/Base/Button.astro";
-import Input from "../components/Forms/Input.astro";
+import CallToActionSection from "../components/Sections/CallToActionSection.astro";
+import TestimonialsSection from "../components/Sections/TestimonialsSection.astro";
+import BenefitsSection from "../components/Sections/BenefitsSection.astro";
+import CaseStudySection from "../components/Sections/CaseStudySection.astro";
 ---
 
 <LandingPageLayout props
@@ -16,50 +17,26 @@ import Input from "../components/Forms/Input.astro";
 	description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro in expedita beatae perferendis quod qui perspiciatis numquam."
 >
 
-    <HeroLandingPageExample />
+    <HeroLandingPageSection />
     
     <!-- Benefits -->
-    <Section>
-        <H2>Benefits</H2>
-    </Section>
+    <BenefitsSection />
 
-    <!-- More info re: call to action -->
+    <!-- More info re: main service offered -->
     <Section contentWidth="slim" class="bg-primary-100">
         <IntroExample />
         <Button href="#case-study" variant="outline" class="mt-6">
-            View case study
+            See how our service helped John
         </Button>
     </Section>
 
-    <!-- Trust, Social Proof, and testamonials -->
-    <Section contentWidth="slim">
-        <TestimonialsExample />
-        <div class="h-12"></div>
-        <CtaButton />
-    </Section>
+    <!-- Social Proof, Trust building, Tesimonials. Can be broken up into multiple sections -->
+    <TestimonialsSection />
 
     <!-- Case Study -->
-    <Section id="case-study">
-        <H2>Case Study</H2>
-    </Section>
+    <CaseStudySection />
 
     <!-- Call to action -->
-    <Section contentWidth="slim" class="bg-primary-700 text-primary-50">
-        <TextBlock>
-            <H2>Ready to join?</H2>
-            <p class="text-lg">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex repellendus quae consequuntur possimus porro omnis mollitia perspiciatis molestiae itaque voluptate?
-            </p>
-            <Input 
-                type='email'
-                title="Your Email Address"
-                name="email"
-                class='!w-full !min-w-max'
-            />
-            <div class="px-2">
-                <CtaButton />
-            </div>
-        </TextBlock>
-    </Section>
+     <CallToActionSection />
 
 </LandingPageLayout>

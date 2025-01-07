@@ -1,0 +1,35 @@
+---
+import CtaButton from "../Base/CtaButton.astro";
+import Review from "../Base/Review.astro";
+import TextBlock from "../Base/TextBlock.astro";
+import H2 from "../Heading/H2.astro";
+import Section from "../Layout/Section.astro";
+---
+
+<Section contentWidth="slim">
+    <TextBlock>
+
+        <H2>What our customers are saying</H2>
+        
+        <div class="grid gap-8">
+
+            <Review 
+                review="Suscipit laborum itaque esse mollitia commodi sint beatae enim assumenda magnam possimus! Suscipit laborum itaque esse mollitia commodi sint beatae enim assumenda magnam possimus!"
+                name="Person One"
+            />
+
+            <Review
+                review="Repellat unde delectus asperiores vitae porro, recusandae omnis incidunt voluptatibus eos possimus dolorem atque rem soluta, ipsa, harum deleniti quidem consectetur. Omnis! Repellat unde delectus asperiores vitae porro, recusandae omnis incidunt voluptatibus eos possimus dolorem atque rem soluta, ipsa, harum deleniti quidem consectetur. Omnis!"
+                name="Person Two"
+            />
+
+            <Review 
+                review="Tempore, dolores velit ipsam dolorum esse eos reprehenderit distinctio assumenda minima ipsum harum facilis incidunt iste sapiente. Tempore, dolores velit ipsam dolorum esse eos reprehenderit distinctio assumenda minima ipsum harum facilis incidunt iste sapiente."
+                name="Person Three"
+            />
+        </div>
+
+    </TextBlock>
+    <div class="h-12"></div>
+    <CtaButton />
+</Section>

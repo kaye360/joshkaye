@@ -2,10 +2,13 @@
 import Layout from '../layouts/Layout.astro'
 import Section from '../components/Layout/Section.astro';
 import IntroExample from '../components/_Examples/IntroExample.astro';
-import TestimonialsExample from '../components/_Examples/TestimonialsExample.astro';
-import HeroExample from '../components/_Examples/HeroExample.astro';
-import CardsExample from '../components/_Examples/CardsExample.astro';
-import CardsAsLinksExample from '../components/_Examples/CardsAsLinksExample.astro';
+import Button from '../components/Base/Button.astro';
+import CallToActionSection from '../components/Sections/CallToActionSection.astro';
+import TestimonialsSection from '../components/Sections/TestimonialsSection.astro';
+import HeroSection from '../components/Sections/HeroSection.astro';
+import ServicesSection from '../components/Sections/ServicesSection.astro';
+import BenefitsSection from '../components/Sections/BenefitsSection.astro';
+import CaseStudySection from '../components/Sections/CaseStudySection.astro';
 ---
 
 <Layout props
@@ -13,27 +16,29 @@ import CardsAsLinksExample from '../components/_Examples/CardsAsLinksExample.ast
 	description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro in expedita beatae perferendis quod qui perspiciatis numquam."
 >
 
-	<Section 
-		contentWidth="slim"
-		class="min-h-[70vh] bg-primary-900 grid text-primary-100 place-items-center" 
-	>
-		<HeroExample />
-	</Section>
+	<HeroSection />
 
+	<!-- Intro to company -->
 	<Section contentWidth='slim'>
 		<IntroExample />
+		<Button href="#case-study" variant="outline" class="mt-6">
+            See how our service helped John
+        </Button>
 	</Section>
 
-	<Section class='bg-primary-50'>
-		<CardsExample />
-	</Section>
+	<!-- Benefits -->
+	<BenefitsSection />
 
-	<Section contentWidth='slim'>
-		<!-- <TestimonialsExample /> -->
-	</Section>
+	<!-- Services -->
+	<ServicesSection />
 
-	<Section class='bg-primary-50'>
-		<CardsAsLinksExample />
-	</Section>
+	<!-- Social Proof, Trust building, Tesimonials. Can be broken up into multiple sections -->
+	<TestimonialsSection />
+
+	<!-- Case Study -->
+	<CaseStudySection />
+
+	<!-- Main call to action or contact -->
+	<CallToActionSection />
 
 </Layout>

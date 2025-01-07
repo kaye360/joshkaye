@@ -1,0 +1,30 @@
+---
+import Button from "../Base/Button.astro";
+import CtaButton from "../Base/CtaButton.astro";
+import FiveStars from "../Base/FiveStars.astro";
+import Section from "../Layout/Section.astro";
+---
+<Section 
+    contentWidth="slim"
+    class="min-h-[70vh] bg-primary-900 bg-[url(/temp/hero.jpg)] bg-cover bg-blend-soft-light grid text-primary-100 place-items-center" 
+>
+    <div class="grid gap-6">
+        <h1 class="text-3xl font-bold leading-10">
+            Adipisicing elit. Minima, fugit. Eaque ullam natus enim repudiandae.
+        </h1>
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi asperiores, laborum, incidunt provident voluptatem vero quaerat accusamus aut maiores nihil.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+            <CtaButton />
+            <Button href="#" variant="ghost">Learn More</Button>
+        </div>
+        
+        <div class="fic-2 mt-3">
+            5 stars on Google
+            <FiveStars />
+        </div>
+    </div>
+</Section>
