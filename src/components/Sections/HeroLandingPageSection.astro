@@ -8,7 +8,7 @@ import Section from "../Layout/Section.astro";
 ---
 
 <Image
-    src="/temp/image.jpg"
+    src="/temp/computer.jpg"
     width={200}
     height={400}
     alt=""
@@ -20,7 +20,7 @@ import Section from "../Layout/Section.astro";
     class="py-2 md:py-16 grid text-primary-100 place-items-center bg-primary-900 bg-[url(/temp/hero.jpg)] bg-cover bg-blend-soft-light" 
 >
 
-    <Columns class="gap-x-4 items-start">
+    <Columns cols={2} class="gap-x-4 items-start">
 
         <div class="grid gap-6 py-4 md:py-12">
             <h1 class="text-2xl md:text-3xl font-bold leading-10">
@@ -43,14 +43,13 @@ import Section from "../Layout/Section.astro";
             </div>
         </div>
         
-        <!-- <Image
-            src="/temp/image.jpg"
+        <Image
+            src="/temp/computer.jpg"
             width={200}
             height={400}
             alt=""
-            class="w-full h-[150px] md:h-[400px] object-cover hidden md:block"
-        /> -->
-        <div></div>
+            class="w-full h-full max-h-[400px] object-cover hidden md:block"
+        />
 
     </Columns>
 

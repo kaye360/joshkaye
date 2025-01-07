@@ -1,5 +1,22 @@
 ---
 import FiveStars from "./FiveStars.astro";
+interface Props {
+    /**
+     * Name of person giving review
+     */
+    name : string
+    
+    /**
+     * Review text
+     */
+    review : string
+
+    /**
+     * @prop name : string
+     * @prop review : string
+     */
+    props? : true
+}
 const { name, review } = Astro.props
 ---
 

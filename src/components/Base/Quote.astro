@@ -1,0 +1,29 @@
+---
+interface Props {
+    /**
+     * Name of person giving review
+     */
+    name : string
+    
+    /**
+     * Review text
+     */
+    quote : string
+
+    /**
+     * @prop name : string
+     * @prop quote : string
+     */
+    props? : true
+}
+const { name, quote } = Astro.props
+---
+
+<div class="border-l-4 border-primary-200 pl-2">
+    <blockquote class="mb-2">
+        {quote}
+    </blockquote>
+    <cite>
+        - {name}
+    </cite>
+</div>

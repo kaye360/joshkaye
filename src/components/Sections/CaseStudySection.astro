@@ -1,8 +1,44 @@
 ---
+import Columns from "../Base/Columns.astro";
+import Quote from "../Base/Quote.astro";
+import Review from "../Base/Review.astro";
+import TextBlock from "../Base/TextBlock.astro";
 import H2 from "../Heading/H2.astro";
 import Section from "../Layout/Section.astro";
+import Image from "astro/components/Image.astro";
 ---
 
 <Section id="case-study">
-    <H2>John's story of successs</H2>
+
+    
+    <Columns cols={2} class="gap-4">
+        
+        <TextBlock>
+            <H2>John's story of successs</H2>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio tempore culpa delectus fugiat illo nulla, non maxime nesciunt commodi vero.
+            </p>
+            <p>
+                Suscipit laudantium facere quam autem facilis, delectus totam nulla. Voluptates possimus beatae maiores officiis veritatis natus? Mollitia corporis cumque voluptas sit! Consequuntur?
+            </p>
+            <p>
+                Consectetur adipisicing elit. Fugiat laudantium harum recusandae amet iste modi error aspernatur sit quidem vero?
+            </p>
+            <Quote
+                name="John Smith, CEO of a company"
+                quote="Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit laudantium facere quam autem facilis, delectus totam nulla. Voluptates possimus beatae maiores officiis veritatis!"
+            />
+        </TextBlock>
+
+        <div>
+            <Image
+                src="/temp/person-2.jpg"
+                width={200}
+                height={400}
+                alt=""
+                class="w-[300px] h-[300px] mx-auto lg:w-full lg:h-full object-cover"
+            />
+        </div>
+    </Columns>
+    
 </Section>

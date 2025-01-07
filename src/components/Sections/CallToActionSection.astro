@@ -1,24 +1,29 @@
 ---
 import CtaButton from "../Base/CtaButton.astro";
 import TextBlock from "../Base/TextBlock.astro";
-import Input from "../Forms/Input.astro";
 import H2 from "../Heading/H2.astro";
 import Section from "../Layout/Section.astro";
 ---
 
-<Section contentWidth="slim" class="bg-primary-700 text-primary-50">
+<Section contentWidth="slim" class="bg-primary-800 text-primary-50">
     <TextBlock>
         <H2>Ready to join?</H2>
         <p class="text-lg">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex repellendus quae consequuntur possimus porro omnis mollitia perspiciatis molestiae itaque voluptate?
         </p>
-        <Input 
-            type='email'
-            title="Your Email Address"
-            name="email"
-            class='!w-full !min-w-max'
-        />
-        <div class="px-2">
+        <label>
+            <span class="inline-block my-2 font-semibold">
+                Enter you email address
+            </span>
+            <input 
+                type='email'
+                title="Your Email Address"
+                name="email"
+                class="form-field !min-w-full focus:outline-primary-600 text-primary-700"
+                placeholder="your@email.com"
+            />
+        </label>
+        <div class="">
             <CtaButton />
         </div>
     </TextBlock>
