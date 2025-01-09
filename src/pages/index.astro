@@ -9,6 +9,8 @@ import HeroSection from '../components/Sections/HeroSection.astro';
 import ServicesSection from '../components/Sections/ServicesSection.astro';
 import BenefitsSection from '../components/Sections/BenefitsSection.astro';
 import CaseStudySection from '../components/Sections/CaseStudySection.astro';
+import TextBlock from '../components/Base/TextBlock.astro';
+import Avatar from '../components/Base/Avatar.astro';
 ---
 
 <Layout props
@@ -20,20 +22,24 @@ import CaseStudySection from '../components/Sections/CaseStudySection.astro';
 
 	<!-- Intro to company -->
 	<Section contentWidth='slim'>
-		<IntroExample />
-		<Button href="#case-study" variant="outline" class="mt-6">
-            See how our service helped John
-        </Button>
+		<div class="flex gap-4 items-start md:items-center">
+			<Avatar 
+				src="/img/josh-avatar.webp"
+				name="Josh Kaye"
+			/>
+			<p>
+				Hello! I'm Josh. I'm a <strong>freelance web developer</strong> who specializes in small business websites, brochure-style websites, landing pages, and more. With over <strong>15 years of experience</strong> in the industry, I have refined my workflow to create your perfect site for an affordable price.
+			</p>
+		</div>
 	</Section>
 
 	<!-- Benefits -->
 	<BenefitsSection />
 
-	<!-- Services -->
-	<ServicesSection />
-
 	<!-- Social Proof, Trust building, Tesimonials. Can be broken up into multiple sections -->
 	<TestimonialsSection />
+
+	<!-- Projects -->
 
 	<!-- Case Study -->
 	<CaseStudySection />

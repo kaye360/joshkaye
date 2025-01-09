@@ -9,11 +9,6 @@ type Props<HTMLElement extends HTMLTag> = Polymorphic<{
     variant? : 'fill' | 'outline' | 'ghost',
 
     /**
-     * Link href of button if button is a link
-     */
-    href? : string,
-
-    /**
      * Type of element the button should be. Default \<button>
      */
     as : HTMLElement,
@@ -25,7 +20,6 @@ type Props<HTMLElement extends HTMLTag> = Polymorphic<{
 
     /**
      * @props variant : 'fill' | 'outline' | 'ghost' - Default 'fill'
-     * @props href? : string
      * @props as? : HTMLElement
      * @props class? : string
      */
@@ -34,7 +28,6 @@ type Props<HTMLElement extends HTMLTag> = Polymorphic<{
 
 const { 
     variant = 'fill',
-    href = null,
     as : Element = 'div',
     class: className,
     ...props
@@ -44,10 +37,10 @@ const {
 
 <Element 
     class:list={[
-        'fic-2 justify-center px-4 py-2 font-normal tracking-wide rounded-md border transition-all active:scale-95', 
+        'fic-3 justify-center px-4 py-2 font-semibold tracking-widest rounded-md border transition-all active:scale-95', 
 
         variant === 'fill' && 
-            'border-primary-500 hover:border-secondary-500 bg-primary-500 hover:bg-secondary-500 text-white ',
+            'border-secondary-500 hover:border-primary-500 bg-secondary-500 hover:bg-primary-500 text-white ',
 
         variant === 'outline' && 
             'border-primary-500 hover:border-secondary-500 text-primary-600 hover:text-secondary-600',
@@ -58,7 +51,6 @@ const {
         className
     ]}
     { ...props }
-    { ...( href && { href } ) }
 >
     <slot />
 </Element>

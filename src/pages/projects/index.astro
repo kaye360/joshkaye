@@ -1,0 +1,56 @@
+---
+import Button from "../../components/Base/Button.astro";
+import Columns from "../../components/Base/Columns.astro";
+import H1 from "../../components/Heading/H1.astro";
+import H2 from "../../components/Heading/H2.astro";
+import Section from "../../components/Layout/Section.astro";
+import Project from "../../components/Project/Project.astro";
+import ProjectRole from "../../components/Project/ProjectRole.astro";
+import ProjectTags from "../../components/Project/ProjectTags.astro";
+import { projects } from "../../config/projects";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout 
+    title="Web design projects"
+    description=""
+>
+
+    <H1>Projects</H1>
+
+    <Section>
+
+        <p class="mb-12 max-w-xl" >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, rem quas. Qui asperiores quasi et quisquam delectus consequuntur voluptatibus. Dolorem, aliquid ut quis nisi perferendis eum nihil et quo magni!
+        </p>
+
+		<Columns cols={2} class="gap-16">
+	
+			{  projects.map( project => (
+				<Project>
+					<img 
+						src={project.cover} 
+						width="576"
+						height="576"
+						alt=""
+                        class="w-full aspect-square mb-2"
+						loading="lazy"
+					/>
+                    <H2>{project.title}</H2>
+					<ProjectRole>{project.role}</ProjectRole>
+					<ProjectTags>
+						{ project.tags.map( tag => (
+							<span class=" first:hidden">&#8226;</span>
+							<span>{tag}</span>
+						))}
+					</ProjectTags>
+                    <Button as="a" href={project.caseStudyUrl} variant="outline">
+                        View case study
+                    </Button>
+				</Project>
+			))}
+			
+		</Columns>
+	</Section>
+
+</Layout>

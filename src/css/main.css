@@ -10,7 +10,7 @@
                 
         /* Color Picker is just for use in IDE */
         --color-picker : hsl(204, 36%, 36%);
-        --color-picker : hsl(340, 93%, 62%);
+        --color-picker : hsl(352, 93%, 62%);
         --color-picker : hsl(286, 39%, 44%);
 
         /* 
@@ -19,17 +19,11 @@
         */
         --primary-color   : 204deg 36%;
         --secondary-color : 340deg 90%;
-        --tertiary-color  : 286deg 40%;
-
 
         /* ------------------------ Spacing ------------------------ */
     }
     
-    html {
-        scroll-behavior: smooth;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
+    h2, h3, h4, h5, h6 {
         text-wrap : balance;
     }
 
@@ -61,6 +55,9 @@
     }
     .fic-2 {
         @apply flex items-center gap-2
+    }
+    .fic-3 {
+        @apply flex items-center gap-3
     }
     .fic-4 {
         @apply flex items-center gap-4

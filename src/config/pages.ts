@@ -39,34 +39,24 @@ export const PAGES : Page[] = [
         group : ['header', 'footer'],
     },
     {
-        title : 'Services',
-        path  : '/services',
+        title : 'Plans + Pricing',
+        path  : '/plans',
         group : ['header', 'footer'],
-        subPages : [
-            { title : 'Small business website', path : '/services/sub1' },
-            { title : 'E-commerce website', path : '/services/sub2' },
-            { title : 'Local SEO and Google Ads', path : '/services/sub3' },
-            { title : 'Website Analytics', path : '/services/sub4' },
-            { title : 'Landing Pages', path : '/services/sub5' },
-            { title : 'Small business website', path : '/services/sub1' },
-            { title : 'E-commerce website', path : '/services/sub2' },
-            { title : 'Local SEO and Google Ads', path : '/services/sub3' },
-        ]
     },
     {
-        title : 'Examples',
-        path  : '/examples',
+        title : 'Projects',
+        path  : '/projects',
         group : ['header', 'footer'],
-        subPages : [
-            { title : 'Small business website', path : '/services/sub1' },
-            { title : 'E-commerce website', path : '/services/sub2' },
-            { title : 'Local SEO and Google Ads', path : '/services/sub3' },
-        ]
+    },
+    {
+        title : 'FAQ',
+        path  : '/faq',
+        group : ['header', 'footer'],
     },
     {
         title : 'About',
         path  : '/about',
-        group : ['header', 'footer'],
+        group : ['footer'],
     },
     {
         title : 'Contact',
@@ -79,18 +69,13 @@ export const PAGES : Page[] = [
         group : ['footer'],
     },
     {
-        title : 'Admin',
-        path  : '/admin/index.html',
-        group : ['footer'],
-    },
-    {
         title : 'Site Map',
         path  : '/site-map',
         group : ['footer'],
     },
     {
-        title : 'Book Now',
-        path  : '/booking',
+        title : 'Get Started',
+        path  : '/get-started',
         group : ['cta'],
     },
 ]

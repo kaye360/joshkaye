@@ -1,0 +1,14 @@
+---
+interface Props {
+    href : string
+}
+
+const { href } = Astro.props
+---
+<a 
+    href={href}
+    class="inline-block text-lg"
+    target="_blank"
+>
+    View Project
+</a>

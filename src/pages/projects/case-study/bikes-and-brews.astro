@@ -1,0 +1,100 @@
+---
+import List from "../../../components/Base/List.astro";
+import TextBlock from "../../../components/Base/TextBlock.astro";
+import H1 from "../../../components/Heading/H1.astro";
+import H2 from "../../../components/Heading/H2.astro";
+import Section from "../../../components/Layout/Section.astro";
+import ProjectLink from "../../../components/Project/ProjectLink.astro";
+import ProjectRole from "../../../components/Project/ProjectRole.astro";
+import ProjectTags from "../../../components/Project/ProjectTags.astro";
+import { projects } from "../../../config/projects";
+import Layout from "../../../layouts/Layout.astro";
+
+const project = projects.filter( project => project.title === 'Tri-city Bikes and Brews')[0]
+---
+
+<Layout 
+    title="Web design projects"
+    description=""
+>
+
+    <H1>Case Study: {project.title}</H1>
+
+    <Section contentWidth="slim">
+
+        <TextBlock>
+    
+            <ProjectRole>Project Role: {project.role}</ProjectRole>
+    
+            <ProjectTags>
+                { project.tags.map( tag => (
+                    <span class=" first:hidden">&#8226;</span>
+                    <span>{tag}</span>
+                ))}
+            </ProjectTags>
+    
+            <img 
+                src={project.cover}
+                width="576"
+                height="576"
+                alt=""
+                loading="lazy"
+            />
+    
+            <p>Tri-City Bikes and Brews is a local meetup group for bike enthusiasts who enjoy cycling, local trails, and and ending their ride at a local brewery or distillery. The community had grown enough to warrant a website. The goal was to create a modern, easy-to-update site that would showcase the group's activities and simplify event planning.</p>
+    
+            <div class="grid grid-cols-2 gap-4">
+                <img 
+                    src="/projects/bikes-and-brews-mobile-1.webp" 
+                />
+                <img 
+                    src="/projects/bikes-and-brews-mobile-2.webp" 
+                />
+            </div>
+    
+            <H2>Project Goals</H2>
+    
+            <List>
+                <li><strong>User-Friendly Design:</strong> A simple and engaging website showcasing bike rides, brewery tours, and community events.</li>
+                <li><strong>Event Management:</strong> A system to notify members of events.</li>
+                <li><strong>Social Media Integration:</strong> Connect with members and promote events via social media.</li>
+                <li><strong>Content Updates:</strong> Allow the owner to add photos, news, and blog posts effortlessly.</li>
+            </List>
+    
+            <img 
+                src="/projects/bikes-and-brews-desktop-1.webp" 
+            />
+    
+            <H2>The Solution</H2>
+            <p>A <strong>WordPress site with a custom theme</strong> was developed to meet the client's needs. Key features included:</p>
+    
+            <List>
+                <li><strong>Event Management System:</strong> Custom post types and a calendar plugin allowed the owner to easily create and display events with detailed information.</li>
+                <li><strong>Photo Gallery:</strong> A simple upload system for photos from past events, keeping content fresh.</li>
+                <li><strong>Social Media Links:</strong> Direct connections to Facebook, Instagram, and Twitter, along with sharing options to increase visibility.</li>
+                <li><strong>Responsive Design:</strong> The website adapts to all devices, ensuring usability across desktop, tablet, and mobile.</li>
+                <li><strong>News Section:</strong> A space for blog posts, news articles, and media mentions, which also helped the site gain press attention.</li>
+                <li><strong>SEO Optimization:</strong> Implemented SEO practices to increase discoverability, driving more local traffic.</li>
+            </List>
+    
+            <H2>The Result</H2>
+            <p>The new website transformed how the group managed events and engaged with members. The event system was easy to use, and social media integration helped grow their online community. The site's news section attracted local press, further promoting the group. As a result, Tri-City Bikes and Brews saw increased member engagement and visibility in the local scene.</p>
+    
+            <img 
+                src="/projects/bikes-and-brews-desktop-2.webp" 
+            />
+    
+            <H2>Conclusion</H2>
+            <p>This WordPress site streamlined event management, improved social media integration, and helped Tri-City Bikes and Brews grow its community. The custom theme made the site both functional and easy to update, with a strong local presence supported by SEO and press exposure.</p>
+    
+            { project.projectUrl && 
+                <ProjectLink href={project.projectUrl} />
+            }
+
+        </TextBlock>
+
+    </Section>
+
+
+</Layout>
+

@@ -1,42 +1,90 @@
 ---
+import Button from "../Base/Button.astro";
 import Columns from "../Base/Columns.astro";
+import CtaButton from "../Base/CtaButton.astro";
 import Icon from "../Base/Icon.astro";
+import TextBlock from "../Base/TextBlock.astro";
 import H2 from "../Heading/H2.astro";
 import H3 from "../Heading/H3.astro";
 import Section from "../Layout/Section.astro";
-import { DatabaseZap, WalletMinimal, PackageCheck, Gamepad2 } from 'lucide'
+import { PiggyBank, Zap, ChartNoAxesCombined, MonitorSmartphone, Telescope } from 'lucide'
 ---
 
-<Section contentWidth="full" >
+<Section 
+    id="benefits"
+    contentWidth="full" 
+    class="flex flex-col items-center gap-16 bg-primary-50" 
+>
 
-    <H2 class="text-center">Why work with us</H2>
+    <TextBlock class="md:text-center">
+        <H2>Focus on running your business, not fixing your website</H2>
+        <p>
+            I make it easy for you. Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto tenetur dolorem incidunt repellat facere recusandae ullam earum laborum!
+        </p>
+    </TextBlock>
 
-    <Columns cols={4} class="gap-4">
+    <Columns cols={4} class="gap-x-4 gap-y-8">
 
-        <div class="flex flex-col gap-2 items-center">
-            <Icon icon={ DatabaseZap } class="w-10 h-10 text-primary-500" stroke-width="1.5" />
-            <H3>Safety first</H3>
-            <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor molestiae sint quo cumque.</p>
+        <div class="flex flex-col gap-2 items-start">
+            <Icon icon={ Zap } class="w-16 h-16 text-primary-500" stroke-width="1.5" />
+            <H3>Fast websites = higher conversions</H3>
+            <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor molestiae sint quo cumque.</p>
         </div>
 
-        <div class="flex flex-col gap-2 items-center">
-            <Icon icon={ WalletMinimal } class="w-10 h-10 text-primary-500" stroke-width="1.5" />
+        <div class="flex flex-col gap-2 items-start">
+            <Icon icon={ PiggyBank } class="w-16 h-16 text-primary-500" stroke-width="1.5" />
             <H3>Save your money</H3>
-            <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor molestiae sint quo cumque.</p>
+            <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor molestiae sint quo cumque.</p>
         </div>
 
-        <div class="flex flex-col gap-2 items-center">
-            <Icon icon={ PackageCheck } class="w-10 h-10 text-primary-500" stroke-width="1.5" />
-            <H3>Less waiting</H3>
-            <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor molestiae sint quo cumque.</p>
+        <div class="flex flex-col gap-2 items-start">
+            <Icon icon={ MonitorSmartphone } class="w-16 h-16 text-primary-500" stroke-width="1.5" />
+            <H3>Set and forget</H3>
+            <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor molestiae sint quo cumque.</p>
         </div>
 
-        <div class="flex flex-col gap-2 items-center">
-            <Icon icon={ Gamepad2 } class="w-10 h-10 text-primary-500" stroke-width="1.5" />
-            <H3>Have fun</H3>
-            <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor molestiae sint quo cumque.</p>
+        <div class="flex flex-col gap-2 items-start">
+            <Icon icon={ ChartNoAxesCombined } class="w-16 h-16 text-primary-500" stroke-width="1.5" />
+            <H3>Scale as you grow!</H3>
+            <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor molestiae sint quo cumque.</p>
         </div>
     
     </Columns>
+
+    <Columns cols={2}>
+        <TextBlock>
+            <H2>Every plan includes:</H2>
+            <ul class="list-disc ml-6 grid gap-2">
+                <li>
+                    <H3>Content writing</H3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, voluptate rerum totam quos itaque beatae impedit et aliquam quidem explicabo!</p>
+                </li>
+                <li>
+                    <H3>Custom, responsive theme</H3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores velit ullam dignissimos tenetur necessitatibus, quidem vel voluptatibus rem eligendi! Facere dolorem quos harum commodi veniam.</p>
+                </li>
+                <li>
+                    <H3>1 year hosting, maintenance, and security</H3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et, distinctio sequi. Natus aperiam possimus fugit? Fugit voluptatem repudiandae vel autem.</p>
+                </li>
+                <li>
+                    <H3>On-page local SEO optimization</H3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium reprehenderit rem ducimus?</p>
+                </li>
+            </ul>
+        </TextBlock>
+
+        <div class="bg-gray-200">Placeholder</div>
+    </Columns>
+
+    <div class="fic-6 flex-col text-center justify-center px-6 py-12 bg-primary-900 text-primary-100 w-full rounded-md bg-[url(/img/flurry.svg)]">
+        <p class="text-2xl font-semibold tracking-wider">
+            Want a website that works for you?
+        </p>
+        <Button as="a" href="/plans" class="w-fit !px-8 mx-auto">
+            Explore web design + web hosting packages
+            <Icon icon={Telescope} class="shrink-0" />
+        </Button>
+    </div>
 
 </Section>

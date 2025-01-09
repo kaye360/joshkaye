@@ -2,11 +2,11 @@
 import { getPages } from "../../js/getPages";
 import Button from "./Button.astro";
 import Icon from "./Icon.astro";
-import { NotepadText } from 'lucide'
+import { Rocket } from 'lucide'
 const cta = getPages().byGroup('cta').single()
 ---
 
-<Button href={cta.path}>
-    <Icon icon={NotepadText} />
+<Button as="a" href={cta.path} class="group">
+    <Icon icon={Rocket} class="group transition-all group-hover:translate-x-1 group-hover:-translate-y-1 "/>
     {cta.title}
 </Button>

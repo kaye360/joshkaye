@@ -1,30 +1,48 @@
 ---
+import { LOCATION } from "../../config/site";
 import Button from "../Base/Button.astro";
 import CtaButton from "../Base/CtaButton.astro";
-import FiveStars from "../Base/FiveStars.astro";
+import Icon from "../Base/Icon.astro";
 import Section from "../Layout/Section.astro";
+import { CircleArrowDown, MapPin } from 'lucide'
 ---
 <Section 
     contentWidth="slim"
-    class="min-h-[70vh] bg-primary-900 bg-[url(/temp/hero.jpg)] bg-cover bg-blend-soft-light grid text-primary-100 place-items-center" 
+    class="min-h-[70vh] grid text-primary-50 place-items-center bg-primary-900" 
 >
-    <div class="grid gap-6">
-        <h1 class="text-3xl font-bold leading-10">
-            Adipisicing elit. Minima, fugit. Eaque ullam natus enim repudiandae.
-        </h1>
+    <hero-content class="relative z-20 grid justify-start gap-8 md:gap-4 animate-reveal-up pt-28 md:pt-0">
+        <span class="fic-1 text-sm select-none text-primary-300">
+            <Icon icon={MapPin} class="w-4 h-4 sm:w-5 sm:h-5" />
+            Launching from {LOCATION}
+        </span>
 
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi asperiores, laborum, incidunt provident voluptatem vero quaerat accusamus aut maiores nihil.
-        </p>
+        <span class="text-3xl font-bold leading-[3rem] select-none animate-reveal-up">
+            Give your small business the website it deserves. Custom websites starting at <span class="inline-block px-2 bg-secondary-500 text-4xl">$500.</span>
+        </span>
+
+        <h1 class="text-xl animate-reveal-up md:max-w-[30ch] select-none">
+            Small business web design, development, and web hosting with affordable pricing options. Scale up as your business grows!
+        </h1>
         
-        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mt-3">
             <CtaButton />
-            <Button href="#" variant="ghost">Learn More</Button>
+            <Button as="a" href="#benefits" variant="ghost">
+                <Icon icon={CircleArrowDown} />
+                View features
+            </Button>
         </div>
+
         
-        <div class="fic-2 mt-3">
-            5 stars on Google
-            <FiveStars />
-        </div>
+    </hero-content>
+    
+    <div class="absolute top-0 bottom-0 right-0 w-full h-[250px] md:h-full z-10 bg-primary-900">
+        <img 
+            src="/img/hero-bg-2.webp"
+            width="1311"
+            height="850"
+            class="w-full h-full object-right object-cover mix-blend-color-dodge"
+            alt=""
+        />
     </div>
+    
 </Section>

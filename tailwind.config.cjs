@@ -33,21 +33,29 @@ module.exports = {
 					800 : "hsl( var(--secondary-color) 20% / <alpha-value> )",
 					900 : "hsl( var(--secondary-color) 10% / <alpha-value> )",
 				},
-				"tertiary" : {
-					50  : "hsl( var(--tertiary-color) 95% / <alpha-value> )",
-					100 : "hsl( var(--tertiary-color) 90% / <alpha-value> )",
-					200 : "hsl( var(--tertiary-color) 80% / <alpha-value> )",
-					300 : "hsl( var(--tertiary-color) 70% / <alpha-value> )",
-					400 : "hsl( var(--tertiary-color) 60% / <alpha-value> )",
-					500 : "hsl( var(--tertiary-color) 50% / <alpha-value> )",
-					600 : "hsl( var(--tertiary-color) 40% / <alpha-value> )",
-					700 : "hsl( var(--tertiary-color) 30% / <alpha-value> )",
-					800 : "hsl( var(--tertiary-color) 20% / <alpha-value> )",
-					900 : "hsl( var(--tertiary-color) 10% / <alpha-value> )",
-				},
 			},
 			backgroundImage : {
 				'radial-gradient' : 'radial-gradient(var(--tw-gradient-stops))'
+			},
+			animation : {
+				'reveal-up' : 'reveal-up 750ms ease 500ms both',
+				'fade-in' : 'fade-in 750ms both'
+			},
+			keyframes : {
+				'reveal-up' : {
+					'from' : { 
+						clipPath : 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)',
+						transform : 'translateY(1rem)'
+					},
+					'to' : { 
+						clipPath : 'polygon(0 0, 100% 0, 100% 200%, 0 200%)',
+						transform : 'translate(0)'
+					},
+				},
+				'fade-in' : {
+					'from' : { opacity : '0' },
+					'to' : { opacity : '1' },
+				}
 			}
 		},
 	},

@@ -29,28 +29,8 @@ const headerPages = getPages().byGroup('header').all()
 
 <header
     data-element="header"
-    class="sticky top-0 left-0 right-0 z-[999] bg-primary-25"
+    class="sticky top-0 left-0 right-0 z-[999] bg-primary-50"
 >
-
-    <Section py-none class='py-2 bg-primary-900'>
-        <ul class="flex flex-wrap items-center justify-end gap-x-6 gap-y-2">
-
-            <ContactLink href={'tel:' + PHONE_NUMBER}>
-                <Icon icon={Phone} class="w-4 h-4 sm:w-5 sm:h-5" />
-                {PHONE_NUMBER}
-            </ContactLink>
-
-            <ContactLink href={'mailto:' + EMAIL_ADDRESS}>
-                <Icon icon={Mail} class="w-4 h-4 sm:w-5 sm:h-5" />
-                {EMAIL_ADDRESS}
-            </ContactLink>
-            
-            <ContactLink>
-                <Icon icon={MapPin} class="w-4 h-4 sm:w-5 sm:h-5" />
-                {LOCATION}
-            </ContactLink>
-        </ul>
-    </Section>
 
     <Section py-none>
 
@@ -73,7 +53,7 @@ const headerPages = getPages().byGroup('header').all()
                     "order-2 overflow-clip lg:overflow-visible", 
                     "absolute lg:relative top-0 left-0 right-0",
                     "w-full lg:w-auto max-h-[0px] lg:max-h-none", 
-                    "bg-primary-50/90 backdrop-blur-sm lg:bg-primary-25",
+                    "bg-primary-50/90 backdrop-blur-sm lg:bg-transparent",
                     "transition-all ease-[cubic-bezier(0.34,1.56,0.64,1)] duration-500"
                 ]}
             >
