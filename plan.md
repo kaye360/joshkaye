@@ -12,6 +12,7 @@ Focus on small business and personal sites
     - Security, maintence 
     - analytics (by request)
     - ON-page SEO optimization
+    - hosting for one year
 
 Starter $500 one time
 - single page with up to 5 sections

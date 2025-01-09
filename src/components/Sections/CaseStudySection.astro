@@ -8,13 +8,12 @@ import Section from "../Layout/Section.astro";
 import Image from "astro/components/Image.astro";
 ---
 
-<Section id="case-study" class="bg-primary-100">
-
+<Section width="full" id="case-study" class="bg-primary-100">
     
     <Columns cols={2} class="gap-4">
         
         <TextBlock>
-            <H2>John's story of successs</H2>
+            <H2>Louise's story of successs</H2>
             <p>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio tempore culpa delectus fugiat illo nulla, non maxime nesciunt commodi vero.
             </p>
@@ -32,11 +31,11 @@ import Image from "astro/components/Image.astro";
 
         <div>
             <Image
-                src="/temp/person-2.jpg"
-                width={200}
+                src="/projects/elite-homestay-cover.webp"
+                width={400}
                 height={400}
                 alt=""
-                class="w-[300px] h-[300px] mx-auto lg:w-full lg:h-full object-cover"
+                class="w-full aspect-square object-cover"
             />
         </div>
     </Columns>

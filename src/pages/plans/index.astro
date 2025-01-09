@@ -1,5 +1,15 @@
 ---
+import Button from "../../components/Base/Button.astro";
+import Columns from "../../components/Base/Columns.astro";
+import List from "../../components/Base/List.astro";
+import TextBlock from "../../components/Base/TextBlock.astro";
+import Card from "../../components/Card/Card.astro";
+import CardContent from "../../components/Card/CardContent.astro";
+import CardFooter from "../../components/Card/CardFooter.astro";
+import CardHeading from "../../components/Card/CardHeading.astro";
 import H1 from "../../components/Heading/H1.astro";
+import H2 from "../../components/Heading/H2.astro";
+import Section from "../../components/Layout/Section.astro";
 import Layout from "../../layouts/Layout.astro";
 ---
 
@@ -9,5 +19,102 @@ import Layout from "../../layouts/Layout.astro";
 >
 
     <H1>Plans and Pricing</H1>
+
+    <Section>
+
+        <TextBlock class="mx-auto mb-12">
+            <strong>Simple and transparent pricing:</strong>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis debitis dicta rem neque! Fugiat amet magnam id facere sapiente, blanditiis nesciunt culpa totam cumque esse a nobis, reiciendis vitae perferendis!
+        </TextBlock>
+
+        <Columns cols={3} class="gap-6 mb-12">
+    
+            <Card>
+    
+                <CardHeading class="!pt-10">
+                    Starter Website
+                </CardHeading>
+    
+                <CardContent class="grid gap-6">
+                    <p>
+                        Perfect for dolor sit amet consectetur adipisicing elit. Quibusdam, nam!
+                    </p>
+                    <span class="text-4xl font-semibold">
+                        $500 <span class="text-base">/one time</span>
+                    </span>
+                    <Button as="a" href="/get-started">
+                        Choose this plan
+                    </Button>
+                    <List>
+                        <li>Lorem ipsum dolor sit.</li>
+                        <li>Lorem ipsum dolor sit.</li>
+                        <li>Lorem ipsum dolor sit.</li>
+                        <li>Lorem ipsum dolor sit.</li>
+                    </List>
+    
+                </CardContent>
+            </Card>
+    
+    
+            <Card>
+    
+                <CardHeading class="!pt-10">
+                    3-Page Website
+                </CardHeading>
+    
+                <CardContent class="grid gap-6">
+                    <p>
+                        Perfect for dolor sit amet consectetur adipisicing elit. Quibusdam, nam!
+                    </p>
+                    <span class="text-4xl font-semibold">
+                        $1000 <span class="text-base">/one time</span>
+                    </span>
+                    <Button as="a" href="/get-started">
+                        Choose this plan
+                    </Button>
+                    <List>
+                        <li>Lorem ipsum dolor sit.</li>
+                        <li>Lorem ipsum dolor sit.</li>
+                        <li>Lorem ipsum dolor sit.</li>
+                        <li>Lorem ipsum dolor sit.</li>
+                    </List>
+    
+                </CardContent>
+            </Card>
+    
+    
+            <Card>
+    
+                <CardHeading class="!pt-10">
+                    6-Page Website
+                </CardHeading>
+    
+                <CardContent class="grid gap-6">
+                    <p>
+                        Perfect for dolor sit amet consectetur adipisicing elit. Quibusdam, nam!
+                    </p>
+                    <span class="text-4xl font-semibold">
+                        $2000 <span class="text-base">/one time</span>
+                    </span>
+                    <Button as="a" href="/get-started">
+                        Choose this plan
+                    </Button>
+                    <List>
+                        <li>Lorem ipsum dolor sit.</li>
+                        <li>Lorem ipsum dolor sit.</li>
+                        <li>Lorem ipsum dolor sit.</li>
+                        <li>Lorem ipsum dolor sit.</li>
+                    </List>
+    
+                </CardContent>
+            </Card>
+    
+        </Columns>
+
+        <TextBlock class="mx-auto">
+            <H2>Every plan includes:</H2>
+        </TextBlock>
+
+    </Section>
 
 </Layout>

@@ -20,14 +20,17 @@ interface Props {
 const { name, review } = Astro.props
 ---
 
-<div class="grid gap-4 relative z-10 after:absolute after:right-4 after:bottom-4 md:after:-bottom-2 after:-z-10 after:text-7xl md:after:text-9xl after:text-primary-300 after:font-bold after:content-['❞']">
-    <blockquote class='p-6 bg-primary-100/75 rounded-md '>
+<div class="grid gap-2">
+    
+    <blockquote class:list={[
+        "p-6 bg-primary-50 rounded-md relative z-10",
+        "after:absolute after:right-4 after:top-0 after:-z-10", 
+        "after:text-9xl after:text-primary-100 after:font-bold after:content-['❞']"
+    ]}>
         {review}
     </blockquote>
 
-    <div class="fic-1">
-        <span class="inline-block mx-2">{name}</span>
-        <FiveStars />
-    </div>
+    <span class="italic">{name}</span>
 
+    <FiveStars />
 </div>
