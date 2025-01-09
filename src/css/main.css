@@ -20,7 +20,9 @@
         --primary-color   : 204deg 36%;
         --secondary-color : 340deg 90%;
 
-        /* ------------------------ Spacing ------------------------ */
+    }
+    body {
+        @apply bg-primary-25 font-base text-primary-900
     }
     
     h2, h3, h4, h5, h6 {
@@ -40,9 +42,6 @@
 }
 
 @layer components {
-    .body {
-        @apply bg-primary-25 font-base text-primary-900
-    }
 }
 
 @layer utilities {
