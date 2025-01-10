@@ -1,3 +1,22 @@
-<ul class="grid gap-2">
+---
+
+interface Props {
+    
+    variant? : 'disc' | 'none'
+
+    class? : string
+}
+
+const { 
+    variant = 'disc',
+    class : className = ''
+} = Astro.props
+---
+
+<ul class:list={[
+    "grid gap-2",
+    variant === 'disc' && 'list-disc ml-6',
+    className
+]}>
     <slot />
 </ul>

@@ -11,6 +11,8 @@ import BenefitsSection from '../components/Sections/BenefitsSection.astro';
 import CaseStudySection from '../components/Sections/CaseStudySection.astro';
 import TextBlock from '../components/Base/TextBlock.astro';
 import Avatar from '../components/Base/Avatar.astro';
+import FeaturesSection from '../components/Sections/FeaturesSection.astro';
+import ExplorePlans from '../components/Sections/ExplorePlans.astro';
 ---
 
 <Layout props
@@ -33,18 +35,18 @@ import Avatar from '../components/Base/Avatar.astro';
 		</div>
 	</Section>
 
-	<!-- Benefits -->
 	<BenefitsSection />
 
-	<!-- Social Proof, Trust building, Tesimonials. Can be broken up into multiple sections -->
+	<FeaturesSection />
+
+	<ExplorePlans />
+
 	<TestimonialsSection />
 
 	<!-- Projects -->
 
-	<!-- Case Study -->
 	<CaseStudySection />
 
-	<!-- Main call to action or contact -->
 	<CallToActionSection />
 
 </Layout>

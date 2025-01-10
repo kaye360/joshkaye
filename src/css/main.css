@@ -4,14 +4,8 @@
 
 @layer base {
     :root {
-
-
-        /* ------------------------ Colors ------------------------ */
-                
         /* Color Picker is just for use in IDE */
         --color-picker : hsl(204, 36%, 36%);
-        --color-picker : hsl(352, 93%, 62%);
-        --color-picker : hsl(286, 39%, 44%);
 
         /* 
             Base Site Colors (HSL) 
@@ -21,6 +15,7 @@
         --secondary-color : 340deg 90%;
 
     }
+
     body {
         @apply bg-primary-25 font-base text-primary-900
     }
@@ -29,16 +24,13 @@
         text-wrap : balance;
     }
 
+    main a {
+        @apply text-primary-500 underline hover:text-secondary-500
+    }
 
     p {
         line-height: 1.6rem;
     }
-
-    .text-flow ul {
-        list-style: disc;
-        margin-left: 2rem;
-    }
-
 }
 
 @layer components {

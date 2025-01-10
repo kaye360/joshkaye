@@ -1,16 +1,21 @@
 ---
 import Button from "../../components/Base/Button.astro";
 import Columns from "../../components/Base/Columns.astro";
+import Icon from "../../components/Base/Icon.astro";
+import LiCheck from "../../components/Base/LiCheck.astro";
 import List from "../../components/Base/List.astro";
 import TextBlock from "../../components/Base/TextBlock.astro";
 import Card from "../../components/Card/Card.astro";
 import CardContent from "../../components/Card/CardContent.astro";
-import CardFooter from "../../components/Card/CardFooter.astro";
 import CardHeading from "../../components/Card/CardHeading.astro";
 import H1 from "../../components/Heading/H1.astro";
 import H2 from "../../components/Heading/H2.astro";
 import Section from "../../components/Layout/Section.astro";
+import CallToActionSection from "../../components/Sections/CallToActionSection.astro";
+import FeaturesSection from "../../components/Sections/FeaturesSection.astro";
+import { plans } from "../../config/plans";
 import Layout from "../../layouts/Layout.astro";
+import { MoveRight } from 'lucide'
 ---
 
 <Layout 
@@ -23,98 +28,111 @@ import Layout from "../../layouts/Layout.astro";
     <Section>
 
         <TextBlock class="mx-auto mb-12">
-            <strong>Simple and transparent pricing:</strong>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis debitis dicta rem neque! Fugiat amet magnam id facere sapiente, blanditiis nesciunt culpa totam cumque esse a nobis, reiciendis vitae perferendis!
+            <p>
+                <strong class="text-xl">Simple and transparent pricing</strong><br />
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis debitis dicta rem neque! Fugiat amet magnam id facere sapiente, blanditiis nesciunt culpa totam cumque esse a nobis, reiciendis vitae perferendis!
+            </p>
+            <p>
+                If you feel you need more than the plans available, please <a href="/contact">contact me</a> and I can help you out!
+            </p>
         </TextBlock>
 
-        <Columns cols={3} class="gap-6 mb-12">
+        <Columns cols={3} class="gap-x-6 gap-y-10 ">
+            { plans.map( plan => (
+                <Card>
+                    <CardHeading class="!pt-10">
+                        {plan.title}
+                    </CardHeading>
+                    <CardContent class="grid gap-6">
+                        <p>{plan.description}</p>
+                        <span class="text-4xl font-semibold">
+                            ${plan.price} <span class="text-base">/one time</span>
+                        </span>
+                        <Button as="a" href={"/get-started?plan=" + plan.slug}>
+                            Choose this plan
+                            <Icon icon={MoveRight} />
+                        </Button>
+                        <List variant="none">
+                            { plan.features.map( feature => (
+                                <LiCheck>{feature}</LiCheck>
+                            ))}
+                        </List>
+                    </CardContent>
+                </Card>
+            )) }
+        </Columns>
+    </Section>
     
-            <Card>
-    
-                <CardHeading class="!pt-10">
-                    Starter Website
-                </CardHeading>
-    
-                <CardContent class="grid gap-6">
-                    <p>
-                        Perfect for dolor sit amet consectetur adipisicing elit. Quibusdam, nam!
-                    </p>
+    <FeaturesSection />
+
+    <Section>
+
+        <H2>Additional Add-ons</H2>
+
+        <Columns cols={3} class="gap-6 mt-12">
+            <Card class="py-6">
+                <CardHeading class="text-primary-700">Extra Pages</CardHeading>
+                <CardContent>
                     <span class="text-4xl font-semibold">
-                        $500 <span class="text-base">/one time</span>
+                        $250 <span class="text-base">/one time per page</span>
                     </span>
-                    <Button as="a" href="/get-started">
-                        Choose this plan
-                    </Button>
-                    <List>
-                        <li>Lorem ipsum dolor sit.</li>
-                        <li>Lorem ipsum dolor sit.</li>
-                        <li>Lorem ipsum dolor sit.</li>
-                        <li>Lorem ipsum dolor sit.</li>
-                    </List>
-    
+                    <p class="mt-4">
+                        Need more than 6 pages for your site? No problem at all. Get as many pages as you'd like at $250 per page, plus $10/year for hosting.
+                    </p>
                 </CardContent>
             </Card>
-    
-    
-            <Card>
-    
-                <CardHeading class="!pt-10">
-                    3-Page Website
-                </CardHeading>
-    
-                <CardContent class="grid gap-6">
-                    <p>
-                        Perfect for dolor sit amet consectetur adipisicing elit. Quibusdam, nam!
+            <Card class="py-6">
+                <CardHeading class="text-primary-700">Unlimited website updates</CardHeading>
+                <CardContent>
+                    <span class="text-4xl font-semibold">
+                        $300 <span class="text-base">/yearly</span>
+                    </span>
+                    <p class="mt-4">
+                        Update and edit your website as many times as you would like with one yearly fee.
                     </p>
+                </CardContent>
+            </Card>
+            <Card class="py-6">
+                <CardHeading class="text-primary-700">Website Updates at 50/hour</CardHeading>
+                <CardContent>
+                    <span class="text-4xl font-semibold">
+                        $50 <span class="text-base">/hour</span>
+                    </span>
+                    <p class="mt-4">
+                        If you need to update the website after it is built, updates can be done at $50/hour with 1/2 increments. A minimum charge of 1/2 hours applies to every update.
+                    </p>
+                </CardContent>
+            </Card>
+            <Card class="py-6">
+                <CardHeading class="text-primary-700">SEO/Google ads</CardHeading>
+                <CardContent>
+                    <span class="text-4xl font-semibold">
+                        $1000 <span class="text-base">/starting price</span>
+                    </span>
+                    <p class="mt-4">
+                        Want to bring visitors to your newly created site? Starting at $1000, we can set up a plan for you.
+                    </p>
+                </CardContent>
+            </Card>
+            <Card class="py-6">
+                <CardHeading class="text-primary-700">Content Management system</CardHeading>
+                <CardContent>
                     <span class="text-4xl font-semibold">
                         $1000 <span class="text-base">/one time</span>
                     </span>
-                    <Button as="a" href="/get-started">
-                        Choose this plan
-                    </Button>
-                    <List>
-                        <li>Lorem ipsum dolor sit.</li>
-                        <li>Lorem ipsum dolor sit.</li>
-                        <li>Lorem ipsum dolor sit.</li>
-                        <li>Lorem ipsum dolor sit.</li>
-                    </List>
-    
-                </CardContent>
-            </Card>
-    
-    
-            <Card>
-    
-                <CardHeading class="!pt-10">
-                    6-Page Website
-                </CardHeading>
-    
-                <CardContent class="grid gap-6">
-                    <p>
-                        Perfect for dolor sit amet consectetur adipisicing elit. Quibusdam, nam!
+                    <p class="mt-4">
+                        If you would like to edit the content of your site, I can set up a CMS for you.
                     </p>
-                    <span class="text-4xl font-semibold">
-                        $2000 <span class="text-base">/one time</span>
-                    </span>
-                    <Button as="a" href="/get-started">
-                        Choose this plan
-                    </Button>
-                    <List>
-                        <li>Lorem ipsum dolor sit.</li>
-                        <li>Lorem ipsum dolor sit.</li>
-                        <li>Lorem ipsum dolor sit.</li>
-                        <li>Lorem ipsum dolor sit.</li>
-                    </List>
-    
                 </CardContent>
             </Card>
-    
         </Columns>
 
-        <TextBlock class="mx-auto">
-            <H2>Every plan includes:</H2>
-        </TextBlock>
-
     </Section>
+    
+    <Section>
+        <H2>Benefits of hard-coded websites</H2>
+    </Section>
+    
+    <CallToActionSection />
 
 </Layout>

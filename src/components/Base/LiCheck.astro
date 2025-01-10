@@ -1,0 +1,9 @@
+---
+import { Check } from "lucide";
+import Icon from "./Icon.astro";
+---
+
+<li class="flex items-start gap-1">
+    <Icon icon={Check} class="text-primary-500 scale-75 origin-bottom shrink-0" />
+    <slot />
+</li>

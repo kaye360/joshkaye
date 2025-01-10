@@ -1,0 +1,36 @@
+---
+import { planFeatures } from "../../config/plans";
+import Columns from "../Base/Columns.astro";
+import TextBlock from "../Base/TextBlock.astro";
+import H2 from "../Heading/H2.astro";
+import Section from "../Layout/Section.astro";
+import Image from "../Base/Image.astro";
+import Icon from "../Base/Icon.astro";
+import CallToActionSection from "./CallToActionSection.astro";
+---
+
+<Section class="overflow-clip">
+
+    <H2>Every plan includes:</H2>
+
+    <Columns cols={2} class="gap-10 mt-12">
+    
+        { planFeatures.map( feature => (
+            <div class="flex items-start gap-4">
+                <Icon icon={feature.icon} class="w-10 h-10" stroke-width="1.5" />
+                <div>
+                    <span class="font-semibold">{feature.title}</span>
+                    <p>{feature.description}</p>
+                </div>
+            </div>
+        ))}
+        
+    </Columns>
+
+    <svg width="1000" height="1000" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute -bottom-1/4 -right-[15%] -z-10 text-primary-50/60">
+        <circle cx="150" cy="150" r="148.993" stroke="currentColor" stroke-width="2.01342"/>
+        <circle cx="150" cy="150" r="138.926" stroke="currentColor" stroke-width="2.01342"/>
+        <circle cx="150" cy="150" r="126.846" stroke="currentColor" stroke-width="2.01342"/>
+        <circle cx="151.007" cy="151.007" r="44.2953" stroke="currentColor" stroke-width="4.02685"/>
+    </svg>
+</Section>
