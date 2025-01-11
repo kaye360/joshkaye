@@ -1,0 +1,52 @@
+---
+import LiCheck from "../components/Base/LiCheck.astro"
+import List from "../components/Base/List.astro"
+import TextBlock from "../components/Base/TextBlock.astro"
+import H1 from "../components/Heading/H1.astro"
+import Section from "../components/Layout/Section.astro"
+import BenefitsSection from "../components/Sections/BenefitsSection.astro"
+import FeaturesSection from "../components/Sections/FeaturesSection.astro"
+import WorkTogetherBanner from "../components/Sections/WorkTogetherBanner.astro"
+import { PLANS } from "../config/plans"
+import Layout from "./Layout.astro"
+
+const { title } = Astro.props
+
+const plan = PLANS.filter( plan => plan.title === title)[0]
+---
+
+<Layout 
+    title="Web design plans and pricing"
+    description=""
+>
+
+    <H1>{plan.title} plan</H1>
+
+    <Section>
+
+        <TextBlock>
+            <p>
+                <span class="inline-block text-4xl font-semibold">
+                    ${plan.price}<span class="text-base">/one time </span>
+                </span>
+                <span>(Renews at ${plan.renewalPrice}/year)</span>
+            </p>
+    
+            <p>{plan.description}</p>
+    
+            <List>
+                {plan.features.map( feature => (
+                    <LiCheck>{feature}</LiCheck>
+                ))}
+            </List>
+        </TextBlock>
+
+    </Section>
+
+    <FeaturesSection />
+
+    <BenefitsSection />
+
+    <WorkTogetherBanner />
+
+</Layout>

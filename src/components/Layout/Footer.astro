@@ -5,14 +5,15 @@ import Columns from "../Base/Columns.astro";
 import Section from "./Section.astro";
 import { getPages } from "../../js/getPages";
 import Icon from "../Base/Icon.astro";
-import { Phone, Mail, Pin } from 'lucide'
+import { Phone, Mail, MapPin } from 'lucide'
 import TextBlock from "../Base/TextBlock.astro";
+import List from "../Base/List.astro";
 
 const pages = getPages().byGroup('footer').all()
-const services = getPages().subPagesOf('Services')
+const plans = getPages().subPagesOf('Plans + Pricing')
 ---
 
-<footer class="bg-primary-100">
+<footer class="bg-primary-100 pb-6">
     <Section>
         <Columns props cols={3} class="gap-6">
 
@@ -47,23 +48,20 @@ const services = getPages().subPagesOf('Services')
                     </li>
                     
                     <li>
-                        <a href={LOCATION} class="fic-2">
-                            <Icon icon={Pin} class="w-5 h-5" stroke-width="1.5" />
+                        <span class="fic-2 select-none">
+                            <Icon icon={MapPin} class="w-5 h-5" stroke-width="1.5" />
                             {LOCATION}
-                        </a>
+                        </span>
                     </li>
                 </ul>
             </nav>
 
             <div class="grid grid-cols-[auto_auto] justify-between">
 
-                <!-- Services -->
+                <!-- Plans -->
                 <nav>
-                    <h2 class="text-xl font-semibold mb-3">
-                        Services
-                    </h2>
-                    <ul class="grid gap-2">
-                        { services.map( (page) => ( 
+                    <List variant="none">
+                        { plans.map( (page) => ( 
                             <li>
                                 <a 
                                     href={page.path}
@@ -73,15 +71,12 @@ const services = getPages().subPagesOf('Services')
                                 </a>
                             </li>
                         ))}
-                    </ul>
+                    </List>
                 </nav>
 
                 <!-- Links -->
                 <nav>
-                    <h2 class="text-xl font-semibold mb-3">
-                        Links
-                    </h2>
-                    <ul class="grid gap-2">
+                    <List variant="none">
                         { pages.map( (page) => ( 
                             <li>
                                 <a 
@@ -92,7 +87,7 @@ const services = getPages().subPagesOf('Services')
                                 </a>
                             </li>
                         ))}
-                    </ul>
+                    </List>
                 </nav>
 
             </div>

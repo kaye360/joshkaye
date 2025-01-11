@@ -29,7 +29,7 @@ export interface Page {
     group : PageGroup[]
 }
 
-export type SubPage = Omit<Page, 'group'>
+export type SubPage = Omit<Page, 'group' | 'subPages'>
 
 
 export const PAGES : Page[] = [
@@ -42,6 +42,12 @@ export const PAGES : Page[] = [
         title : 'Plans + Pricing',
         path  : '/plans',
         group : ['header', 'footer'],
+        subPages : [
+            { title : 'Starter website', path : '/plans/starter'},
+            { title : '3-page website', path : '/plans/3-page'},
+            { title : '6-page website', path : '/plans/6-page'},
+            { title : 'Compare all plans', path : '/plans'},
+        ]
     },
     {
         title : 'Projects',

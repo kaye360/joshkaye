@@ -9,7 +9,7 @@ interface Plan {
     features : string[]
 }
 
-export const plans : Plan[] = [
+export const PLANS : Plan[] = [
     {
         title : 'Starter Website',
         slug : 'starter',
@@ -64,8 +64,8 @@ interface PlanFeature {
 
 export const planFeatures : PlanFeature[] = [
     {
-        title : '1 year of website hosting, maintenance, and security (Renewals available)',
-        description : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sapiente, iusto ad minima neque tempora.',
+        title : '1 year of website hosting, maintenance, and security',
+        description : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sapiente, iusto ad minima neque tempora. Renewals available',
         icon : Lock,
     },
     {

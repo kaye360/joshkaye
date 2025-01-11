@@ -1,0 +1,41 @@
+---
+import { MoveRight } from "lucide";
+import { PLANS } from "../../config/plans";
+import Button from "../Base/Button.astro";
+import Columns from "../Base/Columns.astro";
+import Icon from "../Base/Icon.astro";
+import LiCheck from "../Base/LiCheck.astro";
+import Card from "../Card/Card.astro";
+import CardContent from "../Card/CardContent.astro";
+import CardHeading from "../Card/CardHeading.astro";
+import List from "../Base/List.astro";
+import Section from "../Layout/Section.astro";
+---
+<Section>
+    <slot name="before" />
+    <Columns cols={3} class="gap-x-6 gap-y-10">
+        { PLANS.map( plan => (
+            <Card class="py-6">
+                <CardHeading>
+                    {plan.title}
+                </CardHeading>
+                <CardContent class="grid gap-6">
+                    <p>{plan.description}</p>
+                    <span class="text-4xl font-semibold">
+                        ${plan.price} <span class="text-base">/one time</span>
+                    </span>
+                    <Button as="a" href={"/get-started?plan=" + plan.slug}>
+                        Choose this plan
+                        <Icon icon={MoveRight} />
+                    </Button>
+                    <List variant="none">
+                        { plan.features.map( feature => (
+                            <LiCheck>{feature}</LiCheck>
+                        ))}
+                    </List>
+                </CardContent>
+            </Card>
+        )) }
+    </Columns>
+    <slot name="after" />
+</Section>

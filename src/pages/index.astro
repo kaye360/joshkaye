@@ -1,18 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Section from '../components/Layout/Section.astro';
-import IntroExample from '../components/_Examples/IntroExample.astro';
-import Button from '../components/Base/Button.astro';
-import CallToActionSection from '../components/Sections/CallToActionSection.astro';
 import TestimonialsSection from '../components/Sections/TestimonialsSection.astro';
 import HeroSection from '../components/Sections/HeroSection.astro';
-import ServicesSection from '../components/Sections/ServicesSection.astro';
 import BenefitsSection from '../components/Sections/BenefitsSection.astro';
 import CaseStudySection from '../components/Sections/CaseStudySection.astro';
-import TextBlock from '../components/Base/TextBlock.astro';
 import Avatar from '../components/Base/Avatar.astro';
 import FeaturesSection from '../components/Sections/FeaturesSection.astro';
-import ExplorePlans from '../components/Sections/ExplorePlans.astro';
+import ExplorePlansBanner from '../components/Sections/ExplorePlansBanner.astro';
+import WorkTogetherBanner from '../components/Sections/WorkTogetherBanner.astro';
 ---
 
 <Layout props
@@ -30,7 +26,7 @@ import ExplorePlans from '../components/Sections/ExplorePlans.astro';
 				name="Josh Kaye"
 			/>
 			<p>
-				Hello! I'm Josh. I'm a <strong>freelance web developer</strong> who specializes in small business websites, brochure-style websites, landing pages, and more. With over <strong>15 years of experience</strong> in the industry, I have refined my workflow to create your perfect site for an affordable price.
+				Hello! I'm Josh. I'm a <strong>freelance web developer</strong> who specializes in small business websites, brochure-style websites, landing pages, and more. With over <strong>15 years of experience</strong> in the industry, I have refined my workflow to efficiently create small business websites for an affordable price.
 			</p>
 		</div>
 	</Section>
@@ -39,7 +35,7 @@ import ExplorePlans from '../components/Sections/ExplorePlans.astro';
 
 	<FeaturesSection />
 
-	<ExplorePlans />
+	<ExplorePlansBanner />
 
 	<TestimonialsSection />
 
@@ -47,6 +43,6 @@ import ExplorePlans from '../components/Sections/ExplorePlans.astro';
 
 	<CaseStudySection />
 
-	<CallToActionSection />
+	<WorkTogetherBanner />
 
 </Layout>
