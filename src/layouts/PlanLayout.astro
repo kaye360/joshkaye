@@ -1,14 +1,21 @@
 ---
+import { MoveRight } from "lucide"
+import Button from "../components/Base/Button.astro"
+import Columns from "../components/Base/Columns.astro"
+import Icon from "../components/Base/Icon.astro"
 import LiCheck from "../components/Base/LiCheck.astro"
 import List from "../components/Base/List.astro"
 import TextBlock from "../components/Base/TextBlock.astro"
 import H1 from "../components/Heading/H1.astro"
+import H2 from "../components/Heading/H2.astro"
 import Section from "../components/Layout/Section.astro"
 import BenefitsSection from "../components/Sections/BenefitsSection.astro"
 import FeaturesSection from "../components/Sections/FeaturesSection.astro"
+import PlansSection from "../components/Sections/PlansSection.astro"
 import WorkTogetherBanner from "../components/Sections/WorkTogetherBanner.astro"
 import { PLANS } from "../config/plans"
 import Layout from "./Layout.astro"
+import Image from "../components/Base/Image.astro"
 
 const { title } = Astro.props
 
@@ -24,22 +31,40 @@ const plan = PLANS.filter( plan => plan.title === title)[0]
 
     <Section>
 
-        <TextBlock>
-            <p>
-                <span class="inline-block text-4xl font-semibold">
-                    ${plan.price}<span class="text-base">/one time </span>
-                </span>
-                <span>(Renews at ${plan.renewalPrice}/year)</span>
-            </p>
-    
-            <p>{plan.description}</p>
-    
-            <List>
-                {plan.features.map( feature => (
-                    <LiCheck>{feature}</LiCheck>
-                ))}
-            </List>
-        </TextBlock>
+        <Columns cols={2} class="gap-4">
+        
+            <TextBlock>
+                <p>
+                    <span class="inline-block text-4xl font-semibold">
+                        ${plan.price}<span class="text-base">/one time </span>
+                    </span>
+                    <span>(Renews at ${plan.renewalPrice}/year)</span>
+                </p>
+        
+                <p>{plan.description}</p>
+        
+                <List>
+                    {plan.features.map( feature => (
+                        <LiCheck>{feature}</LiCheck>
+                    ))}
+                </List>
+
+                <Button as="a" href={"/get-started?plan=" + plan.slug} variant="outline">
+                    Select this plan
+                    <Icon icon={MoveRight} />
+                </Button>
+            </TextBlock>
+        
+            <div class="flex">
+                <Image 
+                    src="/projects/kelly-ann-creations-desktop-1.webp" 
+                    width={400}
+                    height={340}
+                    class="mx-auto"
+                    alt=""
+                />
+            </div>
+        </Columns>
 
     </Section>
 
@@ -48,5 +73,9 @@ const plan = PLANS.filter( plan => plan.title === title)[0]
     <BenefitsSection />
 
     <WorkTogetherBanner />
-
+    
+    <PlansSection>
+        <H2 slot="before" class="py-8 text-center">All plans</H2>
+    </PlansSection>
+    
 </Layout>

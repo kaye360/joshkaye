@@ -26,3 +26,11 @@ export function loadPersistedForm( form : HTMLFormElement ) {
         }
     }
 }
+
+export function disableInitialInvalidState( inputs : string[] ) {
+    inputs.forEach( input => {
+        const el = document.querySelector(`#${input}`) as HTMLInputElement | HTMLTextAreaElement
+        el.dataset.isTouched = 'false'
+        el.addEventListener('focus', () => el.dataset.isTouched = 'true')
+    })
+}

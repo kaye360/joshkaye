@@ -1,5 +1,14 @@
 ---
+import Columns from "../../components/Base/Columns.astro";
+import TextBlock from "../../components/Base/TextBlock.astro";
+import Input from "../../components/Forms/Input.astro";
+import Radio from "../../components/Forms/Radio.astro";
+import SubmitReset from "../../components/Forms/SubmitReset.astro";
+import Textarea from "../../components/Forms/Textarea.astro";
 import H1 from "../../components/Heading/H1.astro";
+import H2 from "../../components/Heading/H2.astro";
+import Section from "../../components/Layout/Section.astro";
+import { PLANS } from "../../config/plans";
 import Layout from "../../layouts/Layout.astro";
 ---
 
@@ -10,4 +19,108 @@ import Layout from "../../layouts/Layout.astro";
 
     <H1>Get Started</H1>
 
+    <Section>
+
+        <Columns cols={2} class="gap-4">
+
+            <TextBlock class="md:order-2">
+                <H2>Lets work together</H2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam porro sequi sint necessitatibus qui pariatur dicta officia excepturi consequatur doloremque.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam porro sequi sint necessitatibus qui pariatur dicta officia excepturi consequatur doloremque.
+                </p>
+            </TextBlock>
+
+            <form 
+                id="get-started-form"
+                method="post" 
+                class="grid gap-4"
+            >
+    
+                <span class="text-lg font-semibold">
+                    Choose your plan
+                </span>
+    
+                {PLANS.map( plan => (
+                    <label class="fic-2 form-field-has-checked p-4 rounded-lg cursor-pointer border border-primary-200 has-[:checked]:border-primary-400">
+                        <input 
+                            type="radio" 
+                            name={'plan'} 
+                            id={'plan'} 
+                            value={plan.slug.replace('/', '')}
+                            {...(plan.title === 'Starter Website' ? {checked : true} : {})}
+                        />
+                        <span class="font-semibold min-w-max">
+                            {plan.title} 
+                        </span>
+                        <span>
+                            ${plan.price}/one time, renews at ${plan.renewalPrice}/yearly
+                        </span>
+                        {}
+                    </label>
+                ))}
+    
+                <label class="fic-2 form-field-has-checked p-4 rounded-lg cursor-pointer border border-primary-200 has-[:checked]:border-primary-400">
+                    <input 
+                        type="radio" 
+                        name={'plan'} 
+                        id={'plan'} 
+                        value={'custom'}
+                        required
+                    />
+                    <span class="font-semibold min-w-max">
+                        Custom Website
+                    </span>
+                    <span>
+                       I need something more custom
+                    </span>
+                </label>
+    
+                <Input props
+                    type="text"
+                    title="Your name"
+                    name="name"
+                    required
+                />
+                
+                <Input props
+                    type="email"
+                    title="Your email address"
+                    name="email"
+                    required
+                />
+    
+                <Input props
+                    type="tel"
+                    title="Your phone number"
+                    name="phone"
+                    required
+                />
+    
+                <Textarea props
+                    title="Tell me very briefly about your project"
+                    name="message"
+                    required
+                />
+    
+                <SubmitReset />
+    
+            </form>
+
+        </Columns>
+
+        
+    </Section>
+
 </Layout>
+
+<script>
+import { disableInitialInvalidState } from "../../js/form";
+
+document.addEventListener('astro:page-load', () => 
+    disableInitialInvalidState(['name', 'email', 'phone', 'message'])
+)
+
+</script>

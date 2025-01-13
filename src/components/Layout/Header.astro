@@ -32,7 +32,7 @@ const headerPages = getPages().byGroup('header').all()
     class="sticky top-0 left-0 right-0 z-[999] bg-primary-50 font-base"
 >
 
-    <Section py-none>
+    <Section width="full" contentWidth='content' py-none>
 
         <div class="relative fic-4 flex-wrap text-primary-700 py-2">
 
@@ -66,7 +66,7 @@ const headerPages = getPages().byGroup('header').all()
                     { headerPages.map( (page) => (
                         <li>
                             <NavLink href={page.path}>{page.title}</NavLink>
-                            { page.subPages && (
+                            { 'subPages' in page && page.subPages && (
                                 <MegaMenu pages={page.subPages} />
                             )}
                         </li>

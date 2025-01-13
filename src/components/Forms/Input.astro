@@ -34,7 +34,7 @@ const { title, name, required, type, ...props } = Astro.props
         name={name.toLowerCase()} 
         id={name.toLowerCase()} 
         required={required} 
-        class="form-field [&:invalid:not(:placeholder-shown)]:border-red-200 :"
+        class="form-field [&:invalid]:border-red-400"
         {...props}
     />
 

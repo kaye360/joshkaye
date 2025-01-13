@@ -32,9 +32,11 @@ const { title, name, required, ...props } = Astro.props
     <textarea 
         name={name.toLowerCase()} 
         id={name.toLowerCase()}
-        class="form-field"
+        class="form-field [&:invalid]:border-red-400"
         rows="5"
+        required={required}
         {...props}
-    />
+    ></textarea>
+
 
 </Label>

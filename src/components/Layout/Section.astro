@@ -32,7 +32,7 @@ interface Props extends HTMLAttributes<'section'> {
     class? : string,
 
     /**
-     * @prop width: 'full' | 'content' | 'slim' - Default 'content'
+     * @prop width: 'full' | 'content' | 'slim' - Default 'full'
      * @prop contentWidth: 'full' | 'content' | 'slim' - Default 'content'
      * @prop px-none : boolean
      * @prop py-none : boolean
@@ -43,7 +43,7 @@ interface Props extends HTMLAttributes<'section'> {
 }
 
 const { 
-    width = 'content',
+    width = 'full',
     contentWidth = 'content',
     ['px-none'] : pxNone = false,
     ['py-none'] : pyNone = false,

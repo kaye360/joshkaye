@@ -31,6 +31,14 @@
     p {
         line-height: 1.6rem;
     }
+
+    /**
+    Overwrite initial invalid state on page load
+    */
+    input[data-is-touched="false"]:invalid,
+    textarea[data-is-touched="false"]:invalid {
+        border-color: hsl( var(--primary-color) 80%);
+    }
 }
 
 @layer components {
@@ -67,6 +75,10 @@
 
     .form-field-has-focus {
         @apply has-[:focus]:bg-primary-100/75
+    }
+
+    .form-field-has-checked {
+        @apply has-[:checked]:bg-primary-100/75
     }
 
 }
