@@ -13,13 +13,13 @@ const { pages } = Astro.props
 ---
 
 <ul 
-    class="mega-menu hidden lg:grid grid-cols-4 gap-x-8 gap-y-4 p-8 bg-primary-50 drop-shadow-xl opacity-95 font-semibold transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] overflow-hidden min-w-max"
+    class="mega-menu hidden lg:grid grid-cols-4 gap-x-8 gap-y-4 p-8 bg-primary-800 drop-shadow-xl opacity-95 font-semibold transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] overflow-hidden min-w-max"
 >
     { pages.map( page => (
         <li class="min-w-max">
             <a 
                 href={page.path} 
-                class="inline-block hover:text-secondary-500 w-full min-w-max"
+                class="inline-block hover:text-secondary-400 w-full min-w-max"
             >
                 {page.title}
             </a>
