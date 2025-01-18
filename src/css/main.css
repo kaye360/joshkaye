@@ -4,17 +4,15 @@
 
 @layer base {
     :root {
-        /* Color Picker is just for use in IDE */
+        /* Color Picker for dev */
         --color-picker : hsl(204, 36%, 36%);
 
-        /* 
-            Base Site Colors (HSL) 
-            Note: only provide H and S values. L values are not needed
-        */
+        /* Theme Colors (HSL) L values are not needed */
         --primary-color   : 204deg 36%;
         --secondary-color : 340deg 90%;
-
     }
+
+    /* Boilerplate styles */
 
     body {
         @apply bg-primary-25 font-base text-primary-900
@@ -32,9 +30,7 @@
         line-height: 1.6rem;
     }
 
-    /**
-    Overwrite initial invalid state on page load
-    */
+    /** Overwrite initial invalid state on page load */
     input[data-is-touched="false"]:invalid,
     textarea[data-is-touched="false"]:invalid {
         border-color: hsl( var(--primary-color) 80%);
@@ -46,9 +42,7 @@
 
 @layer utilities {
     
-    /* 
-    flex items-center gap-x shorthand
-    */
+    /* flex items-center gap-x shorthand */
     .fic-1 {
         @apply flex items-center gap-1
     }
@@ -65,10 +59,7 @@
         @apply flex items-center gap-6
     }
 
-    /* 
-    Base form field styles
-    Used for Input, Textarea, Select, etc components to keep consistent styles
-    */
+    /* Base form field styles - Used in multiple components */
     .form-field {
         @apply p-2 rounded border border-primary-200 bg-primary-25 w-full max-w-xl focus-visible:outline-primary-300
     }

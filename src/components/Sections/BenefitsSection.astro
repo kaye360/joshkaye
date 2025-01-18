@@ -1,27 +1,21 @@
 ---
-import Button from "../Base/Button.astro";
 import Columns from "../Base/Columns.astro";
-import CtaButton from "../Base/CtaButton.astro";
 import Icon from "../Base/Icon.astro";
 import TextBlock from "../Base/TextBlock.astro";
 import H2 from "../Heading/H2.astro";
 import H3 from "../Heading/H3.astro";
 import Section from "../Layout/Section.astro";
-import Image from "../Base/Image.astro";
-import { PiggyBank, Zap, ChartNoAxesCombined, MonitorSmartphone, Telescope } from 'lucide'
-import { planFeatures } from "../../config/plans";
-import List from "../Base/List.astro";
-import LiCheck from "../Base/LiCheck.astro";
+import { PiggyBank, Zap, ChartNoAxesCombined, MonitorSmartphone } from 'lucide'
 ---
 
 <Section id="benefits" width="full" class=" bg-primary-50">
 
-    <div class="flex flex-col items-center gap-16 overflow-clip">
+    <div class="grid gap-16 overflow-clip">
 
-        <TextBlock class="md:text-center">
-            <H2>Focus on running your business, not fixing your website</H2>
-            <p>
-                I make it easy for you. Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto tenetur dolorem incidunt repellat facere recusandae ullam earum laborum!
+        <TextBlock class="md:flex md:flex-col md:items-center w-fit mx-auto">
+            <H2 class="md:text-center">Focus on running your business, not fixing your website</H2>
+            <p class="text-lg md:text-center">
+                I make it easy for you. From the initial concept and content writing to the final launch, I'll handle all the details. My focus is on building a site that not only looks fantastic but also drives results, <strong>helping you achieve your business goals</strong>.
             </p>
         </TextBlock>
     
@@ -29,26 +23,26 @@ import LiCheck from "../Base/LiCheck.astro";
     
             <div class="flex flex-col gap-2 items-start">
                 <Icon icon={ Zap } class="w-16 h-16 text-primary-500" stroke-width="1.5" />
-                <H3>Fast websites = higher conversions</H3>
-                <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor molestiae sint quo cumque.</p>
+                <H3>Higher conversions</H3>
+                <p>Avoid losing customers with a slow website. I optimize your site's performance to ensure fast load times, keeping visitors engaged and encouraging them to take action..</p>
             </div>
     
             <div class="flex flex-col gap-2 items-start">
                 <Icon icon={ PiggyBank } class="w-16 h-16 text-primary-500" stroke-width="1.5" />
                 <H3>Save your money</H3>
-                <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor molestiae sint quo cumque.</p>
+                <p>I save you money by offering affordable website solutions that fit your budget, without sacrificing quality or results.</p>
             </div>
     
             <div class="flex flex-col gap-2 items-start">
                 <Icon icon={ MonitorSmartphone } class="w-16 h-16 text-primary-500" stroke-width="1.5" />
                 <H3>Set and forget</H3>
-                <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor molestiae sint quo cumque.</p>
+                <p>With my "set and forget" approach, you won't have to worry about ongoing maintenance, security, or updates. I'll handle everything, so you can focus on your business with peace of mind.</p>
             </div>
     
             <div class="flex flex-col gap-2 items-start">
                 <Icon icon={ ChartNoAxesCombined } class="w-16 h-16 text-primary-500" stroke-width="1.5" />
                 <H3>Scale as you grow!</H3>
-                <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor molestiae sint quo cumque.</p>
+                <p>As your business grows, I'll ensure your website grows with you. Upgrade to a plan that suits your needs, and I'll handle the technical details to keep your site running smoothly as you scale.</p>
             </div>
         
         </Columns>
