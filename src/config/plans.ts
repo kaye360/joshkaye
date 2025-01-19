@@ -13,7 +13,7 @@ export const PLANS : Plan[] = [
     {
         title : 'Starter Website',
         slug : 'starter',
-        description : 'Perfect for dolor sit amet consectetur adipisicing elit. Quibusdam, nam!',
+        description : 'Ideal for a one-person business looking to establish their online presence and get their business up and running.',
         price : 500,
         renewalPrice : 150,
         features : [
@@ -27,7 +27,7 @@ export const PLANS : Plan[] = [
     {
         title : '3-Page Website',
         slug : '3-page',
-        description : 'Perfect for dolor sit amet consectetur adipisicing elit. Quibusdam, nam!',
+        description : 'Perfect for a small business that has grown and requires a more comprehensive website beyond a single page.',
         price : 1000,
         renewalPrice : 150,
         features : [
@@ -41,13 +41,13 @@ export const PLANS : Plan[] = [
     {
         title : '6-Page Website',
         slug : '6-page',
-        description : 'Perfect for dolor sit amet consectetur adipisicing elit. Quibusdam, nam!',
+        description : 'Designed for the small business that requires a complete brochure website with the potential for future growth and scalability.',
         price : 2000,
         renewalPrice : 250,
         features : [
             'Full website with up to 6 pages',
             'Hosting for 1 year (Renews at $250/year)',
-            'Extra pages for $250/each (one time) plus $10/year',
+            'Extra pages for $250/each (one time) plus $10/year hosting',
             'Content writing',
             'Custom theme and site optimization',
             'Integrate with booking and payment apps'
@@ -75,7 +75,7 @@ export const planFeatures : PlanFeature[] = [
     },
     {
         title : 'Custom, modern theme that looks great on all screen sizes',
-        description : 'A custom, modern theme will be designed to look stunning and function seamlessly across all screen sizes, ensuring a perfect user experience on any device.',
+        description : 'A custom, modern theme will be designed to look stunning and function seamlessly across all screen sizes.',
         icon : MonitorSmartphone,
     },
     {
@@ -90,7 +90,7 @@ export const planFeatures : PlanFeature[] = [
     },
     {
         title : 'On-page search engine optimization and best practices',
-        description : 'On-page SEO and best practices will be implemented to improve your site\'s visibility, helping it rank higher in search engine results and attract more traffic.',
+        description : 'On-page SEO will be implemented to improve your site\'s visibility, helping it rank higher in search engine results and attract more traffic.',
         icon : SearchCheck,
     },
     {
