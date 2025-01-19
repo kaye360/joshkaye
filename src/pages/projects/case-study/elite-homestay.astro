@@ -7,10 +7,10 @@ import ProjectLink from "../../../components/Project/ProjectLink.astro";
 import ProjectRole from "../../../components/Project/ProjectRole.astro";
 import ProjectTags from "../../../components/Project/ProjectTags.astro";
 import Layout from "../../../layouts/Layout.astro";
-import { projects } from "../../../config/projects";
+import { PROJECTS } from "../../../config/projects";
 import List from "../../../components/Base/List.astro";
 
-const project = projects.filter( project => project.title === 'Elite Canadian Homestay')[0]
+const project = PROJECTS.filter( project => project.title === 'Elite Canadian Homestay')[0]
 ---
 
 <Layout 

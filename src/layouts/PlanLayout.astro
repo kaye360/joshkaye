@@ -16,6 +16,7 @@ import WorkTogetherBanner from "../components/Sections/WorkTogetherBanner.astro"
 import { PLANS } from "../config/plans"
 import Layout from "./Layout.astro"
 import Image from "../components/Base/Image.astro"
+import AddOnsSection from "../components/Sections/AddOnsSection.astro"
 
 const { title } = Astro.props
 
@@ -69,6 +70,8 @@ const plan = PLANS.filter( plan => plan.title === title)[0]
     </Section>
 
     <FeaturesSection />
+
+    <AddOnsSection />
 
     <BenefitsSection />
 

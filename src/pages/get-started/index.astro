@@ -1,4 +1,5 @@
 ---
+import Avatar from "../../components/Base/Avatar.astro";
 import Columns from "../../components/Base/Columns.astro";
 import TextBlock from "../../components/Base/TextBlock.astro";
 import Input from "../../components/Forms/Input.astro";
@@ -22,14 +23,20 @@ import Layout from "../../layouts/Layout.astro";
 
         <Columns cols={2} class="gap-4">
 
-            <TextBlock class="md:order-2">
+            <TextBlock class="md:order-2 mb-4">
                 <H2>Lets work together</H2>
                 <p>
-                    Start by selecting the web design plan that best suits your needs. Once you've chosen your plan, simply fill in the details to get the process underway. Keep the project description brief - I will gather more information as needed.
+                    Start by selecting the web design plan that best suits your needs. Once you've chosen your plan, simply fill in the details to get the process underway. 
                 </p>
                 <p>
-                    Whether you're building from scratch or enhancing an existing site, I'm here to make your journey seamless and successful. Let's get started on creating a website that works for you!
+                    Please keep the project description brief. I will gather more information as needed.
                 </p>
+                <div class="fic-4">
+                    <Avatar src="/img/josh-avatar.webp" name="Josh" />
+                    <p>
+                        I'm here to make your journey simple and successful. Let's get started on creating a website that works for you!
+                    </p>
+                </div>
             </TextBlock>
 
             <form 
@@ -37,6 +44,8 @@ import Layout from "../../layouts/Layout.astro";
                 method="post" 
                 class="grid gap-4"
             >
+
+                <input type="hidden" name="subject" value="Get Started" />
     
                 <span class="text-lg font-semibold">
                     Choose your plan

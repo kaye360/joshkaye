@@ -1,0 +1,83 @@
+---
+import Columns from "../Base/Columns.astro";
+import Card from "../Card/Card.astro";
+import CardContent from "../Card/CardContent.astro";
+import CardHeading from "../Card/CardHeading.astro";
+import H2 from "../Heading/H2.astro";
+import Section from "../Layout/Section.astro";
+---
+
+<Section>
+
+    <H2>Additional Add-ons</H2>
+
+    <Columns cols={3} class="gap-6 mt-12">
+        <Card class="py-6">
+            <CardHeading class="text-primary-700">Extra pages</CardHeading>
+            <CardContent>
+                <span class="text-4xl font-semibold">
+                    $250 <span class="text-base">/one time per page</span>
+                </span>
+                <p class="mt-4">
+                    Need more than 6 pages for your site? No problem at all. Get as many pages as you'd like at $250 per page, plus $10/year for hosting.
+                </p>
+            </CardContent>
+        </Card>
+        <Card class="py-6">
+            <CardHeading class="text-primary-700">Unlimited website updates</CardHeading>
+            <CardContent>
+                <span class="text-4xl font-semibold">
+                    $300 <span class="text-base">/yearly</span>
+                </span>
+                <p class="mt-4">
+                    Update and edit your website as many times as you would like with one yearly fee.
+                </p>
+            </CardContent>
+        </Card>
+        <Card class="py-6">
+            <CardHeading class="text-primary-700">Website updates at $50/hour</CardHeading>
+            <CardContent>
+                <span class="text-4xl font-semibold">
+                    $50 <span class="text-base">/hour</span>
+                </span>
+                <p class="mt-4">
+                    If you need to update the website after it is built, updates can be done at $50/hour with 1/2 increments. A minimum charge of 1/2 hour applies to every update.
+                </p>
+            </CardContent>
+        </Card>
+        <Card class="py-6">
+            <CardHeading class="text-primary-700">SEO/Google ads</CardHeading>
+            <CardContent>
+                <span class="text-4xl font-semibold">
+                    $1000 <span class="text-base">/starting price</span>
+                </span>
+                <p class="mt-4">
+                    Want to bring visitors to your newly created site? Starting at $1000, I can set up a plan for you.
+                </p>
+            </CardContent>
+        </Card>
+        <Card class="py-6">
+            <CardHeading class="text-primary-700">Content management system</CardHeading>
+            <CardContent>
+                <span class="text-4xl font-semibold">
+                    $1000 <span class="text-base">/one time</span>
+                </span>
+                <p class="mt-4">
+                    If you would like to be able to edit the content of your site, I can integrate a CMS for you.
+                </p>
+            </CardContent>
+        </Card>
+        <Card class="py-6">
+            <CardHeading class="text-primary-700">Blog</CardHeading>
+            <CardContent>
+                <span class="text-4xl font-semibold">
+                    $1000 <span class="text-base">/one time</span>
+                </span>
+                <p class="mt-4">
+                    Need to regularly update your visitors or provide articles? I can set up a blog for you.
+                </p>
+            </CardContent>
+        </Card>
+    </Columns>
+
+</Section>

@@ -7,10 +7,10 @@ import Section from "../../../components/Layout/Section.astro";
 import ProjectLink from "../../../components/Project/ProjectLink.astro";
 import ProjectRole from "../../../components/Project/ProjectRole.astro";
 import ProjectTags from "../../../components/Project/ProjectTags.astro";
-import { projects } from "../../../config/projects";
+import { PROJECTS } from "../../../config/projects";
 import Layout from "../../../layouts/Layout.astro";
 
-const project = projects.filter( project => project.title === 'Kelly Ann Creations')[0]
+const project = PROJECTS.filter( project => project.title === 'Kelly Ann Creations')[0]
 ---
 
 <Layout 

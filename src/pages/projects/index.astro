@@ -8,7 +8,7 @@ import Section from "../../components/Layout/Section.astro";
 import Project from "../../components/Project/Project.astro";
 import ProjectRole from "../../components/Project/ProjectRole.astro";
 import ProjectTags from "../../components/Project/ProjectTags.astro";
-import { projects } from "../../config/projects";
+import { PROJECTS } from "../../config/projects";
 import Layout from "../../layouts/Layout.astro";
 ---
 
@@ -29,7 +29,7 @@ import Layout from "../../layouts/Layout.astro";
 
 		<Columns cols={2} class="gap-16">
 	
-			{  projects.map( project => (
+			{  PROJECTS.map( project => (
 				<Project>
 					<img 
 						src={project.cover} 

@@ -8,7 +8,7 @@ interface Project {
     projectUrl : string | null,
 }
 
-export const projects: Project[] = [
+export const PROJECTS: Project[] = [
 
     {
         title : 'Elite Canadian Homestay',

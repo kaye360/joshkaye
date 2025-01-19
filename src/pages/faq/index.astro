@@ -1,9 +1,8 @@
 ---
-import { CircleArrowDown, CircleArrowRight } from "lucide";
+import { CircleArrowRight } from "lucide";
 import Icon from "../../components/Base/Icon.astro";
 import TextBlock from "../../components/Base/TextBlock.astro";
 import H1 from "../../components/Heading/H1.astro";
-import H2 from "../../components/Heading/H2.astro";
 import Section from "../../components/Layout/Section.astro";
 import { FAQ } from "../../config/faq";
 import Layout from "../../layouts/Layout.astro";
@@ -26,11 +25,7 @@ import Layout from "../../layouts/Layout.astro";
                         <Icon icon={CircleArrowRight} stroke-width="1" />
                         {question.question}
                     </span>
-                    <div>
-                        <p class="py-4 pl-8">
-                            {question.answer}
-                        </p>
-                    </div>
+                    <p class="py-4 pl-8" set:html={question.answer} />
                 </div>
             )) }
 
