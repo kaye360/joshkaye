@@ -2,7 +2,6 @@
 import Columns from "../../components/Base/Columns.astro";
 import TextBlock from "../../components/Base/TextBlock.astro";
 import Input from "../../components/Forms/Input.astro";
-import Radio from "../../components/Forms/Radio.astro";
 import SubmitReset from "../../components/Forms/SubmitReset.astro";
 import Textarea from "../../components/Forms/Textarea.astro";
 import H1 from "../../components/Heading/H1.astro";
@@ -26,10 +25,10 @@ import Layout from "../../layouts/Layout.astro";
             <TextBlock class="md:order-2">
                 <H2>Lets work together</H2>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam porro sequi sint necessitatibus qui pariatur dicta officia excepturi consequatur doloremque.
+                    Start by selecting the web design plan that best suits your needs. Once you've chosen your plan, simply fill in the details to get the process underway. Keep the project description brief - I will gather more information as needed.
                 </p>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam porro sequi sint necessitatibus qui pariatur dicta officia excepturi consequatur doloremque.
+                    Whether you're building from scratch or enhancing an existing site, I'm here to make your journey seamless and successful. Let's get started on creating a website that works for you!
                 </p>
             </TextBlock>
 
@@ -48,9 +47,8 @@ import Layout from "../../layouts/Layout.astro";
                         <input 
                             type="radio" 
                             name={'plan'} 
-                            id={'plan'} 
-                            value={plan.slug.replace('/', '')}
-                            {...(plan.title === 'Starter Website' ? {checked : true} : {})}
+                            id={'plan-' + plan.slug}
+                            value={plan.slug}
                         />
                         <span class="font-semibold min-w-max">
                             {plan.title} 
@@ -58,7 +56,6 @@ import Layout from "../../layouts/Layout.astro";
                         <span>
                             ${plan.price}/one time, renews at ${plan.renewalPrice}/yearly
                         </span>
-                        {}
                     </label>
                 ))}
     
@@ -66,7 +63,7 @@ import Layout from "../../layouts/Layout.astro";
                     <input 
                         type="radio" 
                         name={'plan'} 
-                        id={'plan'} 
+                        id={'plan-custom'} 
                         value={'custom'}
                         required
                     />
@@ -119,8 +116,38 @@ import Layout from "../../layouts/Layout.astro";
 <script>
 import { disableInitialInvalidState } from "../../js/form";
 
-document.addEventListener('astro:page-load', () => 
+document.addEventListener('astro:page-load', () => {
+
     disableInitialInvalidState(['name', 'email', 'phone', 'message'])
-)
+    
+    setCheckedPlan()
+})
+
+/**
+ * Sets the currently selected plan based on url param 'plan'
+ */
+function setCheckedPlan() {
+    const params = new URLSearchParams( window.location.search )
+    const plan = params.get('plan')
+
+    const starterPlan = document.querySelector('#plan-starter') as HTMLInputElement
+    const planInput = document.querySelector(`#plan-${plan}`) as HTMLInputElement
+
+    /**
+     * Note: Need to check these explicitly otherwise astro throws a wierd
+     * error. Something to do with View Transitions
+     */
+
+    if( !planInput && starterPlan ) {
+        starterPlan.checked = true
+        return
+    } 
+    
+    if( planInput ) {
+        planInput.checked = true
+    }
+
+}
+
 
 </script>
