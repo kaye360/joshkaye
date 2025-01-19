@@ -38,7 +38,7 @@ module.exports = {
 				'radial-gradient' : 'radial-gradient(var(--tw-gradient-stops))'
 			},
 			animation : {
-				'reveal-up' : 'reveal-up 750ms ease 500ms both',
+				'reveal-up' : 'reveal-up 500ms ease 500ms both',
 				'fade-in' : 'fade-in 750ms both'
 			},
 			keyframes : {

@@ -15,7 +15,7 @@ const plans = getPages().subPagesOf('Plans + Pricing')
 
 <footer class="bg-primary-100 pb-6">
     <Section>
-        <Columns props cols={3} class="gap-6">
+        <Columns props cols={4} class="gap-6">
 
             <!-- Logo -->
             <div>
@@ -31,7 +31,7 @@ const plans = getPages().subPagesOf('Plans + Pricing')
 
             <!-- Contact -->
             <nav>
-                <h2 class="text-xl font-semibold mb-3">Contact Us</h2>
+                <h2 class="text-xl font-semibold mb-3">Contact us</h2>
                 <ul class="grid gap-2">
                     <li>
                         <a href={PHONE_NUMBER} class="fic-2">
@@ -56,41 +56,39 @@ const plans = getPages().subPagesOf('Plans + Pricing')
                 </ul>
             </nav>
 
-            <div class="grid grid-cols-[auto_auto] justify-between">
+            <!-- Plans -->
+            <nav>
+                <h2 class="text-xl font-semibold mb-3">Web design plans</h2>
+                <List variant="none">
+                    { plans.map( (page) => ( 
+                        <li>
+                            <a 
+                                href={page.path}
+                                class="hover:underline"
+                            >
+                                {page.title}
+                            </a>
+                        </li>
+                    ))}
+                </List>
+            </nav>
 
-                <!-- Plans -->
-                <nav>
-                    <List variant="none">
-                        { plans.map( (page) => ( 
-                            <li>
-                                <a 
-                                    href={page.path}
-                                    class="hover:underline"
-                                >
-                                    {page.title}
-                                </a>
-                            </li>
-                        ))}
-                    </List>
-                </nav>
-
-                <!-- Links -->
-                <nav>
-                    <List variant="none">
-                        { pages.map( (page) => ( 
-                            <li>
-                                <a 
-                                    href={page.path}
-                                    class="hover:underline"
-                                >
-                                    {page.title}
-                                </a>
-                            </li>
-                        ))}
-                    </List>
-                </nav>
-
-            </div>
+            <!-- Links -->
+            <nav>
+                <h2 class="text-xl font-semibold mb-3">Links</h2>
+                <List variant="none">
+                    { pages.map( (page) => ( 
+                        <li>
+                            <a 
+                                href={page.path}
+                                class="hover:underline"
+                            >
+                                {page.title}
+                            </a>
+                        </li>
+                    ))}
+                </List>
+            </nav>
 
         </Columns>
 

@@ -7,16 +7,18 @@ import { ArrowUpCircle } from 'lucide'
 <Section props 
     py-none
     id="back-to-top-button-wrapper"
-    class="!fixed z-[9999] -bottom-24 left-0 right-2 transition-all duration-300 pointer-events-none"
+    class="!fixed z-[9999] -bottom-24 left-0 w-full h-1 right-2 transition-all duration-300 pointer-events-none"
 >
-    <a 
-        href="#top"
-        class="fic-2 ml-auto w-fit px-4 py-2 text-base rounded-md bg-primary-100 hover:bg-primary-200 pointer-events-auto font-medium border border-primary-300 active:scale-95"
-        id="back-to-top-button"
-    >
-        <Icon icon={ArrowUpCircle} stroke-width="1" />
-        Back to Top
-    </a>
+    <div class="relative">
+        <a 
+            href="#top"
+            title="Back to top"
+            id="back-to-top-button"
+            class="absolute right-0 bottom-0 p-2 pointer-events-auto text-primary-700 hover:text-secondary-500 active:scale-95"
+        >
+            <Icon icon={ArrowUpCircle} stroke-width="1" class="w-10 h-10 fill-primary-25/90" />
+        </a>
+    </div>
 </Section>
 
 <script>
@@ -28,31 +30,21 @@ document.addEventListener('astro:page-load', () => {
     const backToTopBtnWrapper = document.querySelector('#back-to-top-button-wrapper') as HTMLDivElement
     const backToTopBtn = document.querySelector('#back-to-top-button') as HTMLAnchorElement
     
-    backToTopBtn.addEventListener('click', e => {
-        e.preventDefault()
-        scrollTo({
-            top : 0, 
-            behavior : 'smooth'
-        })
+    backToTopBtn.addEventListener('click', () => {
+        scrollTo({ top : 0,  behavior : 'smooth' })
     })
-    
-    function showBackToTopBtn() {
-        backToTopBtnWrapper.classList.add('bottom-2')
-        backToTopBtnWrapper.classList.remove('-bottom-24')
-    }
-    
-    function hideBackToTopBtn() {
-        backToTopBtnWrapper.classList.add('-bottom-24')
-        backToTopBtnWrapper.classList.remove('bottom-2')
-    }
     
     document.addEventListener('scroll', debounce( () => {
         if( scrollY > window.screen.height) {
-            showBackToTopBtn()
+            // Show
+            backToTopBtnWrapper.classList.add('bottom-2')
+            backToTopBtnWrapper.classList.remove('-bottom-24')
         } else {
-            hideBackToTopBtn()
+            // Hide
+            backToTopBtnWrapper.classList.add('-bottom-24')
+            backToTopBtnWrapper.classList.remove('bottom-2')
         }
-    }, 500))
+    }, 100))
 
 })
 
