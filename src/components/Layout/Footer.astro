@@ -8,6 +8,7 @@ import Icon from "../Base/Icon.astro";
 import { Phone, Mail, MapPin } from 'lucide'
 import TextBlock from "../Base/TextBlock.astro";
 import List from "../Base/List.astro";
+import CtaButton from "../Base/CtaButton.astro";
 
 const pages = getPages().byGroup('footer').all()
 const plans = getPages().subPagesOf('Plans + Pricing')
@@ -26,25 +27,27 @@ const plans = getPages().subPagesOf('Plans + Pricing')
                         &copy; <span id="footer-date">{PUBLISH_DATE}</span><br /> 
                         {SITE_FULL_NAME}
                     </p>
+
+                    <CtaButton />
                 </TextBlock>
             </div>
 
             <!-- Contact -->
             <nav>
-                <h2 class="text-xl font-semibold mb-3">Contact</h2>
+                <h2 class="text-xl font-semibold mb-3">Contact </h2>
                 <ul class="grid gap-2">
                     <li>
-                        <a href={PHONE_NUMBER} class="fic-2">
+                        <span class="fic-2">
                             <Icon icon={Phone} class="w-5 h-5" stroke-width="1.5" />
                             {PHONE_NUMBER}
-                        </a>
+                        </span>
                     </li>
         
                     <li>
-                        <a href={EMAIL_ADDRESS} class="fic-2">
+                        <span class="fic-2">
                             <Icon icon={Mail} class="w-5 h-5" stroke-width="1.5" />
                             {EMAIL_ADDRESS}
-                        </a>
+                        </span>
                     </li>
                     
                     <li>

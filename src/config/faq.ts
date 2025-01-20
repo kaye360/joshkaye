@@ -7,7 +7,7 @@ interface FAQ {
 export const FAQ : FAQ[] = [
     { 
         question : `Why do you hand-code websites instead of using WordPress or Wix?`,
-        answer : `I hand-code websites to prioritize speed, ensuring your site loads quickly and doesn't lose customers due to slow performance. This approach also improves SEO, enhances security, and simplifies maintenance, giving you full control over design and functionality while minimizing future issues. <br /><br /> Site builders such as WordPress tend to be bloated, slower, and more susceptible to hackers than hand-coded sites.`,
+        answer : `I hand-code websites to prioritize speed, ensuring your site loads quickly and doesn't lose customers due to slow performance. This approach also improves SEO, enhances security, and simplifies maintenance, giving you full control over design and functionality while minimizing future issues. <br /><br /> Site builders such as WordPress tend to be bloated, slower, and more susceptible to hackers than hand-coded sites. There are almost no potential entrypoints for hackers to gain access to your source code.`,
     },
     { 
         question : `Why are your prices less than other agencies?`,
@@ -15,7 +15,7 @@ export const FAQ : FAQ[] = [
     },
     { 
         question : `Who writes all the content for my site?`,
-        answer : `I write all the content for your site, ensuring it not only aligns with your brand and speaks to your audience but also follows a SEO strategy. Every piece is carefully written and placed to boost your search engine rankings and help drive more traffic to your site. <br /><br /> If you would like to provide content, that is okay as well.`,
+        answer : `I write all the content for your site, ensuring it not only aligns with your brand and speaks to your audience but also follows a SEO strategy. Every piece is written and placed to boost your search engine rankings and help drive more traffic to your site. <br /><br /> If you would like to provide content, that is okay as well.`,
     },
     { 
         question : `What kind of theme will I get?`,
@@ -23,7 +23,7 @@ export const FAQ : FAQ[] = [
     },
     { 
         question : `Do you host websites?`,
-        answer : `Yes, I offer website hosting services to ensure your site runs smoothly, with reliable uptime and optimal performance. I only host websites created by myself.`,
+        answer : `Yes, I offer website hosting services to ensure your site runs smoothly and securely. I only host websites created by myself. You may provide your own hosting but it is not recommended.`,
     },
     { 
         question : `What kind of search engine optimizaion (SEO) do you provide?`,

@@ -15,10 +15,10 @@ export const PLANS : Plan[] = [
         slug : 'starter',
         description : 'Ideal for a one-person business looking to establish their online presence and get their business up and running.',
         price : 500,
-        renewalPrice : 150,
+        renewalPrice : 200,
         features : [
             'Single landing page with up to 6 sections',
-            'Hosting for 1 year (Renews at $150/year)',
+            'Hosting for 1 year (Renews at $200/year)',
             'Content writing',
             'Custom theme and site optimization',
             'Integrate with booking and payment apps'
@@ -29,10 +29,10 @@ export const PLANS : Plan[] = [
         slug : '3-page',
         description : 'Perfect for a small business that has grown and requires a more comprehensive website beyond a single page.',
         price : 1000,
-        renewalPrice : 150,
+        renewalPrice : 200,
         features : [
             'Website with up to 3 pages',
-            'Hosting for 1 year (Renews at $150/year)',
+            'Hosting for 1 year (Renews at $200/year)',
             'Content writing',
             'Custom theme and site optimization',
             'Integrate with booking and payment apps'   
@@ -43,10 +43,10 @@ export const PLANS : Plan[] = [
         slug : '6-page',
         description : 'Designed for the small business that requires a complete brochure website with the potential for future growth and scalability.',
         price : 2000,
-        renewalPrice : 250,
+        renewalPrice : 300,
         features : [
             'Full website with up to 6 pages',
-            'Hosting for 1 year (Renews at $250/year)',
+            'Hosting for 1 year (Renews at $300/year)',
             'Extra pages for $250/each (one time) plus $10/year hosting',
             'Content writing',
             'Custom theme and site optimization',

@@ -80,6 +80,11 @@ export const PAGES : Page[] = [
         group : ['footer'],
     },
     {
+        title : 'Edmonton Web Design',
+        path  : '/edmonton-web-design',
+        group : ['footer'],
+    },
+    {
         title : 'Get Started',
         path  : '/get-started',
         group : ['cta'],
