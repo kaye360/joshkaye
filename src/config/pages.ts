@@ -70,11 +70,6 @@ export const PAGES : Page[] = [
         group : ['header', 'footer'],
     },
     {
-        title : 'Privacy Policy',
-        path  : '/privacy',
-        group : ['footer'],
-    },
-    {
         title : 'Site Map',
         path  : '/site-map',
         group : ['footer'],

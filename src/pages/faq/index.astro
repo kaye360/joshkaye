@@ -22,7 +22,7 @@ import Layout from "../../layouts/Layout.astro";
             { FAQ.map( question => (
                 <div class="pb-4 border-b border-primary-200">
                     <span class="flex items-start gap-2 py-2 text-xl">
-                        <Icon icon={CircleArrowRight} stroke-width="1" class="translate-y-1" />
+                        <Icon icon={CircleArrowRight} stroke-width="1.5" class="translate-y-1" />
                         {question.question}
                     </span>
                     <p class="py-4 pl-8" set:html={question.answer} />

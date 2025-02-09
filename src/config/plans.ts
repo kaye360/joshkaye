@@ -95,7 +95,7 @@ export const planFeatures : PlanFeature[] = [
     },
     {
         title : 'Integrate with booking and payment apps',
-        description : 'Your website will be seamlessly integrated with booking and payment apps, streamlining transactions and enhancing user convenience.',
+        description : 'Your website may integrate with booking and payment apps, making transactions easier for your customers.',
         icon : AppWindow,
     },
 ]
