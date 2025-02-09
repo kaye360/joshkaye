@@ -1,5 +1,4 @@
 ---
-import ContactFormExample from "../../components/_Examples/ContactFormExample.astro";
 import Columns from "../../components/Base/Columns.astro";
 import Icon from "../../components/Base/Icon.astro";
 import TextBlock from "../../components/Base/TextBlock.astro";
@@ -9,15 +8,14 @@ import Textarea from "../../components/Forms/Textarea.astro";
 import H1 from "../../components/Heading/H1.astro";
 import H2 from "../../components/Heading/H2.astro";
 import Section from "../../components/Layout/Section.astro";
-import { ADDRESS, EMAIL_ADDRESS, PHONE_NUMBER } from "../../config/site";
+import { EMAIL_ADDRESS, LOCATION, PHONE_NUMBER } from "../../config/site";
 import Layout from "../../layouts/Layout.astro";
 import { MapPin, Phone, Mail } from 'lucide'
 ---
 
 <Layout
-    lang="en"
     title="Contact"
-    description="Tenetur culpa ab ipsam tempora est debitis? Totam quis saepe nostrum ducimus ipsa id vitae sit."
+    description="Contact Josh Kaye for web design and development services"
 >
 
     <H1>
@@ -70,13 +68,18 @@ import { MapPin, Phone, Mail } from 'lucide'
                     </H2>
 
                     <p>
-                        Whether you have questions about my services, need support, or want to provide feedback, I'm listening. Fill out the form here, and I will get back to you as soon as possible.</p>
+                        Whether you have questions about my services, need support, or want to provide feedback, I'm listening. Fill out the form here, and I will get back to you as soon as possible.
+                    </p>
+
+                    <p>
+                        Check the <a href="/faq">frequently asked questions</a> for more information.
+                    </p>
 
                     <div>
                         <h3 class="font-semibold">Location</h3>
                         <p class="fic-2">
                             <Icon icon={MapPin} stroke-width="1" class="w-5 h-5" />
-                            {ADDRESS}
+                            {LOCATION}
                         </p>
                     </div>
                     
