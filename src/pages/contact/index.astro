@@ -26,9 +26,15 @@ import { MapPin, Phone, Mail } from 'lucide'
         <Columns cols={2}  class="gap-12">
 
             <form 
+                id="contact"
+                name="contact"
                 method="post"
                 class="grid gap-2"
+                data-netlify="true"
             >
+
+                <input type="hidden" name="subject" value="Web inquiry" />
+                
                 <Input props
                     title="Your name"
                     name="name"
