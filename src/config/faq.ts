@@ -7,23 +7,23 @@ interface FAQ {
 export const FAQ : FAQ[] = [
     { 
         question : `Why do you hand-code websites instead of using WordPress or Wix?`,
-        answer : `I hand-code websites to prioritize speed, ensuring your site loads quickly and doesn't lose customers due to slow performance. This approach also improves SEO, enhances security, and simplifies maintenance, giving you full control over design and functionality while minimizing future issues. <br /><br /> Site builders such as WordPress tend to be bloated, slower, and more susceptible to hackers than hand-coded sites. There are almost no potential entrypoints for hackers to gain access to your source code.`,
+        answer : `I hand-code websites to prioritize speed, ensuring your <strong>site loads quickly and doesn't lose customers</strong> due to slow performance. This approach also improves SEO, enhances security, and simplifies maintenance. <br /><br /> Site builders such as WordPress tend to be bloated, slower, and more susceptible to hackers than hand-coded sites. There are almost no potential entrypoints for hackers to gain access to your source code with my coding style.`,
     },
     { 
         question : `Why are your prices less than other agencies?`,
-        answer : `Other agencies can charge between $5,000 and $10,000 for similar websites. My streamlined approach gives you a similar product at an affordable price. I am a solo web designer and web developer; thus I simply do not have the same business costs as other agencies.`,
+        answer : `Other agencies can charge between $5,000 and $10,000 for similar websites. My approach gives you a similar product at an affordable price. I am a solo web designer and web developer; thus I simply do not have the same business costs as other agencies.`,
     },
     { 
         question : `Who writes all the content for my site?`,
-        answer : `I write all the content for your site, ensuring it not only aligns with your brand and speaks to your audience but also follows a SEO strategy. Every piece is written and placed to boost your search engine rankings and help drive more traffic to your site. <br /><br /> If you would like to provide content, that is okay as well.`,
+        answer : `I write all the content for your site, ensuring it not only aligns with your brand and speaks to your audience but also follows a SEO strategy. Every piece is written and placed strategically to help guiding users toward whatever your business goals are. <br /><br /> If you would like to provide content, that is okay as well.`,
     },
     { 
         question : `What kind of theme will I get?`,
-        answer : `You will receive a custom-designed theme that is mobile-friendly, responsive across all screen sizes, and perfectly suited to your brand. You wil also have 100% input on the design, ensuring it reflects your vision and business goals while providing a seamless user experience on any device.`,
+        answer : `You will receive a custom-designed theme that is mobile-friendly, responsive across all screen sizes, and perfectly suited to your brand. <strong>You wil also have 100% input on the design</strong>, ensuring it reflects your vision and business goals.`,
     },
     { 
         question : `Do you host websites?`,
-        answer : `Yes, I offer website hosting services to ensure your site runs smoothly and securely. I only host websites created by myself. You may provide your own hosting but it is not recommended.`,
+        answer : `Yes, I offer website hosting services to ensure your site runs smoothly and securely. I only host websites created by myself. You may provide your own hosting but it is not recommended and may incur additional fees.`,
     },
     { 
         question : `What kind of search engine optimizaion (SEO) do you provide?`,

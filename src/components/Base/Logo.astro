@@ -11,7 +11,9 @@ interface Props {
 }
 ---
 
-<a href="/" class="fic-2 text-lg font-bold font-theme hover:text-secondary-400 group">
+<a href="/" class="fic-1 sm:fic-2 text-base sm:text-lg font-bold font-theme hover:text-secondary-400 group">
     <Icon icon={Orbit} class="group group-hover:rotate-[-720deg] transition-all duration-[2s]" />
-    {SITE_SHORT_NAME}
+    <span>
+        {SITE_SHORT_NAME}<span class="text-sm">.dev</span>
+    </span>
 </a>    

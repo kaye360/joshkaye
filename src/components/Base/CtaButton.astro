@@ -7,6 +7,8 @@ const cta = getPages().byGroup('cta').single()
 ---
 
 <Button as="a" href={cta.path} class="group">
-    <Icon icon={Rocket} class="group transition-all group-hover:translate-x-1 group-hover:-translate-y-1 "/>
-    {cta.title}
+    <Icon icon={Rocket} class="group transition-all group-hover:translate-x-1 group-hover:-translate-y-1 w-5 sm:w-auto "/>
+    <span class="text-sm sm:text-base">
+        {cta.title}
+    </span>
 </Button>
