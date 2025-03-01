@@ -76,7 +76,7 @@ import { MapPin, Phone, Mail } from 'lucide'
                     </p>
 
                     <div>
-                        <h3 class="font-semibold">Location</h3>
+                        <h3 class="font-semibold mb-1">Location</h3>
                         <p class="fic-2">
                             <Icon icon={MapPin} stroke-width="1" class="w-5 h-5" />
                             {LOCATION}
@@ -84,15 +84,17 @@ import { MapPin, Phone, Mail } from 'lucide'
                     </div>
                     
                     <div>
-                        <h3 class="font-semibold">Contact</h3>
+                        <h3 class="font-semibold mb-1">Email</h3>
                         <p class="fic-2 mb-2">
                             <Icon icon={Mail} stroke-width="1" class="w-5 h-5" />
-                            {EMAIL_ADDRESS}
+                            <a href={`mailto:${EMAIL_ADDRESS}`}>
+                                {EMAIL_ADDRESS}
+                            </a>
                         </p>
-                        <p class="fic-2">
+                        <!-- <p class="fic-2">
                             <Icon icon={Phone} stroke-width="1" class="w-5 h-5" />
                             {PHONE_NUMBER}
-                        </p>
+                        </p> -->
                     </div>
 
                 </TextBlock>
