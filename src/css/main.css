@@ -18,16 +18,16 @@
         @apply bg-primary-25 font-base text-primary-900
     }
     
-    h2, h3, h4, h5, h6 {
-        text-wrap : balance;
+    article h2 {
+        @apply text-primary-500 text-2xl font-semibold tracking-wide;
+    }
+
+    article ul {
+        @apply list-disc ml-6
     }
 
     main a {
         @apply text-primary-500 underline hover:text-secondary-500
-    }
-
-    p {
-        line-height: 1.6rem;
     }
 
     /** Overwrite initial invalid state on page load */

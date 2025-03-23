@@ -1,0 +1,57 @@
+---
+import { getCollection } from "astro:content";
+import H1 from "../../components/Heading/H1.astro";
+import Section from "../../components/Layout/Section.astro";
+import Layout from "../../layouts/Layout.astro";
+
+const articles = await getCollection('articles')
+const articlesSorted = articles.sort((a,b) => {
+    const aDate = new Date(a.data.date)
+    const bDate = new Date(b.data.date)
+    return aDate < bDate ? 1 : -1
+})
+---
+
+<Layout 
+    title="Web design frequently asked questions"
+    description="Custom, affordable web design"
+>
+
+    <H1>Articles</H1>
+
+    <Section width="slim">
+
+        <p class="mb-6 pb-6 border-b border-primary-200 text-lg">
+            Running a small business comes with many challenges, and your website shouldn't be one of them. Your website is one of your most valuable business assets—if it's built and managed correctly. In this collection of articles, I cover essential topics to help you understand how I build, optimize, and protect your small business website
+        </p>
+
+        <div class="grid gap-12">
+            { articlesSorted.map( (article, i) => (
+                <div class="flex items-start gap-4">
+                    <article class="grid gap-2">
+                        <h2>
+                            <a href={`/articles/${article.id}`}>
+                                { article.data.title }
+                            </a>
+                        </h2>
+                        <span class="text-sm">
+                            { article.data.date}
+                        </span>
+                        <p class="text-lg">
+                            {article.data.summary}
+                        </p>
+                    </article>
+                    <img 
+                        src={`/article-img/${article.data.cover}`} 
+                        class="mix-blend-darken w-[100px] sm:w-[200px] shrink-0"
+                        width="100"
+                        height="100"
+                        alt=""
+                    />
+                </div>
+            ))}
+        </div>
+
+    </Section>
+
+</Layout>

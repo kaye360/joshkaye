@@ -60,6 +60,11 @@ export const PAGES : Page[] = [
         group : ['header', 'footer'],
     },
     {
+        title : 'Articles',
+        path  : '/articles',
+        group : ['header', 'footer'],
+    },
+    {
         title : 'About',
         path  : '/about',
         group : ['footer'],
@@ -72,11 +77,6 @@ export const PAGES : Page[] = [
     {
         title : 'Site Map',
         path  : '/site-map',
-        group : ['footer'],
-    },
-    {
-        title : 'Edmonton Web Design',
-        path  : '/edmonton-web-design',
         group : ['footer'],
     },
     {

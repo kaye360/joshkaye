@@ -1,10 +1,13 @@
 ---
+import { getCollection } from "astro:content";
 import { getPages } from "../../js/getPages";
 import Section from "../Layout/Section.astro";
 const pages = getPages().all()
+const articles = await getCollection('articles')
 ---
 
 <Section py-none contentWidth="slim" class="text-lg">
+    <h2 class="font-semibold">Pages</h2>
     <ul class="list-disc pl-6">
         { pages.map( page => (
             <li>
@@ -22,6 +25,19 @@ const pages = getPages().all()
                         ))}
                     </ul>
                 )}
+            </li>
+        )) }
+    </ul>
+</Section>
+
+<Section py-none contentWidth="slim" class="text-lg mt-4">
+    <h2 class="font-semibold">Articles</h2>
+    <ul class="list-disc pl-6">
+        { articles.map( article => (
+            <li>
+                <a href={`/articles/${article.id}`} class="hover:underline">
+                    {article.data.title}
+                </a>
             </li>
         )) }
     </ul>

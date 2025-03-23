@@ -6,10 +6,10 @@ import Footer from '../components/Layout/Footer.astro';
 import Header from '../components/Layout/Header.astro';
 import SkipToContent from '../components/Layout/SkipToContent.astro';
 import Main from '../components/Layout/Main.astro';
-import Head from '../components/Layout/Head.astro';
 import type { Layout } from '../types/Layout'
 import Analytics from '../components/Layout/Analytics.astro';
-
+import { ClientRouter } from 'astro:transitions';
+import { SITE_SHORT_NAME, SITE_URL } from '../config/site';
 
 interface Props extends Layout { }
 
@@ -24,7 +24,33 @@ const {
 
 <html lang={lang} class="scroll-pt-8 scroll-smooth">
 
-	<Head title={title} description={description} />
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="theme-color" content="#D7CCC1" />
+		<meta name="description" content={description}>
+		<title>{title + ' - ' + SITE_SHORT_NAME}</title>
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<!-- Facebook Meta Tags -->
+		<meta property="og:url" content={SITE_URL + Astro.url.pathname }>
+		<meta property="og:type" content="website">
+		<meta property="og:title" content={title}>
+		<meta property="og:description" content={description}>
+		<meta property="og:image" content="/img/temp.jpg">
+		<!-- Twitter Meta Tags -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta property="twitter:domain" content={SITE_URL}>
+		<meta property="twitter:url" content={SITE_URL + Astro.url.pathname }>
+		<meta name="twitter:title" content={title}>
+		<meta name="twitter:description" content={description}>
+		<meta name="twitter:image" content="/img/temp.jpg">
+		<ClientRouter />
+		<slot name="head" />
+	</head>
 
 	<body 
 		class:list={className}
@@ -33,14 +59,12 @@ const {
 
 		<SkipToContent />
 
-		<div id="top" class=" h-0 w-full" />
+		<div id="top" class="absolute left-0 top-0 h-0 w-full" />
 
 		<Header />
 
         <Main>
-
             <slot />
-
         </Main>
 
         <Footer />

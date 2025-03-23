@@ -7,7 +7,8 @@ interface FAQ {
 export const FAQ : FAQ[] = [
     { 
         question : `Why do you hand-code websites instead of using WordPress or Wix?`,
-        answer : `I hand-code websites to prioritize speed, ensuring your <strong>site loads quickly and doesn't lose customers</strong> due to slow performance. This approach also improves SEO, enhances security, and simplifies maintenance. <br /><br /> Site builders such as WordPress tend to be bloated, slower, and more susceptible to hackers than hand-coded sites. There are almost no potential entrypoints for hackers to gain access to your source code with my coding style.`,
+        answer : `I hand-code websites to prioritize speed, ensuring your <strong>site loads quickly and doesn't lose customers</strong> due to slow performance. This approach also improves SEO, enhances security, and simplifies maintenance. <br /><br /> Site builders such as WordPress tend to be bloated, slower, and more susceptible to hackers than hand-coded sites. There are almost no potential entrypoints for hackers to gain access to your source code with my coding style.
+        <br/> <br /><a href="/articles/the-case-for-hand-coded-websites">More information</a>`,
     },
     { 
         question : `Why are your prices less than other agencies?`,
@@ -19,7 +20,7 @@ export const FAQ : FAQ[] = [
     },
     { 
         question : `What kind of theme will I get?`,
-        answer : `You will receive a custom-designed theme that is mobile-friendly, responsive across all screen sizes, and perfectly suited to your brand. <strong>You wil also have 100% input on the design</strong>, ensuring it reflects your vision and business goals.`,
+        answer : `You will receive a <a href="/articles/small-business-website-theme">custom-designed theme</a> that is mobile-friendly, responsive across all screen sizes, and perfectly suited to your brand. <strong>You wil also have 100% input on the design</strong>, ensuring it reflects your vision and business goals.`,
     },
     { 
         question : `Do you host websites?`,
@@ -39,11 +40,11 @@ export const FAQ : FAQ[] = [
     },
     { 
         question : `Why are hand-coded websites generally faster than WordPress or Wix?`,
-        answer : `Hand-coded websites are faster than WordPress or Wix because they don't rely on heavy themes, plugins, databases, or 3rd party services.`,
+        answer : `Hand-coded websites are faster than WordPress or Wix because they <a href="/articles/the-problems-with-wordpress-wix-squarespace">don't rely on heavy themes, plugins, databases, or 3rd party services</a>.`,
     },
     { 
         question : `Why are hand-coded websites generally more secure than WordPress or Wix?`,
-        answer : `Hand-coded websites are generally more secure than WordPress or Wix because they don't rely on third-party plugins or themes, which can introduce vulnerabilities. WordPress, being open-source, has code that is publicly accessible, making it a more frequent target for hackers.`,
+        answer : `Hand-coded websites <a href="/articles/the-case-for-hand-coded-websites">are generally more secure than WordPress or Wix</a> because they don't rely on third-party plugins or themes, which can introduce vulnerabilities. WordPress, being open-source, has code that is publicly accessible, making it a more frequent target for hackers.`,
     },
     { 
         question : `Do I own my website and code?`,

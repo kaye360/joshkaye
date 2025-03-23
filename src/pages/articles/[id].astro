@@ -1,0 +1,110 @@
+---
+import { getCollection } from 'astro:content';
+import type { Article } from '../../content.config';
+import { render  } from 'astro:content'
+import Layout from '../../layouts/Layout.astro';
+import Section from '../../components/Layout/Section.astro';
+import TextBlock from '../../components/Base/TextBlock.astro';
+import WorkTogetherBanner from '../../components/Sections/WorkTogetherBanner.astro';
+import { ArrowLeft } from 'lucide'
+import Icon from '../../components/Base/Icon.astro';
+import Avatar from '../../components/Base/Avatar.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('articles') as Article[]
+  return posts.map(article => ({
+    params: { id: article.id },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props 
+const { Content } = await render(article)
+
+const articles = await getCollection('articles')
+const randomArticles = () => articles.sort( () => Math.random() - 0.5 ).slice(0,3)
+
+---
+
+<Layout 
+    title={article.data.title}
+    description={article.data.summary}
+>
+
+    <Section py-none>
+
+        <div class="sm:flex items-center justify-center w-fit gap-6 mt-4 mx-auto">
+            <div class="flex flex-col gap-6 sm:1/2 lg:w-1/3">
+                <a href="/articles" class="flex items-center gap-1 text-sm">
+                    <Icon icon={ArrowLeft} class="w-4" />
+                    Back to Articles
+                </a>
+                <h1 class="text-3xl md:text-[2rem] md:leading-[2.5rem] font-semibold">
+                    {article.data.title}
+                </h1>
+                <div class="flex flex-col gap-2 text-sm">
+                    <span class="block ">
+                        { article.data.date}
+                    </span>
+                    <div class="flex gap-x-2 flex-wrap">
+                        { article.data.tags.map( tag => (
+                            <span class="text-gray-500 text-sm">
+                                #{tag}
+                            </span>
+                        ))}
+                    </div>
+                </div>
+            </div>
+            <img 
+                src={'/article-img/' + article.data.cover} 
+                class="mix-blend-darken max-h-96 sm:max-h-none sm:w-1/2 lg:w-1/3"
+                width="350"
+                height="350"
+                alt={''}
+            />
+        </div>
+    </Section>
+
+    <Section width='slim' py-none>
+
+        <article class="text-xl leading-8 pt-8 my-4">
+
+            <TextBlock>
+                <Content />
+            </TextBlock>
+
+            <div class="flex gap-4 items-center mt-8 bg-primary-100/80 p-4 rounded-lg">
+                <Avatar 
+                    src="/img/josh-avatar.webp"
+                    name="Josh Kaye"
+                />
+                <p>
+                    Article by <br />
+                    <span class="text-xl font-medium">
+                        Josh Kaye, web designer + developer<br />
+                    </span>
+                </p>
+            </div>
+
+            
+        </article>
+
+        <div class="my-8 text-xl">
+            <h2 class=" font-semibold mb-2">Related Articles</h2>
+            { randomArticles().map( article => (
+                <article class="mb-4">
+                    <a href={article.id}>{article.data.title}</a><br />
+                    <span class="text-sm">{article.data.date}</span>
+                </article>
+            ))}
+        </div>
+        
+        <a href="/articles" class="flex items-center gap-1 my-4">
+            <Icon icon={ArrowLeft} />
+            Back to Articles
+        </a>
+    </Section>
+
+    <WorkTogetherBanner />
+
+</Layout>
