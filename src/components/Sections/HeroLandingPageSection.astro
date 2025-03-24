@@ -1,5 +1,5 @@
 ---
-import Image from "astro/components/Image.astro";
+import Image from "../Base/Image.astro"
 import Button from "../Base/Button.astro";
 import Columns from "../Base/Columns.astro";
 import CtaButton from "../Base/CtaButton.astro";
@@ -34,7 +34,7 @@ import Section from "../Layout/Section.astro";
             
             <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
                 <CtaButton />
-                <Button href="#" variant="ghost">Learn More</Button>
+                <Button as="a" href="#" variant="ghost">Learn More</Button>
             </div>
             
             <div class="fic-2 md:pt-6">
