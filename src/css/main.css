@@ -30,6 +30,10 @@
         @apply text-primary-500 underline hover:text-secondary-500
     }
 
+    mark {
+        @apply bg-pink-100 text-inherit;
+    }
+
     /** Overwrite initial invalid state on page load */
     input[data-is-touched="false"]:invalid,
     textarea[data-is-touched="false"]:invalid {

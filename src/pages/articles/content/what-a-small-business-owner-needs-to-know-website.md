@@ -6,17 +6,19 @@ tags : [website-strategy, web-design, conversion]
 cover : woman-laptop.webp
 ---
 
-As a small business owner, your website isn’t just a digital business card — **it’s your most powerful tool for turning visitors into customers**. Think of it as a funnel guiding potential customers towards taking action. But to make your website work for you, you need to make sure it’s built with purpose and strategy. Here’s what you need to know.
+As a small business owner, your website isn’t just a digital business card — **it’s a powerful tool for turning visitors into customers**. Think of it as a funnel guiding potential customers towards taking action. But to make your website work for you, you need to make sure it’s built with purpose and strategy. Here’s what you need to know.
 
 ## Your Website is a Sales Funnel, Not Just a Business Card
-Many small business owners think of their website as simply a digital brochure. But in reality, your website should be a funnel, guiding potential customers through their journey—from discovering your business to taking action. The goal isn’t just to provide information, it’s to actively lead users toward becoming paying customers. Every click should get them closer to making that decision.
+Many small business owners think of their website as simply a digital brochure. But in reality, your website should be a funnel, guiding potential customers through their journey—from discovering your business to taking action. 
 
-## Your website should have one primary business goal
-The first step to building a website that works is to define its main goal. The easist way to do this is ask yourself: Say a person arrives on your site for the first time. What do I want visitor to do when they land on my site? The answer is simple: You want to turn them into customers.
+The goal isn’t just to provide information, it’s to actively lead users toward becoming paying customers. Every click should get them closer to making that decision. As a matter of fact, the fewer the clicks necessary, the better! This is the basis on which I design my websites for small businesses.
+
+## Your website should have <mark>one primary business goal</mark>
+The first step to building a website that works is to define its main goal. The easist way to do this is ask yourself: Say a person - a potential customer - arrives on your site for the first time. What do I want this visitor to do when they land on my site? The answer is simple: You want to turn them into a customer.
 
 But how? The key is in understanding what action you want them to take. Do you want visitors to call you? Fill out a form for a quote or consultation? Request more information about your services? Defining this goal will set the foundation for the rest of your website strategy.
 
-Your website will contain other information about your products and services, as well as information about your business. But this is all secondary to your primary business goal, from a web design standpoint - this goal will determine how your entire website will be constructed.
+Your website will contain other information about your products and services, as well as information about your business. But this is all secondary to your primary business goal, from a web design standpoint - **this goal will determine how your entire website will be constructed.**
 
 ## How Do You Want to Get a New Customer?
 Too often, small business websites actually make it difficult for users to follow through. This directly leads to less sales. Once you’ve identified your main goal, think about the easiest, most direct path to get there. Consider the following actions:
