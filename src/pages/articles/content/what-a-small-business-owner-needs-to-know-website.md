@@ -14,7 +14,7 @@ Many small business owners think of their website as simply a digital brochure. 
 The goal isn’t just to provide information, it’s to actively lead users toward becoming paying customers. Every click should get them closer to making that decision. As a matter of fact, the fewer the clicks necessary, the better! This is the basis on which I design my websites for small businesses.
 
 ## Your website should have <mark>one primary business goal</mark>
-The first step to building a website that works is to define its main goal. The easist way to do this is ask yourself: Say a person - a potential customer - arrives on your site for the first time. What do I want this visitor to do when they land on my site? The answer is simple: You want to turn them into a customer.
+The first step to building a website that works is to define its main goal. The easiest way to do this is ask yourself: Say a new person (a potential customer!) arrives on your site for the first time. What do I want this visitor to do when they land on my site in a best case scenario? The answer is simple: You want to turn them into a customer.
 
 But how? The key is in understanding what action you want them to take. Do you want visitors to call you? Fill out a form for a quote or consultation? Request more information about your services? Defining this goal will set the foundation for the rest of your website strategy.
 
