@@ -1,0 +1,97 @@
+---
+import { ChevronsLeft } from "@lucide/astro"
+import List from "../../components/Base/List.astro"
+import TextBlock from "../../components/Base/TextBlock.astro"
+import H1 from "../../components/Heading/H1.astro"
+import H2 from "../../components/Heading/H2.astro"
+import Section from "../../components/Layout/Section.astro"
+import ProjectLink from "../../components/Project/ProjectLink.astro"
+import ProjectRole from "../../components/Project/ProjectRole.astro"
+import ProjectTags from "../../components/Project/ProjectTags.astro"
+import { PROJECTS } from "../../config/projects"
+import Layout from "../../layouts/Layout.astro"
+
+const project = PROJECTS.find( project => project.title === 'Elite Canadian Homestay')
+---
+
+<Layout 
+    title="Web design projects"
+    description=""
+>
+
+    <H1>Case Study: {project?.title}</H1>
+
+    <Section contentWidth="slim">
+
+        <TextBlock>
+
+            <a href="/#projects" class="flex items-center gap-0.5">
+                <ChevronsLeft size={16} />
+                Back to Recent Projects
+            </a>
+
+            <ProjectRole>Project Role: {project?.role}</ProjectRole>
+
+            <ProjectTags>
+                { project?.tags.map( tag => (
+                    <span class=" first:hidden">&#8226;</span>
+                    <span>{tag}</span>
+                ))}
+            </ProjectTags>
+
+            <img 
+                src={project?.cover}
+                width="576"
+                height="576"
+                alt=""
+                loading="lazy"
+            />
+
+            <p>Elite Canadian Homestay Business offers international students a welcoming and comfortable place to stay while studying in Vancouver, BC. The original website was outdated, difficult to navigate, and didn't reflect the quality and warmth of the homestay experience. The client needed a fresh, modern, and user-friendly website to attract potential guests and allow them to easily sign up online.</p>
+
+            <H2>Project Goals</H2>
+
+            <List>
+                <li><strong>Modern Design:</strong> Redesign the site to be visually appealing and in line with current web trends.</li>
+                <li><strong>Online Booking & Signup:</strong> Enable users to sign up and book their stay online easily.</li>
+                <li><strong>Mobile-Friendly:</strong> Ensure the website is responsive and works well on all devices.</li>
+            </List>
+
+            <div class="grid grid-cols-2 gap-4">
+                <img 
+                    src="/projects/elite-homestay-mobile-1.webp" 
+                />
+                <img 
+                    src="/projects/elite-homestay-mobile-2.webp" 
+                />
+            </div>
+
+            <H2>The Solution</H2>
+
+            <p>I developed a <strong>custom theme</strong> to meet the client's needs. A static site was chosen for its extremely fast page load times. Key features included:</p>
+            <List>
+                <li><strong>Modern, Clean Design:</strong> The new design features a sleek, modern look with large images showcasing the homestay accommodations, local attractions in Vancouver, and happy guests.</li>
+                <li><strong>Online Booking & Signup System:</strong> A custom booking form was integrated, allowing potential guests to easily select their preferred dates, room type, and sign up online.</li>
+                <li><strong>Mobile-Optimized:</strong> The website is responsive, ensuring it looks great and functions well on desktops, tablets, and smartphones.</li>
+                <li><strong>SEO Optimization:</strong> We worked with a local SEO company to  ensure that the website was optimized for search engines to increase visibility and attract more organic traffic from local searches.</li>
+            </List>
+
+            <img src="/projects/elite-homestay-desktop-1.webp" />
+
+            <H2>The Result</H2>
+
+            <p>The revamped website has successfully transformed the client's online presence. It now reflects the professionalism and warmth of the homestay business, with a user-friendly booking system that encourages more guests to sign up. The client can easily track bookings, while the responsive design ensures seamless access across devices.</p>
+
+            <H2>Conclusion</H2>
+
+            <p>The new website for the Vancouver Homestay Business is a vast improvement over the old site, offering a modern, functional, and easy-to-navigate platform for potential guests. With features like online booking, a clean design, and seamless mobile functionality, the website now meets the needs of both the client and their guests, improving overall user experience and boosting business growth.</p>
+
+            { project?.projectUrl && 
+                <ProjectLink href={project?.projectUrl} />
+            }
+
+        </TextBlock>
+        
+    </Section>
+
+</Layout>

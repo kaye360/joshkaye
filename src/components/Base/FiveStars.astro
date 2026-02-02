@@ -1,6 +1,5 @@
 ---
-import Icon from "./Icon.astro";
-import { Star } from  'lucide'
+import { StarIcon } from  '@lucide/astro'
 
 interface Props {
     /**
@@ -30,11 +29,10 @@ for( let i=1; i<=5; i++) {
 }
 ---
 
-<div class="fic-1 text-amber-400">
+<div class="fic-1 text-secondary-200">
     { stars.map( star => (
         <span class="relative">
-            <Icon 
-                icon={Star} 
+            <StarIcon 
                 class:list={[
                     star === 'full' && 'fill-current stroke-0',
                     star === 'empty' && 'fill-transparent stroke-1',
@@ -42,8 +40,7 @@ for( let i=1; i<=5; i++) {
                 ]} 
             />
             { star === 'half' && (
-                <Icon 
-                    icon={Star}
+                <StarIcon 
                     class="absolute inset-0 stroke-1 [clip-path:polygon(48%_0,100%_0,100%_100%,48%_100%)]"
                 />
             )}

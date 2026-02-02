@@ -1,7 +1,6 @@
 ---
-import Icon from "../Base/Icon.astro";
+import { CircleArrowUpIcon } from "@lucide/astro";
 import Section from "./Section.astro";
-import { ArrowUpCircle } from 'lucide'
 ---
 
 <Section props 
@@ -16,7 +15,7 @@ import { ArrowUpCircle } from 'lucide'
             id="back-to-top-button"
             class="absolute right-0 bottom-0 p-2 pointer-events-auto text-primary-700 hover:text-secondary-500 active:scale-95"
         >
-            <Icon icon={ArrowUpCircle} stroke-width="1" class="w-10 h-10 fill-primary-25/90" />
+            <CircleArrowUpIcon class="w-10 h-10 fill-primary-25/90" />
         </a>
     </div>
 </Section>
@@ -31,6 +30,7 @@ document.addEventListener('astro:page-load', () => {
     const backToTopBtn = document.querySelector('#back-to-top-button') as HTMLAnchorElement
     
     backToTopBtn.addEventListener('click', () => {
+        backToTopBtn.blur()
         scrollTo({ top : 0,  behavior : 'smooth' })
     })
     

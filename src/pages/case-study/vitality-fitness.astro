@@ -1,0 +1,103 @@
+---
+import { ChevronsLeft } from "@lucide/astro"
+import List from "../../components/Base/List.astro"
+import TextBlock from "../../components/Base/TextBlock.astro"
+import H1 from "../../components/Heading/H1.astro"
+import H2 from "../../components/Heading/H2.astro"
+import Section from "../../components/Layout/Section.astro"
+import ProjectLink from "../../components/Project/ProjectLink.astro"
+import ProjectRole from "../../components/Project/ProjectRole.astro"
+import ProjectTags from "../../components/Project/ProjectTags.astro"
+import { PROJECTS } from "../../config/projects"
+import Layout from "../../layouts/Layout.astro"
+
+const project = PROJECTS.find( project => project.title === 'Vitality Fitness')
+---
+
+<Layout 
+    title="Web design projects"
+    description=""
+>
+
+    <H1>Case Study: {project?.title}</H1>
+
+    <Section contentWidth="slim">
+
+        <TextBlock>
+
+            <a href="/#projects" class="flex items-center gap-0.5">
+                <ChevronsLeft size={16} />
+                Back to Recent Projects
+            </a>
+
+            <ProjectRole>Project Role: {project?.role}</ProjectRole>
+
+            <ProjectTags>
+                { project?.tags.map( tag => (
+                    <span class=" first:hidden">&#8226;</span>
+                    <span>{tag}</span>
+                ))}
+            </ProjectTags>
+
+            <img 
+                src={project?.cover}
+                width="576"
+                height="576"
+                alt=""
+                loading="lazy"
+            />
+
+            <p>Vitality Fitness, a personal training business, needed a modern, user-friendly website to attract new clients and provide easy access to services. The website needed to reflect the company's brand and values, while enabling clients to learn more, book sessions, and get in touch easily.</p>
+
+            <div class="grid grid-cols-2 gap-4">
+                <img 
+                    src="/projects/vitality-fitness-mobile-1.webp" 
+                />
+                <img 
+                    src="/projects/vitality-fitness-mobile-2.webp" 
+                />
+            </div>
+
+            <H2>Project Goals</H2>
+            <List>
+              <li><strong>Custom Branding:</strong> Create a site that reflects the brand's personality.</li>
+              <li><strong>Client Engagement:</strong> Allow visitors to easily book sessions and contact the trainer.</li>
+              <li><strong>Mobile-Optimized:</strong> Ensure the site is fully responsive on all devices.</li>
+              <li><strong>Content Management:</strong> Enable easy content updates without technical expertise.</li>
+            </List>
+
+            <img 
+                src="/projects/vitality-fitness-desktop-1.webp" 
+            />
+          
+            <H2>The Solution</H2>
+            <p>I developed a <strong>custom WordPress theme</strong>, deployed the site, and set up hosting for <strong>Vitality Fitness</strong>. The site included:</p>
+            <List>
+              <li><strong>Custom WordPress Theme:</strong> A clean, modern design that incorporated the brand's colors and logo.</li>
+              <li><strong>Service & Booking Pages:</strong> Pages detailing services with pricing and a contact form, and an integrated booking system for clients to schedule appointments online.</li>
+              <li><strong>Mobile-Responsive Design:</strong> The site adapts to any screen size, ensuring a smooth experience on all devices.</li>
+              <li><strong>Testimonials & Blog:</strong> A section for client testimonials and a blog for fitness tips and advice.</li>
+              <li><strong>Content Management System:</strong> WordPress allows the trainer to easily update content without technical skills.</li>
+              <li><strong>Deployment & Hosting:</strong> I set up reliable hosting with regular backups to ensure fast performance and security.</li>
+            </List>
+          
+            <img 
+                src="/projects/vitality-fitness-desktop-2.webp" 
+            />
+
+            <H2>The Result</H2>
+            <p>The new website gave <strong>Vitality Fitness</strong> a professional online presence that was easy for both clients and the trainer to use. The booking system simplified appointment scheduling, and the mobile-responsive design made the site accessible on any device. The trainer can now manage content independently, and the site has become an essential tool for client engagement and business growth.</p>
+          
+            <H2>Conclusion</H2>
+            <p>The WordPress website for <strong>Vitality Fitness</strong> successfully enhanced the company's online presence. With a custom theme, booking system, and mobile-friendly design, the site has streamlined client interaction, allowing the trainer to focus more on delivering quality fitness coaching.</p>
+          
+            { project?.projectUrl && 
+                <ProjectLink href={project?.projectUrl} />
+            }
+
+        </TextBlock>
+
+
+    </Section>
+
+</Layout>

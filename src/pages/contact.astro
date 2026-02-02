@@ -1,0 +1,120 @@
+---
+import { MapPinIcon, MailIcon, PhoneIcon } from "@lucide/astro";
+import TextBlock from "../components/Base/TextBlock.astro";
+import Input from "../components/Forms/Input.astro";
+import SubmitReset from "../components/Forms/SubmitReset.astro";
+import Textarea from "../components/Forms/Textarea.astro";
+import H1 from "../components/Heading/H1.astro";
+import H2 from "../components/Heading/H2.astro";
+import { LOCATION, EMAIL_ADDRESS, PHONE_NUMBER } from "../config/site";
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Layout/Section.astro";
+import Columns from "../components/Base/Columns.astro";
+
+---
+
+<Layout
+    title="Contact"
+    description="Contact Josh Kaye for web design and development services"
+>
+
+    <H1>
+        Get in touch
+    </H1>
+
+    <Section>
+        <Columns cols={2}  class="gap-12">
+
+            <div class="bg-primary-50 p-6 rounded-xl md:order-2">
+                <TextBlock>
+
+                    <H2>
+                        I would love to hear from you!
+                    </H2>
+
+                    <p>
+                        Have a project in mind or need help? Reach out using the form below and I'll respond as soon as possible.
+                    </p>
+
+                    <div>
+                        <h3 class="font-semibold mb-1">Location</h3>
+                        <p class="fic-2">
+                            <MapPinIcon class="w-5 h-5" stroke-width="1.5" />
+                            {LOCATION}
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-semibold mb-1">Email</h3>
+                        <p class="fic-2 mb-2">
+                            <MailIcon class="w-5 h-5" stroke-width="1.5" />
+                            <a href={`mailto:${EMAIL_ADDRESS}`}>
+                                {EMAIL_ADDRESS}
+                            </a>
+                        </p>
+                        <p class="fic-2">
+                            <PhoneIcon class="w-5 h-5" stroke-width="1.5" />
+                            <a href={`tel:${PHONE_NUMBER}`}>
+                                {PHONE_NUMBER}
+                            </a>
+                        </p>
+                    </div>
+
+                </TextBlock>
+
+            </div>
+
+            <form 
+                id="contact"
+                name="contact"
+                method="post"
+                class="grid gap-2"
+                data-netlify="true"
+            >
+
+                <input type="hidden" name="subject" value="Web inquiry" />
+                
+                <Input props
+                    title="Your name"
+                    name="name"
+                    type="text"
+                    required
+                />
+            
+                <Input props
+                    title="Your email"
+                    name="email"
+                    type="email"
+                    required
+                />
+                
+                <Input props
+                    title="Your phone number"
+                    name="phone"
+                    type="tel"
+                    required
+                />
+
+                <Textarea props
+                    title="Message"
+                    name="message"
+                    required
+                />
+
+                <SubmitReset />
+
+            </form>
+
+        </Columns>
+    </Section>
+
+</Layout>
+
+<script>
+import { disableInitialInvalidState } from "../js/form";
+
+document.addEventListener('astro:page-load', () => 
+    disableInitialInvalidState(['name', 'email', 'phone', 'message'])
+)
+
+</script>

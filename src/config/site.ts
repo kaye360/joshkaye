@@ -4,7 +4,7 @@
 
 export const SITE_URL        = 'http://www.joshkaye.dev'
 export const SITE_FULL_NAME  = 'Josh Kaye Web Design and Development in Edmonton, Alberta'
-export const SITE_SHORT_NAME = 'Josh Kaye'
+export const SITE_SHORT_NAME = 'JoshKaye.dev'
 export const PHONE_NUMBER    = '604-996-9695'
 export const EMAIL_ADDRESS   = 'josh@joshkaye.dev'
 export const LOCATION        = 'Edmonton, Alberta'

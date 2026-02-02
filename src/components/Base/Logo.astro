@@ -1,7 +1,6 @@
 ---
+import { OrbitIcon } from "@lucide/astro";
 import { SITE_SHORT_NAME } from '../../config/site'
-import Icon from './Icon.astro'
-import { Orbit } from 'lucide'
 
 interface Props {
     /**
@@ -12,8 +11,9 @@ interface Props {
 ---
 
 <a href="/" class="fic-1 sm:fic-2 text-base sm:text-lg font-bold font-theme hover:text-secondary-400 group">
-    <Icon icon={Orbit} class="group group-hover:rotate-[-720deg] transition-all duration-[2s]" />
+     <OrbitIcon class="group group-hover:rotate-[-720deg] transition-all duration-[2s]" />
+
     <span>
-        {SITE_SHORT_NAME}<span class="text-sm">.dev</span>
+        {SITE_SHORT_NAME}<span class="text-sm"></span>
     </span>
 </a>    

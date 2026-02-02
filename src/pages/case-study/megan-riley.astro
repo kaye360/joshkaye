@@ -1,0 +1,93 @@
+---
+import { ChevronsLeft } from "@lucide/astro"
+import List from "../../components/Base/List.astro"
+import TextBlock from "../../components/Base/TextBlock.astro"
+import H1 from "../../components/Heading/H1.astro"
+import H2 from "../../components/Heading/H2.astro"
+import Section from "../../components/Layout/Section.astro"
+import ProjectLink from "../../components/Project/ProjectLink.astro"
+import ProjectRole from "../../components/Project/ProjectRole.astro"
+import ProjectTags from "../../components/Project/ProjectTags.astro"
+import { PROJECTS } from "../../config/projects"
+import Layout from "../../layouts/Layout.astro"
+
+const project = PROJECTS.find( project => project.title === 'Megan Riley')
+---
+
+<Layout 
+    title="Web design projects"
+    description=""
+>
+
+    <H1>Case Study: {project?.title}</H1>
+
+    <Section contentWidth="slim">
+
+        <TextBlock>
+
+            <a href="/#projects" class="flex items-center gap-0.5">
+                <ChevronsLeft size={16} />
+                Back to Recent Projects
+            </a>
+
+            <ProjectRole>Project Role: {project?.role}</ProjectRole>
+
+            <ProjectTags>
+                { project?.tags.map( tag => (
+                    <span class=" first:hidden">&#8226;</span>
+                    <span>{tag}</span>
+                ))}
+            </ProjectTags>
+
+            <img 
+                src={project?.cover}
+                width="576"
+                height="576"
+                alt=""
+                loading="lazy"
+            />
+
+            <p>Megan Riley offers a supportive community for non-neurotypical individuals, providing a safe space for connection, learning, and growth. Megan needed a landing page to introduce her services, explain the benefits of joining her community, and provide clear paths for users to engage. The goal was to create a welcoming, user-friendly page that reflected her brand and encouraged people to sign up and learn more.</p>
+
+            <H2>Project Goals</H2>
+            <List>
+                <li><strong>Brand Consistency:</strong> Create a landing page that reflected Megan's brand through her color scheme and overall design.</li>
+                <li><strong>Clear Calls to Action:</strong> Make it easy for visitors to sign up, get involved, and learn more.</li>
+                <li><strong>User-Friendly:</strong> Ensure the page was simple to navigate, with a focus on key messaging.</li>
+                <li><strong>Responsive Design:</strong> Ensure the page was fully optimized for both desktop and mobile users.</li>
+            </List>
+
+            <div class="grid gap-4 grid-cols-2">
+                <img src="/projects/megan-riley-mobile-1.webp" />
+                <img src="/projects/megan-riley-mobile-2.webp" />
+            </div>
+
+            <H2>The Solution</H2>
+            <p>To meet the client's needs, I developed a <strong>custom landing page</strong> using HTML and CSS. The page featured:</p>
+            <List>
+                <li><strong>Branding Consistency:</strong> The page design incorporated Megan's color scheme, ensuring the page felt personal and aligned with her mission. A clean, simple layout highlighted the community's benefits, with a focus on clarity and warmth.</li>
+                <li><strong>Prominent Calls to Action (CTAs):</strong> Strategically placed CTAs encouraged users to sign up, join the community, or learn more. These buttons were designed to stand out and drive conversions. Clear messaging near each CTA explained the value of joining Megan's community.</li>
+                <li><strong>User-Focused Design:</strong> The layout was intuitive and easy to navigate, with clear sections detailing what Megan's community offers and how it supports non-neurotypical individuals. Testimonials and a brief introduction to Megan were included to build trust and credibility.</li>
+                <li><strong>Mobile-Optimized:</strong> The page was fully responsive, ensuring an excellent experience on mobile devices, which is crucial for engaging a wide range of users.</li>
+            </List>
+
+            <img src="/projects/megan-riley-desktop-1.webp" />
+            
+            <H2>The Result</H2>
+            <p>The new landing page successfully introduced Megan's community to a wider audience. By using her color scheme and including clear CTAs, the page encouraged visitors to sign up and get involved. The simple design and responsive layout ensured a smooth experience across devices, leading to better user engagement.</p>
+            
+            <img src="/projects/megan-riley-desktop-2.webp" />
+
+            <H2>Conclusion</H2>
+            <p>The custom landing page for Megan Riley helped her connect with non-neurotypical individuals by presenting her community in a clear, inviting way. With its user-friendly design, strong calls to action, and mobile optimization, the page effectively promoted her mission and encouraged more people to join.</p>
+
+            { project?.projectUrl && 
+                <ProjectLink href={project?.projectUrl} />
+            }
+
+        </TextBlock>
+
+
+    </Section>
+
+</Layout>

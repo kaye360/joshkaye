@@ -3,26 +3,28 @@ import '../css/main.css'
 import '@fontsource/lato'
 import BackToTop from '../components/Layout/BackToTop.astro';
 import Footer from '../components/Layout/Footer.astro';
-import Header from '../components/Layout/Header.astro';
 import SkipToContent from '../components/Layout/SkipToContent.astro';
 import Main from '../components/Layout/Main.astro';
 import type { Layout } from '../types/Layout'
 import Analytics from '../components/Layout/Analytics.astro';
 import { ClientRouter } from 'astro:transitions';
 import { SITE_SHORT_NAME, SITE_URL } from '../config/site';
+import Section from '../components/Layout/Section.astro';
+import Logo from '../components/Base/Logo.astro';
+import CtaButton from '../components/Base/CtaButton.astro';
+import WorkTogetherBanner from '../components/Sections/WorkTogetherBanner.astro';
 
 interface Props extends Layout { }
 
 const {
     title = '',
     description = '',
-	lang = 'en',
 	class : className = ''
 } = Astro.props
 
 ---
 
-<html lang={lang} class="scroll-pt-8 scroll-smooth">
+<html lang="en" class="scroll-pt-8 scroll-smooth">
 
 	<head>
 		<meta charset="utf-8" />
@@ -52,20 +54,36 @@ const {
 		<slot name="head" />
 	</head>
 
-	<body 
-		class:list={className}
-		data-mobile-menu="closed"
-	>
+	<body class:list={className} >
 
 		<SkipToContent />
 
 		<div id="top" class="absolute left-0 top-0 h-0 w-full" />
 
-		<Header />
+		<header
+			data-element="header"
+			class="sticky top-0 left-0 right-0 z-[999] bg-primary-900 font-base text-primary-50"
+		>
+
+			<Section width="full" contentWidth='content' py-none>
+
+				<div class="relative fic-4 justify-between py-2">
+
+					<Logo />
+
+					<CtaButton />
+
+				</div>
+
+			</Section>
+
+		</header>
 
         <Main>
             <slot />
         </Main>
+
+		<WorkTogetherBanner />
 
         <Footer />
 

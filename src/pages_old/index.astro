@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Section from '../components/Layout/Section.astro';
+import TestimonialsSection from '../components/Sections/TestimonialsSection.astro';
+import HeroSection from '../components/Sections/HeroSection.astro';
+import BenefitsSection from '../components/Sections/BenefitsSection.astro';
+import CaseStudySection from '../components/Sections/CaseStudySection.astro';
+import Avatar from '../components/Base/Avatar.astro';
+import FeaturesSection from '../components/Sections/FeaturesSection.astro';
+import ExplorePlansBanner from '../components/Sections/ExplorePlansBanner.astro';
+import WorkTogetherBanner from '../components/Sections/WorkTogetherBanner.astro';
+---
+
+<Layout props
+	title="Edmonton web design and development"
+	description="Web design and devlopment services in Edmonton, Alberta and the surrounding areas."
+>
+
+	<HeroSection />
+
+	<!-- Intro to company -->
+	<Section contentWidth='slim'>
+		<div class="flex gap-4 items-start md:items-center">
+			<Avatar 
+				src="/img/josh-avatar.webp"
+				name="Josh Kaye"
+			/>
+			<p>
+				Hello! I'm Josh. I'm a <strong>freelance web developer</strong> who specializes in small business websites, brochure-style websites, landing pages, and more. With over <strong>15 years of experience</strong> in the industry, I have refined my workflow to create custom small business websites for an affordable price.
+			</p>
+		</div>
+	</Section>
+
+	<BenefitsSection />
+
+	<FeaturesSection />
+
+	<ExplorePlansBanner />
+
+	<TestimonialsSection />
+
+	<!-- Projects -->
+
+	<CaseStudySection />
+
+	<WorkTogetherBanner />
+
+</Layout>

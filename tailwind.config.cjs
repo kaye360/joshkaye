@@ -48,7 +48,7 @@ module.exports = {
 						transform : 'translateY(1rem)'
 					},
 					'to' : { 
-						clipPath : 'polygon(0 0, 100% 0, 100% 200%, 0 200%)',
+						clipPath : 'polygon(0 0, 200% 0, 200% 200%, 0 200%)',
 						transform : 'translate(0)'
 					},
 				},

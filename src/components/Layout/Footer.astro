@@ -3,20 +3,13 @@ import { PHONE_NUMBER, EMAIL_ADDRESS, LOCATION, SITE_FULL_NAME, PUBLISH_DATE } f
 import Logo from "../Base/Logo.astro";
 import Columns from "../Base/Columns.astro";
 import Section from "./Section.astro";
-import { getPages } from "../../js/getPages";
-import Icon from "../Base/Icon.astro";
-import { Phone, Mail, MapPin } from 'lucide'
+import { PhoneIcon, MailIcon, MapPinIcon } from '@lucide/astro'
 import TextBlock from "../Base/TextBlock.astro";
-import List from "../Base/List.astro";
-import CtaButton from "../Base/CtaButton.astro";
-
-const pages = getPages().byGroup('footer').all()
-const plans = getPages().subPagesOf('Plans + Pricing')
 ---
 
 <footer class="bg-primary-100 pb-6">
     <Section>
-        <Columns props cols={4} class="gap-6">
+        <Columns props cols={2} class="gap-6">
 
             <!-- Logo -->
             <div>
@@ -27,8 +20,6 @@ const plans = getPages().subPagesOf('Plans + Pricing')
                         &copy; <span id="footer-date">{PUBLISH_DATE}</span><br /> 
                         {SITE_FULL_NAME}
                     </p>
-
-                    <CtaButton />
                 </TextBlock>
             </div>
 
@@ -36,67 +27,33 @@ const plans = getPages().subPagesOf('Plans + Pricing')
             <nav>
                 <h2 class="text-xl font-semibold mb-3">Contact </h2>
                 <ul class="grid gap-2">
-                    <!-- <li>
+                    <li>
                         <a 
                             href={'tel:' + PHONE_NUMBER}
                             class="fic-2"
                         >
-                            <Icon icon={Phone} class="w-5 h-5" stroke-width="1.5" />
+                            <PhoneIcon class="w-5 h-5" stroke-width="1.5" />
                             {PHONE_NUMBER}
                         </a>
-                    </li> -->
+                    </li>
         
                     <li>
                         <a 
                             href={'mailto:' + EMAIL_ADDRESS}
                             class="fic-2"
                         >
-                            <Icon icon={Mail} class="w-5 h-5" stroke-width="1.5" />
+                            <MailIcon class="w-5 h-5" stroke-width="1.5" />
                             {EMAIL_ADDRESS}
                         </a>
                     </li>
                     
                     <li>
                         <span class="fic-2 select-none">
-                            <Icon icon={MapPin} class="w-5 h-5" stroke-width="1.5" />
+                            <MapPinIcon class="w-5 h-5" stroke-width="1.5" />
                             {LOCATION}
                         </span>
                     </li>
                 </ul>
-            </nav>
-
-            <!-- Plans -->
-            <nav>
-                <h2 class="text-xl font-semibold mb-3">Web design plans</h2>
-                <List variant="none">
-                    { plans.map( (page) => ( 
-                        <li>
-                            <a 
-                                href={page.path}
-                                class="hover:underline"
-                            >
-                                {page.title}
-                            </a>
-                        </li>
-                    ))}
-                </List>
-            </nav>
-
-            <!-- Links -->
-            <nav>
-                <h2 class="text-xl font-semibold mb-3">Links</h2>
-                <List variant="none">
-                    { pages.map( (page) => ( 
-                        <li>
-                            <a 
-                                href={page.path}
-                                class="hover:underline"
-                            >
-                                {page.title}
-                            </a>
-                        </li>
-                    ))}
-                </List>
             </nav>
 
         </Columns>

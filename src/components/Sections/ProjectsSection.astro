@@ -1,0 +1,50 @@
+---
+import { PROJECTS } from "../../config/projects";
+import Button from "../Base/Button.astro";
+import Columns from "../Base/Columns.astro";
+import TextBlock from "../Base/TextBlock.astro";
+import H2 from "../Heading/H2.astro";
+import Section from "../Layout/Section.astro";
+import Project from "../Project/Project.astro";
+import ProjectRole from "../Project/ProjectRole.astro";
+import ProjectTags from "../Project/ProjectTags.astro";
+
+---
+<Section width="slim">
+
+    <H2>Recent Projects</H2>
+
+    <TextBlock class="my-6">
+        <p>
+            I've partnered with clients across Canada and USA, in industries spanning hospitality, financial technology, health and fitness, local enthusiast groups, artist portfolios, and more. Regardless of your industry, I can create a website that's effective, visually appealing, high-performing, and customized to meet your business needs.
+        </p>
+    </TextBlock>
+
+    <div class="grid gap-8 grid-cols-2">
+
+        {  PROJECTS.map( project => (
+            <Project>
+                <img 
+                    src={project.cover} 
+                    width="576"
+                    height="576"
+                    alt=""
+                    class="w-full aspect-square mb-2 rounded-lg"
+                    loading="lazy"
+                />
+                <H2>{project.title}</H2>
+                <ProjectRole>{project.role}</ProjectRole>
+                <ProjectTags>
+                    { project.tags.map( tag => (
+                        <span class=" first:hidden">&#8226;</span>
+                        <span>{tag}</span>
+                    ))}
+                </ProjectTags>
+                <Button as="a" href={project.caseStudyUrl} variant="outline">
+                    View case study
+                </Button>
+            </Project>
+        ))}
+        
+    </div>
+</Section>

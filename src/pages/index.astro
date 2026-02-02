@@ -2,13 +2,20 @@
 import Layout from '../layouts/Layout.astro'
 import Section from '../components/Layout/Section.astro';
 import TestimonialsSection from '../components/Sections/TestimonialsSection.astro';
-import HeroSection from '../components/Sections/HeroSection.astro';
-import BenefitsSection from '../components/Sections/BenefitsSection.astro';
 import CaseStudySection from '../components/Sections/CaseStudySection.astro';
 import Avatar from '../components/Base/Avatar.astro';
-import FeaturesSection from '../components/Sections/FeaturesSection.astro';
-import ExplorePlansBanner from '../components/Sections/ExplorePlansBanner.astro';
-import WorkTogetherBanner from '../components/Sections/WorkTogetherBanner.astro';
+import Button from '../components/Base/Button.astro';
+import TextBlock from '../components/Base/TextBlock.astro';
+import H2 from '../components/Heading/H2.astro';
+import Project from '../components/Project/Project.astro';
+import ProjectRole from '../components/Project/ProjectRole.astro';
+import { PROJECTS } from '../config/projects';
+import Columns from '../components/Base/Columns.astro';
+import { planFeatures } from '../config/plans';
+import { CircleArrowDownIcon, EyeIcon, FileChartColumnIncreasingIcon, MapPinIcon, ViewIcon } from '@lucide/astro';
+import { LOCATION } from '../config/site';
+import CtaButton from '../components/Base/CtaButton.astro';
+import H3 from '../components/Heading/H3.astro';
 ---
 
 <Layout props
@@ -16,7 +23,50 @@ import WorkTogetherBanner from '../components/Sections/WorkTogetherBanner.astro'
 	description="Web design and devlopment services in Edmonton, Alberta and the surrounding areas."
 >
 
-	<HeroSection />
+	<!-- Hero Section -->
+	<Section 
+		contentWidth="slim"
+		class="min-h-[50vh] grid text-primary-50 place-items-center bg-primary-900 mb-8" 
+	>
+		<hero-content class="relative md:-left-[25%] z-20 grid justify-start gap-8 md:gap-6">
+			
+			<div class="animate-reveal-up">
+				<span class="fic-1 text-sm select-none text-primary-300 mb-1">
+					<MapPinIcon class="w-4 h-4 sm:w-5 sm:h-5" stroke-width="1.5" />
+					Launching from {LOCATION}
+				</span>
+	
+				<span class="text-3xl md:text-4xl font-bold leading-[3rem] select-none">
+					Give your small business the <br /> website it deserves.
+				</span>
+			</div>
+
+			<h1 class="text-lg animate-reveal-up md:max-w-[35ch] select-none">
+				Edmonton web design, development, and web hosting with affordable pricing for small businesses. Scale up as your business grows!
+			</h1>
+			
+			<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mt-3 animate-reveal-up">
+				<CtaButton />
+				<Button as="a" href="#projects" variant="ghost">
+					<CircleArrowDownIcon />
+					View portfolio
+				</Button>
+			</div>
+
+			
+		</hero-content>
+		
+		<div class="absolute top-0 bottom-0 right-0 w-full  md:h-full z-10 bg-primary-900">
+			<img 
+				src="/img/hero-bg.webp"
+				width="1311"
+				height="850"
+				class="w-full h-full object-right object-cover mix-blend-color-dodge opacity-15 md:opacity-100"
+				alt=""
+			/>
+		</div>
+		
+	</Section>
 
 	<!-- Intro to company -->
 	<Section contentWidth='slim'>
@@ -25,24 +75,82 @@ import WorkTogetherBanner from '../components/Sections/WorkTogetherBanner.astro'
 				src="/img/josh-avatar.webp"
 				name="Josh Kaye"
 			/>
-			<p>
-				Hello! I'm Josh. I'm a <strong>freelance web developer</strong> who specializes in small business websites, brochure-style websites, landing pages, and more. With over <strong>15 years of experience</strong> in the industry, I have refined my workflow to create custom small business websites for an affordable price.
-			</p>
+			<TextBlock>
+				<p>
+					Hello! I'm Josh. I'm a <strong>freelance web developer</strong> who specializes in small business websites, brochure-style websites, landing pages, and more. With over <strong>15 years of experience</strong> in the industry, I have refined my workflow to create custom small business websites for an affordable price.
+				</p>
+			</TextBlock>
 		</div>
 	</Section>
 
-	<BenefitsSection />
 
-	<FeaturesSection />
+	<!-- Recent Projects -->
+	<Section width="slim" id="projects">
 
-	<ExplorePlansBanner />
+		<H2>Recent Projects</H2>
+
+		<TextBlock class="my-6">
+			<p>
+				I've partnered with clients across Canada and USA, in industries spanning hospitality, financial technology, health and fitness, local enthusiast groups, artist portfolios, and more. Regardless of your industry, I can create a website that's effective, visually appealing, high-performing, and customized to meet your business needs.
+			</p>
+		</TextBlock>
+
+		<div class="grid gap-8 grid-cols-2">
+
+			{  PROJECTS.map( project => (
+				<Project>
+					<img 
+						src={project.cover} 
+						width="576"
+						height="576"
+						alt=""
+						class="w-full aspect-square mb-2 rounded-lg"
+						loading="lazy"
+					/>
+					<H3>{project.title}</H2>
+					<ProjectRole>{project.role}</ProjectRole>
+					<Button as="a" href={project.caseStudyUrl} variant="outline">
+						View case study
+						{/* <FileChartColumnIncreasingIcon size={20} /> */}
+					</Button>
+				</Project>
+			))}
+			
+		</div>
+	</Section>
+
+
+	<!-- Features -->
+	<Section class="overflow-clip bg-primary-100 relative">
+
+		<H2>What's Included in Your Website:</H2>
+
+		<Columns cols={2} class="gap-10 mt-12">
+		
+			{ planFeatures.map( feature => (
+				<div class="flex items-start gap-4">
+					<span class="bg-primary-700 text-primary-100 rounded-full p-2 shrink-0">
+						<feature.icon class="w-6 h-6" stroke-width="1.5" />
+					</span>
+					<div>
+						<span class="font-semibold text-lg">{feature.title}</span>
+						<p>{feature.description}</p>
+					</div>
+				</div>
+			))}
+			
+		</Columns>
+
+		<svg width="1000" height="1000" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute -bottom-[15%] -right-[15%] text-primary-200/20">
+			<circle cx="150" cy="150" r="148.993" stroke="currentColor" stroke-width="2.01342"/>
+			<circle cx="150" cy="150" r="138.926" stroke="currentColor" stroke-width="2.01342"/>
+			<circle cx="150" cy="150" r="126.846" stroke="currentColor" stroke-width="2.01342"/>
+			<circle cx="151.007" cy="151.007" r="44.2953" stroke="currentColor" stroke-width="4.02685"/>
+		</svg>
+	</Section>
 
 	<TestimonialsSection />
 
-	<!-- Projects -->
-
 	<CaseStudySection />
-
-	<WorkTogetherBanner />
 
 </Layout>

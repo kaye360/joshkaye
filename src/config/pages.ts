@@ -38,50 +38,50 @@ export const PAGES : Page[] = [
         path  : '/',
         group : ['header', 'footer'],
     },
+    // {
+    //     title : 'Plans + Pricing',
+    //     path  : '/plans',
+    //     group : ['header', 'footer'],
+    //     subPages : [
+    //         { title : 'Starter website', path : '/plans/starter'},
+    //         { title : '3-page website', path : '/plans/3-page'},
+    //         { title : '6-page website', path : '/plans/6-page'},
+    //         { title : 'Compare all plans', path : '/plans'},
+    //     ]
+    // },
+    // {
+    //     title : 'Projects',
+    //     path  : '/projects',
+    //     group : ['header', 'footer'],
+    // },
+    // {
+    //     title : 'FAQ',
+    //     path  : '/faq',
+    //     group : ['header', 'footer'],
+    // },
+    // {
+    //     title : 'Articles',
+    //     path  : '/articles',
+    //     group : ['header', 'footer'],
+    // },
+    // {
+    //     title : 'About',
+    //     path  : '/about',
+    //     group : ['footer'],
+    // },
     {
-        title : 'Plans + Pricing',
-        path  : '/plans',
-        group : ['header', 'footer'],
-        subPages : [
-            { title : 'Starter website', path : '/plans/starter'},
-            { title : '3-page website', path : '/plans/3-page'},
-            { title : '6-page website', path : '/plans/6-page'},
-            { title : 'Compare all plans', path : '/plans'},
-        ]
-    },
-    {
-        title : 'Projects',
-        path  : '/projects',
-        group : ['header', 'footer'],
-    },
-    {
-        title : 'FAQ',
-        path  : '/faq',
-        group : ['header', 'footer'],
-    },
-    {
-        title : 'Articles',
-        path  : '/articles',
-        group : ['header', 'footer'],
-    },
-    {
-        title : 'About',
-        path  : '/about',
-        group : ['footer'],
-    },
-    {
-        title : 'Contact',
+        title : 'Get in Touch',
         path  : '/contact',
-        group : ['header', 'footer'],
+        group : ['footer', 'cta'],
     },
-    {
-        title : 'Site Map',
-        path  : '/site-map',
-        group : ['footer'],
-    },
-    {
-        title : 'Get Started',
-        path  : '/get-started',
-        group : ['cta'],
-    },
+    // {
+    //     title : 'Site Map',
+    //     path  : '/site-map',
+    //     group : ['footer'],
+    // },
+    // {
+    //     title : 'Get Started',
+    //     path  : '/get-started',
+    //     group : ['cta'],
+    // },
 ]

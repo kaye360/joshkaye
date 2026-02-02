@@ -1,4 +1,4 @@
-import { AppWindow, ChartSpline, FastForward, Lock, MonitorSmartphone, NotebookPen, SearchCheck, type IconNode } from "lucide"
+import { AppWindowIcon, ChartSplineIcon, FastForwardIcon, MonitorSmartphoneIcon, NotebookPenIcon, SearchCheckIcon, LockIcon, type AstroComponent } from "@lucide/astro"
 
 interface Plan {
     title : string,
@@ -59,43 +59,43 @@ export const PLANS : Plan[] = [
 interface PlanFeature {
     title : string,
     description: string,
-    icon : IconNode
+    icon : AstroComponent
 }
 
 export const planFeatures : PlanFeature[] = [
     {
         title : '1 year of website hosting, maintenance, and security',
         description : 'Get one year of reliable website hosting, ongoing maintenance, and robust security to keep your site running smoothly and safely. Renewals available.',
-        icon : Lock,
+        icon : LockIcon,
     },
     {
         title : 'Content writing for the whole site',
         description : 'Professional, SEO-friendly content will be created for your entire site, ensuring clear communication and engagement with your audience.',
-        icon : NotebookPen,
+        icon : NotebookPenIcon,
     },
     {
         title : 'Custom, modern theme that looks great on all screen sizes',
         description : 'A custom, modern theme will be designed to look stunning and function seamlessly across all screen sizes.',
-        icon : MonitorSmartphone,
+        icon : MonitorSmartphoneIcon,
     },
     {
         title : 'Website page speed optimization',
         description : 'Website page speed will be optimized to ensure fast load times, improving user experience and boosting conversion rates.',
-        icon : FastForward,
+        icon : FastForwardIcon,
     },
     {
         title : 'Analytics (by request)',
         description : 'Analytics will be set up upon request, providing valuable insights into your website\'s performance and user behavior.',
-        icon : ChartSpline,
+        icon : ChartSplineIcon,
     },
     {
         title : 'On-page search engine optimization and best practices',
         description : 'On-page SEO will be implemented to improve your site\'s visibility, helping it rank higher in search engine results and attract more traffic.',
-        icon : SearchCheck,
+        icon : SearchCheckIcon,
     },
     {
         title : 'Integrate with booking and payment apps',
         description : 'Your website may integrate with booking and payment apps, making transactions easier for your customers.',
-        icon : AppWindow,
+        icon : AppWindowIcon,
     },
 ]
