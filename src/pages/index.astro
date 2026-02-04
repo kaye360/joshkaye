@@ -12,10 +12,14 @@ import ProjectRole from '../components/Project/ProjectRole.astro';
 import { PROJECTS } from '../config/projects';
 import Columns from '../components/Base/Columns.astro';
 import { planFeatures } from '../config/plans';
-import { CircleArrowDownIcon, EyeIcon, FileChartColumnIncreasingIcon, MapPinIcon, ViewIcon } from '@lucide/astro';
-import { LOCATION } from '../config/site';
+import { CircleArrowDownIcon, EyeIcon, FileChartColumnIncreasingIcon, MailIcon, MapPinIcon, PhoneIcon, ViewIcon } from '@lucide/astro';
+import { EMAIL_ADDRESS, LOCATION, PHONE_NUMBER } from '../config/site';
 import CtaButton from '../components/Base/CtaButton.astro';
 import H3 from '../components/Heading/H3.astro';
+import Input from '../components/Forms/Input.astro';
+import SubmitReset from '../components/Forms/SubmitReset.astro';
+import Textarea from '../components/Forms/Textarea.astro';
+import WorkTogetherBanner from '../components/Sections/WorkTogetherBanner.astro';
 ---
 
 <Layout props
@@ -70,14 +74,20 @@ import H3 from '../components/Heading/H3.astro';
 
 	<!-- Intro to company -->
 	<Section contentWidth='slim'>
-		<div class="flex gap-4 items-start md:items-center">
+		<div class="flex gap-4 items-start dmd:items-center">
 			<Avatar 
 				src="/img/josh-avatar.webp"
 				name="Josh Kaye"
 			/>
 			<TextBlock>
 				<p>
-					Hello! I'm Josh. I'm a <strong>freelance web developer</strong> who specializes in small business websites, brochure-style websites, landing pages, and more. With over <strong>15 years of experience</strong> in the industry, I have refined my workflow to create custom small business websites for an affordable price.
+					Hello! I'm Josh. I'm a freelance web developer who specializes in small business websites, brochure-style websites, landing pages, and more. With over 15 years of experience in the industry, I have refined my workflow to create custom small business websites at a practical, cost-effective price point — typically in the $500-$5,000 range.
+				</p>
+				<p class="text-lg font-semibold">
+					Getting a professional website shouldn't feel complicated or expensive — but it often is.
+				</p>
+				<p>
+					I build fast, high-converting websites with a simple process and clear pricing — so you can focus on your business, not your website.
 				</p>
 			</TextBlock>
 		</div>
@@ -149,8 +159,96 @@ import H3 from '../components/Heading/H3.astro';
 		</svg>
 	</Section>
 
+	<WorkTogetherBanner />
+
 	<TestimonialsSection />
 
 	<CaseStudySection />
+
+    <Section id="contact">
+        <Columns cols={2}  class="gap-12">
+
+            <div class="bg-primary-50 p-6 rounded-xl md:order-2">
+                <TextBlock>
+
+                    <H2>
+                        I would love to hear from you!
+                    </H2>
+
+                    <p>
+                        Have a project in mind or need help? Reach out using the form below and I'll respond as soon as possible.
+                    </p>
+
+                    <div>
+                        <h3 class="font-semibold mb-1">Location</h3>
+                        <p class="fic-2">
+                            <MapPinIcon class="w-5 h-5" stroke-width="1.5" />
+                            {LOCATION}
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-semibold mb-1">Email</h3>
+                        <p class="fic-2 mb-2">
+                            <MailIcon class="w-5 h-5" stroke-width="1.5" />
+                            <a href={`mailto:${EMAIL_ADDRESS}`}>
+                                {EMAIL_ADDRESS}
+                            </a>
+                        </p>
+                        <p class="fic-2">
+                            <PhoneIcon class="w-5 h-5" stroke-width="1.5" />
+                            <a href={`tel:${PHONE_NUMBER}`}>
+                                {PHONE_NUMBER}
+                            </a>
+                        </p>
+                    </div>
+
+                </TextBlock>
+
+            </div>
+
+            <form 
+                id="contact-form"
+                name="contact-form"
+                method="post"
+                class="grid gap-2"
+                data-netlify="true"
+            >
+
+                <input type="hidden" name="subject" value="Web inquiry" />
+                
+                <Input props
+                    title="Your name"
+                    name="name"
+                    type="text"
+                    required
+                />
+            
+                <Input props
+                    title="Your email"
+                    name="email"
+                    type="email"
+                    required
+                />
+                
+                <Input props
+                    title="Your phone number"
+                    name="phone"
+                    type="tel"
+                    required
+                />
+
+                <Textarea props
+                    title="Message"
+                    name="message"
+                    required
+                />
+
+                <SubmitReset />
+
+            </form>
+
+        </Columns>
+    </Section>
 
 </Layout>

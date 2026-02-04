@@ -71,7 +71,7 @@ export const PAGES : Page[] = [
     // },
     {
         title : 'Get in Touch',
-        path  : '/contact',
+        path  : '#contact',
         group : ['footer', 'cta'],
     },
     // {

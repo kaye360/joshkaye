@@ -12,7 +12,6 @@ import { SITE_SHORT_NAME, SITE_URL } from '../config/site';
 import Section from '../components/Layout/Section.astro';
 import Logo from '../components/Base/Logo.astro';
 import CtaButton from '../components/Base/CtaButton.astro';
-import WorkTogetherBanner from '../components/Sections/WorkTogetherBanner.astro';
 
 interface Props extends Layout { }
 
@@ -82,8 +81,6 @@ const {
         <Main>
             <slot />
         </Main>
-
-		<WorkTogetherBanner />
 
         <Footer />
 
